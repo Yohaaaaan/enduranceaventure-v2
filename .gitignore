@@ -23,7 +23,6 @@ data/analytics.json
 
 # Public heavy media & scraped assets library
 public/assets/*
-!public/assets/*.webp
 !public/assets/endurance-aventure-logo-blanc.png
 !public/assets/endurance-aventure-logo-noir.png
 !public/assets/endurance-aventure-icone-noir.png
@@ -35,3 +34,7 @@ public/assets/*
 !public/assets/organisation-evenements-sportifs-services-endurance-aventure.jpg
 !public/assets/production-tele-services-endurance-aventure-e1517973509712.jpg
 !public/assets/raid-endurance-aventure-basse-cote-nord-2008.jpg
+!public/assets/2023-08-05_GBC500_mc_1498-scaled.webp
+!public/assets/51581835318_775ae15a4e_k.webp
+!public/assets/51582278409_86672a9a9f_k.webp
+!public/assets/51586236989_64f608f4ba_k.webp
