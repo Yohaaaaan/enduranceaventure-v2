@@ -1,0 +1,83 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const trailSchema = {
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Trail des Neiges Mont-Orford",
+  "description": "La classique hivernale de course en sentier enneigé au Mont-Orford : épreuves 5 km, 10 km et 15 km nocturne.",
+  "startDate": "2027-02-06",
+  "endDate": "2027-02-06",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "Parc national du Mont-Orford",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Orford",
+      "addressRegion": "QC",
+      "addressCountry": "CA"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Endurance Aventure",
+    "url": "https://enduranceaventure.com"
+  }
+};
+---
+
+<Layout 
+  title="Trail des Neiges | Mont-Orford | Endurance Aventure"
+  description="La classique hivernale de course en sentier enneigé au Mont-Orford. Épreuves 5 km, 10 km et 15 km nocturne."
+  image="/assets/51581835318_775ae15a4e_k.webp"
+  jsonLd={trailSchema}
+>
+  <section class="relative min-h-[50vh] flex items-center justify-center bg-brand-darker overflow-hidden">
+    <img 
+      src="/assets/51581835318_775ae15a4e_k.webp" 
+      alt="Trail des Neiges Mont-Orford" 
+      class="absolute inset-0 w-full h-full object-cover opacity-40"
+      onerror="this.src='/assets/51581835318_775ae15a4e_k.jpg'"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-transparent"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto px-4 text-center py-20">
+      <span class="px-3 py-1 rounded bg-brand-red text-white text-xs font-bold uppercase tracking-wider mb-4 inline-block">
+        Classique Hivernale
+      </span>
+      <h1 class="text-4xl sm:text-6xl font-heading font-black uppercase text-white mb-4">
+        Trail des Neiges
+      </h1>
+      <p class="text-lg text-slate-300 font-light max-w-2xl mx-auto mb-8">
+        Une expérience magique et intense à la lueur des lampes frontales sur les sentiers enneigés du Mont-Orford.
+      </p>
+      <a href="/contact" class="px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-xl">
+        Recevoir l'Avis d'Ouverture des Inscriptions
+      </a>
+    </div>
+  </section>
+
+  <section class="py-20 bg-brand-dark">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div class="bg-brand-darker p-6 rounded-xl border border-brand-gray text-center">
+          <div class="text-3xl font-heading font-bold text-brand-red mb-2">5 KM</div>
+          <div class="text-xs uppercase text-slate-400 font-semibold mb-2">Découverte Hivernale</div>
+          <p class="text-xs text-slate-300">Sentiers damés, accessible aux marcheurs rapides et coureurs débutants en neige.</p>
+        </div>
+        <div class="bg-brand-darker p-6 rounded-xl border border-brand-gray text-center">
+          <div class="text-3xl font-heading font-bold text-white mb-2">10 KM</div>
+          <div class="text-xs uppercase text-slate-400 font-semibold mb-2">Le Défi Intermédiaire</div>
+          <p class="text-xs text-slate-300">Montées soutenues et portions techniques en sous-bois hivernal.</p>
+        </div>
+        <div class="bg-brand-darker p-6 rounded-xl border border-brand-gray text-center">
+          <div class="text-3xl font-heading font-bold text-brand-cyan mb-2">15 KM</div>
+          <div class="text-xs uppercase text-slate-400 font-semibold mb-2">Nocturne Expert</div>
+          <p class="text-xs text-slate-300">Frontale obligatoire, dénivelé important et passage au sommet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

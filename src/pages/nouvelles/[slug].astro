@@ -1,0 +1,86 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import news from '../../data/news.json';
+
+export async function getStaticPaths() {
+  return news.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.title,
+  "description": post.excerpt,
+  "datePublished": post.date,
+  "author": {
+    "@type": "Organization",
+    "name": "Endurance Aventure"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Endurance Aventure",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://enduranceaventure.com/assets/endurance-aventure-logo-blanc.png"
+    }
+  },
+  "image": post.image ? `https://enduranceaventure.com${post.image}` : undefined
+};
+---
+
+<Layout 
+  title={`${post.title} | Actualités | Endurance Aventure`} 
+  description={post.excerpt} 
+  image={post.image}
+  jsonLd={blogSchema}
+>
+  
+  <article class="py-16 bg-brand-dark">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="mb-8">
+        <a href="/nouvelles" class="text-xs font-bold uppercase tracking-wider text-brand-red hover:underline mb-4 inline-block">
+          ← Retour aux actualités
+        </a>
+        <div class="text-xs text-brand-cyan font-bold uppercase tracking-wider mb-2">
+          Publié le {post.date}
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-heading font-black text-white leading-tight mb-6">
+          {post.title}
+        </h1>
+      </div>
+
+      <!-- Featured Image -->
+      {post.image && (
+        <div class="rounded-2xl overflow-hidden mb-12 shadow-2xl bg-brand-darker max-h-[500px]">
+          <img 
+            src={post.image} 
+            alt={post.title} 
+            class="w-full h-full object-cover"
+            onerror="this.style.display='none'"
+          />
+        </div>
+      )}
+
+      <!-- Post Content Rendered -->
+      <div class="prose prose-invert prose-lg max-w-none text-slate-300 leading-relaxed space-y-6" set:html={post.content} />
+
+      <!-- Bottom navigation -->
+      <div class="mt-16 pt-8 border-t border-brand-gray flex items-center justify-between">
+        <a href="/nouvelles" class="px-6 py-3 rounded-lg bg-brand-gray text-white text-xs font-bold uppercase tracking-wider hover:bg-brand-red transition-all">
+          ← Toutes les actualités
+        </a>
+        <a href="/contact" class="px-6 py-3 rounded-lg bg-brand-red text-white text-xs font-bold uppercase tracking-wider hover:bg-brand-red-dark transition-all">
+          Nous contacter
+        </a>
+      </div>
+
+    </div>
+  </article>
+
+</Layout>

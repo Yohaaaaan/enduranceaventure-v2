@@ -1,0 +1,155 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-brand-gray/60 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <img 
+          src="/assets/endurance-aventure-logo-blanc.png" 
+          alt="Endurance Aventure Logo" 
+          class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+        />
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7">
+        <a 
+          href="/" 
+          class={`text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${currentPath === '/' ? 'text-brand-red' : 'text-slate-200 hover:text-brand-cyan-light'}`}
+        >
+          Accueil
+        </a>
+
+        <!-- Dropdown Événements -->
+        <div class="relative group">
+          <a 
+            href="/evenements" 
+            class={`inline-flex items-center gap-1 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${currentPath.startsWith('/evenements') ? 'text-brand-red' : 'text-slate-200 hover:text-brand-cyan-light'}`}
+          >
+            Événements
+            <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+          <div class="absolute left-0 mt-2 w-64 rounded-xl bg-brand-darker border border-brand-gray/80 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left group-hover:translate-y-0 translate-y-2 py-2 z-50">
+            <a href="/evenements/gbc500" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-red hover:text-white transition-colors">
+              <div class="font-bold text-slate-100">GBC 500</div>
+              <div class="text-xs text-slate-400 group-hover/item:text-slate-200">Gravel Bikepacking Challenge</div>
+            </a>
+            <a href="/evenements/trail-des-neiges" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-red hover:text-white transition-colors">
+              <div class="font-bold text-slate-100">Trail des Neiges</div>
+              <div class="text-xs text-slate-400">Classique hivernale au Mont-Orford</div>
+            </a>
+            <a href="/evenements/raids" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-red hover:text-white transition-colors">
+              <div class="font-bold text-slate-100">Raids Aventure</div>
+              <div class="text-xs text-slate-400">Gaspésie & Témiscamingue</div>
+            </a>
+            <div class="border-t border-brand-gray/50 my-1"></div>
+            <a href="/evenements" class="block px-4 py-2 text-xs font-semibold text-brand-cyan hover:text-white uppercase tracking-wider">
+              Voir tous les événements →
+            </a>
+          </div>
+        </div>
+
+        <!-- Dropdown Services Pro -->
+        <div class="relative group">
+          <a 
+            href="/services" 
+            class={`inline-flex items-center gap-1 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${currentPath.startsWith('/services') ? 'text-brand-red' : 'text-slate-200 hover:text-brand-cyan-light'}`}
+          >
+            Services Pro
+            <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+          <div class="absolute left-0 mt-2 w-64 rounded-xl bg-brand-darker border border-brand-gray/80 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left group-hover:translate-y-0 translate-y-2 py-2 z-50">
+            <a href="/services/organisation-evenements" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-cyan hover:text-white transition-colors">
+              <div class="font-bold text-slate-100">Organisation Clé en Main</div>
+              <div class="text-xs text-slate-400">Logistique, parcours, sécurité</div>
+            </a>
+            <a href="/services/production-tele" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-cyan hover:text-white transition-colors">
+              <div class="font-bold text-slate-100">Production Télé & Vidéo</div>
+              <div class="text-xs text-slate-400">Captation extrême, drones, 4K</div>
+            </a>
+          </div>
+        </div>
+
+        <a 
+          href="/entreprise" 
+          class={`text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${currentPath === '/entreprise' ? 'text-brand-red' : 'text-slate-200 hover:text-brand-cyan-light'}`}
+        >
+          L'Entreprise
+        </a>
+
+        <a 
+          href="/nouvelles" 
+          class={`text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${currentPath.startsWith('/nouvelles') ? 'text-brand-red' : 'text-slate-200 hover:text-brand-cyan-light'}`}
+        >
+          Actualités
+        </a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a 
+          href="/contact" 
+          class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-sm tracking-wider uppercase transition-all duration-200 shadow-lg shadow-brand-red/20 hover:shadow-brand-red/40 hover:-translate-y-0.5"
+        >
+          Contact / Devis
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="flex md:hidden">
+        <button 
+          id="mobile-menu-btn" 
+          type="button" 
+          class="text-slate-200 hover:text-white p-2 rounded-lg focus:outline-none"
+          aria-label="Ouvrir le menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-menu" class="hidden md:hidden bg-brand-darker border-b border-brand-gray px-4 pt-2 pb-6 space-y-3">
+    <a href="/" class="block py-2 text-base font-semibold text-slate-100 hover:text-brand-red">Accueil</a>
+    <a href="/evenements" class="block py-2 text-base font-semibold text-slate-100 hover:text-brand-red">Tous les Événements</a>
+    <div class="pl-4 space-y-2 border-l border-brand-gray">
+      <a href="/evenements/gbc500" class="block text-sm text-slate-300 hover:text-brand-red">GBC 500 (Gravel Bike)</a>
+      <a href="/evenements/trail-des-neiges" class="block text-sm text-slate-300 hover:text-brand-red">Trail des Neiges</a>
+      <a href="/evenements/raids" class="block text-sm text-slate-300 hover:text-brand-red">Raids Aventure</a>
+    </div>
+    <a href="/services" class="block py-2 text-base font-semibold text-slate-100 hover:text-brand-cyan">Services Corporatifs</a>
+    <div class="pl-4 space-y-2 border-l border-brand-gray">
+      <a href="/services/organisation-evenements" class="block text-sm text-slate-300 hover:text-brand-cyan">Organisation Clé en Main</a>
+      <a href="/services/production-tele" class="block text-sm text-slate-300 hover:text-brand-cyan">Production Télé & Vidéo</a>
+    </div>
+    <a href="/entreprise" class="block py-2 text-base font-semibold text-slate-100 hover:text-brand-red">L'Entreprise</a>
+    <a href="/nouvelles" class="block py-2 text-base font-semibold text-slate-100 hover:text-brand-red">Actualités</a>
+    <div class="pt-2">
+      <a href="/contact" class="block text-center w-full py-3 rounded-lg bg-brand-red text-white font-bold uppercase tracking-wider text-sm shadow-md">
+        Nous Contacter
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>

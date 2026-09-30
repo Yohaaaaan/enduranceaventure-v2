@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import events from '../../data/events.json';
+---
+
+<Layout title="Nos Événements Sportifs | Endurance Aventure" description="Découvrez les courses et défis sportifs d'Endurance Aventure : GBC 500, Trail des Neiges, Raids Multisports.">
+  
+  <div class="bg-brand-darker py-16 border-b border-brand-gray/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="text-brand-red text-sm font-bold uppercase tracking-widest block mb-2">Calendrier & Défis</span>
+      <h1 class="text-4xl sm:text-6xl font-heading font-black uppercase tracking-tight text-white mb-4">
+        Nos Événements Sportifs
+      </h1>
+      <p class="max-w-2xl text-base sm:text-lg text-slate-300 font-light leading-relaxed">
+        Des épreuves d'endurance authentiques, sécurisées et immersives organisées au cœur des paysages les plus spectaculaires du Québec.
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      {events.map((evt) => (
+        <div class="rounded-2xl bg-brand-dark border border-brand-gray overflow-hidden flex flex-col group hover:border-brand-red transition-all duration-300 shadow-xl">
+          <div class="relative h-72 overflow-hidden">
+            <img 
+              src={evt.image} 
+              alt={evt.title} 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 px-3 py-1 rounded bg-brand-red text-white text-xs font-bold uppercase tracking-wider">
+              {evt.category}
+            </span>
+            <span class="absolute bottom-4 left-4 px-3 py-1 rounded bg-brand-darker/90 text-slate-200 text-xs font-semibold backdrop-blur-md">
+              📍 {evt.location}
+            </span>
+          </div>
+
+          <div class="p-8 flex-grow flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-brand-cyan font-bold uppercase tracking-wider mb-2">
+                <span>{evt.dates}</span>
+                <span>{evt.distance}</span>
+              </div>
+              <h2 class="text-2xl font-heading font-bold text-white mb-3 group-hover:text-brand-red transition-colors">
+                {evt.title}
+              </h2>
+              <p class="text-sm text-slate-400 mb-6 leading-relaxed">
+                {evt.description}
+              </p>
+
+              <div class="bg-brand-darker rounded-xl p-4 mb-6 border border-brand-gray/50">
+                <div class="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2">Points forts :</div>
+                <ul class="space-y-1.5 text-xs text-slate-400">
+                  {evt.highlights.map(h => (
+                    <li class="flex items-center gap-2">
+                      <span class="text-brand-red font-bold">✓</span>
+                      <span>{h}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-4 pt-4 border-t border-brand-gray">
+              <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-800 text-slate-300">
+                {evt.status}
+              </span>
+              <a 
+                href={`/evenements/${evt.slug === 'raid-gaspesie' ? 'raids' : evt.slug}`} 
+                class="px-5 py-2.5 rounded-lg bg-brand-red hover:bg-brand-red-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-md shadow-brand-red/20"
+              >
+                Accéder à l'épreuve →
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</Layout>

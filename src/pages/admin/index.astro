@@ -1,0 +1,302 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Tableau de Bord Analytics | Endurance Aventure"
+  description="Panneau d'administration et statistiques de fréquentation du site Endurance Aventure."
+>
+
+  <div class="bg-brand-darker border-b border-brand-gray/60 py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-brand-red flex items-center justify-center font-bold text-white shadow-lg shadow-brand-red/30">
+          EA
+        </div>
+        <div>
+          <h1 class="text-xl font-heading font-bold text-white flex items-center gap-2">
+            Panneau d'Administration & Analytics
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-green-950 text-green-400 border border-green-700/50">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+              En direct
+            </span>
+          </h1>
+          <p class="text-xs text-slate-400">Statistiques de visites & provenance (Inspiré de Plausible / Umami Open-Source)</p>
+        </div>
+      </div>
+
+      <!-- Time filter & Refresh -->
+      <div class="flex items-center gap-3">
+        <select id="time-range" class="bg-brand-dark border border-brand-gray text-slate-200 text-xs font-semibold rounded-lg px-3 py-2 focus:outline-none focus:border-brand-cyan">
+          <option value="today">Aujourd'hui</option>
+          <option value="7d" selected>7 Derniers Jours</option>
+          <option value="30d">30 Derniers Jours</option>
+          <option value="all">Tout l'historique</option>
+        </select>
+        <button id="refresh-btn" class="px-3 py-2 rounded-lg bg-brand-gray hover:bg-slate-700 text-white text-xs font-bold transition-all flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+          Actualiser
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Analytics Container -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
+    
+    <!-- KPI CARDS -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <div class="rounded-2xl bg-brand-darker border border-brand-gray p-6">
+        <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Vues de Pages Totales</div>
+        <div id="stat-views" class="text-3xl font-heading font-black text-white">--</div>
+        <div class="text-[11px] text-green-400 font-semibold mt-2 flex items-center gap-1">
+          <span>↑ En hausse</span>
+          <span class="text-slate-500">• Vues enregistrées</span>
+        </div>
+      </div>
+
+      <div class="rounded-2xl bg-brand-darker border border-brand-gray p-6">
+        <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Visiteurs Uniques</div>
+        <div id="stat-visitors" class="text-3xl font-heading font-black text-brand-red">--</div>
+        <div class="text-[11px] text-slate-400 font-semibold mt-2">
+          Adresses uniques anonymisées
+        </div>
+      </div>
+
+      <div class="rounded-2xl bg-brand-darker border border-brand-gray p-6">
+        <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Source Principale</div>
+        <div id="stat-top-source" class="text-xl font-heading font-bold text-brand-cyan truncate">Direct / Organique</div>
+        <div class="text-[11px] text-slate-400 font-semibold mt-2">
+          Premier canal de provenance
+        </div>
+      </div>
+
+      <div class="rounded-2xl bg-brand-darker border border-brand-gray p-6">
+        <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Page la Plus Consultée</div>
+        <div id="stat-top-page" class="text-xl font-heading font-bold text-white truncate">/evenements/gbc500</div>
+        <div class="text-[11px] text-slate-400 font-semibold mt-2">
+          Intérêt athlètes maximal
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAIN CHART -->
+    <div class="rounded-3xl bg-brand-darker border border-brand-gray p-6 sm:p-8">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h2 class="text-lg font-heading font-bold text-white">Évolution de la Fréquentation</h2>
+          <p class="text-xs text-slate-400">Vues quotidiennes sur la période sélectionnée</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs">
+          <span class="inline-block w-3 h-3 rounded bg-brand-red"></span>
+          <span class="text-slate-300 font-semibold">Pages Vues</span>
+        </div>
+      </div>
+
+      <div class="relative h-72 w-full">
+        <canvas id="views-chart"></canvas>
+      </div>
+    </div>
+
+    <!-- 2 COLUMNS BREAKDOWN -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- TOP PAGES -->
+      <div class="rounded-2xl bg-brand-darker border border-brand-gray p-6">
+        <div class="flex items-center justify-between mb-6 border-b border-brand-gray/60 pb-4">
+          <h3 class="text-base font-heading font-bold text-white flex items-center gap-2">
+            <span>📄</span> Pages les plus visitées
+          </h3>
+          <span class="text-xs text-slate-500 font-bold uppercase">Vues</span>
+        </div>
+        <div id="top-pages-list" class="space-y-3">
+          <div class="text-xs text-slate-500 py-4 text-center">Chargement des données...</div>
+        </div>
+      </div>
+
+      <!-- SOURCES & REFERRERS -->
+      <div class="rounded-2xl bg-brand-darker border border-brand-gray p-6">
+        <div class="flex items-center justify-between mb-6 border-b border-brand-gray/60 pb-4">
+          <h3 class="text-base font-heading font-bold text-white flex items-center gap-2">
+            <span>🌐</span> Origine des Visiteurs (Provenance / Referrers)
+          </h3>
+          <span class="text-xs text-slate-500 font-bold uppercase">Visites</span>
+        </div>
+        <div id="top-referrers-list" class="space-y-3">
+          <div class="text-xs text-slate-500 py-4 text-center">Chargement des données...</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DEVICES & RECENT ACTIVITY -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <!-- Devices -->
+      <div class="rounded-2xl bg-brand-darker border border-brand-gray p-6">
+        <h3 class="text-base font-heading font-bold text-white mb-6 border-b border-brand-gray/60 pb-4 flex items-center gap-2">
+          <span>📱</span> Appareils & Navigateurs
+        </h3>
+        <div id="devices-breakdown" class="space-y-4">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+
+      <!-- Recent Log Stream -->
+      <div class="lg:col-span-2 rounded-2xl bg-brand-darker border border-brand-gray p-6">
+        <div class="flex items-center justify-between mb-6 border-b border-brand-gray/60 pb-4">
+          <h3 class="text-base font-heading font-bold text-white flex items-center gap-2">
+            <span>⚡</span> Flux des Dernières Visites (Temps Réel)
+          </h3>
+          <span class="text-[11px] text-brand-cyan font-bold uppercase">Anonymisé RGPD</span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead>
+              <tr class="text-slate-500 border-b border-brand-gray/50 pb-2">
+                <th class="pb-2 font-bold">Page</th>
+                <th class="pb-2 font-bold">Source</th>
+                <th class="pb-2 font-bold">Appareil</th>
+                <th class="pb-2 font-bold text-right">Moment</th>
+              </tr>
+            </thead>
+            <tbody id="recent-stream" class="divide-y divide-brand-gray/30 text-slate-300">
+              <!-- Filled by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Chart.js Script via official CDN -->
+  <script is:inline src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script is:inline>
+    let chartInstance = null;
+
+    async function loadStats() {
+      try {
+        const res = await fetch('/api/stats');
+        const data = await res.json();
+
+        // Update KPIs
+        document.getElementById('stat-views').innerText = data.totalViews || 0;
+        document.getElementById('stat-visitors').innerText = data.uniqueVisitors || 0;
+        document.getElementById('stat-top-source').innerText = data.topReferrer || 'Accès Direct';
+        document.getElementById('stat-top-page').innerText = data.topPage || '/';
+
+        // Render Chart
+        const ctx = document.getElementById('views-chart').getContext('2d');
+        if (chartInstance) chartInstance.destroy();
+
+        chartInstance = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: data.timeline.labels,
+            datasets: [{
+              label: 'Vues',
+              data: data.timeline.values,
+              borderColor: '#DB2E3C',
+              backgroundColor: 'rgba(219, 46, 60, 0.15)',
+              borderWidth: 3,
+              fill: true,
+              tension: 0.35,
+              pointBackgroundColor: '#DB2E3C',
+              pointRadius: 4,
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false }
+            },
+            scales: {
+              x: {
+                grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                ticks: { color: '#8A8D9F', font: { size: 11 } }
+              },
+              y: {
+                beginAtZero: true,
+                grid: { color: 'rgba(255, 255, 255, 0.05)' },
+                ticks: { color: '#8A8D9F', font: { size: 11 }, precision: 0 }
+              }
+            }
+          }
+        });
+
+        // Render Top Pages
+        const pagesEl = document.getElementById('top-pages-list');
+        pagesEl.innerHTML = data.topPages.map(p => `
+          <div class="flex items-center justify-between text-xs py-2 px-3 rounded-lg bg-brand-dark border border-brand-gray/50 hover:border-brand-gray transition-colors">
+            <span class="font-mono text-slate-300 truncate max-w-[280px]">${p.path}</span>
+            <span class="font-bold text-white px-2 py-0.5 rounded bg-brand-darker border border-slate-700">${p.count}</span>
+          </div>
+        `).join('') || '<div class="text-xs text-slate-500 text-center py-4">Aucune vue encore enregistrée.</div>';
+
+        // Render Top Referrers
+        const refEl = document.getElementById('top-referrers-list');
+        refEl.innerHTML = data.topReferrers.map(r => `
+          <div class="flex items-center justify-between text-xs py-2 px-3 rounded-lg bg-brand-dark border border-brand-gray/50 hover:border-brand-gray transition-colors">
+            <span class="text-slate-300 font-semibold truncate max-w-[280px]">${r.source}</span>
+            <span class="font-bold text-brand-cyan px-2 py-0.5 rounded bg-brand-darker border border-slate-700">${r.count}</span>
+          </div>
+        `).join('') || '<div class="text-xs text-slate-500 text-center py-4">Aucun référent externe détecté.</div>';
+
+        // Render Devices
+        const devEl = document.getElementById('devices-breakdown');
+        const dev = data.devices || { mobile: 0, desktop: 0 };
+        const totalDev = (dev.mobile + dev.desktop) || 1;
+        const mobPct = Math.round((dev.mobile / totalDev) * 100);
+        const deskPct = 100 - mobPct;
+
+        devEl.innerHTML = `
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-slate-300">📱 Mobile & Tablette</span>
+                <span class="font-bold text-white">${mobPct}% (${dev.mobile})</span>
+              </div>
+              <div class="w-full bg-brand-dark rounded-full h-2 overflow-hidden">
+                <div class="bg-brand-red h-full rounded-full" style="width: ${mobPct}%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-slate-300">💻 Ordinateur (Desktop)</span>
+                <span class="font-bold text-white">${deskPct}% (${dev.desktop})</span>
+              </div>
+              <div class="w-full bg-brand-dark rounded-full h-2 overflow-hidden">
+                <div class="bg-brand-cyan h-full rounded-full" style="width: ${deskPct}%"></div>
+              </div>
+            </div>
+          </div>
+        `;
+
+        // Render Recent Stream
+        const streamEl = document.getElementById('recent-stream');
+        streamEl.innerHTML = data.recent.map(item => `
+          <tr>
+            <td class="py-2.5 font-mono text-slate-200">${item.path}</td>
+            <td class="py-2.5 text-slate-400">${item.referrer}</td>
+            <td class="py-2.5 text-slate-400">${item.device}</td>
+            <td class="py-2.5 text-right text-slate-500">${item.time}</td>
+          </tr>
+        `).join('') || '<tr><td colspan="4" class="py-4 text-center text-slate-500">En attente de nouvelles visites...</td></tr>';
+
+      } catch (err) {
+        console.error('Failed to load stats:', err);
+      }
+    }
+
+    document.getElementById('refresh-btn')?.addEventListener('click', loadStats);
+    loadStats();
+    setInterval(loadStats, 15000); // Auto-refresh every 15s
+  </script>
+
+</Layout>

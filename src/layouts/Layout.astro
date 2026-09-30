@@ -1,0 +1,116 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  jsonLd?: Record<string, any>;
+}
+
+const {
+  title = "Endurance Aventure | Événements sportifs d'aventure & Production",
+  description = "Spécialiste de l'organisation d'événements sportifs extrêmes, gravel bikepacking (GBC500), trails hivernaux, raids multisports et production télévisuelle au Québec depuis plus de 20 ans.",
+  image = "/assets/2023-08-05_GBC500_mc_1498-scaled.webp",
+  jsonLd,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://enduranceaventure.com');
+
+const defaultOrgSchema = {
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "Endurance Aventure",
+  "url": "https://enduranceaventure.com",
+  "logo": "https://enduranceaventure.com/assets/endurance-aventure-logo-blanc.png",
+  "description": description,
+  "founder": {
+    "@type": "Person",
+    "name": "Daniel Poirier"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Magog",
+    "addressRegion": "QC",
+    "addressCountry": "CA"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "info@enduranceaventure.com",
+    "contactType": "customer service"
+  }
+};
+---
+
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/assets/endurance-aventure-icone-noir.png" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="fr_CA" />
+    <meta property="og:site_name" content="Endurance Aventure" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- Google Fonts: Montserrat & Source Sans 3 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd || defaultOrgSchema)} />
+
+    <!-- Privacy-first Analytics Tracker (Plausible/Umami style) -->
+    <script is:inline>
+      (function() {
+        try {
+          if (window.location.pathname.startsWith('/admin')) return;
+          const data = {
+            path: window.location.pathname,
+            referrer: document.referrer || 'Direct',
+            screenWidth: window.innerWidth,
+            timestamp: new Date().toISOString()
+          };
+          if (navigator.sendBeacon) {
+            navigator.sendBeacon('/api/track', JSON.stringify(data));
+          } else {
+            fetch('/api/track', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(data),
+              keepalive: true
+            }).catch(function() {});
+          }
+        } catch(e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-brand-dark text-slate-100 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-red selection:text-white">
+    <Header />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,68 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import news from '../../data/news.json';
+---
+
+<Layout title="Actualités, Récits & Archives | Endurance Aventure" description="Découvrez les actualités, résumés de courses, vidéos et annonces d'Endurance Aventure.">
+  
+  <div class="bg-brand-darker py-16 border-b border-brand-gray/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div>
+          <span class="text-brand-red text-sm font-bold uppercase tracking-widest block mb-2">Récits de Course & Histoire</span>
+          <h1 class="text-4xl sm:text-6xl font-heading font-black uppercase tracking-tight text-white mb-4">
+            Actualités & Récits
+          </h1>
+          <p class="max-w-2xl text-base sm:text-lg text-slate-300 font-light leading-relaxed">
+            Revivez les temps forts, les annonces officielles et les plus grands exploits d'Endurance Aventure à travers nos archives et articles.
+          </p>
+        </div>
+
+        <div class="bg-brand-dark px-4 py-2 rounded-xl border border-brand-gray text-xs text-slate-400">
+          <span class="font-bold text-white">{news.length}</span> récits & publications archivés
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    
+    <!-- News Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {news.map((n) => (
+        <article class="rounded-2xl bg-brand-dark border border-brand-gray overflow-hidden flex flex-col group hover:border-brand-red/60 transition-all duration-300 hover:-translate-y-1 shadow-lg">
+          <div class="relative h-52 overflow-hidden bg-brand-darker">
+            <img 
+              src={n.image} 
+              alt={n.title} 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              onerror="this.src='/assets/EnduranceAventure.jpg'"
+            />
+            <span class="absolute top-3 right-3 px-3 py-1 rounded bg-black/80 text-xs font-semibold text-slate-200 backdrop-blur-md border border-slate-700">
+              📅 {n.date}
+            </span>
+          </div>
+
+          <div class="p-6 flex-grow flex flex-col justify-between">
+            <div>
+              <h2 class="text-lg font-heading font-bold text-white mb-3 group-hover:text-brand-red transition-colors line-clamp-2">
+                <a href={`/nouvelles/${n.slug}`}>{n.title}</a>
+              </h2>
+              <p class="text-xs sm:text-sm text-slate-400 line-clamp-3 leading-relaxed mb-6">
+                {n.excerpt}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-brand-gray/60 flex items-center justify-between">
+              <span class="text-[11px] uppercase tracking-wider text-slate-500 font-semibold">Endurance Aventure</span>
+              <a href={`/nouvelles/${n.slug}`} class="text-xs font-bold uppercase tracking-wider text-brand-red hover:underline flex items-center gap-1">
+                Lire l'article →
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+
+</Layout>

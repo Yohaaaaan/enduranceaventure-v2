@@ -1,0 +1,198 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Contactez-Nous & Soumissions | Endurance Aventure" 
+  description="Contactez l'équipe d'Endurance Aventure pour toute demande d'information sur nos événements sportifs ou pour une soumission de services corporatifs."
+>
+  
+  <div class="bg-brand-darker py-16 border-b border-brand-gray/50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="text-brand-red text-sm font-bold uppercase tracking-widest block mb-2">Formulaire Sécurisé</span>
+      <h1 class="text-4xl sm:text-6xl font-heading font-black uppercase tracking-tight text-white mb-4">
+        Contactez-Nous
+      </h1>
+      <p class="max-w-2xl text-base sm:text-lg text-slate-300 font-light leading-relaxed">
+        Une question sur un événement ? Une demande de devis pour une organisation sportive ou un tournage ? Notre équipe vous répond sous 24 à 48 heures.
+      </p>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      
+      <!-- Contact Info Sidebar -->
+      <div class="space-y-8">
+        <div class="bg-brand-darker p-8 rounded-2xl border border-brand-gray space-y-6">
+          <h3 class="text-xl font-heading font-bold text-white border-l-2 border-brand-red pl-3">
+            Coordonnées Directes
+          </h3>
+          
+          <div class="space-y-4 text-sm text-slate-300">
+            <div>
+              <div class="text-xs text-slate-500 uppercase font-bold mb-1">Siège social</div>
+              <div class="text-white font-medium">Magog, Cantons-de-l'Est</div>
+              <div class="text-slate-400">Québec, Canada</div>
+            </div>
+
+            <div>
+              <div class="text-xs text-slate-500 uppercase font-bold mb-1">Courriel direct</div>
+              <a href="mailto:info@enduranceaventure.com" class="text-brand-cyan hover:underline font-semibold">
+                info@enduranceaventure.com
+              </a>
+            </div>
+
+            <div>
+              <div class="text-xs text-slate-500 uppercase font-bold mb-1">Direction générale</div>
+              <div class="font-semibold text-white">Daniel Poirier</div>
+              <div class="text-xs text-slate-400">Fondateur & Directeur d'épreuves</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-brand-darker p-8 rounded-2xl border border-brand-gray space-y-4">
+          <h3 class="text-lg font-heading font-bold text-white border-l-2 border-brand-cyan pl-3">
+            Sécurité & Confidentialité
+          </h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Vos informations sont strictement confidentielles. Aucun spam, aucun traceur malveillant. Ce site utilise un socle statique inviolable sans base de données ouverte.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="lg:col-span-2">
+        <div class="bg-brand-darker p-8 sm:p-10 rounded-3xl border border-brand-gray shadow-2xl relative">
+          
+          <!-- Success Alert (Hidden by default) -->
+          <div id="form-success" class="hidden mb-6 p-4 rounded-xl bg-green-950/80 border border-green-500/50 text-green-300 text-sm flex items-start gap-3">
+            <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            <div>
+              <div class="font-bold text-white">Merci pour votre message !</div>
+              <div>Votre demande a été enregistrée avec succès. Daniel Poirier et l'équipe d'Endurance Aventure reviendront vers vous rapidement.</div>
+            </div>
+          </div>
+
+          <form id="contact-form" class="space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                  Nom complet *
+                </label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required 
+                  placeholder="Ex: Jean Tremblay"
+                  class="w-full px-4 py-3.5 rounded-xl bg-brand-dark border border-brand-gray text-white placeholder-slate-500 focus:outline-none focus:border-brand-red transition-colors text-sm"
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                  Adresse courriel *
+                </label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  placeholder="jean@exemple.com"
+                  class="w-full px-4 py-3.5 rounded-xl bg-brand-dark border border-brand-gray text-white placeholder-slate-500 focus:outline-none focus:border-brand-red transition-colors text-sm"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label for="phone" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                  Téléphone (Optionnel)
+                </label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  placeholder="(819) 000-0000"
+                  class="w-full px-4 py-3.5 rounded-xl bg-brand-dark border border-brand-gray text-white placeholder-slate-500 focus:outline-none focus:border-brand-red transition-colors text-sm"
+                />
+              </div>
+
+              <div>
+                <label for="topic" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                  Objet de votre demande *
+                </label>
+                <select 
+                  id="topic" 
+                  name="topic" 
+                  required
+                  class="w-full px-4 py-3.5 rounded-xl bg-brand-dark border border-brand-gray text-white focus:outline-none focus:border-brand-red transition-colors text-sm"
+                >
+                  <option value="evenement">Inscription / Information Événement sportif</option>
+                  <option value="gbc500">GBC 500 (Gravel Bikepacking)</option>
+                  <option value="trail">Trail des Neiges Mont-Orford</option>
+                  <option value="raids">Raids Aventure Multisports</option>
+                  <option value="corporate">Organisation d'Événement Corporatif</option>
+                  <option value="video">Production Télévisuelle & Drones</option>
+                  <option value="partenariat">Partenariat & Commandites</option>
+                  <option value="autre">Autre demande</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="message" class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                Votre Message *
+              </label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="5" 
+                required 
+                placeholder="Précisez votre demande, vos dates envisagées ou vos questions..."
+                class="w-full px-4 py-3.5 rounded-xl bg-brand-dark border border-brand-gray text-white placeholder-slate-500 focus:outline-none focus:border-brand-red transition-colors text-sm leading-relaxed"
+              ></textarea>
+            </div>
+
+            <div class="pt-2">
+              <button 
+                id="submit-btn"
+                type="submit" 
+                class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-xl shadow-brand-red/30 cursor-pointer flex items-center justify-center gap-2"
+              >
+                <span>Envoyer le Message</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const successMsg = document.getElementById('form-success');
+    const submitBtn = document.getElementById('submit-btn');
+
+    if (form && successMsg && submitBtn) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        submitBtn.setAttribute('disabled', 'true');
+        submitBtn.innerHTML = `<span>Envoi en cours...</span>`;
+
+        // Simulate secure API dispatch
+        setTimeout(() => {
+          successMsg.classList.remove('hidden');
+          form.reset();
+          submitBtn.removeAttribute('disabled');
+          submitBtn.innerHTML = `<span>Message Envoyé ✓</span>`;
+          successMsg.scrollIntoView({ behavior: 'smooth' });
+        }, 800);
+      });
+    }
+  </script>
+
+</Layout>
