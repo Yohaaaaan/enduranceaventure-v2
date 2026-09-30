@@ -34,6 +34,28 @@ import events from '../../data/events.json';
               <span class="absolute top-4 left-4 px-3 py-1 rounded bg-brand-red text-white text-xs font-bold uppercase tracking-wider shadow-md">
                 {evt.category}
               </span>
+
+              <!-- Badge Logos Officiels sur fond blanc immaculé (Argon 18 & GBC 500 etc.) -->
+              {evt.logo && (
+                <div class="absolute top-4 right-4 p-2 sm:p-2.5 rounded-2xl bg-white shadow-xl border border-slate-200/90 flex items-center gap-2.5 z-10">
+                  <img 
+                    src={evt.logo} 
+                    alt={`Logo ${evt.title}`} 
+                    class="h-10 sm:h-12 w-auto object-contain max-w-[120px]" 
+                  />
+                  {evt.secondaryLogo && (
+                    <>
+                      <div class="h-8 w-px bg-slate-200"></div>
+                      <img 
+                        src={evt.secondaryLogo} 
+                        alt="Partenaire Titre Argon 18" 
+                        class="h-7 sm:h-9 w-auto object-contain max-w-[90px]" 
+                      />
+                    </>
+                  )}
+                </div>
+              )}
+
               <span class="absolute bottom-4 left-4 px-3 py-1 rounded bg-slate-950/80 text-white text-xs font-semibold backdrop-blur-md">
                 📍 {evt.location}
               </span>

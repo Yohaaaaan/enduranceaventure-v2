@@ -8,8 +8,9 @@
     "location": "Cantons-de-l'Est / Mont Mégantic, QC",
     "dates": "Édition 2026 : Août 2026",
     "distance": "500 km / 250 km / 100 km",
-    "image": "/assets/2023-08-05_GBC500_mc_1498-scaled.jpg",
+    "image": "/assets/2023-08-05_GBC500_mc_1498-scaled.webp",
     "logo": "/assets/logo-GBC500-ARGON18.png",
+    "secondaryLogo": "/assets/logo-argon-18-2.png",
     "featured": true,
     "description": "Une aventure épique d'endurance en autonomie complète à travers les plus beaux chemins de terre, forêts et sommets du Québec.",
     "highlights": [
@@ -18,7 +19,7 @@
       "Ravitaillements & Campings de bivouac",
       "Suivi en direct par puce GPS"
     ],
-    "registrationLink": "https://enduranceaventure.com/contactez-nous/",
+    "registrationLink": "/contact?type=general&subject=gbc500",
     "status": "Inscriptions Ouvertes"
   },
   {
@@ -30,7 +31,8 @@
     "location": "Mont-Orford, QC",
     "dates": "Février 2027",
     "distance": "5 km / 10 km / 15 km Nocturne",
-    "image": "/assets/51581835318_775ae15a4e_k.jpg",
+    "image": "/assets/51581835318_775ae15a4e_k.webp",
+    "logo": "/assets/orford_logo-original_fond_transparent.png",
     "featured": true,
     "description": "Affrontez le froid, la neige et les montées abruptes du Mont-Orford lors d'une des épreuves hivernales les plus emblématiques.",
     "highlights": [
@@ -38,7 +40,7 @@
       "Ambiance festive avec feu de joie",
       "Épreuve accessible à tous les niveaux"
     ],
-    "registrationLink": "https://enduranceaventure.com/contactez-nous/",
+    "registrationLink": "/contact?type=general&subject=trail-des-neiges",
     "status": "Bientôt Disponible"
   },
   {
@@ -50,7 +52,8 @@
     "location": "Péninsule Gaspésienne, QC",
     "dates": "Automne",
     "distance": "Multisport (Kayak, VTT, Trek, Corde)",
-    "image": "/assets/51582278409_86672a9a9f_k.jpg",
+    "image": "/assets/51582278409_86672a9a9f_k.webp",
+    "logo": "/assets/ZF-LogoRIG-ombrNoir-trans.png",
     "featured": true,
     "description": "Une immersion totale de plusieurs jours par équipes dans les paysages sauvages et côtiers de la Gaspésie.",
     "highlights": [
@@ -58,7 +61,7 @@
       "Sections nautiques en mer",
       "Équipes de 2 ou 4 athlètes"
     ],
-    "registrationLink": "https://enduranceaventure.com/contactez-nous/",
+    "registrationLink": "/contact?type=general&subject=raids",
     "status": "Sur Sélection"
   },
   {
@@ -70,7 +73,8 @@
     "location": "Témiscamingue, QC",
     "dates": "Automne",
     "distance": "3 jours d'expédition",
-    "image": "/assets/raid-endurance-aventure-basse-cote-nord-2008.jpg",
+    "image": "/assets/Raid-Temis-reperage4.webp",
+    "logo": "/assets/VF-Logo-Raid-Temiscamingue-coul.png",
     "featured": false,
     "description": "Une épreuve légendaire de navigation et de dépassement de soi en milieu sauvage isolé.",
     "highlights": [
@@ -78,7 +82,7 @@
       "Sections de course d'orientation",
       "Bivouacs sauvages"
     ],
-    "registrationLink": "https://enduranceaventure.com/contactez-nous/",
+    "registrationLink": "/contact?type=general&subject=raids",
     "status": "Archives & Édition future"
   }
 ]

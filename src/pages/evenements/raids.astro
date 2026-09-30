@@ -104,59 +104,227 @@ const raidSchema = {
 
       </div>
 
-      <!-- SECTION MATÉRIEL OBLIGATOIRE EN RAID MULTISPORTS -->
-      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm space-y-6">
-        <div>
-          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Sécurité & Autonomie d'Équipe</span>
-          <h3 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 mb-4">
-            Équipement Obligatoire par Équipe
-          </h3>
-          <p class="text-sm text-slate-600 leading-relaxed mb-6">
-            Les raids aventure se déroulent en autonomie complète dans des territoires sauvages. Le matériel obligatoire est contrôlé rigoureusement avant le départ et lors de contrôles inopinés en course.
-          </p>
+      <!-- SECTION MATÉRIEL OBLIGATOIRE EN RAID MULTISPORTS (Visuelle & Normes Mondiales ARWS) -->
+      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm space-y-8">
+        
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8 pb-8 border-b border-slate-100">
+          <div class="max-w-2xl">
+            <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Sécurité & Autonomie d'Équipe</span>
+            <h3 class="text-2xl sm:text-3xl font-heading font-black text-slate-900 mb-3">
+              Équipement Obligatoire par Équipe
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Les raids aventure se déroulent en autonomie complète dans des territoires sauvages. Le matériel obligatoire est contrôlé rigoureusement avant le départ et lors de contrôles inopinés aux points de transition.
+            </p>
+          </div>
+
+          <!-- Illustration Équipe Canot / Navigation -->
+          <div class="w-full lg:w-72 flex-shrink-0 rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-100 group">
+            <img 
+              src="/assets/Raid-International-Gasp%C3%A9sie-2017-RIG-Wladimir-Togumi-Canoe-Rivi%C3%A8re-Nouvelle.webp" 
+              alt="Équipe de raid en canot avec gilets VFI et matériel" 
+              class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-300"
+              onerror="this.src='/assets/51582278409_86672a9a9f_k.webp'"
+            />
+            <div class="p-2.5 bg-slate-900 text-white text-[10px] text-center font-semibold">
+              Sections Nautiques & Gilets Homologués
+            </div>
+          </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-700">
           
-          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-            <div class="font-bold text-slate-900 flex items-center gap-2">
-              <span class="text-brand-cyan">🧭</span> Orientation & Navigation
+          <!-- 1. Orientation -->
+          <div class="p-6 rounded-2xl bg-slate-50/90 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-10 h-10 rounded-xl bg-cyan-100 text-brand-cyan flex items-center justify-center font-bold">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 4.2V8a1 1 0 11-2 0V6.2A8 8 0 004.2 13H6a1 1 0 110 2H4.2A8 8 0 0011 21.8V20a1 1 0 112 0v1.8a8 8 0 006.8-6.8H18a1 1 0 110-2h1.8A8 8 0 0013 6.2zM14.5 9.5L10 14l1.5-4.5L14.5 9.5z"/></svg>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-cyan-100 text-brand-cyan border border-cyan-200">
+                  Orientation Pure Sans GPS
+                </span>
+              </div>
+              <h4 class="font-heading font-bold text-slate-900 text-base mb-3">Orientation & Navigation</h4>
+              <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-cyan font-bold flex-shrink-0">•</span>
+                  <span><strong>1 boussole de précision par coureur</strong> (à plaquette ou à pouce).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-cyan font-bold flex-shrink-0">•</span>
+                  <span><strong>1 porte-carte étanche grand format</strong> (cartes topographiques 1:20 000 fournies).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-cyan font-bold flex-shrink-0">•</span>
+                  <span><strong>Balise GPS satellite / SOS d'urgence</strong> fournie par l'organisation (allumée en continu).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-cyan font-bold flex-shrink-0">•</span>
+                  <span><strong>Téléphone de secours scellé</strong> : Utilisable uniquement en cas de détresse majeure.</span>
+                </li>
+              </ul>
             </div>
-            <div>• 1 boussole de précision par coureur (boussole à plaquette ou à pouce).</div>
-            <div>• 1 porte-carte étanche grand format (cartes topographiques fournies par l'organisation).</div>
-            <div>• Balise de géolocalisation GPS/SOS fournie par Endurance Aventure (à conserver allumée).</div>
-            <div>• Téléphone d'urgence éteint sous scellé étanche.</div>
           </div>
 
-          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-            <div class="font-bold text-slate-900 flex items-center gap-2">
-              <span class="text-brand-red">🚴</span> Vélo Tout-Terrain (Sections VTT)
+          <!-- 2. VTT -->
+          <div class="p-6 rounded-2xl bg-slate-50/90 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-10 h-10 rounded-xl bg-red-100 text-brand-red flex items-center justify-center font-bold">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-red-100 text-brand-red border border-red-200">
+                  Sections VTT Exigeantes
+                </span>
+              </div>
+              <h4 class="font-heading font-bold text-slate-900 text-base mb-3">Vélo Tout-Terrain</h4>
+              <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-red font-bold flex-shrink-0">•</span>
+                  <span><strong>VTT révisé et en parfait état</strong> avec pneus tout-terrain crantés.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-red font-bold flex-shrink-0">•</span>
+                  <span><strong>Casque rigide CE/CPSC</strong> ajusté et attaché en permanence lors des transitions vélo.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-red font-bold flex-shrink-0">•</span>
+                  <span><strong>Éclairage avant 400 lumens minimum</strong> + feu arrière rouge pour les étapes nocturnes.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-red font-bold flex-shrink-0">•</span>
+                  <span><strong>Kit atelier d'équipe</strong> : Pompe, dérive-chaîne, chambres, mèches et maillons rapides.</span>
+                </li>
+              </ul>
             </div>
-            <div>• VTT en parfait état de fonctionnement (pneus tout-terrain obligatoires).</div>
-            <div>• Casque rigide aux normes CE/CPSC ajusté et attaché en permanence.</div>
-            <div>• Éclairage avant puissant (minimum 400 lumens) et feu rouge arrière pour les sections de nuit.</div>
-            <div>• Kit de réparation complet par équipe (pompe, mèches/chambres, dérive-chaîne, patte de dérailleur).</div>
           </div>
 
-          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-            <div class="font-bold text-slate-900 flex items-center gap-2">
-              <span class="text-brand-cyan">🛶</span> Équipement Nautique (Canot & Kayak)
+          <!-- 3. Nautique -->
+          <div class="p-6 rounded-2xl bg-slate-50/90 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-100 text-blue-700 border border-blue-200">
+                  Sécurité Nautique
+                </span>
+              </div>
+              <h4 class="font-heading font-bold text-slate-900 text-base mb-3">Équipement Nautique (Canot & Kayak)</h4>
+              <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-500 font-bold flex-shrink-0">•</span>
+                  <span><strong>Gilet VFI homologué Transports Canada</strong> porté et serré en permanence sur l'eau.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-500 font-bold flex-shrink-0">•</span>
+                  <span><strong>Sifflet sans bille fixé au gilet</strong> de chaque équipier.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-500 font-bold flex-shrink-0">•</span>
+                  <span><strong>Sac étanche étanche 20 L</strong> pour les vêtements chauds et la nourriture en rivière.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-500 font-bold flex-shrink-0">•</span>
+                  <span><strong>Pagaies de rechange et écope</strong> embarquées dans chaque embarcation.</span>
+                </li>
+              </ul>
             </div>
-            <div>• Gilet de flottaison individuel (VFI) homologué Transports Canada porté en permanence sur l'eau.</div>
-            <div>• 1 sifflet sans bille attaché à chaque gilet de flottaison.</div>
-            <div>• Sac étanche pour protéger les vêtements de rechange et la nourriture lors des rapides.</div>
           </div>
 
-          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
-            <div class="font-bold text-slate-900 flex items-center gap-2">
-              <span class="text-brand-red">🩹</span> Trousse de Premiers Soins d'Équipe
+          <!-- 4. Premiers Secours -->
+          <div class="p-6 rounded-2xl bg-slate-50/90 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-700 border border-emerald-200">
+                  Trousse Médicale Obligatoire
+                </span>
+              </div>
+              <h4 class="font-heading font-bold text-slate-900 text-base mb-3">Trousse de Premiers Soins</h4>
+              <ul class="space-y-2 text-xs text-slate-600 leading-relaxed">
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-500 font-bold flex-shrink-0">•</span>
+                  <span><strong>1 couverture thermique par athlète</strong> (minimum 1,40 m x 2,00 m).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-500 font-bold flex-shrink-0">•</span>
+                  <span><strong>Bandes de contention élastique</strong> (Tensoplast / Coban) pour entorses articulaires.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-500 font-bold flex-shrink-0">•</span>
+                  <span><strong>Compresses stériles, antiseptique et pansements ampoules</strong> (Compeed).</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-emerald-500 font-bold flex-shrink-0">•</span>
+                  <span><strong>Couteau avec lame 6 cm et briquet étanche</strong> pour la sécurité en bivouac sauvage.</span>
+                </li>
+              </ul>
             </div>
-            <div>• 1 couverture de survie aluminisée par coéquipier (minimum 1,40 m x 2 m).</div>
-            <div>• Bandes élastiques de contention (type Tensoplast / Coban) pour entorses.</div>
-            <div>• Compresses stériles, pansements hydrocolloïdes pour ampoules et désinfectant.</div>
-            <div>• Couteau avec lame d'au moins 6 cm et briquet étanche.</div>
           </div>
 
+        </div>
+      </div>
+
+      <!-- SECTION GALERIE PHOTOS RAIDS (Plein les yeux : 25 ans d'expéditions extrêmes) -->
+      <div>
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Immersion Expédition</span>
+          <h3 class="text-2xl sm:text-4xl font-heading font-black uppercase text-slate-900">
+            L'Aventure Multisport en Terres Sauvages
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 mt-2">
+            Descentes d'eaux vives, sentiers côtiers, falaises escarpées et forêts sans fin.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div class="group rounded-2xl overflow-hidden bg-slate-200 shadow-md relative h-72">
+            <img 
+              src="/assets/Raid-International-Gasp%C3%A9sie-2017-RIG-Wladimir-Togumi-Canoe-Rivi%C3%A8re-Nouvelle.webp" 
+              alt="Descente en canot sur la rivière Nouvelle" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='/assets/51582278409_86672a9a9f_k.webp'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-bold">Rapides en canot • Rivière Nouvelle</span>
+          </div>
+
+          <div class="group rounded-2xl overflow-hidden bg-slate-200 shadow-md relative h-72">
+            <img 
+              src="/assets/raid-international-gaspesie-2016-mont-saint-joseph-slack-line.webp" 
+              alt="Slackline vertigineuse au Mont Saint-Joseph" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='/assets/51582278409_86672a9a9f_k.webp'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-bold">Slackline & vertige • Baie des Chaleurs</span>
+          </div>
+
+          <div class="group rounded-2xl overflow-hidden bg-slate-200 shadow-md relative h-72">
+            <img 
+              src="/assets/RIG-2018-Prologue-v%C3%A9lo-calvette.webp" 
+              alt="Prologue VTT sur le littoral gaspésien" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='/assets/51582278409_86672a9a9f_k.webp'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-bold">VTT technique le long du fleuve</span>
+          </div>
+
+          <div class="group rounded-2xl overflow-hidden bg-slate-200 shadow-md relative h-72">
+            <img 
+              src="/assets/Raid-Temis-reperage4.webp" 
+              alt="Repérage cartographique au Témiscamingue" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='/assets/51582278409_86672a9a9f_k.webp'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-bold">Immersion boréale au Témiscamingue</span>
+          </div>
         </div>
       </div>
 
