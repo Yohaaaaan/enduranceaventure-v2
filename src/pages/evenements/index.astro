@@ -70,7 +70,7 @@ import events from '../../data/events.json';
                   {evt.status}
                 </span>
                 <a 
-                  href={`/evenements/${evt.slug === 'raid-gaspesie' ? 'raids' : evt.slug}/`} 
+                  href={evt.slug.startsWith('raid-') ? '/evenements/raids/' : `/evenements/${evt.slug}/`} 
                   class="px-5 py-2.5 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-md shadow-brand-red/20"
                 >
                   Accéder à l'épreuve →

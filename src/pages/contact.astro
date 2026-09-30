@@ -3,34 +3,34 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout 
-  title="Contactez-Nous & Soumissions | Endurance Aventure" 
-  description="Contactez l'équipe d'Endurance Aventure pour toute demande d'information sur nos événements sportifs ou pour une soumission de services corporatifs."
+  title="Contactez-Nous & Soumissions Corporatives | Endurance Aventure" 
+  description="Contactez l'équipe d'Endurance Aventure pour une demande de soumission B2B (événements d'entreprise, production télévisuelle, chronométrage) ou une question sur nos courses."
 >
   
   <!-- Banner Sombre -->
   <div class="bg-slate-950 py-16 sm:py-20 border-b border-slate-800">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Formulaire Sécurisé</span>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Formulaire Sécurisé & Devis Direct</span>
       <h1 class="text-4xl sm:text-6xl font-heading font-black uppercase tracking-tight text-white mb-4">
-        Contactez-Nous
+        Contact & Soumissions
       </h1>
       <p class="max-w-2xl text-base sm:text-lg text-slate-300 font-light leading-relaxed">
-        Une question sur un événement ? Une demande de devis pour une organisation sportive ou un tournage ? Notre équipe vous répond sous 24 à 48 heures.
+        Vous planifiez un défi corporatif, une production télévisuelle ou avez une question sur une course ? Bastien Michau, Daniel Poirier et l'équipe technique vous répondent sous 24 à 48h.
       </p>
     </div>
   </div>
 
   <!-- Contenu Principal sur Fond Clair -->
-  <div class="bg-slate-50 py-20">
+  <div class="bg-slate-50 py-16 sm:py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
         
-        <!-- Contact Info Sidebar -->
-        <div class="space-y-8">
+        <!-- Sidebar Coordonnées -->
+        <div class="lg:col-span-4 space-y-6">
           <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-6">
-            <h3 class="text-xl font-heading font-bold text-slate-900 border-l-2 border-brand-red pl-3">
+            <h2 class="text-xl font-heading font-bold text-slate-900 border-l-2 border-brand-red pl-3">
               Coordonnées Directes
-            </h3>
+            </h2>
             
             <div class="space-y-4 text-sm text-slate-700">
               <div>
@@ -40,131 +40,285 @@ import Layout from '../layouts/Layout.astro';
               </div>
 
               <div>
-                <div class="text-xs text-slate-500 uppercase font-bold mb-1">Courriel direct</div>
+                <div class="text-xs text-slate-500 uppercase font-bold mb-1">Téléphone direct</div>
+                <a href="tel:4506599944" class="text-slate-900 font-bold hover:text-brand-red transition-colors">
+                  (450) 659-9944
+                </a>
+              </div>
+
+              <div>
+                <div class="text-xs text-slate-500 uppercase font-bold mb-1">Courriel officiel</div>
                 <a href="mailto:info@enduranceaventure.com" class="text-brand-cyan hover:underline font-semibold">
                   info@enduranceaventure.com
                 </a>
               </div>
 
+              <div class="pt-2 border-t border-slate-100">
+                <div class="text-xs text-slate-500 uppercase font-bold mb-1">Direction de production</div>
+                <div class="font-semibold text-slate-900">Bastien Michau</div>
+                <div class="text-xs text-slate-500">bmichau@enduranceaventure.com</div>
+              </div>
+
               <div>
                 <div class="text-xs text-slate-500 uppercase font-bold mb-1">Direction générale</div>
                 <div class="font-semibold text-slate-900">Daniel Poirier</div>
-                <div class="text-xs text-slate-500">Fondateur & Directeur d'épreuves</div>
+                <div class="text-xs text-slate-500">dpoirier@enduranceaventure.com</div>
               </div>
             </div>
           </div>
 
+          <!-- Carte Engagements -->
           <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
-            <h3 class="text-lg font-heading font-bold text-slate-900 border-l-2 border-brand-cyan pl-3">
-              Confidentialité
+            <h3 class="text-base font-heading font-bold text-slate-900 border-l-2 border-brand-cyan pl-3">
+              Engagements & Sécurité
             </h3>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Vos informations sont strictement confidentielles. Aucun spam, aucun traceur publicitaire intrusif. Ce site utilise un socle statique sécurisé.
-            </p>
+            <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+              <li class="flex items-center gap-2">
+                <span class="text-brand-cyan font-bold">✓</span>
+                <span>Réponse personnalisée sous 48h ouvrées.</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-brand-cyan font-bold">✓</span>
+                <span>Assurance responsabilité civile tout-terrain.</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-brand-cyan font-bold">✓</span>
+                <span>Données strictement confidentielles, sans spam.</span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <!-- Contact Form -->
-        <div class="lg:col-span-2">
+        <!-- Formulaire avec Onglets B2B / Coureurs -->
+        <div class="lg:col-span-8">
           <div class="bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm relative">
             
-            <!-- Success Alert (Hidden by default) -->
-            <div id="form-success" class="hidden mb-6 p-4 rounded-xl bg-green-50 border border-green-300 text-green-800 text-sm flex items-start gap-3">
-              <svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-              <div>
-                <div class="font-bold text-green-900">Merci pour votre message !</div>
-                <div>Votre demande a été enregistrée avec succès. Daniel Poirier et l'équipe d'Endurance Aventure reviendront vers vous rapidement.</div>
+            <!-- Sélecteur d'Onglets -->
+            <div class="flex border-b border-slate-200 mb-8 pb-1 gap-2">
+              <button 
+                type="button" 
+                id="tab-b2b-btn" 
+                class="pb-3 px-4 font-heading font-bold text-sm tracking-wider uppercase border-b-2 border-brand-red text-brand-red transition-all"
+              >
+                🏢 Devis B2B & Municipalités
+              </button>
+              <button 
+                type="button" 
+                id="tab-general-btn" 
+                class="pb-3 px-4 font-heading font-semibold text-sm tracking-wider uppercase border-b-2 border-transparent text-slate-500 hover:text-slate-900 transition-all"
+              >
+                🏃 Coureurs & Questions Générales
+              </button>
+            </div>
+
+            <!-- Message de Succès -->
+            <div id="form-success" class="hidden mb-6 p-6 rounded-2xl bg-emerald-50 border border-emerald-300 text-emerald-900 text-sm space-y-2">
+              <div class="font-heading font-bold text-base flex items-center gap-2 text-emerald-800">
+                <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span>Votre demande a bien été transmise !</span>
               </div>
+              <p class="text-xs text-emerald-700 leading-relaxed">
+                Merci d'avoir contacté Endurance Aventure. Bastien Michau, Daniel Poirier et l'équipe technique reviendront vers vous avec une étude préliminaire sous 24 à 48 heures.
+              </p>
+            </div>
+
+            <!-- Message d'Erreur -->
+            <div id="form-error" class="hidden mb-6 p-4 rounded-xl bg-red-50 border border-red-300 text-brand-red text-xs font-semibold">
+              Une erreur est survenue lors de l'envoi. Veuillez réessayer ou nous écrire directement à info@enduranceaventure.com.
             </div>
 
             <form id="contact-form" class="space-y-6">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <input type="hidden" id="form-type" name="type" value="b2b" />
+
+              <!-- SECTION B2B (Affichée en mode B2B) -->
+              <div id="b2b-fields" class="space-y-6">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label for="org-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                      Nom de l'organisation / Entreprise / Ville *
+                    </label>
+                    <input 
+                      type="text" 
+                      id="org-name" 
+                      name="organization" 
+                      placeholder="Ex: Ville de Magog / Groupe Canam"
+                      class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red text-sm"
+                    />
+                  </div>
+
+                  <div>
+                    <label for="org-type" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                      Type d'entité *
+                    </label>
+                    <select 
+                      id="org-type" 
+                      name="orgType"
+                      class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 focus:outline-none focus:border-brand-red text-sm"
+                    >
+                      <option value="entreprise">Entreprise privée / Corporatif</option>
+                      <option value="municipalite">Ville / MRC / Municipalité</option>
+                      <option value="obnl">Association sportive / OBNL</option>
+                      <option value="media">Diffuseur média / Agence TV</option>
+                      <option value="autre">Autre organisme</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label for="service-needed" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                      Prestation principale souhaitée *
+                    </label>
+                    <select 
+                      id="service-needed" 
+                      name="service"
+                      class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 focus:outline-none focus:border-brand-red text-sm"
+                    >
+                      <option value="organisation-evenements">Organisation clé en main d'épreuve / Défi corpo</option>
+                      <option value="production-tele">Production télévisuelle, 4K & Drones certifiés</option>
+                      <option value="chronometrage">Chronométrage RFID & Télémétrie satellite live</option>
+                      <option value="ingenierie-securite">Ingénierie de parcours, plans d'urgence & sécurité</option>
+                      <option value="autre">Projet combiné / Autre</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="participants-count" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                      Nombre estimé de participants
+                    </label>
+                    <select 
+                      id="participants-count" 
+                      name="participants"
+                      class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 focus:outline-none focus:border-brand-red text-sm"
+                    >
+                      <option value="<100">Moins de 100 participants</option>
+                      <option value="100-300">100 à 300 participants</option>
+                      <option value="300-1000">300 à 1 000 participants</option>
+                      <option value="1000+">Plus de 1 000 participants</option>
+                      <option value="a-definir">À déterminer</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div>
+                    <label for="target-period" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                      Date ou période visée
+                    </label>
+                    <input 
+                      type="text" 
+                      id="target-period" 
+                      name="period" 
+                      placeholder="Ex: Automne 2026 / Été 2027"
+                      class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red text-sm"
+                    />
+                  </div>
+
+                  <div>
+                    <label for="budget-range" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                      Fourchette budgétaire estimée (indicative)
+                    </label>
+                    <select 
+                      id="budget-range" 
+                      name="budget"
+                      class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 focus:outline-none focus:border-brand-red text-sm"
+                    >
+                      <option value="a-evaluer">À évaluer lors de la soumission</option>
+                      <option value="5k-15k">5 000 $ à 15 000 $</option>
+                      <option value="15k-30k">15 000 $ à 30 000 $</option>
+                      <option value="30k-60k">30 000 $ à 60 000 $</option>
+                      <option value="60k+">Plus de 60 000 $</option>
+                    </select>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- CHAMPS COMMUNS (Nom, Email, Téléphone, Message) -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
                 <div>
-                  <label for="name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                    Nom complet *
+                  <label for="contact-name" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                    Votre nom complet *
                   </label>
                   <input 
                     type="text" 
-                    id="name" 
+                    id="contact-name" 
                     name="name" 
                     required 
-                    placeholder="Ex: Jean Tremblay"
-                    class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red transition-colors text-sm"
+                    placeholder="Ex: Marie Gagnon"
+                    class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red text-sm"
                   />
                 </div>
 
                 <div>
-                  <label for="email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                  <label for="contact-email" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
                     Adresse courriel *
                   </label>
                   <input 
                     type="email" 
-                    id="email" 
+                    id="contact-email" 
                     name="email" 
                     required 
-                    placeholder="jean@exemple.com"
-                    class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red transition-colors text-sm"
+                    placeholder="marie@organisation.qc.ca"
+                    class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red text-sm"
                   />
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label for="phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                    Téléphone (optionnel)
-                  </label>
-                  <input 
-                    type="tel" 
-                    id="phone" 
-                    name="phone" 
-                    placeholder="(450) 000-0000"
-                    class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red transition-colors text-sm"
-                  />
-                </div>
-
-                <div>
-                  <label for="subject" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                    Sujet de votre demande *
-                  </label>
-                  <select 
-                    id="subject" 
-                    name="subject" 
-                    required
-                    class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brand-red transition-colors text-sm"
-                  >
-                    <option value="">Sélectionnez un motif</option>
-                    <option value="gbc500">GBC 500 (Gravel Bikepacking)</option>
-                    <option value="trail-des-neiges">Trail des Neiges Mont-Orford</option>
-                    <option value="raids">Raids Aventure (Gaspésie / Témiscamingue)</option>
-                    <option value="services-b2b">Organisation d'événement corporatif</option>
-                    <option value="production-tv">Production télévisuelle & Drones</option>
-                    <option value="autre">Autre demande générale</option>
-                  </select>
                 </div>
               </div>
 
               <div>
-                <label for="message" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
-                  Votre message *
+                <label for="contact-phone" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                  Téléphone direct
+                </label>
+                <input 
+                  type="tel" 
+                  id="contact-phone" 
+                  name="phone" 
+                  placeholder="(450) 000-0000"
+                  class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red text-sm"
+                />
+              </div>
+
+              <!-- CHAMP SPÉCIFIQUE COUREUR (Affiché en mode général) -->
+              <div id="general-fields" class="hidden">
+                <label for="contact-subject" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                  Sujet de votre question *
+                </label>
+                <select 
+                  id="contact-subject" 
+                  name="subject"
+                  class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brand-red text-sm"
+                >
+                  <option value="gbc500">GBC 500 (Gravel Bikepacking Challenge)</option>
+                  <option value="trail-des-neiges">Trail des Neiges Mont-Orford</option>
+                  <option value="raids">Raids Aventure (Gaspésie & Témiscamingue)</option>
+                  <option value="benevolat">Devenir bénévole sur une épreuve</option>
+                  <option value="autre">Autre question générale</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="contact-message" class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                  Détails de votre demande ou projet *
                 </label>
                 <textarea 
-                  id="message" 
+                  id="contact-message" 
                   name="message" 
                   rows="5" 
                   required 
-                  placeholder="Décrivez votre projet, vos questions ou le nombre de participants..."
-                  class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red transition-colors text-sm"
+                  placeholder="Décrivez votre vision, vos objectifs, les spécificités du territoire ou vos questions..."
+                  class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red text-sm"
                 ></textarea>
               </div>
 
-              <div class="flex items-center justify-between pt-2">
-                <span class="text-xs text-slate-500">* Champs obligatoires</span>
+              <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+                <span class="text-xs text-slate-500">* Tous les champs marqués d'une étoile sont requis.</span>
                 <button 
                   type="submit" 
                   id="submit-btn"
-                  class="px-8 py-3.5 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-md shadow-brand-red/20"
+                  class="w-full sm:w-auto px-9 py-4 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-md shadow-brand-red/20"
                 >
-                  Envoyer ma Demande
+                  Soumettre ma Demande
                 </button>
               </div>
             </form>
@@ -178,21 +332,90 @@ import Layout from '../layouts/Layout.astro';
 
   <script is:inline>
     const form = document.getElementById('contact-form');
+    const formType = document.getElementById('form-type');
+    const b2bFields = document.getElementById('b2b-fields');
+    const generalFields = document.getElementById('general-fields');
+    const tabB2b = document.getElementById('tab-b2b-btn');
+    const tabGen = document.getElementById('tab-general-btn');
     const successAlert = document.getElementById('form-success');
+    const errorAlert = document.getElementById('form-error');
     const submitBtn = document.getElementById('submit-btn');
 
-    form?.addEventListener('submit', function(e) {
-      e.preventDefault();
-      submitBtn.disabled = true;
-      submitBtn.innerText = 'Envoi en cours...';
+    function setTab(mode) {
+      if (mode === 'general') {
+        formType.value = 'general';
+        b2bFields.classList.add('hidden');
+        generalFields.classList.remove('hidden');
+        tabGen.className = 'pb-3 px-4 font-heading font-bold text-sm tracking-wider uppercase border-b-2 border-brand-red text-brand-red transition-all';
+        tabB2b.className = 'pb-3 px-4 font-heading font-semibold text-sm tracking-wider uppercase border-b-2 border-transparent text-slate-500 hover:text-slate-900 transition-all';
+        submitBtn.innerText = 'Envoyer ma Question';
+      } else {
+        formType.value = 'b2b';
+        b2bFields.classList.remove('hidden');
+        generalFields.classList.add('hidden');
+        tabB2b.className = 'pb-3 px-4 font-heading font-bold text-sm tracking-wider uppercase border-b-2 border-brand-red text-brand-red transition-all';
+        tabGen.className = 'pb-3 px-4 font-heading font-semibold text-sm tracking-wider uppercase border-b-2 border-transparent text-slate-500 hover:text-slate-900 transition-all';
+        submitBtn.innerText = 'Soumettre ma Demande de Devis';
+      }
+    }
 
-      setTimeout(() => {
-        form.reset();
-        successAlert.classList.remove('hidden');
+    tabB2b?.addEventListener('click', () => setTab('b2b'));
+    tabGen?.addEventListener('click', () => setTab('general'));
+
+    // Handle URL parameters (e.g. ?type=b2b, ?service=chronometrage, ?subject=trail-des-neiges)
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('type') === 'general' || params.has('subject')) {
+      setTab('general');
+      const subj = params.get('subject');
+      const subjSelect = document.getElementById('contact-subject');
+      if (subj && subjSelect) subjSelect.value = subj;
+    } else {
+      setTab('b2b');
+      const srv = params.get('service');
+      const srvSelect = document.getElementById('service-needed');
+      if (srv && srvSelect) {
+        for (let opt of srvSelect.options) {
+          if (opt.value.includes(srv)) {
+            srvSelect.value = opt.value;
+            break;
+          }
+        }
+      }
+    }
+
+    // Direct submission via fetch
+    form?.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      successAlert.classList.add('hidden');
+      errorAlert.classList.add('hidden');
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Transmission en cours...';
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        const json = await res.json();
+        if (json.success) {
+          form.reset();
+          successAlert.classList.remove('hidden');
+          successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          errorAlert.innerText = json.error || 'Erreur lors de l\'envoi.';
+          errorAlert.classList.remove('hidden');
+        }
+      } catch (err) {
+        errorAlert.classList.remove('hidden');
+      } finally {
         submitBtn.disabled = false;
-        submitBtn.innerText = 'Envoyer ma Demande';
-        successAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 700);
+        submitBtn.innerText = formType.value === 'b2b' ? 'Soumettre ma Demande de Devis' : 'Envoyer ma Question';
+      }
     });
   </script>
 

@@ -9,11 +9,22 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 4321;
 const DATA_FILE = path.join(__dirname, 'data', 'analytics.json');
+const CONTACTS_FILE = path.join(__dirname, 'data', 'contacts.json');
 const ADMIN_PASS = process.env.ADMIN_PASSWORD || '123546789';
 const AUTH_TOKEN = 'ea_secure_session_' + Buffer.from(ADMIN_PASS).toString('base64');
 
 // Ensure data directory
 fs.mkdirSync(path.join(__dirname, 'data'), { recursive: true });
+
+// Initialize analytics and contacts storage
+let contacts = [];
+if (fs.existsSync(CONTACTS_FILE)) {
+  try {
+    contacts = JSON.parse(fs.readFileSync(CONTACTS_FILE, 'utf8'));
+  } catch (e) {
+    contacts = [];
+  }
+}
 
 // Initialize analytics storage
 let analytics = [];
@@ -176,10 +187,67 @@ app.get('/api/stats', requireAdmin, (req, res) => {
   }
 });
 
-// Serve static Astro dist files
+// API: Submit Contact / B2B Quote
+app.post('/api/contact', (req, res) => {
+  try {
+    const {
+      type = 'general',
+      name,
+      email,
+      phone = '',
+      organization = '',
+      orgType = '',
+      service = '',
+      participants = '',
+      period = '',
+      budget = '',
+      subject = '',
+      message,
+    } = req.body || {};
+
+    if (!name || !email || !message) {
+      return res.status(400).json({ success: false, error: 'Nom, courriel et message sont obligatoires.' });
+    }
+
+    const newLead = {
+      id: 'lead_' + Date.now(),
+      type, // 'b2b' or 'general'
+      name,
+      email,
+      phone,
+      organization,
+      orgType,
+      service: service || subject,
+      participants,
+      period,
+      budget,
+      subject: subject || service || 'Demande générale',
+      message,
+      createdAt: new Date().toISOString(),
+      status: 'Nouveau',
+    };
+
+    contacts.unshift(newLead);
+    if (contacts.length > 500) contacts.pop();
+    fs.writeFileSync(CONTACTS_FILE, JSON.stringify(contacts, null, 2));
+
+    console.log(`[Contact] Nouvelle demande reçue de ${name} (${email}) - ${type}`);
+    res.json({ success: true, id: newLead.id });
+  } catch (err) {
+    console.error('[Contact Error]', err);
+    res.status(500).json({ success: false, error: 'Erreur lors de l\'enregistrement de votre demande.' });
+  }
+});
+
+// API: Get Leads (Admin only)
+app.get('/api/contacts', requireAdmin, (req, res) => {
+  res.json({ contacts });
+});
+
+// Serve static Astro dist files with aggressive caching for static assets
 const distDir = path.join(__dirname, 'dist');
 
-// Direct HTML page resolution (supports with or without trailing slash seamlessly with direct 200 OK)
+// Direct HTML page resolution (supports with or without trailing slash seamlessly)
 app.use((req, res, next) => {
   if (req.method !== 'GET') return next();
   const cleanPath = req.path.replace(/^\/+|\/+$/g, '');
@@ -187,12 +255,21 @@ app.use((req, res, next) => {
 
   const htmlPath = path.join(distDir, cleanPath, 'index.html');
   if (fs.existsSync(htmlPath)) {
+    res.setHeader('Cache-Control', 'public, max-age=3600');
     return res.sendFile(htmlPath);
   }
   next();
 });
 
-app.use(express.static(distDir));
+// Static assets caching (30 days for media/fonts)
+app.use(express.static(distDir, {
+  maxAge: '7d',
+  setHeaders: (res, filePath) => {
+    if (filePath.match(/\.(webp|jpg|jpeg|png|svg|ico|pdf|woff2|woff)$/i)) {
+      res.setHeader('Cache-Control', 'public, max-age=2592000, immutable');
+    }
+  }
+}));
 
 // Fallback for 404 or SPA fallback
 app.use((req, res) => {

@@ -52,7 +52,7 @@ const raidSchema = {
       <p class="text-lg text-slate-300 font-light max-w-2xl mx-auto mb-8 leading-relaxed">
         L'épreuve par excellence du travail d'équipe, de l'orientation à la boussole et de la persévérance en milieu sauvage.
       </p>
-      <a href="/contact" class="px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-xl shadow-brand-red/30">
+      <a href="/contact?type=general&subject=raids" class="px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-xl shadow-brand-red/30">
         Informations Prochaines Épreuves
       </a>
     </div>
@@ -78,7 +78,7 @@ const raidSchema = {
               <li class="flex items-center gap-2"><span class="text-brand-cyan font-bold">✓</span> Tournage documentaire pour diffusion télévisuelle</li>
             </ul>
           </div>
-          <a href="/contact/" class="w-full py-3.5 rounded-xl bg-brand-cyan hover:bg-cyan-600 text-white font-heading font-bold text-center text-xs uppercase tracking-wider transition-colors shadow-md shadow-brand-cyan/20">
+          <a href="/contact?type=general&subject=raids" class="w-full py-3.5 rounded-xl bg-brand-cyan hover:bg-cyan-600 text-white font-heading font-bold text-center text-xs uppercase tracking-wider transition-colors shadow-md shadow-brand-cyan/20">
             En savoir plus sur la Gaspésie
           </a>
         </div>
@@ -97,33 +97,66 @@ const raidSchema = {
               <li class="flex items-center gap-2"><span class="text-brand-red font-bold">✓</span> Dépassement, solidarité et immersion totale</li>
             </ul>
           </div>
-          <a href="/contact/" class="w-full py-3.5 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-center text-xs uppercase tracking-wider transition-colors shadow-md shadow-brand-red/20">
+          <a href="/contact?type=general&subject=raids" class="w-full py-3.5 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-center text-xs uppercase tracking-wider transition-colors shadow-md shadow-brand-red/20">
             En savoir plus sur le Témiscamingue
           </a>
         </div>
 
       </div>
 
-      <!-- Les Disciplines du Raid Aventure -->
-      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm">
-        <h3 class="text-2xl font-heading font-bold text-slate-900 mb-6">Les Disciplines au Cœur de Nos Raids</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
-          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-            <div class="text-xl font-heading font-bold text-slate-900 mb-1">Canoë / Kayak</div>
-            <div class="text-xs text-slate-600">Lacs isolés, fleuve et rivières vives</div>
+      <!-- SECTION MATÉRIEL OBLIGATOIRE EN RAID MULTISPORTS -->
+      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm space-y-6">
+        <div>
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Sécurité & Autonomie d'Équipe</span>
+          <h3 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 mb-4">
+            Équipement Obligatoire par Équipe
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            Les raids aventure se déroulent en autonomie complète dans des territoires sauvages. Le matériel obligatoire est contrôlé rigoureusement avant le départ et lors de contrôles inopinés en course.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-700">
+          
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="font-bold text-slate-900 flex items-center gap-2">
+              <span class="text-brand-cyan">🧭</span> Orientation & Navigation
+            </div>
+            <div>• 1 boussole de précision par coureur (boussole à plaquette ou à pouce).</div>
+            <div>• 1 porte-carte étanche grand format (cartes topographiques fournies par l'organisation).</div>
+            <div>• Balise de géolocalisation GPS/SOS fournie par Endurance Aventure (à conserver allumée).</div>
+            <div>• Téléphone d'urgence éteint sous scellé étanche.</div>
           </div>
-          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-            <div class="text-xl font-heading font-bold text-slate-900 mb-1">Vélo Tout-Terrain</div>
-            <div class="text-xs text-slate-600">Chemins forestiers et sentiers rocheux</div>
+
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="font-bold text-slate-900 flex items-center gap-2">
+              <span class="text-brand-red">🚴</span> Vélo Tout-Terrain (Sections VTT)
+            </div>
+            <div>• VTT en parfait état de fonctionnement (pneus tout-terrain obligatoires).</div>
+            <div>• Casque rigide aux normes CE/CPSC ajusté et attaché en permanence.</div>
+            <div>• Éclairage avant puissant (minimum 400 lumens) et feu rouge arrière pour les sections de nuit.</div>
+            <div>• Kit de réparation complet par équipe (pompe, mèches/chambres, dérive-chaîne, patte de dérailleur).</div>
           </div>
-          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-            <div class="text-xl font-heading font-bold text-slate-900 mb-1">Trek & Trail</div>
-            <div class="text-xs text-slate-600">Progression hors-sentier et crêtes</div>
+
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="font-bold text-slate-900 flex items-center gap-2">
+              <span class="text-brand-cyan">🛶</span> Équipement Nautique (Canot & Kayak)
+            </div>
+            <div>• Gilet de flottaison individuel (VFI) homologué Transports Canada porté en permanence sur l'eau.</div>
+            <div>• 1 sifflet sans bille attaché à chaque gilet de flottaison.</div>
+            <div>• Sac étanche pour protéger les vêtements de rechange et la nourriture lors des rapides.</div>
           </div>
-          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
-            <div class="text-xl font-heading font-bold text-slate-900 mb-1">Orientation Pure</div>
-            <div class="text-xs text-slate-600">Carte topographique 1:50 000 & boussole</div>
+
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="font-bold text-slate-900 flex items-center gap-2">
+              <span class="text-brand-red">🩹</span> Trousse de Premiers Soins d'Équipe
+            </div>
+            <div>• 1 couverture de survie aluminisée par coéquipier (minimum 1,40 m x 2 m).</div>
+            <div>• Bandes élastiques de contention (type Tensoplast / Coban) pour entorses.</div>
+            <div>• Compresses stériles, pansements hydrocolloïdes pour ampoules et désinfectant.</div>
+            <div>• Couteau avec lame d'au moins 6 cm et briquet étanche.</div>
           </div>
+
         </div>
       </div>
 

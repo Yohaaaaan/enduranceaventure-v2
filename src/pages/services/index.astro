@@ -48,16 +48,75 @@ import services from '../../data/services.json';
                 ))}
               </div>
 
-              <a 
-                href="/contact/" 
-                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-brand-cyan hover:bg-cyan-600 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-brand-cyan/20"
-              >
-                Demander une estimation →
-              </a>
+              <div class="flex flex-wrap items-center gap-4">
+                <a 
+                  href={`/services/${srv.slug}/`} 
+                  class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-brand-red text-white font-heading font-bold text-xs uppercase tracking-wider transition-all shadow-md"
+                >
+                  Consulter l'offre détaillée →
+                </a>
+                <a 
+                  href={`/contact/?type=b2b&service=${srv.slug}`} 
+                  class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300 font-heading font-bold text-xs uppercase tracking-wider transition-all"
+                >
+                  Demander un devis
+                </a>
+              </div>
             </div>
           </div>
         ))}
       </div>
+
+      <!-- BANDEAU MÉTHODOLOGIE & GOUVERNANCE B2B -->
+      <div class="mt-24 rounded-3xl bg-white border border-slate-200 p-8 sm:p-12 shadow-sm">
+        <div class="max-w-3xl mb-12">
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Processus Éprouvé depuis 1998</span>
+          <h3 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 mb-3">
+            Notre Méthode d'Intervention B2B & Collectivités
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            De la première esquisse cartographique à la remise du film officiel et des classements certifiés, chaque étape fait l'objet d'une validation technique rigoureuse.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="text-brand-red font-black text-2xl font-heading mb-2">01</div>
+            <div class="font-bold text-slate-900 text-sm mb-2">Étude & Repérage Terrain</div>
+            <p class="text-xs text-slate-600 leading-relaxed">Analyse des accès, relevés GPS topographiques, conformité environnementale et étude des contraintes météo.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="text-brand-cyan font-black text-2xl font-heading mb-2">02</div>
+            <div class="font-bold text-slate-900 text-sm mb-2">Sécurité & Plans d'Urgence</div>
+            <p class="text-xs text-slate-600 leading-relaxed">Coordination avec la sécurité civile, pompiers, ambulances et mise en place de liaisons satellites de secours.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="text-emerald-600 font-black text-2xl font-heading mb-2">03</div>
+            <div class="font-bold text-slate-900 text-sm mb-2">Exécution & Régie Terrain</div>
+            <p class="text-xs text-slate-600 leading-relaxed">Gestion des ravitaillements, balisage soigné, puces RFID, drones 4K et suivi GPS des athlètes en temps réel.</p>
+          </div>
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="text-purple-600 font-black text-2xl font-heading mb-2">04</div>
+            <div class="font-bold text-slate-900 text-sm mb-2">Bilan & Livrables Média</div>
+            <p class="text-xs text-slate-600 leading-relaxed">Classements officiels archivés, capsules vidéo promotionnelles montées et bilan d'impact territorial.</p>
+          </div>
+        </div>
+
+        <!-- Call to action corporatif -->
+        <div class="mt-12 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <div class="font-bold text-slate-900 text-base">Vous préparez un événement d'entreprise ou municipal ?</div>
+            <div class="text-xs text-slate-500 mt-0.5">Nos directeurs Bastien Michau et Daniel Poirier vous répondent personnellement sous 24 à 48 heures.</div>
+          </div>
+          <a 
+            href="/contact/?type=b2b" 
+            class="px-8 py-3.5 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-brand-red/20 flex-shrink-0"
+          >
+            Obtenir une soumission personnalisée →
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 

@@ -66,14 +66,22 @@ const currentPath = Astro.url.pathname;
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </a>
-          <div class="absolute left-0 mt-2 w-64 rounded-xl bg-slate-900 border border-slate-700 shadow-2xl opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-150 transform origin-top-left py-2 z-50">
-            <a href="/services/" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-cyan hover:text-white transition-colors">
+          <div class="absolute left-0 mt-2 w-72 rounded-xl bg-slate-900 border border-slate-700 shadow-2xl opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-150 transform origin-top-left py-2 z-50">
+            <a href="/services/organisation-evenements/" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-red hover:text-white transition-colors">
               <div class="font-bold text-slate-100">Organisation Clé en Main</div>
-              <div class="text-xs text-slate-400">Logistique, parcours, sécurité</div>
+              <div class="text-xs text-slate-400">Défis corporatifs, courses, logistique</div>
             </a>
             <a href="/services/production-tele/" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-cyan hover:text-white transition-colors">
               <div class="font-bold text-slate-100">Production Télé & Vidéo</div>
-              <div class="text-xs text-slate-400">Captation extrême, drones, 4K</div>
+              <div class="text-xs text-slate-400">Captation extrême, drones 4K, émissions TV</div>
+            </a>
+            <a href="/services/chronometrage-logistique/" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-emerald-600 hover:text-white transition-colors">
+              <div class="font-bold text-slate-100">Chronométrage & Suivi GPS</div>
+              <div class="text-xs text-slate-400">Puces RFID, télémétrie live, classements</div>
+            </a>
+            <div class="border-t border-slate-800 my-1"></div>
+            <a href="/services/" class="block px-4 py-2 text-xs font-semibold text-brand-cyan hover:text-white uppercase tracking-wider">
+              Voir tous les services pro →
             </a>
           </div>
         </div>
@@ -142,10 +150,11 @@ const currentPath = Astro.url.pathname;
     </div>
 
     <div>
-      <a href="/services/" class="block py-2 text-base font-semibold text-slate-100 hover:text-brand-cyan">Services Corporatifs</a>
+      <a href="/services/" class="block py-2 text-base font-semibold text-slate-100 hover:text-brand-cyan">Services Pro & B2B</a>
       <div class="pl-4 py-1 space-y-2.5 border-l-2 border-slate-800 ml-1">
-        <a href="/services/" class="block text-sm text-slate-300 hover:text-brand-cyan">Organisation Clé en Main</a>
-        <a href="/services/production-tele/" class="block text-sm text-slate-300 hover:text-brand-cyan">Production Télé & Drones</a>
+        <a href="/services/organisation-evenements/" class="block text-sm text-slate-300 hover:text-brand-red">Organisation Clé en Main</a>
+        <a href="/services/production-tele/" class="block text-sm text-slate-300 hover:text-brand-cyan">Production Télé & Drones 4K</a>
+        <a href="/services/chronometrage-logistique/" class="block text-sm text-slate-300 hover:text-emerald-400">Chronométrage & Suivi GPS Live</a>
       </div>
     </div>
 

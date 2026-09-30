@@ -20,14 +20,57 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://enduranc
 
 const defaultOrgSchema = {
   "@context": "https://schema.org",
-  "@type": "SportsActivityLocation",
+  "@type": "SportsOrganization",
   "name": "Endurance Aventure",
   "url": "https://enduranceaventure.com",
   "logo": "https://enduranceaventure.com/assets/endurance-aventure-logo-blanc.png",
   "description": description,
   "founder": {
     "@type": "Person",
-    "name": "Daniel Poirier"
+    "name": "Daniel Poirier",
+    "jobTitle": "Fondateur & Directeur d'Épreuves"
+  },
+  "member": [
+    {
+      "@type": "Person",
+      "name": "Bastien Michau",
+      "jobTitle": "Directeur de Production & Réalisateur"
+    },
+    {
+      "@type": "Person",
+      "name": "Daniel Poirier",
+      "jobTitle": "Fondateur & Directeur d'Épreuves"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services Événementiels et Audiovisuels Tout-Terrain",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Organisation d'Événements Sportifs & Corporatifs",
+          "url": "https://enduranceaventure.com/services/organisation-evenements/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Production Télévisuelle & Audiovisuelle Tout-Terrain",
+          "url": "https://enduranceaventure.com/services/production-tele/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Chronométrage Électronique RFID & Suivi GPS Satellite",
+          "url": "https://enduranceaventure.com/services/chronometrage-logistique/"
+        }
+      }
+    ]
   },
   "address": {
     "@type": "PostalAddress",
@@ -38,6 +81,7 @@ const defaultOrgSchema = {
   "contactPoint": {
     "@type": "ContactPoint",
     "email": "info@enduranceaventure.com",
+    "telephone": "+1-450-659-9944",
     "contactType": "customer service"
   }
 };

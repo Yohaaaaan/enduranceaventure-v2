@@ -217,6 +217,36 @@ import Layout from '../../layouts/Layout.astro';
               </thead>
               <tbody id="recent-stream" class="divide-y divide-brand-gray/30 text-slate-300">
                 <!-- Filled by JS -->
+        </div>
+
+        <!-- Section Demandes de Soumissions B2B & Messages -->
+        <div class="lg:col-span-3 rounded-2xl bg-brand-darker border border-brand-gray p-6">
+          <div class="flex items-center justify-between mb-6 border-b border-brand-gray/60 pb-4">
+            <h3 class="text-base font-heading font-bold text-white flex items-center gap-2">
+              <span>📬</span> Demandes de Soumissions B2B & Messages Reçus
+            </h3>
+            <span id="leads-count-badge" class="px-2.5 py-1 rounded-full text-xs font-bold bg-brand-red text-white">
+              0 demande
+            </span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="text-slate-400 border-b border-brand-gray/50 pb-2">
+                  <th class="pb-3 font-bold">Date</th>
+                  <th class="pb-3 font-bold">Type</th>
+                  <th class="pb-3 font-bold">Organisation / Nom</th>
+                  <th class="pb-3 font-bold">Coordonnées</th>
+                  <th class="pb-3 font-bold">Prestation / Événement</th>
+                  <th class="pb-3 font-bold">Participants / Budget</th>
+                  <th class="pb-3 font-bold">Message</th>
+                </tr>
+              </thead>
+              <tbody id="contacts-stream" class="divide-y divide-brand-gray/30 text-slate-300">
+                <tr>
+                  <td colspan="7" class="py-6 text-center text-slate-500">Chargement des demandes...</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -434,17 +464,88 @@ import Layout from '../../layouts/Layout.astro';
           `).join('') || '<tr><td colspan="4" class="py-4 text-center text-slate-500">En attente de nouvelles visites...</td></tr>';
         }
 
+        // Also load contacts
+        loadContacts();
+
       } catch (err) {
         console.error('Failed to load stats:', err);
       }
     }
 
-    document.getElementById('refresh-btn')?.addEventListener('click', loadStats);
+    async function loadContacts() {
+      const token = getToken();
+      if (!token) return;
+
+      try {
+        const res = await fetch('/api/contacts', {
+          headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (!res.ok) return;
+
+        const data = await res.json();
+        const contacts = data.contacts || [];
+
+        const badgeEl = document.getElementById('leads-count-badge');
+        if (badgeEl) {
+          badgeEl.innerText = `${contacts.length} demande${contacts.length > 1 ? 's' : ''}`;
+        }
+
+        const tbody = document.getElementById('contacts-stream');
+        if (tbody) {
+          if (contacts.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="7" class="py-6 text-center text-slate-500">Aucune demande reçue pour le moment.</td></tr>';
+          } else {
+            tbody.innerHTML = contacts.map(c => {
+              const isB2b = c.type === 'b2b';
+              const dateStr = c.createdAt ? new Date(c.createdAt).toLocaleDateString('fr-CA', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) : '-';
+              return `
+                <tr class="hover:bg-brand-dark/50 transition-colors">
+                  <td class="py-3 text-slate-400 whitespace-nowrap">${dateStr}</td>
+                  <td class="py-3">
+                    <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${isB2b ? 'bg-brand-red/20 text-brand-red border border-brand-red/30' : 'bg-brand-cyan/20 text-cyan-400 border border-brand-cyan/30'}">
+                      ${isB2b ? '🏢 B2B' : '🏃 Coureur'}
+                    </span>
+                  </td>
+                  <td class="py-3">
+                    <div class="font-bold text-white">${c.name}</div>
+                    ${c.organization ? `<div class="text-[11px] text-slate-400">${c.organization} (${c.orgType || 'Entité'})</div>` : ''}
+                  </td>
+                  <td class="py-3">
+                    <a href="mailto:${c.email}" class="text-brand-cyan hover:underline block">${c.email}</a>
+                    ${c.phone ? `<div class="text-slate-400 text-[11px]">${c.phone}</div>` : ''}
+                  </td>
+                  <td class="py-3">
+                    <span class="font-medium text-slate-200">${c.service || c.subject || '-'}</span>
+                  </td>
+                  <td class="py-3 text-slate-300">
+                    <div>${c.participants ? `👥 ${c.participants}` : '-'}</div>
+                    ${c.budget ? `<div class="text-emerald-400 text-[11px]">💰 ${c.budget}</div>` : ''}
+                  </td>
+                  <td class="py-3 max-w-[240px]">
+                    <div class="truncate text-slate-300 hover:text-white" title="${c.message}">${c.message}</div>
+                  </td>
+                </tr>
+              `;
+            }).join('');
+          }
+        }
+      } catch (e) {
+        console.error('Failed to load contacts:', e);
+      }
+    }
+
+    document.getElementById('refresh-btn')?.addEventListener('click', () => {
+      loadStats();
+      loadContacts();
+    });
 
     // Initial check
     checkAuth();
     setInterval(() => {
-      if (getToken()) loadStats();
+      if (getToken()) {
+        loadStats();
+        loadContacts();
+      }
     }, 15000);
   </script>
   </div>

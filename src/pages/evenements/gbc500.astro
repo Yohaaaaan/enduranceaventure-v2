@@ -60,10 +60,16 @@ const gbcSchema = {
 
       <div class="flex flex-wrap items-center justify-center gap-4">
         <a 
-          href="/contact" 
+          href="/contact?type=general&subject=gbc500" 
           class="px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-xl shadow-brand-red/30"
         >
           S'inscrire à l'Édition 2026
+        </a>
+        <a 
+          href="#gpx" 
+          class="px-8 py-4 rounded-xl bg-slate-900/80 border border-slate-700 hover:border-slate-500 text-slate-200 text-sm font-bold uppercase tracking-wider transition-all backdrop-blur-sm"
+        >
+          Traces GPX & Cartes
         </a>
         <a 
           href="#reglements" 
@@ -107,8 +113,8 @@ const gbcSchema = {
               <li class="flex items-center gap-2"><span class="text-brand-red font-bold">✓</span> Finisher Patch & T-shirt exclusif Argon 18</li>
             </ul>
           </div>
-          <a href="/contact" class="w-full py-3.5 rounded-xl bg-brand-red text-white font-heading font-bold text-center text-xs uppercase tracking-wider hover:bg-brand-red-dark transition-all shadow-md">
-            Choisir le 500 km
+          <a href="/contact?type=general&subject=gbc500" class="w-full py-3.5 rounded-xl bg-brand-red text-white font-heading font-bold text-center text-xs uppercase tracking-wider hover:bg-brand-red-dark transition-all shadow-md">
+            S'inscrire au 500 km
           </a>
         </div>
 
@@ -126,8 +132,8 @@ const gbcSchema = {
               <li class="flex items-center gap-2"><span class="text-brand-cyan font-bold">✓</span> Repas d'arrivée festif & douche</li>
             </ul>
           </div>
-          <a href="/contact" class="w-full py-3.5 rounded-xl bg-slate-900 text-white font-heading font-bold text-center text-xs uppercase tracking-wider hover:bg-brand-red transition-all shadow-md">
-            Choisir le 250 km
+          <a href="/contact?type=general&subject=gbc500" class="w-full py-3.5 rounded-xl bg-slate-900 text-white font-heading font-bold text-center text-xs uppercase tracking-wider hover:bg-brand-red transition-all shadow-md">
+            S'inscrire au 250 km
           </a>
         </div>
 
@@ -145,8 +151,8 @@ const gbcSchema = {
               <li class="flex items-center gap-2"><span class="text-slate-900 font-bold">✓</span> Médaille commémorative Finisher</li>
             </ul>
           </div>
-          <a href="/contact" class="w-full py-3.5 rounded-xl bg-slate-900 text-white font-heading font-bold text-center text-xs uppercase tracking-wider hover:bg-brand-red transition-all shadow-md">
-            Choisir le 100 km
+          <a href="/contact?type=general&subject=gbc500" class="w-full py-3.5 rounded-xl bg-slate-900 text-white font-heading font-bold text-center text-xs uppercase tracking-wider hover:bg-brand-red transition-all shadow-md">
+            S'inscrire au 100 km
           </a>
         </div>
 
@@ -185,6 +191,77 @@ const gbcSchema = {
             <div class="font-bold text-slate-900">Mécanique & Dépannage</div>
             <div>• 2 chambres à air adaptées (ou mèches tubeless) + pompe ou cartouches CO2.</div>
             <div>• Outil multifonction avec dérive-chaîne et maillon rapide (quick-link).</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION TRACES GPX & CARTOGRAPHIE (Indispensable pour la préparation des coureurs) -->
+    <section id="gpx" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm">
+        <div class="mb-8">
+          <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">Navigation & Tracés</span>
+          <h3 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900">
+            Cartographie & Fichiers GPX Officiels
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 mt-2 max-w-2xl leading-relaxed">
+            Les tracés officiels sont reconnus et validés sur le terrain. Chargez directement les fichiers .GPX sur votre compteur GPS (Garmin, Wahoo, Hammerhead).
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="text-[11px] font-bold uppercase text-brand-red mb-1">Boucle Intégrale</div>
+              <div class="text-xl font-heading font-black text-slate-900 mb-2">Trace GPX 500 KM</div>
+              <div class="text-xs text-slate-600 space-y-1.5 mb-6">
+                <div>• Dénivelé : +6 150 m D+</div>
+                <div>• Terrain : 78% Gravelle / 22% Rang</div>
+                <div>• POI bivouacs et ravitaillements inclus</div>
+              </div>
+            </div>
+            <a 
+              href="/contact?type=general&subject=gbc500" 
+              class="w-full py-2.5 rounded-lg bg-slate-900 hover:bg-brand-red text-white text-xs font-heading font-bold uppercase tracking-wider text-center transition-colors shadow-sm"
+            >
+              Demander le tracé 500k
+            </a>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="text-[11px] font-bold uppercase text-slate-600 mb-1">Semi-Bikepacking</div>
+              <div class="text-xl font-heading font-black text-slate-900 mb-2">Trace GPX 250 KM</div>
+              <div class="text-xs text-slate-600 space-y-1.5 mb-6">
+                <div>• Dénivelé : +3 200 m D+</div>
+                <div>• Terrain : 82% Gravelle / 18% Rang</div>
+                <div>• Étape bivouac mi-parcours identifiée</div>
+              </div>
+            </div>
+            <a 
+              href="/contact?type=general&subject=gbc500" 
+              class="w-full py-2.5 rounded-lg bg-slate-900 hover:bg-brand-red text-white text-xs font-heading font-bold uppercase tracking-wider text-center transition-colors shadow-sm"
+            >
+              Demander le tracé 250k
+            </a>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="text-[11px] font-bold uppercase text-brand-cyan mb-1">Gravel Day</div>
+              <div class="text-xl font-heading font-black text-slate-900 mb-2">Trace GPX 100 KM</div>
+              <div class="text-xs text-slate-600 space-y-1.5 mb-6">
+                <div>• Dénivelé : +1 450 m D+</div>
+                <div>• Terrain : 85% Gravelle roulante</div>
+                <div>• Ravitaillements km 45 et km 75</div>
+              </div>
+            </div>
+            <a 
+              href="/contact?type=general&subject=gbc500" 
+              class="w-full py-2.5 rounded-lg bg-slate-900 hover:bg-brand-red text-white text-xs font-heading font-bold uppercase tracking-wider text-center transition-colors shadow-sm"
+            >
+              Demander le tracé 100k
+            </a>
           </div>
         </div>
       </div>
