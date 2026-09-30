@@ -5,6 +5,8 @@ const team = [
   {
     name: 'Bastien Michau',
     role: 'Associé, Directeur de course & Dessinateur de parcours',
+    badge: 'Directeur de course & Associé',
+    badgeClass: 'bg-brand-red text-white',
     bio: 'Guide spéléo et canyon, raideur d\'expédition et orienteur chevronné. Figure incontournable du raid aventure en Amérique du Nord, Bastien conçoit et supervise les tracés les plus exigeants, notamment le Raid Témiscamingue et le premier Championnat du monde junior de raid aventure (ARWS).',
     image: '/assets/bastien-michau.webp',
     fallback: '/assets/bastien-michau.jpg',
@@ -14,6 +16,8 @@ const team = [
   {
     name: 'Daniel Poirier',
     role: 'Cofondateur, Directeur de la production télévisuelle',
+    badge: 'Cofondateur & Réalisateur TV',
+    badgeClass: 'bg-brand-cyan text-white',
     bio: 'Cofondateur d\'Endurance Aventure en 1998. Raideur passionné et triathlète longue distance, Daniel pilote la réalisation de documentaires sportifs et les tournages extrêmes en milieux hostiles diffusés sur les télévisions nationales.',
     image: '/assets/daniel-poirier-endurance-aventure.webp',
     fallback: '/assets/daniel-poirier-endurance-aventure.jpg',
@@ -23,6 +27,8 @@ const team = [
   {
     name: 'Jean-Thomas Boily',
     role: 'Cofondateur, Directeur des opérations & de la logistique',
+    badge: 'Cofondateur & Logistique Terrain',
+    badgeClass: 'bg-slate-900 text-white',
     bio: 'Cofondateur de l\'entreprise, skieur de fond paralympien et cycliste d\'élite. Jean-Thomas orchestre la logistique globale, la sécurité des parcours et l\'ingénierie terrain de chaque épreuve.',
     image: '/assets/jean-thomas-boily.webp',
     fallback: '/assets/jean-thomas-boily.jpg',
@@ -32,6 +38,8 @@ const team = [
   {
     name: 'Marc Plante',
     role: 'Associé, Producteur exécutif & Distribution',
+    badge: 'Producteur Exécutif & Associé',
+    badgeClass: 'bg-slate-800 text-white',
     bio: 'Associé depuis 2017. Passionné de hockey et de sport d\'équipe, Marc assure la production exécutive des projets documentaires et développe les partenariats de distribution internationale.',
     image: '/assets/marc-plante.webp',
     fallback: '/assets/marc-plante.jpg',
@@ -41,6 +49,8 @@ const team = [
   {
     name: 'Patricia Desgagné',
     role: 'Relations médias & Athlètes internationaux',
+    badge: 'Relations Médias & Accueil',
+    badgeClass: 'bg-slate-700 text-white',
     bio: 'Anthropologue et polyglotte, Patricia coordonne l\'accueil et l\'accompagnement des délégations internationales, des équipes d\'expédition et des journalistes étrangers.',
     image: '/assets/patricia-desgagne.webp',
     fallback: '/assets/patricia-desgagne.jpg',
@@ -194,11 +204,9 @@ const team = [
                     class="w-full h-full object-cover object-top transition-all duration-300 hover:scale-105"
                     onerror={`this.src='${member.fallback}'`}
                   />
-                  {member.name.includes('Bastien') && (
-                    <span class="absolute top-3 right-3 px-2.5 py-1 rounded bg-brand-red text-white text-[11px] font-bold uppercase tracking-wider shadow-md">
-                      Directeur de course
-                    </span>
-                  )}
+                  <span class={`absolute top-3 right-3 px-2.5 py-1 rounded ${member.badgeClass || 'bg-slate-900 text-white'} text-[11px] font-bold uppercase tracking-wider shadow-md backdrop-blur-sm`}>
+                    {member.badge}
+                  </span>
                 </div>
                 <div class="p-6">
                   <h3 class="text-xl font-heading font-bold text-slate-900 mb-1">

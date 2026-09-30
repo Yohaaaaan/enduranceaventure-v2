@@ -35,17 +35,18 @@ const gbcSchema = {
   jsonLd={gbcSchema}
 >
 
-  <!-- BANNER HERO GBC500 SOMBRE (Action & Immersion) -->
-  <section class="relative min-h-[65vh] flex items-center justify-center bg-slate-950 overflow-hidden">
+  <!-- BANNER HERO GBC500 GRAND ÉCRAN (Immersion Totale & Pleine Hauteur) -->
+  <section class="relative min-h-[88vh] sm:min-h-screen flex items-center justify-center bg-slate-950 overflow-hidden">
     <img 
       src="/assets/2023-08-05_GBC500_mc_1498-scaled.webp" 
       alt="GBC 500 Gravel Bike" 
-      class="absolute inset-0 w-full h-full object-cover opacity-35 scale-105"
+      class="absolute inset-0 w-full h-full object-cover object-center opacity-80 brightness-90 contrast-105"
       onerror="this.src='/assets/2023-08-05_GBC500_mc_1498-scaled.jpg'"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
+    <!-- Dégradé léger et naturel qui laisse respirer la photo -->
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-black/20 to-black/40"></div>
     
-    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 sm:py-28">
       <!-- Logos Officiels GBC 500 & Partenaire Titre Argon 18 sur fond blanc net et contrasté -->
       <div class="inline-flex items-center justify-center gap-6 sm:gap-10 px-8 sm:px-12 py-5 sm:py-6 rounded-3xl bg-white shadow-2xl border-2 border-white/80 mb-8 mx-auto">
         <img 

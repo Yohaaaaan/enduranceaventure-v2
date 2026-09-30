@@ -33,34 +33,39 @@ const raidSchema = {
 >
 
   <!-- BANNER HERO SOMBRE (Action extrême & Navigation) -->
-  <section class="relative min-h-[55vh] flex items-center justify-center bg-slate-950 overflow-hidden">
+  <section class="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center bg-slate-950 overflow-hidden">
     <img 
       src="/assets/51582278409_86672a9a9f_k.webp" 
       alt="Raid Aventure Gaspésie" 
-      class="absolute inset-0 w-full h-full object-cover opacity-40 brightness-75 contrast-110"
+      class="absolute inset-0 w-full h-full object-cover opacity-80 brightness-90 contrast-105"
       onerror="this.src='/assets/51582278409_86672a9a9f_k.jpg'"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-black/20 to-black/30"></div>
     
-    <div class="relative z-10 max-w-4xl mx-auto px-4 text-center py-20">
-      <span class="px-3.5 py-1 rounded bg-brand-red text-white text-xs font-bold uppercase tracking-wider mb-4 inline-block shadow">
+    <div class="relative z-10 max-w-4xl mx-auto px-4 text-center py-24 sm:py-32">
+      <span class="px-3.5 py-1.5 rounded-full bg-brand-red text-white text-xs font-bold uppercase tracking-wider mb-4 inline-block shadow">
         Expéditions & Championnats Mondiaux
       </span>
-      <h1 class="text-4xl sm:text-6xl font-heading font-black uppercase text-white mb-4">
+      <h1 class="text-4xl sm:text-7xl font-heading font-black uppercase text-white mb-6 tracking-tight drop-shadow-md">
         Raids Aventure Multisports
       </h1>
-      <p class="text-lg text-slate-300 font-light max-w-2xl mx-auto mb-8 leading-relaxed">
+      <p class="text-lg sm:text-xl text-slate-200 font-light max-w-2xl mx-auto mb-10 leading-relaxed drop-shadow">
         L'épreuve par excellence du travail d'équipe, de l'orientation à la boussole et de la persévérance en milieu sauvage.
       </p>
-      <a href="/contact?type=general&subject=raids" class="px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-xl shadow-brand-red/30">
-        Informations Prochaines Épreuves
-      </a>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="#raids-details" class="px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-xl shadow-brand-red/30">
+          Découvrir les Raids
+        </a>
+        <a href="/contact?type=general&subject=raids" class="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 font-heading font-bold text-sm uppercase tracking-wider transition-all">
+          Informations Prochaines Épreuves
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- CONTENU PRINCIPAL SUR FOND CLAIR -->
   <div class="bg-slate-50 py-20 space-y-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <div id="raids-details" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         
