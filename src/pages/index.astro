@@ -165,8 +165,8 @@ const latestNews = news.slice(0, 3);
               <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
                 <span class="text-xs text-slate-500 font-semibold">{evt.dates}</span>
                 <a 
-                  href={`/evenements/${evt.slug === 'raid-gaspesie' ? 'raids' : evt.slug}`} 
-                  class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-brand-red text-white text-xs font-heading font-bold uppercase tracking-wider transition-colors"
+                  href={`/evenements/${evt.slug === 'raid-gaspesie' ? 'raids' : evt.slug}/`} 
+                  class="px-4 py-2.5 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-md shadow-brand-red/20"
                 >
                   Détails & Inscription
                 </a>
@@ -220,8 +220,8 @@ const latestNews = news.slice(0, 3);
             </div>
 
             <a 
-              href={`/services/${srv.slug}`} 
-              class="w-full py-2.5 rounded-lg border border-slate-300 text-slate-800 hover:border-brand-cyan hover:bg-brand-cyan hover:text-white text-center text-xs font-bold uppercase tracking-wider transition-all"
+              href={`/services/${srv.slug}/`} 
+              class="w-full py-2.5 rounded-xl border border-slate-300 text-slate-800 hover:border-brand-cyan hover:bg-brand-cyan hover:text-white text-center text-xs font-bold uppercase tracking-wider transition-all"
             >
               Consulter les détails →
             </a>
@@ -229,15 +229,15 @@ const latestNews = news.slice(0, 3);
         ))}
       </div>
 
-      <!-- Bandeau Action Sombre & Immersif (Contraste Hybride) -->
-      <div class="mt-16 rounded-3xl bg-slate-950 text-white p-8 sm:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-800">
+      <!-- Bandeau Action Harmonisé (Sans contraste brutal noir sur blanc) -->
+      <div class="mt-16 rounded-3xl bg-slate-100 text-slate-900 p-8 sm:p-12 border border-slate-300/80 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
         <div>
-          <h4 class="text-2xl font-heading font-bold text-white mb-2">Un projet d'événement ou un tournage extrême ?</h4>
-          <p class="text-sm text-slate-300 max-w-xl">Échangez directement avec Daniel Poirier, Bastien Michau et l'équipe technique pour une étude de faisabilité et un devis personnalisé.</p>
+          <h4 class="text-2xl font-heading font-bold text-slate-900 mb-2">Un projet d'événement ou un tournage extrême ?</h4>
+          <p class="text-sm text-slate-600 max-w-xl leading-relaxed">Échangez directement avec Daniel Poirier, Bastien Michau et l'équipe technique pour une étude de faisabilité et un devis personnalisé.</p>
         </div>
         <a 
-          href="/contact" 
-          class="px-8 py-4 rounded-xl bg-brand-cyan hover:bg-cyan-600 text-white font-heading font-bold text-sm uppercase tracking-wider transition-all flex-shrink-0 shadow-lg shadow-brand-cyan/20"
+          href="/contact/" 
+          class="px-8 py-4 rounded-xl bg-brand-cyan hover:bg-cyan-600 text-white font-heading font-bold text-sm uppercase tracking-wider transition-all flex-shrink-0 shadow-md shadow-brand-cyan/20"
         >
           Demander une Soumission
         </a>
