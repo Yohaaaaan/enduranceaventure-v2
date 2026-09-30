@@ -18,7 +18,20 @@ yarn-debug.log*
 yarn-error.log*
 .DS_Store
 
-# Large media archives (>10MB)
-public/assets/*.pdf
-public/assets/*.mp4
-public/assets/*.zip
+# Data runtime
+data/analytics.json
+
+# Public heavy media & scraped assets library
+public/assets/*
+!public/assets/*.webp
+!public/assets/endurance-aventure-logo-blanc.png
+!public/assets/endurance-aventure-logo-noir.png
+!public/assets/endurance-aventure-icone-noir.png
+!public/assets/logo-GBC500-ARGON18.png
+!public/assets/logo-argon-18-2.png
+!public/assets/orford_logo-original_fond_transparent.png
+!public/assets/EnduranceAventure.jpg
+!public/assets/daniel-poirier-endurance-aventure.jpg
+!public/assets/organisation-evenements-sportifs-services-endurance-aventure.jpg
+!public/assets/production-tele-services-endurance-aventure-e1517973509712.jpg
+!public/assets/raid-endurance-aventure-basse-cote-nord-2008.jpg
