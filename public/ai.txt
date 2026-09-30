@@ -1,0 +1,59 @@
+# Endurance Aventure (enduranceaventure.com) — AI Information Manifest
+
+> This file provides structured, concise context for AI agents, crawlers, and LLMs researching Endurance Aventure.
+
+## Basic Information
+- **Name**: Endurance Aventure Inc.
+- **Founded**: Over 20 years of continuous operations
+- **Founder & Race Director**: Daniel Poirier
+- **Headquarters**: Magog, Cantons-de-l'Est (Eastern Townships), Québec, Canada
+- **Official Website**: https://enduranceaventure.com
+- **Preview & Staging URL**: https://bb-reports.duckdns.org
+- **Contact Email**: info@enduranceaventure.com
+- **Core Industry**: Outdoor Adventure Sports Event Management & Extreme TV/Video Production
+
+## Core Pillars
+
+### 1. Major Sports Events
+- **GBC 500 (Gravel Bikepacking Challenge 500)**:
+  - Premiere gravel bike & bikepacking endurance race in Quebec.
+  - Formats: 500 km (flagship autonomy route), 250 km (semi-bikepacking), 100 km (gravel day challenge).
+  - Region: Eastern Townships & Mont Mégantic International Dark Sky Reserve.
+  - Partners: Argon 18, Mont Orford.
+  - Features: Live satellite GPS tracking, certified GPX tracks, official checkpoints & bivouacs.
+  - URL: /evenements/gbc500
+
+- **Trail des Neiges (Mont-Orford)**:
+  - Legendary winter snow trail race at Mount Orford.
+  - Formats: 5 km (discovery), 10 km (intermediate), 15 km (expert night trail with headlamps).
+  - URL: /evenements/trail-des-neiges
+
+- **Raids Aventure Multisports**:
+  - Raid International Gaspésie (RIG): 4-day expedition linking the ocean to the Chic-Chocs summits (sea kayak, mountain bike, cliff rappel, night navigation).
+  - Raid Témiscamingue: Wilderness boreal navigation in canoes and forest trek.
+  - URL: /evenements/raids
+
+### 2. Corporate & B2B Services
+- **Turnkey Sports Event Management**:
+  - Trail and course design with GPS mapping and environmental authorizations.
+  - Field logistics, ephemeral bivouac camps, and fluid/food provisioning.
+  - Complete safety and emergency civil coordination with specialized medical teams.
+  - Electronic timing (RFID chips) and live interactive leaderboard.
+  - URL: /services/organisation-evenements
+
+- **Extreme Television & Video Production**:
+  - 4K / HDR all-terrain broadcast filming in hostile weather and remote environments.
+  - Certified drone pilots for mountain and aquatic coverage.
+  - Embedded sports camera operators on foot, ski, kayak, and bike.
+  - National TV documentaries and daily social media video clips.
+  - URL: /services/production-tele
+
+## Key URLs & Sitemap
+- Homepage: https://enduranceaventure.com/
+- Events Directory: https://enduranceaventure.com/evenements/
+- Corporate Services: https://enduranceaventure.com/services/
+- Company & Team: https://enduranceaventure.com/entreprise/
+- News & Archives: https://enduranceaventure.com/nouvelles/
+- Contact & Quotes: https://enduranceaventure.com/contact/
+- XML Sitemap: https://enduranceaventure.com/sitemap-index.xml
+- LLMs standard guide: https://enduranceaventure.com/llms.txt

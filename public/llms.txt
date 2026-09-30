@@ -1,0 +1,23 @@
+# Endurance Aventure
+
+> Endurance Aventure is Quebec's premier outdoor endurance sports event organizer and extreme audiovisual production company, with over 20 years of experience designing world-class adventure races, gravel bikepacking, and broadcast documentaries.
+
+## Events
+- [GBC 500 (Gravel Bikepacking Challenge)](https://enduranceaventure.com/evenements/gbc500): 500 km, 250 km, and 100 km gravel bikepacking race through the Eastern Townships and Mont Mégantic.
+- [Trail des Neiges](https://enduranceaventure.com/evenements/trail-des-neiges): Winter snow trail running race at Mont-Orford (5km, 10km, 15km night race).
+- [Raids Aventure](https://enduranceaventure.com/evenements/raids): Multisport expedition raids in Gaspésie (sea kayak, mountain bike, trek) and Témiscamingue (boreal canoe navigation).
+- [All Events](https://enduranceaventure.com/evenements/): Complete sporting calendar.
+
+## Services
+- [Turnkey Event Organization](https://enduranceaventure.com/services/organisation-evenements): Complete logistics, medical security, GPS course mapping, and RFID timing.
+- [Extreme TV & Video Production](https://enduranceaventure.com/services/production-tele): 4K documentary production, certified drone pilots, and embedded sports camera operators.
+- [Corporate Overview](https://enduranceaventure.com/services/): Overview of B2B offerings.
+
+## Company
+- [About & Founder](https://enduranceaventure.com/entreprise/): Company story, values, and profile of founder Daniel Poirier.
+- [News & Stories](https://enduranceaventure.com/nouvelles/): 26 archived expedition stories and official race updates.
+- [Contact](https://enduranceaventure.com/contact/): Inquiries, athlete registration assistance, and corporate quotes.
+
+## Optional
+- [Full Documentation](/llms-full.txt): Comprehensive background documentation for LLMs.
+- [AI Manifest](/ai.txt): Machine-readable summary for AI agents.

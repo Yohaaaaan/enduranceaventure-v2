@@ -28,7 +28,9 @@ Modern, high-performance, and secure web application rebuilding Endurance Aventu
 /
 ├── public/
 │   ├── assets/                 # 500+ optimized WebP photos, logos, graphics
-│   └── robots.txt              # Search engine directives
+│   ├── robots.txt              # Search engine directives
+│   ├── ai.txt                  # Machine-readable context manifest for AI agents
+│   └── llms.txt                # Industry standard LLM directory and navigation guide
 ├── src/
 │   ├── components/             # Reusable UI elements (Header, Footer, Navigation)
 │   ├── data/                   # Structured data (events.json, services.json, news.json)
