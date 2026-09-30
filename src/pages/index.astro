@@ -115,8 +115,18 @@ const sponsors = [
     </div>
 
     <!-- Bandeau Bas d'Accès Direct aux 3 Épreuves Clés (Preuve concrète de terrain) -->
-    <div class="relative z-10 border-t border-white/15 bg-black/80 backdrop-blur-md">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+    <div class="relative z-10 border-t border-white/15 bg-black/85 backdrop-blur-md overflow-hidden">
+      <!-- Formes Géométriques Athlétiques : Slashes de vitesse en arrière-plan -->
+      <div class="absolute inset-0 pointer-events-none overflow-hidden opacity-10">
+        <svg class="absolute -right-8 -top-4 w-72 h-full text-white" viewBox="0 0 250 80" fill="none">
+          <line x1="60" y1="0" x2="10" y2="80" stroke="currentColor" stroke-width="2" />
+          <line x1="90" y1="0" x2="40" y2="80" stroke="currentColor" stroke-width="4" />
+          <line x1="130" y1="0" x2="80" y2="80" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4" />
+          <line x1="170" y1="0" x2="120" y2="80" stroke="currentColor" stroke-width="6" />
+        </svg>
+      </div>
+
+      <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-white/10">
           
           <a href="/evenements/gbc500" class="group pt-3 md:pt-0 md:px-4 first:pl-0 flex items-center justify-between">
@@ -151,15 +161,35 @@ const sponsors = [
     </div>
   </section>
 
-  <!-- BANDEAU PARTENAIRES & SPONSORS (Carrousel Infini de Logos) -->
-  <section class="py-8 bg-slate-900 border-t border-b border-slate-800 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 text-center">
+  <!-- BANDEAU PARTENAIRES & SPONSORS (Carrousel Infini de Logos avec Formes Dynamiques Athlétiques) -->
+  <section class="py-8 bg-slate-900 border-t border-b border-slate-800 overflow-hidden relative">
+    <!-- Formes Géométriques Athlétiques Style Ironman (Slashes & Profils d'Élévation) -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      <!-- Chevrons / Slashes de vitesse en filigrane répété -->
+      <svg class="absolute inset-0 w-full h-full opacity-[0.04] text-white" viewBox="0 0 1440 120" preserveAspectRatio="none">
+        <pattern id="sponsor-slashes" width="80" height="120" patternUnits="userSpaceOnUse" patternTransform="rotate(25)">
+          <line x1="0" y1="0" x2="0" y2="120" stroke="currentColor" stroke-width="1.5" />
+          <line x1="25" y1="0" x2="25" y2="120" stroke="currentColor" stroke-width="4" opacity="0.6" />
+          <line x1="50" y1="0" x2="50" y2="120" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 4" />
+        </pattern>
+        <rect width="100%" height="100%" fill="url(#sponsor-slashes)" />
+      </svg>
+      <!-- Lignes de crêtes topographiques subtiles rouge et cyan -->
+      <svg class="absolute -bottom-1 left-0 right-0 w-full h-10 opacity-20 text-brand-red pointer-events-none" viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none">
+        <path d="M0 35 C 320 10, 680 38, 1020 18 C 1240 5, 1380 28, 1440 22" stroke="currentColor" stroke-width="1.5" />
+      </svg>
+      <svg class="absolute -top-1 left-0 right-0 w-full h-10 opacity-15 text-brand-cyan pointer-events-none" viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none">
+        <path d="M0 10 C 280 32, 620 8, 960 25 C 1180 35, 1360 12, 1440 15" stroke="currentColor" stroke-width="1.5" stroke-dasharray="8 6" />
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 text-center">
       <span class="text-[11px] font-heading font-bold uppercase tracking-widest text-brand-red block mb-1">Partenaires & Équipementiers Officiels</span>
       <p class="text-xs text-slate-400">Ils équipent et soutiennent les athlètes et les épreuves d'Endurance Aventure sur le terrain</p>
     </div>
     
     <!-- Carrousel continu infini (Logos Uniquement) -->
-    <div class="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
+    <div class="relative z-10 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
       <div class="flex items-center gap-6 w-max animate-infinite-scroll">
         {[...sponsors, ...sponsors].map((s) => (
           <div class="h-16 w-36 sm:w-44 px-4 py-2 rounded-2xl bg-white shadow-sm border border-slate-200/90 flex items-center justify-center flex-shrink-0">
@@ -175,9 +205,28 @@ const sponsors = [
     </div>
   </section>
 
-  <!-- SECTION ÉVÉNEMENTS PHARES (Fond clair pour lisibilité parfaite) -->
-  <section id="evenements" class="py-24 bg-slate-100/70 border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- SECTION ÉVÉNEMENTS PHARES (Fond clair avec relief topographique de terrain) -->
+  <section id="evenements" class="py-24 bg-slate-100/70 border-t border-slate-200 relative overflow-hidden">
+    <!-- Formes de Relief Topographique Style Carte IGN / Outdoor (Courbes de niveau & Dénivelé) -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      <svg class="absolute -top-10 left-1/2 -translate-x-1/2 w-[160%] sm:w-full h-[120%] opacity-[0.035] text-slate-900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-100 120 C 200 40, 450 260, 750 140 C 1050 20, 1300 180, 1600 90" stroke="currentColor" stroke-width="2" />
+        <path d="M-100 200 C 220 110, 480 320, 780 210 C 1080 100, 1320 250, 1600 170" stroke="currentColor" stroke-width="1.5" />
+        <path d="M-100 280 C 240 180, 510 390, 810 280 C 1110 170, 1340 320, 1600 250" stroke="currentColor" stroke-width="2" stroke-dasharray="12 6" />
+        <path d="M-100 360 C 260 250, 540 460, 840 350 C 1140 240, 1360 390, 1600 330" stroke="currentColor" stroke-width="1.5" />
+        <path d="M-100 440 C 280 320, 570 530, 870 420 C 1170 310, 1380 460, 1600 410" stroke="currentColor" stroke-width="2" />
+        <path d="M-100 520 C 300 390, 600 600, 900 490 C 1200 380, 1400 530, 1600 490" stroke="currentColor" stroke-width="1.5" stroke-dasharray="8 6" />
+        <path d="M-100 600 C 320 460, 630 670, 930 560 C 1230 450, 1420 600, 1600 570" stroke="currentColor" stroke-width="2" />
+        <path d="M-100 680 C 340 530, 660 740, 960 630 C 1260 520, 1440 670, 1600 650" stroke="currentColor" stroke-width="1.5" />
+        <path d="M-100 760 C 360 600, 690 810, 990 700 C 1290 590, 1460 740, 1600 730" stroke="currentColor" stroke-width="2" />
+        <!-- Points de repères d'altitude style carte IGN -->
+        <text x="320" y="275" font-size="11" font-family="sans-serif" font-weight="bold" fill="currentColor" opacity="0.6">850m</text>
+        <text x="820" y="345" font-size="11" font-family="sans-serif" font-weight="bold" fill="currentColor" opacity="0.6">1200m (Mont-Orford)</text>
+        <text x="1220" y="195" font-size="11" font-family="sans-serif" font-weight="bold" fill="currentColor" opacity="0.6">620m</text>
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -321,9 +370,29 @@ const sponsors = [
         })}
       </div>
 
-      <!-- BANDEAU CONSULTATION & DIRECTION DE PROJET (Design sobre, authentique, sans artifice IA) -->
-      <div class="mt-16 rounded-2xl bg-slate-900 border border-slate-800 p-8 sm:p-12 text-white shadow-xl">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <!-- BANDEAU CONSULTATION & DIRECTION DE PROJET (Design sobre avec formes athlétiques style Ironman) -->
+      <div class="mt-16 rounded-2xl bg-slate-900 border border-slate-800 p-8 sm:p-12 text-white shadow-xl relative overflow-hidden">
+        <!-- Formes Géométriques Athlétiques Style Ironman (Découpes Angulaires & Cartographie) -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+          <!-- Grands chevrons angulaires rouges en filigrane (façon triathlon & compétition d'endurance) -->
+          <svg class="absolute -right-16 -bottom-16 w-[420px] h-[420px] opacity-10 text-brand-red pointer-events-none" viewBox="0 0 400 400" fill="none">
+            <polygon points="140,0 230,0 90,400 0,400" fill="currentColor" />
+            <polygon points="260,0 350,0 210,400 120,400" fill="currentColor" />
+            <polygon points="380,0 400,0 290,400 270,400" fill="currentColor" />
+          </svg>
+          <!-- Courbes de niveau topographiques techniques -->
+          <svg class="absolute inset-0 w-full h-full opacity-10 text-slate-300 pointer-events-none" viewBox="0 0 1000 400" fill="none" preserveAspectRatio="none">
+            <path d="M0 100 Q 250 40, 500 120 T 1000 80" stroke="currentColor" stroke-width="1.5" stroke-dasharray="8 6" />
+            <path d="M0 220 Q 300 140, 600 240 T 1000 180" stroke="currentColor" stroke-width="2" />
+            <path d="M0 320 Q 200 260, 450 350 T 1000 290" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" />
+          </svg>
+          <!-- Filigrane technique discret : coordonnées GPS du camp de base Magog -->
+          <div class="absolute top-4 right-6 text-[10px] font-mono tracking-widest text-slate-500 opacity-25 select-none hidden sm:block">
+            MAGOG BASECAMP // 45°16'05"N • 72°08'40"W // ELEV 210M - 850M
+          </div>
+        </div>
+
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           <!-- Colonne Titre & Pitch -->
           <div class="lg:col-span-7">
