@@ -10,8 +10,8 @@ const latestNews = news.slice(0, 3);
 
 <Layout title="Endurance Aventure | Événements Plein Air & Production Audiovisuelle Extrême">
   
-  <!-- HERO SECTION RÉÉCRITE — 100% AUTHENTIQUE & SANS EFFETS IA -->
-  <section class="relative min-h-[80vh] flex flex-col justify-between overflow-hidden bg-brand-darker">
+  <!-- HERO SECTION CINÉMATIQUE SOMBRE (Visuel d'action authentique) -->
+  <section class="relative min-h-[82vh] flex flex-col justify-between overflow-hidden bg-slate-950">
     <!-- Image de fond authentique en plein écran avec assombrissement naturel -->
     <div class="absolute inset-0 z-0">
       <img 
@@ -20,7 +20,7 @@ const latestNews = news.slice(0, 3);
         class="w-full h-full object-cover object-center brightness-60 contrast-110"
         onerror="this.src='/assets/2023-08-05_GBC500_mc_1498-scaled.jpg'"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/40 to-black/60"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-black/60"></div>
     </div>
 
     <!-- Contenu Principal du Hero -->
@@ -28,7 +28,7 @@ const latestNews = news.slice(0, 3);
       
       <!-- Kicker d'autorité -->
       <div class="flex items-center gap-3 text-xs sm:text-sm font-heading font-bold uppercase tracking-widest text-slate-300 mb-4">
-        <span class="px-2.5 py-1 bg-brand-red text-white rounded">Depuis 1998</span>
+        <span class="px-2.5 py-1 bg-brand-red text-white rounded font-bold">Depuis 1998</span>
         <span>Organisation d'Événements Plein Air & Production Télévisuelle</span>
       </div>
 
@@ -40,7 +40,7 @@ const latestNews = news.slice(0, 3);
 
       <!-- Descriptif ancré dans la réalité québécoise -->
       <p class="max-w-2xl text-base sm:text-xl text-slate-200 font-normal leading-relaxed mb-8">
-        Endurance Aventure trace des épreuves d'endurance uniques à travers les territoires les plus spectaculaires du Québec et produit des captations audiovisuelles extrêmes pour la télévision et le web.
+        Endurance Aventure conçoit et organise des épreuves d'endurance uniques à travers les territoires les plus sauvages du Québec, et réalise des tournages extrêmes pour la télévision et le web.
       </p>
 
       <!-- Actions directes -->
@@ -53,7 +53,7 @@ const latestNews = news.slice(0, 3);
         </a>
         <a 
           href="/services" 
-          class="px-8 py-4 rounded-lg bg-brand-dark/80 hover:bg-brand-dark text-slate-100 border border-slate-600 hover:border-white font-heading font-bold text-sm uppercase tracking-wider transition-colors backdrop-blur-sm"
+          class="px-8 py-4 rounded-lg bg-slate-900/80 hover:bg-slate-900 text-slate-100 border border-slate-700 hover:border-slate-500 font-heading font-bold text-sm uppercase tracking-wider transition-colors backdrop-blur-sm"
         >
           Services Corporatifs & Tournages
         </a>
@@ -62,7 +62,7 @@ const latestNews = news.slice(0, 3);
     </div>
 
     <!-- Bandeau Bas d'Accès Direct aux 3 Épreuves Clés (Preuve concrète de terrain) -->
-    <div class="relative z-10 border-t border-white/15 bg-black/75 backdrop-blur-md">
+    <div class="relative z-10 border-t border-white/15 bg-black/80 backdrop-blur-md">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-white/10">
           
@@ -86,9 +86,9 @@ const latestNews = news.slice(0, 3);
 
           <a href="/evenements/raids" class="group pt-3 md:pt-0 md:px-4 flex items-center justify-between">
             <div>
-              <div class="text-[11px] font-bold uppercase tracking-wider text-slate-300">Automne • Forêt Boréale & Mer</div>
+              <div class="text-[11px] font-bold uppercase tracking-wider text-slate-300">Automne • Gaspésie & Témiscamingue</div>
               <div class="text-sm font-heading font-bold text-white group-hover:text-brand-red transition-colors">Raids Aventure Multisports</div>
-              <div class="text-xs text-slate-400">Gaspésie & Témiscamingue</div>
+              <div class="text-xs text-slate-400">Expéditions canot, vélo, trek & boussole</div>
             </div>
             <span class="text-slate-400 group-hover:text-white transition-colors">→</span>
           </a>
@@ -99,19 +99,19 @@ const latestNews = news.slice(0, 3);
   </section>
 
 
-  <!-- SECTION ÉVÉNEMENTS PHARES -->
-  <section id="evenements" class="py-24 bg-brand-dark border-t border-brand-gray/40">
+  <!-- SECTION ÉVÉNEMENTS PHARES (Fond clair pour lisibilité parfaite) -->
+  <section id="evenements" class="py-24 bg-slate-100/70 border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
         <div>
-          <span class="text-brand-red text-sm font-bold uppercase tracking-widest block mb-2">Grand Public & Athlètes</span>
-          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-white">
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Grand Public & Athlètes</span>
+          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-slate-900">
             Nos Événements Sportifs
           </h2>
         </div>
-        <a href="/evenements" class="text-brand-cyan hover:text-brand-cyan-light font-bold text-sm uppercase tracking-wider flex items-center gap-1.5 transition-colors">
+        <a href="/evenements" class="text-brand-red hover:text-red-700 font-bold text-sm uppercase tracking-wider flex items-center gap-1.5 transition-colors">
           Voir tout le calendrier →
         </a>
       </div>
@@ -119,23 +119,23 @@ const latestNews = news.slice(0, 3);
       <!-- Events Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {featuredEvents.map((evt) => (
-          <div class="group rounded-2xl bg-brand-darker border border-brand-gray/80 overflow-hidden flex flex-col transition-all duration-300 hover:border-brand-red/60 hover:shadow-2xl hover:shadow-brand-red/10 hover:-translate-y-1.5">
+          <div class="group rounded-2xl bg-white border border-slate-200/90 shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:border-slate-300 hover:shadow-xl hover:-translate-y-1">
             <!-- Image Frame -->
-            <div class="relative h-64 overflow-hidden">
+            <div class="relative h-64 overflow-hidden bg-slate-200">
               <img 
                 src={evt.image} 
                 alt={evt.title} 
                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-brand-darker via-transparent to-transparent"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
               
               <!-- Badge Status -->
               <span class="absolute top-4 left-4 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-brand-red text-white shadow-md">
                 {evt.category}
               </span>
               
-              <!-- Badge Date -->
-              <span class="absolute bottom-4 left-4 px-3 py-1 rounded-md text-xs font-semibold bg-brand-dark/90 text-slate-200 backdrop-blur-sm border border-slate-700">
+              <!-- Badge Location -->
+              <span class="absolute bottom-4 left-4 px-3 py-1 rounded-md text-xs font-semibold bg-slate-950/80 text-white backdrop-blur-sm">
                 📍 {evt.location}
               </span>
             </div>
@@ -143,15 +143,15 @@ const latestNews = news.slice(0, 3);
             <!-- Content -->
             <div class="p-6 flex-grow flex flex-col justify-between">
               <div>
-                <h3 class="text-2xl font-heading font-bold text-white mb-2 group-hover:text-brand-red transition-colors">
+                <h3 class="text-2xl font-heading font-bold text-slate-900 mb-2 group-hover:text-brand-red transition-colors">
                   {evt.title}
                 </h3>
-                <p class="text-sm text-slate-400 mb-6 line-clamp-3 leading-relaxed">
+                <p class="text-sm text-slate-600 mb-6 line-clamp-3 leading-relaxed">
                   {evt.description}
                 </p>
 
                 <!-- Key details list -->
-                <ul class="space-y-2 mb-6 text-xs text-slate-300">
+                <ul class="space-y-2 mb-6 text-xs text-slate-700">
                   {evt.highlights.slice(0, 3).map(h => (
                     <li class="flex items-center gap-2">
                       <svg class="w-4 h-4 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
@@ -162,11 +162,11 @@ const latestNews = news.slice(0, 3);
               </div>
 
               <!-- Button -->
-              <div class="pt-4 border-t border-brand-gray/60 flex items-center justify-between">
-                <span class="text-xs text-slate-400 font-semibold">{evt.dates}</span>
+              <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                <span class="text-xs text-slate-500 font-semibold">{evt.dates}</span>
                 <a 
                   href={`/evenements/${evt.slug === 'raid-gaspesie' ? 'raids' : evt.slug}`} 
-                  class="px-4 py-2 rounded-lg bg-brand-gray hover:bg-brand-red text-white text-xs font-heading font-bold uppercase tracking-wider transition-colors"
+                  class="px-4 py-2 rounded-lg bg-slate-900 hover:bg-brand-red text-white text-xs font-heading font-bold uppercase tracking-wider transition-colors"
                 >
                   Détails & Inscription
                 </a>
@@ -180,36 +180,36 @@ const latestNews = news.slice(0, 3);
   </section>
 
 
-  <!-- SECTION SERVICES CORPORATIFS (B2B) -->
-  <section class="py-24 bg-brand-darker relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  <!-- SECTION SERVICES CORPORATIFS & B2B (Modèle Hybride : Fond blanc avec cartes structurées) -->
+  <section class="py-24 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="max-w-3xl mb-16">
-        <span class="text-brand-cyan text-sm font-bold uppercase tracking-widest block mb-2">Expertise B2B & Collectivités</span>
-        <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-white mb-4">
+        <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">Expertise B2B & Municipalités</span>
+        <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-slate-900 mb-4">
           Services Événementiels & Production Audiovisuelle
         </h2>
-        <p class="text-base sm:text-lg text-slate-400 leading-relaxed">
-          Nous mettons notre savoir-faire logistique tout-terrain et nos équipes de tournage au service de vos défis d'entreprise, courses officielles et projets télévisés.
+        <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
+          Nous mettons nos 25 années d'ingénierie tout-terrain et nos équipes de tournage au service de vos défis corporatifs, courses officielles et projets télévisés.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {services.map((srv) => (
-          <div class="rounded-2xl bg-brand-dark border border-brand-gray p-8 flex flex-col justify-between transition-all duration-300 hover:border-brand-cyan/60 hover:-translate-y-1">
+          <div class="rounded-2xl bg-slate-50 border border-slate-200 p-8 flex flex-col justify-between transition-all duration-300 hover:border-brand-cyan hover:shadow-lg">
             <div>
-              <div class="w-14 h-14 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan mb-6">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+              <div class="w-12 h-12 rounded-xl bg-cyan-100 border border-cyan-200 flex items-center justify-center text-brand-cyan mb-6 font-bold">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
               </div>
 
-              <h3 class="text-xl font-heading font-bold text-white mb-3">
+              <h3 class="text-xl font-heading font-bold text-slate-900 mb-3">
                 {srv.title}
               </h3>
-              <p class="text-sm text-slate-400 mb-6 leading-relaxed">
+              <p class="text-sm text-slate-600 mb-6 leading-relaxed">
                 {srv.description}
               </p>
 
-              <ul class="space-y-2 mb-8 text-xs text-slate-300">
+              <ul class="space-y-2 mb-8 text-xs text-slate-700">
                 {srv.features.map((f) => (
                   <li class="flex items-start gap-2">
                     <span class="text-brand-cyan font-bold">•</span>
@@ -221,23 +221,23 @@ const latestNews = news.slice(0, 3);
 
             <a 
               href={`/services/${srv.slug}`} 
-              class="w-full py-2.5 rounded-lg border border-brand-cyan text-brand-cyan hover:bg-brand-cyan hover:text-white text-center text-xs font-bold uppercase tracking-wider transition-all"
+              class="w-full py-2.5 rounded-lg border border-slate-300 text-slate-800 hover:border-brand-cyan hover:bg-brand-cyan hover:text-white text-center text-xs font-bold uppercase tracking-wider transition-all"
             >
-              En savoir plus →
+              Consulter les détails →
             </a>
           </div>
         ))}
       </div>
 
-      <!-- Banner CTA Corporate -->
-      <div class="mt-16 rounded-2xl bg-gradient-to-r from-brand-gray to-brand-dark border border-slate-700 p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <!-- Bandeau Action Sombre & Immersif (Contraste Hybride) -->
+      <div class="mt-16 rounded-3xl bg-slate-950 text-white p-8 sm:p-12 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-800">
         <div>
           <h4 class="text-2xl font-heading font-bold text-white mb-2">Un projet d'événement ou un tournage extrême ?</h4>
-          <p class="text-sm text-slate-400">Échangez directement avec Bastien Michau, Daniel Poirier et l'équipe technique pour une étude personnalisée.</p>
+          <p class="text-sm text-slate-300 max-w-xl">Échangez directement avec Daniel Poirier, Bastien Michau et l'équipe technique pour une étude de faisabilité et un devis personnalisé.</p>
         </div>
         <a 
           href="/contact" 
-          class="px-8 py-4 rounded-xl bg-brand-cyan hover:bg-brand-cyan-light text-white font-heading font-bold text-sm uppercase tracking-wider transition-all flex-shrink-0 shadow-lg shadow-brand-cyan/20"
+          class="px-8 py-4 rounded-xl bg-brand-cyan hover:bg-cyan-600 text-white font-heading font-bold text-sm uppercase tracking-wider transition-all flex-shrink-0 shadow-lg shadow-brand-cyan/20"
         >
           Demander une Soumission
         </a>
@@ -247,42 +247,42 @@ const latestNews = news.slice(0, 3);
   </section>
 
 
-  <!-- SECTION DERNIÈRES NOUVELLES -->
-  <section class="py-24 bg-brand-dark border-t border-brand-gray/40">
+  <!-- SECTION DERNIÈRES NOUVELLES (Fond clair pour confort de lecture) -->
+  <section class="py-24 bg-slate-100/70 border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="flex items-center justify-between mb-16">
         <div>
-          <span class="text-brand-red text-sm font-bold uppercase tracking-widest block mb-2">Blog & Mises à jour</span>
-          <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase tracking-tight text-white">
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Récits de Terrain</span>
+          <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase tracking-tight text-slate-900">
             Actualités & Récits
           </h2>
         </div>
-        <a href="/nouvelles" class="text-sm font-bold text-slate-400 hover:text-white uppercase tracking-wider">
+        <a href="/nouvelles" class="text-sm font-bold text-slate-700 hover:text-brand-red uppercase tracking-wider">
           Tous les articles ({news.length}) →
         </a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {latestNews.map((n) => (
-          <article class="rounded-2xl bg-brand-darker border border-brand-gray/70 overflow-hidden flex flex-col group hover:border-slate-600 transition-colors">
-            <div class="relative h-48 overflow-hidden bg-brand-gray">
+          <article class="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden flex flex-col group hover:shadow-lg transition-all duration-300">
+            <div class="relative h-48 overflow-hidden bg-slate-200">
               <img 
                 src={n.image} 
                 alt={n.title} 
                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 onerror="this.src='/assets/EnduranceAventure.jpg'"
               />
-              <span class="absolute top-3 right-3 px-2.5 py-1 rounded bg-black/70 text-[11px] font-semibold text-slate-300 backdrop-blur-sm">
+              <span class="absolute top-3 right-3 px-2.5 py-1 rounded bg-black/75 text-[11px] font-semibold text-white backdrop-blur-sm">
                 📅 {n.date}
               </span>
             </div>
             <div class="p-6 flex-grow flex flex-col justify-between">
               <div>
-                <h3 class="text-lg font-heading font-bold text-white mb-2 group-hover:text-brand-red transition-colors line-clamp-2">
+                <h3 class="text-lg font-heading font-bold text-slate-900 mb-2 group-hover:text-brand-red transition-colors line-clamp-2">
                   <a href={`/nouvelles/${n.slug}`}>{n.title}</a>
                 </h3>
-                <p class="text-xs text-slate-400 line-clamp-3 leading-relaxed mb-4">
+                <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed mb-4">
                   {n.excerpt}
                 </p>
               </div>

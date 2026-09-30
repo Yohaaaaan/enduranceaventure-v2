@@ -40,24 +40,28 @@ const blogSchema = {
   jsonLd={blogSchema}
 >
   
-  <article class="py-16 bg-brand-dark">
+  <!-- Header Sombre Immersif -->
+  <div class="bg-slate-950 py-16 sm:py-20 border-b border-slate-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <a href="/nouvelles" class="text-xs font-bold uppercase tracking-wider text-brand-red hover:underline mb-4 inline-block">
+        ← Retour aux actualités
+      </a>
+      <div class="text-xs text-brand-cyan font-bold uppercase tracking-wider mb-2">
+        Publié le {post.date}
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-heading font-black text-white leading-tight mb-4">
+        {post.title}
+      </h1>
+    </div>
+  </div>
+
+  <!-- Contenu Principal sur Fond Clair (Confort de lecture éditorial) -->
+  <article class="py-16 bg-slate-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="mb-8">
-        <a href="/nouvelles" class="text-xs font-bold uppercase tracking-wider text-brand-red hover:underline mb-4 inline-block">
-          ← Retour aux actualités
-        </a>
-        <div class="text-xs text-brand-cyan font-bold uppercase tracking-wider mb-2">
-          Publié le {post.date}
-        </div>
-        <h1 class="text-3xl sm:text-5xl font-heading font-black text-white leading-tight mb-6">
-          {post.title}
-        </h1>
-      </div>
-
       <!-- Featured Image -->
       {post.image && (
-        <div class="rounded-2xl overflow-hidden mb-12 shadow-2xl bg-brand-darker max-h-[500px]">
+        <div class="rounded-3xl overflow-hidden mb-12 shadow-md bg-slate-200 max-h-[500px]">
           <img 
             src={post.image} 
             alt={post.title} 
@@ -68,16 +72,18 @@ const blogSchema = {
       )}
 
       <!-- Post Content Rendered -->
-      <div class="prose prose-invert prose-lg max-w-none text-slate-300 leading-relaxed space-y-6" set:html={post.content} />
+      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm">
+        <div class="prose prose-slate prose-lg max-w-none text-slate-800 leading-relaxed space-y-6" set:html={post.content} />
 
-      <!-- Bottom navigation -->
-      <div class="mt-16 pt-8 border-t border-brand-gray flex items-center justify-between">
-        <a href="/nouvelles" class="px-6 py-3 rounded-lg bg-brand-gray text-white text-xs font-bold uppercase tracking-wider hover:bg-brand-red transition-all">
-          ← Toutes les actualités
-        </a>
-        <a href="/contact" class="px-6 py-3 rounded-lg bg-brand-red text-white text-xs font-bold uppercase tracking-wider hover:bg-brand-red-dark transition-all">
-          Nous contacter
-        </a>
+        <!-- Bottom navigation -->
+        <div class="mt-16 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <a href="/nouvelles" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider transition-all">
+            ← Toutes les actualités
+          </a>
+          <a href="/contact" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-brand-red text-white text-xs font-bold uppercase tracking-wider hover:bg-brand-red-dark transition-all shadow-md">
+            Nous contacter
+          </a>
+        </div>
       </div>
 
     </div>

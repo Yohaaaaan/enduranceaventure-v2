@@ -31,62 +31,103 @@ const raidSchema = {
   image="/assets/51582278409_86672a9a9f_k.webp"
   jsonLd={raidSchema}
 >
-  <section class="relative min-h-[50vh] flex items-center justify-center bg-brand-darker overflow-hidden">
+
+  <!-- BANNER HERO SOMBRE (Action extrême & Navigation) -->
+  <section class="relative min-h-[55vh] flex items-center justify-center bg-slate-950 overflow-hidden">
     <img 
       src="/assets/51582278409_86672a9a9f_k.webp" 
       alt="Raid Aventure Gaspésie" 
-      class="absolute inset-0 w-full h-full object-cover opacity-40"
+      class="absolute inset-0 w-full h-full object-cover opacity-40 brightness-75 contrast-110"
       onerror="this.src='/assets/51582278409_86672a9a9f_k.jpg'"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
     
     <div class="relative z-10 max-w-4xl mx-auto px-4 text-center py-20">
-      <span class="px-3 py-1 rounded bg-brand-red text-white text-xs font-bold uppercase tracking-wider mb-4 inline-block">
-        Expéditions Multisports
+      <span class="px-3.5 py-1 rounded bg-brand-red text-white text-xs font-bold uppercase tracking-wider mb-4 inline-block shadow">
+        Expéditions & Championnats Mondiaux
       </span>
       <h1 class="text-4xl sm:text-6xl font-heading font-black uppercase text-white mb-4">
-        Raids Aventure
+        Raids Aventure Multisports
       </h1>
-      <p class="text-lg text-slate-300 font-light max-w-2xl mx-auto mb-8">
-        L'épreuve par excellence du travail d'équipe, de la stratégie et de la navigation en milieu hostile.
+      <p class="text-lg text-slate-300 font-light max-w-2xl mx-auto mb-8 leading-relaxed">
+        L'épreuve par excellence du travail d'équipe, de l'orientation à la boussole et de la persévérance en milieu sauvage.
       </p>
-      <a href="/contact" class="px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-xl">
-        Informations Prochaine Édition
+      <a href="/contact" class="px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-xl shadow-brand-red/30">
+        Informations Prochaines Épreuves
       </a>
     </div>
   </section>
 
-  <section class="py-20 bg-brand-dark">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- CONTENU PRINCIPAL SUR FOND CLAIR -->
+  <div class="bg-slate-50 py-20 space-y-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         
-        <div class="bg-brand-darker rounded-2xl border border-brand-gray p-8">
-          <h2 class="text-2xl font-heading font-bold text-white mb-2">Raid International Gaspésie</h2>
-          <div class="text-xs text-brand-cyan font-bold uppercase tracking-wider mb-4">Péninsule Gaspésienne</div>
-          <p class="text-sm text-slate-300 leading-relaxed mb-6">
-            Une aventure mythique de 4 jours reliant l'océan aux sommets des Chic-Chocs. Épreuves de kayak de mer, VTT technique, rappel sur falaises et orientation nocturne.
-          </p>
-          <ul class="space-y-2 text-xs text-slate-400">
-            <li>• Équipes mixtes ou non de 2 à 4 coureurs</li>
-            <li>• Bivouacs sauvages sur les grèves</li>
-            <li>• Diffusion télévisuelle nationale</li>
-          </ul>
+        <!-- Raid International Gaspésie -->
+        <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-10 shadow-sm flex flex-col justify-between hover:shadow-lg transition-all">
+          <div>
+            <div class="text-xs text-brand-cyan font-bold uppercase tracking-wider mb-2">Péninsule Gaspésienne • 4 Jours</div>
+            <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 mb-4">Raid International Gaspésie</h2>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+              Une aventure mythique reliant la baie des Chaleurs, les falaises du littoral et les crêtes escarpées des monts Chic-Chocs. Épreuves combinées de kayak de mer, VTT technique, trek de montagne, cordes et rappel.
+            </p>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 mb-8 border-t border-slate-100 pt-4">
+              <li class="flex items-center gap-2"><span class="text-brand-cyan font-bold">✓</span> Équipes de 2 à 4 coureurs (mixtes ou non)</li>
+              <li class="flex items-center gap-2"><span class="text-brand-cyan font-bold">✓</span> Bivouacs sur les grèves du Saint-Laurent</li>
+              <li class="flex items-center gap-2"><span class="text-brand-cyan font-bold">✓</span> Tournage documentaire pour diffusion télévisuelle</li>
+            </ul>
+          </div>
+          <a href="/contact" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-brand-red text-white font-heading font-bold text-center text-xs uppercase tracking-wider transition-colors shadow">
+            En savoir plus sur la Gaspésie
+          </a>
         </div>
 
-        <div class="bg-brand-darker rounded-2xl border border-brand-gray p-8">
-          <h2 class="text-2xl font-heading font-bold text-white mb-2">Raid Témiscamingue</h2>
-          <div class="text-xs text-brand-red font-bold uppercase tracking-wider mb-4">Forêt Boréale</div>
-          <p class="text-sm text-slate-300 leading-relaxed mb-6">
-            L'immersion totale au cœur du réseau hydrographique et forestier de l'Abitibi-Témiscamingue. Un défi de navigation pure en canoë et orientation forestière.
-          </p>
-          <ul class="space-y-2 text-xs text-slate-400">
-            <li>• Traversée de lacs sauvages et portages</li>
-            <li>• Épreuve 100% sans assistance mécanique motorisée</li>
-            <li>• Esprit de camaraderie et autonomie</li>
-          </ul>
+        <!-- Raid Témiscamingue & Championnat ARWS -->
+        <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-10 shadow-sm flex flex-col justify-between hover:shadow-lg transition-all">
+          <div>
+            <div class="text-xs text-brand-red font-bold uppercase tracking-wider mb-2">Forêt Boréale & Circuit Mondial ARWS</div>
+            <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 mb-4">Raid Témiscamingue</h2>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+              Dessiné sous la direction de <strong class="text-slate-900 font-semibold">Bastien Michau</strong>, le Raid Témiscamingue accueille le circuit officiel de la Série Mondiale (Adventure Racing World Series) et le Championnat du monde junior. Navigation pure en canot, portages forestiers et orientation carte & boussole sans GPS.
+            </p>
+            <ul class="space-y-2.5 text-xs sm:text-sm text-slate-700 mb-8 border-t border-slate-100 pt-4">
+              <li class="flex items-center gap-2"><span class="text-brand-red font-bold">✓</span> Épreuve officielle ARWS (Coupe du Monde & Juniors)</li>
+              <li class="flex items-center gap-2"><span class="text-brand-red font-bold">✓</span> Traversées lacustres sauvages et rapides contrôlés</li>
+              <li class="flex items-center gap-2"><span class="text-brand-red font-bold">✓</span> Dépassement, solidarité et immersion totale</li>
+            </ul>
+          </div>
+          <a href="/contact" class="w-full py-3.5 rounded-xl bg-slate-900 hover:bg-brand-red text-white font-heading font-bold text-center text-xs uppercase tracking-wider transition-colors shadow">
+            En savoir plus sur le Témiscamingue
+          </a>
         </div>
 
       </div>
+
+      <!-- Les Disciplines du Raid Aventure -->
+      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm">
+        <h3 class="text-2xl font-heading font-bold text-slate-900 mb-6">Les Disciplines au Cœur de Nos Raids</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="text-xl font-heading font-bold text-slate-900 mb-1">Canoë / Kayak</div>
+            <div class="text-xs text-slate-600">Lacs isolés, fleuve et rivières vives</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="text-xl font-heading font-bold text-slate-900 mb-1">Vélo Tout-Terrain</div>
+            <div class="text-xs text-slate-600">Chemins forestiers et sentiers rocheux</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="text-xl font-heading font-bold text-slate-900 mb-1">Trek & Trail</div>
+            <div class="text-xs text-slate-600">Progression hors-sentier et crêtes</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200">
+            <div class="text-xl font-heading font-bold text-slate-900 mb-1">Orientation Pure</div>
+            <div class="text-xs text-slate-600">Carte topographique 1:50 000 & boussole</div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+
 </Layout>

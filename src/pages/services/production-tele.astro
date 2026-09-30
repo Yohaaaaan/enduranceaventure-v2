@@ -7,47 +7,59 @@ import Layout from '../../layouts/Layout.astro';
   description="Captation vidéo 4K, drones et production d'émissions télévisées en environnements sauvages et sportifs."
   image="/assets/production-tele-services-endurance-aventure-e1517973509712.jpg"
 >
-  <div class="bg-brand-darker py-16 border-b border-brand-gray/50">
+  <!-- Header Sombre -->
+  <div class="bg-slate-950 py-16 sm:py-20 border-b border-slate-800">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <a href="/services" class="text-xs text-brand-cyan font-bold uppercase tracking-wider mb-4 inline-block">← Retour aux services</a>
+      <a href="/services" class="text-xs text-brand-cyan font-bold uppercase tracking-wider mb-4 inline-block hover:underline">← Retour aux services</a>
       <h1 class="text-3xl sm:text-5xl font-heading font-black uppercase text-white mb-4">
         Production Télé & Vidéo
       </h1>
-      <p class="text-lg text-slate-300 font-light leading-relaxed">
-        Des images à couper le souffle, capturées au plus près de l'action par des cadreurs sportifs aguerris.
+      <p class="text-base sm:text-lg text-slate-300 font-light leading-relaxed">
+        Des images saisissantes capturées au plus près de l'action par des cadreurs sportifs aguerris au terrain extrême.
       </p>
     </div>
   </div>
 
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="rounded-2xl overflow-hidden mb-12 shadow-2xl h-96">
-      <img src="/assets/production-tele-services-endurance-aventure-e1517973509712.jpg" alt="Production télévisuelle" class="w-full h-full object-cover" />
-    </div>
-
-    <div class="prose prose-invert max-w-none text-slate-300 space-y-6">
-      <h2 class="text-2xl font-heading font-bold text-white">Captation en milieux hostiles & Émissions TV</h2>
-      <p>
-        Avec des dizaines de productions diffusées sur les chaînes nationales et internationales (RDS, TVA Sports, canaux spécialisés aventure), Endurance Aventure dispose d'une équipe rodée aux tournages dans des conditions extrêmes : tempêtes hivernales, rivières déchaînées, forêts boréales et haute mer.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-        <div class="bg-brand-darker p-6 rounded-xl border border-brand-gray">
-          <h3 class="font-bold text-white mb-2">Prises de vue par Drone Certifié</h3>
-          <p class="text-xs text-slate-400">Pilotes accrédités pour des survols spectaculaires des sommets, pelotons de gravelle et courses aquatiques.</p>
-        </div>
-        <div class="bg-brand-darker p-6 rounded-xl border border-brand-gray">
-          <h3 class="font-bold text-white mb-2">Cadreurs Sportifs Embarqués</h3>
-          <p class="text-xs text-slate-400">Nos cadreurs suivent les athlètes à pied, en ski, en kayak ou en vélo pour capter l'émotion brute au cœur de l'épreuve.</p>
-        </div>
+  <!-- Contenu Principal sur Fond Clair -->
+  <div class="bg-slate-50 py-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl overflow-hidden mb-12 shadow-md h-96 bg-slate-200">
+        <img src="/assets/production-tele-services-endurance-aventure-e1517973509712.jpg" alt="Production télévisuelle" class="w-full h-full object-cover" />
       </div>
 
-      <div class="bg-brand-dark p-8 rounded-2xl border border-brand-cyan text-center mt-12">
-        <h3 class="text-xl font-heading font-bold text-white mb-2">Besoin d'une production audiovisuelle sportive ?</h3>
-        <p class="text-sm text-slate-300 mb-6">Parlons de votre projet de film, clip promotionnel ou émission sportive.</p>
-        <a href="/contact" class="px-8 py-3.5 rounded-xl bg-brand-cyan text-white font-bold text-xs uppercase tracking-wider hover:bg-brand-cyan-light transition-all inline-block shadow-lg">
-          Demander un devis de tournage
-        </a>
+      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm space-y-8 text-slate-700 leading-relaxed text-sm sm:text-base">
+        <div>
+          <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">Tournage Hors Norme</span>
+          <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 mb-4">Captation en milieux hostiles & Émissions TV</h2>
+          <p>
+            Sous la direction de <strong class="text-slate-900 font-semibold">Daniel Poirier</strong>, notre unité de tournage réalise des documentaires et émissions d'aventure pour les diffuseurs majeurs (RDS, TVA Sports, canaux spécialisés et réseaux internationaux).
+          </p>
+          <p class="mt-4">
+            Nos équipes sont habituées à intervenir là où les moyens traditionnels ne peuvent accéder : tempêtes hivernales à -30°C, portages en canot sur des rapides, ascensions de parois rocheuses et suivis de pelotons de gravelle dans la poussière.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-2">Prises de vue par Drone Certifié</h3>
+            <p class="text-xs sm:text-sm text-slate-600">Pilotes certifiés Transports Canada pour opérations avancées. Survol de pelotons, canyons et paysages grandioses avec caméra cinématographique 4K.</p>
+          </div>
+          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+            <h3 class="font-bold text-slate-900 mb-2">Cadreurs Sportifs Embarqués</h3>
+            <p class="text-xs sm:text-sm text-slate-600">Nos cadreurs suivent les athlètes à pied, en ski, en kayak de mer ou en vélo pour capter la sueur, l'effort et l'émotion brute sans ralentir l'épreuve.</p>
+          </div>
+        </div>
+
+        <!-- Banner Action Sombre -->
+        <div class="bg-slate-950 text-white p-8 rounded-3xl shadow-xl border border-slate-800 text-center">
+          <h3 class="text-xl sm:text-2xl font-heading font-bold text-white mb-2">Un projet de film, documentaire ou captation d'événement ?</h3>
+          <p class="text-xs sm:text-sm text-slate-300 mb-6">Parlons de votre cahier des charges et de la logistique requise.</p>
+          <a href="/contact" class="px-8 py-3.5 rounded-xl bg-brand-cyan hover:bg-cyan-600 text-white font-bold text-xs uppercase tracking-wider transition-all inline-block shadow-lg">
+            Demander un devis de tournage
+          </a>
+        </div>
       </div>
     </div>
   </div>
+
 </Layout>

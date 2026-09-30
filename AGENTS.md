@@ -9,7 +9,7 @@ Modern, high-performance, and secure web application rebuilding Endurance Aventu
   - Primary Red: `#DB2E3C` (Action & Adventure accents)
   - Dark Charcoal: `#171720` (Immersive deep background)
   - Action Cyan: `#0099C5` (Water, outdoor trails & Secondary CTA)
-  - Muted Slate: `#8A8D9F`
+- **Design Pattern**: Hybrid Outdoor Contrast (Dark cinematic media/hero banners + clean high-readability light content `#F8FAFC`/`#FFFFFF`, matching Arc'teryx/Salomon/Ironman industry standards).
 - **Typography**:
   - Headings: `Montserrat`, `Impact`, sans-serif
   - Body: `Source Sans 3`, `Inter`, sans-serif

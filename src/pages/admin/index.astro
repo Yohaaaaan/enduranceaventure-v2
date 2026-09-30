@@ -7,6 +7,7 @@ import Layout from '../../layouts/Layout.astro';
   description="Panneau d'administration et statistiques de fréquentation du site Endurance Aventure."
 >
 
+  <div class="bg-brand-dark min-h-[85vh] text-slate-100">
   <!-- LOGIN MODAL / SCREEN (shown when not authenticated) -->
   <div id="login-overlay" class="min-h-[70vh] flex items-center justify-center px-4 py-16">
     <div class="w-full max-w-md bg-brand-darker border border-brand-gray/80 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
@@ -446,5 +447,6 @@ import Layout from '../../layouts/Layout.astro';
       if (getToken()) loadStats();
     }, 15000);
   </script>
+  </div>
 
 </Layout>

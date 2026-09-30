@@ -35,15 +35,15 @@ const gbcSchema = {
   jsonLd={gbcSchema}
 >
 
-  <!-- Banner Hero GBC500 -->
-  <section class="relative min-h-[65vh] flex items-center justify-center bg-brand-darker overflow-hidden">
+  <!-- BANNER HERO GBC500 SOMBRE (Action & Immersion) -->
+  <section class="relative min-h-[65vh] flex items-center justify-center bg-slate-950 overflow-hidden">
     <img 
       src="/assets/2023-08-05_GBC500_mc_1498-scaled.webp" 
       alt="GBC 500 Gravel Bike" 
-      class="absolute inset-0 w-full h-full object-cover opacity-40 scale-105"
+      class="absolute inset-0 w-full h-full object-cover opacity-35 scale-105"
       onerror="this.src='/assets/2023-08-05_GBC500_mc_1498-scaled.jpg'"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent"></div>
     
     <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
       <img 
@@ -55,7 +55,7 @@ const gbcSchema = {
         Gravel Bikepacking Challenge 500
       </h1>
       <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed mb-8">
-        500 kilomètres d'autonomie, de poussière, de dénivelé et de liberté absolue sur les plus belles routes non pavées du Québec.
+        500 kilomètres d'autonomie, de poussière, de dénivelé et de liberté absolue sur les plus belles routes non pavées des Cantons-de-l'Est.
       </p>
 
       <div class="flex flex-wrap items-center justify-center gap-4">
@@ -66,22 +66,24 @@ const gbcSchema = {
           S'inscrire à l'Édition 2026
         </a>
         <a 
-          href="#suivi" 
-          class="px-8 py-4 rounded-xl bg-brand-cyan/20 border border-brand-cyan/50 hover:bg-brand-cyan hover:text-white text-brand-cyan text-sm font-bold uppercase tracking-wider transition-all"
+          href="#reglements" 
+          class="px-8 py-4 rounded-xl bg-slate-900/80 border border-slate-700 hover:border-slate-500 text-slate-200 text-sm font-bold uppercase tracking-wider transition-all backdrop-blur-sm"
         >
-          🛰️ Suivi GPS & Classements
+          Guide & Règlements
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Distances & Formats -->
-  <section id="parcours" class="py-20 bg-brand-dark">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- CONTENU PRINCIPAL SUR FOND CLAIR (Lecture et étude de parcours optimales) -->
+  <div class="bg-slate-50 py-20 space-y-24">
+    
+    <!-- Distances & Formats -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Formats Officiels</span>
-        <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase text-white">
+        <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase text-slate-900">
           3 Défis Adaptés à Vos Objectifs
         </h2>
       </div>
@@ -89,115 +91,124 @@ const gbcSchema = {
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
         <!-- Format 500 km -->
-        <div class="rounded-2xl bg-brand-darker border-2 border-brand-red p-8 flex flex-col justify-between relative shadow-2xl">
-          <span class="absolute -top-3.5 right-6 px-3 py-1 rounded-full bg-brand-red text-white text-[11px] font-bold uppercase tracking-wider">
+        <div class="rounded-3xl bg-white border-2 border-brand-red p-8 sm:p-10 flex flex-col justify-between relative shadow-xl">
+          <span class="absolute -top-3.5 right-6 px-3.5 py-1 rounded-full bg-brand-red text-white text-[11px] font-bold uppercase tracking-wider shadow">
             L'Épreuve Reine
           </span>
           <div>
             <div class="text-4xl font-heading font-black text-brand-red mb-1">500 KM</div>
-            <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-4">Autonomie complète ou par étapes</div>
-            <p class="text-sm text-slate-300 leading-relaxed mb-6">
-              Le tour complet des Cantons-de-l'Est et de la Réserve internationale de ciel étoilé du Mont Mégantic. Plus de 6 000 m de dénivelé positif.
+            <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-4">Autonomie complète ou par étapes</div>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+              Le tour complet des Cantons-de-l'Est et de la Réserve internationale de ciel étoilé du Mont Mégantic. Plus de 6 000 m de dénivelé positif cumulé.
             </p>
-            <ul class="space-y-2 text-xs text-slate-400 mb-8">
-              <li>• Suivi GPS en direct par balise satellite</li>
-              <li>• Points de ravitaillement et bivouacs officiels</li>
-              <li>• Finisher Patch & T-shirt exclusif Argon 18</li>
+            <ul class="space-y-2.5 text-xs text-slate-700 mb-8 border-t border-slate-100 pt-4">
+              <li class="flex items-center gap-2"><span class="text-brand-red font-bold">✓</span> Suivi GPS en direct par balise satellite</li>
+              <li class="flex items-center gap-2"><span class="text-brand-red font-bold">✓</span> Points de ravitaillement et bivouacs officiels</li>
+              <li class="flex items-center gap-2"><span class="text-brand-red font-bold">✓</span> Finisher Patch & T-shirt exclusif Argon 18</li>
             </ul>
           </div>
-          <a href="/contact" class="w-full py-3 rounded-lg bg-brand-red text-white font-heading font-bold text-center text-xs uppercase tracking-wider hover:bg-brand-red-dark transition-all">
+          <a href="/contact" class="w-full py-3.5 rounded-xl bg-brand-red text-white font-heading font-bold text-center text-xs uppercase tracking-wider hover:bg-brand-red-dark transition-all shadow-md">
             Choisir le 500 km
           </a>
         </div>
 
         <!-- Format 250 km -->
-        <div class="rounded-2xl bg-brand-darker border border-brand-gray p-8 flex flex-col justify-between hover:border-slate-500 transition-all">
+        <div class="rounded-3xl bg-white border border-slate-200 p-8 sm:p-10 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all">
           <div>
-            <div class="text-4xl font-heading font-black text-white mb-1">250 KM</div>
-            <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-4">Le Semi-Bikepacking Express</div>
-            <p class="text-sm text-slate-300 leading-relaxed mb-6">
+            <div class="text-4xl font-heading font-black text-slate-900 mb-1">250 KM</div>
+            <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-4">Le Semi-Bikepacking Express</div>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">
               Une immersion dense de 2 jours avec nuitée en bivouac pour découvrir l'esprit du gravel bikepacking sur un tracé spectaculaire.
             </p>
-            <ul class="space-y-2 text-xs text-slate-400 mb-8">
-              <li>• Idéal pour une première expérience bikepacking</li>
-              <li>• Trace GPX certifiée fournie</li>
-              <li>• Repas d'arrivée festif</li>
+            <ul class="space-y-2.5 text-xs text-slate-700 mb-8 border-t border-slate-100 pt-4">
+              <li class="flex items-center gap-2"><span class="text-brand-cyan font-bold">✓</span> Idéal pour une première expérience bikepacking</li>
+              <li class="flex items-center gap-2"><span class="text-brand-cyan font-bold">✓</span> Trace GPX certifiée fournie</li>
+              <li class="flex items-center gap-2"><span class="text-brand-cyan font-bold">✓</span> Repas d'arrivée festif & douche</li>
             </ul>
           </div>
-          <a href="/contact" class="w-full py-3 rounded-lg bg-brand-gray text-white font-heading font-bold text-center text-xs uppercase tracking-wider hover:bg-brand-red transition-all">
+          <a href="/contact" class="w-full py-3.5 rounded-xl bg-slate-900 text-white font-heading font-bold text-center text-xs uppercase tracking-wider hover:bg-brand-red transition-all shadow-md">
             Choisir le 250 km
           </a>
         </div>
 
         <!-- Format 100 km -->
-        <div class="rounded-2xl bg-brand-darker border border-brand-gray p-8 flex flex-col justify-between hover:border-slate-500 transition-all">
+        <div class="rounded-3xl bg-white border border-slate-200 p-8 sm:p-10 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all">
           <div>
             <div class="text-4xl font-heading font-black text-brand-cyan mb-1">100 KM</div>
-            <div class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-4">Gravel Day Challenge</div>
-            <p class="text-sm text-slate-300 leading-relaxed mb-6">
-              Une journée pure gravelle sur les chemins pittoresques sans charge de bivouac. Accessible aux passionnés de vitesse et de grands espaces.
+            <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-4">Gravel Day Challenge</div>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+              Une journée pure gravelle sur les chemins de rang pittoresques sans charge de bivouac. Accessible et rythmé.
             </p>
-            <ul class="space-y-2 text-xs text-slate-400 mb-8">
-              <li>• Ravitaillements liquides et solides</li>
-              <li>• Assistance mécanique au départ</li>
-              <li>• Médaille commémorative</li>
+            <ul class="space-y-2.5 text-xs text-slate-700 mb-8 border-t border-slate-100 pt-4">
+              <li class="flex items-center gap-2"><span class="text-slate-900 font-bold">✓</span> Ravitaillements liquides et solides</li>
+              <li class="flex items-center gap-2"><span class="text-slate-900 font-bold">✓</span> Assistance mécanique au départ</li>
+              <li class="flex items-center gap-2"><span class="text-slate-900 font-bold">✓</span> Médaille commémorative Finisher</li>
             </ul>
           </div>
-          <a href="/contact" class="w-full py-3 rounded-lg bg-brand-gray text-white font-heading font-bold text-center text-xs uppercase tracking-wider hover:bg-brand-red transition-all">
+          <a href="/contact" class="w-full py-3.5 rounded-xl bg-slate-900 text-white font-heading font-bold text-center text-xs uppercase tracking-wider hover:bg-brand-red transition-all shadow-md">
             Choisir le 100 km
           </a>
         </div>
 
       </div>
 
-    </div>
-  </section>
+    </section>
 
-  <!-- SUIVI EN TEMPS RÉEL & RÉSULTATS (Intégration propre) -->
-  <section id="suivi" class="py-20 bg-brand-darker border-t border-brand-gray/60">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="rounded-3xl bg-brand-dark border border-brand-cyan/40 p-8 sm:p-12">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-          <div class="space-y-4">
-            <span class="inline-flex items-center gap-2 px-3 py-1 rounded bg-brand-cyan/20 text-brand-cyan text-xs font-bold uppercase tracking-wider">
-              <span class="w-2 h-2 rounded-full bg-brand-cyan animate-ping"></span>
-              Live Tracking & Résultats
-            </span>
-            <h3 class="text-2xl sm:text-3xl font-heading font-bold text-white">
-              Suivi Satellite & Classements Officiels
-            </h3>
-            <p class="text-sm text-slate-300 leading-relaxed max-w-xl">
-              Pendant toute la durée de l'épreuve, chaque coureur est équipé d'une balise satellite permettant à ses proches, aux équipes de secours et aux passionnés de suivre sa progression en direct sur la carte interactive.
-            </p>
+    <!-- SECTION MATÉRIEL OBLIGATOIRE & SÉCURITÉ (Ancrée dans la réalité du terrain) -->
+    <section id="reglements" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm">
+        <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Sécurité & Autonomie</span>
+        <h3 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 mb-6">
+          Équipement Obligatoire des Athlètes
+        </h3>
+        <p class="text-sm text-slate-600 mb-8 leading-relaxed">
+          Le GBC 500 traverse des secteurs forestiers isolés. Pour garantir votre sécurité, un contrôle technique du matériel est effectué avant le départ.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-700">
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="font-bold text-slate-900">Éclairage & Visibilité</div>
+            <div>• Feu avant puissant (minimum 500 lumens) avec autonomie pour la nuit.</div>
+            <div>• Feu arrière rouge clignotant + gilet ou bandes réfléchissantes.</div>
           </div>
-          <div class="flex flex-col gap-3 flex-shrink-0 w-full sm:w-auto">
-            <a 
-              href="/contact" 
-              class="px-6 py-3.5 rounded-xl bg-brand-cyan hover:bg-brand-cyan-light text-white font-bold text-xs uppercase tracking-wider text-center transition-all shadow-lg shadow-brand-cyan/20"
-            >
-              Accéder à la carte Live →
-            </a>
-            <a 
-              href="/nouvelles" 
-              class="px-6 py-3.5 rounded-xl bg-brand-gray text-white font-bold text-xs uppercase tracking-wider text-center hover:bg-slate-700 transition-all"
-            >
-              Archives des Résultats
-            </a>
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="font-bold text-slate-900">Navigation & Communication</div>
+            <div>• Compteur GPS ou montre avec la trace GPX officielle chargée.</div>
+            <div>• Téléphone cellulaire chargé dans un étui étanche + batterie externe (power bank).</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="font-bold text-slate-900">Survie & Premiers Soins</div>
+            <div>• Couverture isothermique de survie et sifflet sans bille.</div>
+            <div>• Trousse de premiers soins de base et réserve d'eau minimale de 1,5 L.</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="font-bold text-slate-900">Mécanique & Dépannage</div>
+            <div>• 2 chambres à air adaptées (ou mèches tubeless) + pompe ou cartouches CO2.</div>
+            <div>• Outil multifonction avec dérive-chaîne et maillon rapide (quick-link).</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Partenaires Officiels -->
-  <section class="py-16 bg-brand-dark border-t border-brand-gray/60">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <span class="text-xs uppercase tracking-widest text-slate-500 font-bold block mb-4">Présenté en partenariat avec</span>
-      <div class="flex items-center justify-center gap-10 opacity-80 hover:opacity-100 transition-opacity">
-        <img src="/assets/logo-argon-18-2.png" alt="Argon 18" class="h-12 w-auto object-contain" />
-        <img src="/assets/orford_logo-original_fond_transparent.png" alt="Mont Orford" class="h-12 w-auto object-contain" />
+    <!-- BANDEAU SUIVI GPS SOMBRE (Contraste d'action) -->
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-slate-950 text-white p-8 sm:p-12 shadow-2xl border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div>
+          <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">Pendant la Course</span>
+          <h3 class="text-2xl font-heading font-black uppercase text-white mb-2">Suivi GPS Satellite en Direct</h3>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-lg leading-relaxed">
+            Suivez la progression des cyclistes en temps réel sur la carte interactive satellite avec pointages automatiques à chaque relais.
+          </p>
+        </div>
+        <a 
+          href="/contact" 
+          class="px-8 py-4 rounded-xl bg-brand-cyan hover:bg-cyan-600 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all flex-shrink-0 shadow-lg shadow-brand-cyan/20"
+        >
+          Accéder à la Carte Satellite →
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </div>
 
 </Layout>
