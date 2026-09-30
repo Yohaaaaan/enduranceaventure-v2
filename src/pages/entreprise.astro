@@ -1,101 +1,205 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const team = [
+  {
+    name: 'Bastien Michau',
+    role: 'Associé, Directeur de course & Dessinateur de parcours',
+    bio: 'Guide spéléo et canyon, raideur d\'expédition et orienteur chevronné. Figure incontournable du raid aventure en Amérique du Nord, Bastien conçoit et supervise les tracés les plus exigeants, notamment le Raid Témiscamingue et le premier Championnat du monde junior de raid aventure (ARWS).',
+    image: '/assets/bastien-michau.webp',
+    fallback: '/assets/bastien-michau.jpg',
+    email: 'bmichau@enduranceaventure.com',
+    highlight: true,
+  },
+  {
+    name: 'Daniel Poirier',
+    role: 'Cofondateur, Directeur de la production télévisuelle',
+    bio: 'Cofondateur d\'Endurance Aventure en 1998. Raideur passionné et triathlète longue distance, Daniel pilote la réalisation de documentaires sportifs et les tournages extrêmes en milieux hostiles diffusés sur les télévisions nationales.',
+    image: '/assets/daniel-poirier-endurance-aventure.webp',
+    fallback: '/assets/daniel-poirier-endurance-aventure.jpg',
+    email: 'dpoirier@enduranceaventure.com',
+    highlight: true,
+  },
+  {
+    name: 'Jean-Thomas Boily',
+    role: 'Cofondateur, Directeur des opérations & de la logistique',
+    bio: 'Cofondateur de l\'entreprise, skieur de fond paralympien et cycliste d\'élite. Jean-Thomas orchestre la logistique globale, la sécurité des parcours et l\'ingénierie terrain de chaque épreuve.',
+    image: '/assets/jean-thomas-boily.webp',
+    fallback: '/assets/jean-thomas-boily.jpg',
+    email: 'jtboily@enduranceaventure.com',
+    highlight: true,
+  },
+  {
+    name: 'Marc Plante',
+    role: 'Associé, Producteur exécutif & Distribution',
+    bio: 'Associé depuis 2017. Passionné de hockey et de sport d\'équipe, Marc assure la production exécutive des projets documentaires et développe les partenariats de distribution internationale.',
+    image: '/assets/marc-plante.webp',
+    fallback: '/assets/marc-plante.jpg',
+    email: 'mplante@enduranceaventure.com',
+    highlight: false,
+  },
+  {
+    name: 'Patricia Desgagné',
+    role: 'Relations médias & Athlètes internationaux',
+    bio: 'Anthropologue et polyglotte, Patricia coordonne l\'accueil et l\'accompagnement des délégations internationales, des équipes d\'expédition et des journalistes étrangers.',
+    image: '/assets/patricia-desgagne.webp',
+    fallback: '/assets/patricia-desgagne.jpg',
+    email: 'pdesgagne@enduranceaventure.com',
+    highlight: false,
+  },
+];
 ---
 
 <Layout 
   title="L'Entreprise & L'Équipe | Endurance Aventure" 
-  description="Découvrez l'histoire d'Endurance Aventure, fondée par Daniel Poirier, pionnière des courses d'aventure et de la production extrême au Québec."
-  image="/assets/daniel-poirier-endurance-aventure.jpg"
+  description="Fondée en 1998 au Québec par Jean-Thomas Boily et Daniel Poirier, rejoints par Bastien Michau et Marc Plante. Découvrez l'histoire et les visages d'Endurance Aventure."
+  image="/assets/bastien-michau.webp"
 >
   
+  <!-- En-tête de page sobre et authentique -->
   <div class="bg-brand-darker py-16 border-b border-brand-gray/50">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="text-brand-red text-sm font-bold uppercase tracking-widest block mb-2">Depuis plus de 20 ans</span>
-      <h1 class="text-4xl sm:text-6xl font-heading font-black uppercase tracking-tight text-white mb-4">
-        L'Entreprise & L'Histoire
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Histoire & Gouvernance</span>
+      <h1 class="text-3xl sm:text-5xl font-heading font-black uppercase text-white mb-4">
+        L'Entreprise & L'Équipe
       </h1>
-      <p class="max-w-2xl text-base sm:text-lg text-slate-300 font-light leading-relaxed">
-        Une passion inébranlable pour le dépassement de soi, la nature sauvage québécoise et l'organisation d'épreuves légendaires.
+      <p class="max-w-3xl text-base sm:text-lg text-slate-300 font-light leading-relaxed">
+        Créée en 1998 au Québec, Endurance Aventure transforme les territoires sauvages en théâtres d'épreuves d'endurance mythiques et produit des images d'expédition diffusées à travers le monde.
       </p>
     </div>
   </div>
 
-  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-24">
     
-    <!-- Story & Founder -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center mb-20">
-      <div class="md:col-span-1 rounded-2xl overflow-hidden border border-brand-gray shadow-2xl">
-        <img 
-          src="/assets/daniel-poirier-endurance-aventure.jpg" 
-          alt="Daniel Poirier - Fondateur Endurance Aventure" 
-          class="w-full h-auto object-cover"
-        />
-        <div class="p-4 bg-brand-darker text-center">
-          <div class="font-heading font-bold text-white text-base">Daniel Poirier</div>
-          <div class="text-xs text-brand-red font-semibold uppercase tracking-wider">Fondateur & Directeur de course</div>
-        </div>
-      </div>
-
-      <div class="md:col-span-2 space-y-5 text-slate-300 leading-relaxed text-sm sm:text-base">
+    <!-- Histoire et Genèse -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-7 space-y-6 text-slate-300 leading-relaxed text-sm sm:text-base">
         <h2 class="text-2xl sm:text-3xl font-heading font-bold text-white">
-          Pionnier de l'aventure sportive au Québec
+          Révéler le potentiel des grands espaces québécois
         </h2>
         <p>
-          Fondée par Daniel Poirier, athlète d'endurance passionné et organisateur chevronné, <strong class="text-white">Endurance Aventure</strong> a tracé certains des parcours les plus exigeants et spectaculaires du Canada.
+          Fondée en 1998 par <strong class="text-white">Jean-Thomas Boily</strong> et <strong class="text-white">Daniel Poirier</strong>, Endurance Aventure s'est bâtie sur le terrain, en explorant les cours d'eau, les forêts denses et les chaînes de montagnes du Canada. En 2017, <strong class="text-white">Bastien Michau</strong> et <strong class="text-white">Marc Plante</strong> ont rejoint la direction en tant qu'associés, propulsant le rayonnement international de l'entreprise.
         </p>
         <p>
-          De la péninsule gaspésienne aux forêts sauvages du Témiscamingue, en passant par les sommets du Mont-Orford et les chemins de terre du Mont Mégantic, notre équipe cumule plus de deux décennies d'expérience terrain dans la logistique d'expédition, la sécurité civile en milieu isolé et la captation télévisuelle tout-terrain.
+          Aujourd'hui, Endurance Aventure cumule plus de <strong class="text-white font-semibold">10 000 km de parcours balisés</strong>, des dizaines d'événements majeurs (GBC 500, Raid International Gaspésie, Raid Témiscamingue, Canada Man/Woman Xtri, Trail des Neiges) et mobilise un réseau de <strong class="text-white font-semibold">150 spécialistes</strong> (traceurs, secouristes d'expédition, cadreurs tout-terrain, logisticiens).
         </p>
         <p>
-          Chaque épreuve que nous concevons repose sur un principe fondateur : offrir aux participants un défi authentique, respectueux de l'environnement, avec un niveau d'encadrement et de sécurité irréprochable.
+          Parallèlement aux épreuves sportives, notre division audiovisuelle produit des émissions et documentaires d'aventure captivants pour les diffuseurs télévisuels et plateformes de streaming, offrant aux régions hôtes une vitrine d'attractivité touristique mondiale.
         </p>
+      </div>
+
+      <div class="lg:col-span-5 bg-brand-darker rounded-2xl border border-brand-gray p-8 space-y-6">
+        <h3 class="text-lg font-heading font-bold text-white border-l-2 border-brand-red pl-3">
+          Repères & Chiffres Clés
+        </h3>
+        <dl class="space-y-4 text-xs sm:text-sm">
+          <div class="border-b border-brand-gray/50 pb-3">
+            <dt class="text-slate-400 font-medium">Fondation</dt>
+            <dd class="text-white font-bold text-base mt-0.5">1998 au Québec (Plus de 25 ans d'activité)</dd>
+          </div>
+          <div class="border-b border-brand-gray/50 pb-3">
+            <dt class="text-slate-400 font-medium">Parcours tracés & validés</dt>
+            <dd class="text-white font-bold text-base mt-0.5">+ 10 000 kilomètres en pleine nature</dd>
+          </div>
+          <div class="border-b border-brand-gray/50 pb-3">
+            <dt class="text-slate-400 font-medium">Équipe de direction</dt>
+            <dd class="text-white font-bold text-base mt-0.5">Jean-Thomas Boily, Daniel Poirier, Bastien Michau, Marc Plante</dd>
+          </div>
+          <div>
+            <dt class="text-slate-400 font-medium">Siège opérationnel</dt>
+            <dd class="text-white font-bold text-base mt-0.5">Magog, Cantons-de-l'Est, Québec, Canada</dd>
+          </div>
+        </dl>
       </div>
     </div>
 
-    <!-- Values & Philosophy -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-      <div class="bg-brand-darker p-8 rounded-2xl border border-brand-gray">
-        <div class="w-12 h-12 rounded-xl bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red font-bold text-xl mb-6">
-          01
-        </div>
-        <h3 class="text-xl font-heading font-bold text-white mb-3">Authenticité & Nature</h3>
-        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-          Nous privilégions des parcours 100% sauvages, en symbiose avec les territoires d'accueil et les communautés locales.
+    <!-- Direction & Membres Clés -->
+    <div>
+      <div class="mb-12">
+        <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-1">Expertise Terrain</span>
+        <h2 class="text-2xl sm:text-4xl font-heading font-black uppercase text-white">
+          L'Équipe de Direction
+        </h2>
+        <p class="text-sm text-slate-400 mt-2">
+          Des athlètes d'endurance, guides de haute nature et producteurs au service de vos défis.
         </p>
       </div>
 
-      <div class="bg-brand-darker p-8 rounded-2xl border border-brand-gray">
-        <div class="w-12 h-12 rounded-xl bg-brand-cyan/10 border border-brand-cyan/30 flex items-center justify-center text-brand-cyan font-bold text-xl mb-6">
-          02
-        </div>
-        <h3 class="text-xl font-heading font-bold text-white mb-3">Sécurité & Précision</h3>
-        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-          Chronométrage électronique de précision, suivi GPS temps réel par satellite et équipes de secours médicales spécialisées outdoor.
-        </p>
-      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {team.map((member) => (
+          <div class={`rounded-2xl bg-brand-darker border overflow-hidden flex flex-col justify-between transition-all duration-300 ${member.highlight ? 'border-slate-700 hover:border-brand-red' : 'border-brand-gray/60 hover:border-slate-600'}`}>
+            <div>
+              <div class="h-64 overflow-hidden bg-brand-gray/50 relative">
+                <img 
+                  src={member.image} 
+                  alt={member.name} 
+                  class="w-full h-full object-cover object-top filter grayscale contrast-110 hover:grayscale-0 transition-all duration-300"
+                  onerror={`this.src='${member.fallback}'`}
+                />
+                {member.name.includes('Bastien') && (
+                  <span class="absolute top-3 right-3 px-2.5 py-1 rounded bg-brand-red text-white text-[11px] font-bold uppercase tracking-wider shadow-md">
+                    Directeur de course
+                  </span>
+                )}
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-heading font-bold text-white mb-1">
+                  {member.name}
+                </h3>
+                <div class="text-xs font-semibold text-brand-cyan mb-4">
+                  {member.role}
+                </div>
+                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                  {member.bio}
+                </p>
+              </div>
+            </div>
 
-      <div class="bg-brand-darker p-8 rounded-2xl border border-brand-gray">
-        <div class="w-12 h-12 rounded-xl bg-slate-700/30 border border-slate-600 flex items-center justify-center text-white font-bold text-xl mb-6">
-          03
-        </div>
-        <h3 class="text-xl font-heading font-bold text-white mb-3">Image & Immersion</h3>
-        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-          Une qualité de production audiovisuelle reconnue mondialement par les réseaux télévisés pour immortaliser chaque exploit.
-        </p>
+            <div class="px-6 pb-6 pt-2">
+              <a 
+                href={`mailto:${member.email}`} 
+                class="text-xs font-semibold text-slate-400 hover:text-white flex items-center gap-1.5 transition-colors"
+              >
+                <svg class="w-3.5 h-3.5 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <span>{member.email}</span>
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
 
-    <!-- CTA Section -->
-    <div class="rounded-3xl bg-gradient-to-r from-brand-darker to-brand-gray border border-slate-700 p-8 sm:p-12 text-center">
-      <h3 class="text-2xl sm:text-3xl font-heading font-bold text-white mb-4">
-        Envie de collaborer ou de participer ?
-      </h3>
-      <p class="text-sm text-slate-300 max-w-xl mx-auto mb-8">
-        Que vous soyez un athlète à la recherche de votre prochain défi ou une organisation désireuse de créer son événement, notre équipe est à votre écoute.
-      </p>
-      <a href="/contact" class="px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all inline-block shadow-lg">
-        Nous Contacter →
-      </a>
+    <!-- Nos Valeurs Fondatrices -->
+    <div class="bg-brand-dark rounded-3xl border border-brand-gray p-8 sm:p-12">
+      <div class="max-w-2xl mb-10">
+        <h3 class="text-2xl font-heading font-bold text-white mb-3">Nos Valeurs Fondatrices</h3>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          Chez Endurance Aventure, chaque projet est bâti en relation étroite avec les communautés d'accueil, avec la passion du plein air et la volonté de transmettre le goût de l'aventure aux nouvelles générations.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-5 rounded-xl bg-brand-darker border border-brand-gray/50">
+          <div class="text-2xl mb-2">🧭</div>
+          <div class="text-sm font-bold text-white">Créativité & Tracé</div>
+          <div class="text-xs text-slate-500 mt-1">Parcours inédits hors des sentiers battus</div>
+        </div>
+        <div class="p-5 rounded-xl bg-brand-darker border border-brand-gray/50">
+          <div class="text-2xl mb-2">🤝</div>
+          <div class="text-sm font-bold text-white">Confiance Locale</div>
+          <div class="text-xs text-slate-500 mt-1">Partenariat durable avec les municipalités</div>
+        </div>
+        <div class="p-5 rounded-xl bg-brand-darker border border-brand-gray/50">
+          <div class="text-2xl mb-2">🌱</div>
+          <div class="text-sm font-bold text-white">Développement Jeunesse</div>
+          <div class="text-xs text-slate-500 mt-1">Formation de la relève et championnats juniors</div>
+        </div>
+        <div class="p-5 rounded-xl bg-brand-darker border border-brand-gray/50">
+          <div class="text-2xl mb-2">🔥</div>
+          <div class="text-sm font-bold text-white">Passion de l'Extrême</div>
+          <div class="text-xs text-slate-500 mt-1">L'amour authentique du défi outdoor</div>
+        </div>
+      </div>
     </div>
 
   </div>
