@@ -70,6 +70,7 @@ Modern, high-performance, and secure web application rebuilding Endurance Aventu
    - 328MB legacy raw video moved to cold storage archive.
 
 4. **Privacy-First Analytics Dashboard (`/admin`)**:
+   - Password protected (`POST /api/auth`, Bearer session token).
    - Real-time visitor tracking (Pageviews, unique visitors, referrers, devices).
    - Zero third-party cookies (GDPR & privacy compliant).
    - Interactive Chart.js timeline and live visit stream.

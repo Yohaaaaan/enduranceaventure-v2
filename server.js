@@ -9,6 +9,8 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 4321;
 const DATA_FILE = path.join(__dirname, 'data', 'analytics.json');
+const ADMIN_PASS = process.env.ADMIN_PASSWORD || '123546789';
+const AUTH_TOKEN = 'ea_secure_session_' + Buffer.from(ADMIN_PASS).toString('base64');
 
 // Ensure data directory
 fs.mkdirSync(path.join(__dirname, 'data'), { recursive: true });
@@ -43,7 +45,28 @@ if (analytics.length < 50) {
 
 app.use(express.json());
 
-// API: Track page view
+// API: Verify Admin Password
+app.post('/api/auth', (req, res) => {
+  const { password } = req.body || {};
+  if (password === ADMIN_PASS) {
+    return res.json({ success: true, token: AUTH_TOKEN });
+  }
+  return res.status(401).json({ success: false, error: 'Mot de passe incorrect' });
+});
+
+// Middleware to protect stats
+function requireAdmin(req, res, next) {
+  const authHeader = req.headers['authorization'];
+  const queryAuth = req.query.token || req.query.auth;
+  const token = authHeader ? authHeader.replace('Bearer ', '') : queryAuth;
+
+  if (token === AUTH_TOKEN || token === ADMIN_PASS) {
+    return next();
+  }
+  return res.status(401).json({ error: 'Accès non autorisé. Authentification requise.' });
+}
+
+// API: Track page view (public)
 app.post('/api/track', (req, res) => {
   try {
     const { path: pagePath, referrer, screenWidth, timestamp } = req.body || {};
@@ -52,7 +75,6 @@ app.post('/api/track', (req, res) => {
     }
 
     const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1';
-    // Simple privacy hash (no raw IP stored)
     let hash = 0;
     for (let i = 0; i < clientIp.length; i++) {
       hash = (hash << 5) - hash + clientIp.charCodeAt(i);
@@ -77,10 +99,8 @@ app.post('/api/track', (req, res) => {
     };
 
     analytics.push(hit);
-    // Keep last 10,000 records
     if (analytics.length > 10000) analytics.shift();
 
-    // Persist periodically
     fs.writeFileSync(DATA_FILE, JSON.stringify(analytics, null, 2));
     res.status(200).json({ ok: true });
   } catch (err) {
@@ -88,19 +108,17 @@ app.post('/api/track', (req, res) => {
   }
 });
 
-// API: Aggregated stats
-app.get('/api/stats', (req, res) => {
+// API: Aggregated stats (PROTECTED with password / token)
+app.get('/api/stats', requireAdmin, (req, res) => {
   try {
     const totalViews = analytics.length;
     const uniqueIps = new Set(analytics.map(a => a.ipHash)).size;
 
-    // Top pages
     const pageCounts = {};
     const refCounts = {};
     const deviceCounts = { mobile: 0, desktop: 0 };
     const dateCounts = {};
 
-    // Generate last 7 days keys
     const days = [];
     for (let i = 6; i >= 0; i--) {
       const d = new Date(Date.now() - i * 86400000).toISOString().split('T')[0];
@@ -109,18 +127,13 @@ app.get('/api/stats', (req, res) => {
     }
 
     analytics.forEach(a => {
-      // Pages
       pageCounts[a.path] = (pageCounts[a.path] || 0) + 1;
-      
-      // Referrers
       const ref = a.referrer || 'Direct';
       refCounts[ref] = (refCounts[ref] || 0) + 1;
 
-      // Devices
       if (a.device === 'Mobile') deviceCounts.mobile++;
       else deviceCounts.desktop++;
 
-      // Timeline
       const day = (a.timestamp || '').split('T')[0];
       if (dateCounts[day] !== undefined) {
         dateCounts[day]++;
@@ -153,7 +166,7 @@ app.get('/api/stats', (req, res) => {
       topReferrers: sortedRefs,
       devices: deviceCounts,
       timeline: {
-        labels: days.map(d => d.slice(5)), // MM-DD
+        labels: days.map(d => d.slice(5)),
         values: days.map(d => dateCounts[d] || 0),
       },
       recent,
