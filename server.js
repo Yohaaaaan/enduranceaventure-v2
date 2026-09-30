@@ -178,15 +178,24 @@ app.get('/api/stats', requireAdmin, (req, res) => {
 
 // Serve static Astro dist files
 const distDir = path.join(__dirname, 'dist');
-app.use(express.static(distDir));
 
-// Fallback for HTML routing
-app.use((req, res) => {
+// Direct HTML page resolution (supports with or without trailing slash seamlessly with direct 200 OK)
+app.use((req, res, next) => {
+  if (req.method !== 'GET') return next();
   const cleanPath = req.path.replace(/^\/+|\/+$/g, '');
+  if (!cleanPath) return next();
+
   const htmlPath = path.join(distDir, cleanPath, 'index.html');
   if (fs.existsSync(htmlPath)) {
     return res.sendFile(htmlPath);
   }
+  next();
+});
+
+app.use(express.static(distDir));
+
+// Fallback for 404 or SPA fallback
+app.use((req, res) => {
   const rootIndex = path.join(distDir, 'index.html');
   if (fs.existsSync(rootIndex)) {
     return res.sendFile(rootIndex);
