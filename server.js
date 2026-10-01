@@ -252,6 +252,9 @@ app.use((req, res, next) => {
   if (req.path.startsWith('/services/chronometrage-logistique')) {
     return res.redirect(301, '/services/');
   }
+  if (req.path.startsWith('/evenements/trail-des-neiges')) {
+    return res.redirect(301, '/evenements/championnat-monde-junior-arws/');
+  }
   next();
 });
 

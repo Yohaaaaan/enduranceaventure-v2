@@ -203,6 +203,27 @@ const sponsors = [
               <span class="absolute top-4 left-4 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-brand-red text-white shadow-md">
                 {evt.category}
               </span>
+
+              <!-- Badge Logos Officiels sur capsule blanche -->
+              {evt.logo && (
+                <div class="absolute top-4 right-4 p-1.5 sm:p-2 rounded-xl bg-white shadow-lg border border-slate-200/90 flex items-center gap-2 z-10">
+                  <img 
+                    src={evt.logo} 
+                    alt={`Logo ${evt.title}`} 
+                    class="h-7 sm:h-9 w-auto object-contain max-w-[100px]" 
+                  />
+                  {evt.secondaryLogo && (
+                    <>
+                      <div class="h-6 w-px bg-slate-200"></div>
+                      <img 
+                        src={evt.secondaryLogo} 
+                        alt={`Partenaire / Logo secondaire ${evt.title}`} 
+                        class="h-6 sm:h-7 w-auto object-contain max-w-[70px]" 
+                      />
+                    </>
+                  )}
+                </div>
+              )}
               
               <!-- Badge Location -->
               <span class="absolute bottom-4 left-4 px-3 py-1 rounded-md text-xs font-semibold bg-slate-950/80 text-white backdrop-blur-sm">

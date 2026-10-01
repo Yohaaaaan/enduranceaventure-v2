@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import events from '../../data/events.json';
 ---
 
-<Layout title="Nos Événements Sportifs | Endurance Aventure" description="Découvrez les courses et défis sportifs d'Endurance Aventure : GBC 500, Trail des Neiges, Raids Multisports.">
+<Layout title="Nos Événements Sportifs | Endurance Aventure" description="Découvrez les courses et défis sportifs d'Endurance Aventure : GBC 500, Championnat du Monde Junior ARWS Témiscamingue, Raids Multisports.">
   
   <!-- Banner Sombre & Immersif -->
   <div class="bg-slate-950 py-16 sm:py-20 border-b border-slate-800">
@@ -48,7 +48,7 @@ import events from '../../data/events.json';
                       <div class="h-8 w-px bg-slate-200"></div>
                       <img 
                         src={evt.secondaryLogo} 
-                        alt="Partenaire Titre Argon 18" 
+                        alt={`Partenaire / Logo secondaire ${evt.title}`} 
                         class="h-7 sm:h-9 w-auto object-contain max-w-[90px]" 
                       />
                     </>

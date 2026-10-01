@@ -23,25 +23,27 @@
     "status": "Inscriptions Ouvertes"
   },
   {
-    "id": "trail-des-neiges",
-    "slug": "trail-des-neiges",
-    "title": "Trail des Neiges",
-    "subtitle": "La grande classique hivernale en raquettes et crampons",
-    "category": "Course Hivernale / Snow Trail",
-    "location": "Mont-Orford, QC",
-    "dates": "Février 2027",
-    "distance": "5 km / 10 km / 15 km Nocturne",
-    "image": "/assets/51581835318_775ae15a4e_k.webp",
-    "logo": "/assets/orford_logo-original_fond_transparent.png",
+    "id": "championnat-monde-junior-arws",
+    "slug": "championnat-monde-junior-arws",
+    "title": "Championnat du Monde Junior ARWS Témiscamingue",
+    "subtitle": "Le championnat du monde officiel des jeunes aventuriers U18 & U25",
+    "category": "Championnat Mondial / ARWS Series",
+    "location": "Témiscamingue, Québec, Canada",
+    "dates": "29 juillet au 2 août 2027",
+    "distance": "100 km • 4 Jours • Équipes de 2",
+    "image": "/assets/Raid-Temis-reperage4.webp",
+    "logo": "/assets/Logo-Mondiaux-Bilingue-.webp",
+    "secondaryLogo": "/assets/VF-Logo-Raid-Temiscamingue-coul.webp",
     "featured": true,
-    "description": "Affrontez le froid, la neige et les montées abruptes du Mont-Orford lors d'une des épreuves hivernales les plus emblématiques.",
+    "description": "Le rendez-vous planétaire de la relève de la course d'aventure : 100 km en autonomie totale (carte & boussole, canot, VTT, trail, nage et cordes) réunissant l'élite internationale U18 et U25.",
     "highlights": [
-      "Parcours illuminé en soirée",
-      "Ambiance festive avec feu de joie",
-      "Épreuve accessible à tous les niveaux"
+      "100 km en autonomie stricte carte & boussole",
+      "Équipes de 2 (U18 et U25 : mixte, féminine, masculine)",
+      "Canot boréal, VTT technique, trail & cordes",
+      "30 sélections nationales de 10+ pays (IARA / ARWS)"
     ],
-    "registrationLink": "/contact?type=general&subject=trail-des-neiges",
-    "status": "Bientôt Disponible"
+    "registrationLink": "https://www.arwsjuniorworld.com",
+    "status": "Sélection & Inscriptions 2027"
   },
   {
     "id": "raid-gaspesie",
@@ -74,7 +76,7 @@
     "dates": "Automne",
     "distance": "3 jours d'expédition",
     "image": "/assets/Raid-Temis-reperage4.webp",
-    "logo": "/assets/VF-Logo-Raid-Temiscamingue-coul.png",
+    "logo": "/assets/VF-Logo-Raid-Temiscamingue-coul.webp",
     "featured": false,
     "description": "Une épreuve légendaire de navigation et de dépassement de soi en milieu sauvage isolé.",
     "highlights": [
