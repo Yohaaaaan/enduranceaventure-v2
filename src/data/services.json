@@ -7,9 +7,9 @@
     "image": "/assets/organisation-evenements-sportifs-services-endurance-aventure.jpg",
     "description": "De la conception de parcours extrêmes à la gestion logistique et médicale complète, Endurance Aventure conçoit et réalise des événements outdoor inoubliables pour les marques, villes et entreprises.",
     "features": [
-      "Ingénierie et traçage de parcours (GPS, sécurité, autorisations)",
+      "Ingénierie et traçage de parcours (topographie, sécurité, autorisations)",
       "Logistique d'accueil, ravitaillements et campings",
-      "Chronométrage et gestion des classements en direct",
+      "Coordination des équipes terrain et bénévoles",
       "Sécurité civile, plans d'urgence et premiers secours"
     ]
   },
@@ -25,20 +25,6 @@
       "Production d'émissions télévisées et documentaires sportifs",
       "Clips promotionnels et capsules réseaux sociaux quotidiennes",
       "Post-production complète, montage dynamique et étalonnage"
-    ]
-  },
-  {
-    "id": "chronometrage-logistique",
-    "slug": "chronometrage-logistique",
-    "title": "Chronométrage Électronique & Suivi GPS Live",
-    "subtitle": "Précision et suivi des athlètes en temps réel",
-    "image": "/assets/51586236989_64f608f4ba_k.jpg",
-    "description": "Solutions de chronométrage par puces RFID et balises satellites de géolocalisation en direct pour la sécurité et le suivi des participants par leurs proches.",
-    "features": [
-      "Puces RFID jetables ou réutilisables",
-      "Suivi en temps réel sur carte interactive en ligne",
-      "Affichage instantané des temps intermédiaires et podiums",
-      "Alertes SOS et géosécurité pour les courses longue distance"
     ]
   }
 ]

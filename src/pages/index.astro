@@ -33,15 +33,6 @@ const serviceVisuals: Record<string, {
     btnBorderHover: 'hover:border-brand-cyan hover:bg-brand-cyan hover:text-white',
     bulletColor: 'text-brand-cyan',
     iconSvg: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/><circle cx="9" cy="13" r="2.2" class="fill-brand-cyan/20" stroke="currentColor" stroke-width="1.5"/><path stroke-linecap="round" stroke-width="1.8" d="M5 4h7"/></svg>`
-  },
-  'chronometrage-logistique': {
-    tag: 'RFID & Suivi Live',
-    badgeClass: 'bg-emerald-50 text-emerald-700 border-emerald-200/80',
-    iconBg: 'bg-emerald-50 border-emerald-200 text-emerald-600',
-    borderHover: 'hover:border-emerald-500/50 hover:shadow-emerald-500/10',
-    btnBorderHover: 'hover:border-emerald-600 hover:bg-emerald-600 hover:text-white',
-    bulletColor: 'text-emerald-600',
-    iconSvg: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="14" r="8" stroke-width="1.8"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 10v4l2.5 2.5"/><path stroke-linecap="round" stroke-width="1.8" d="M10 2h4M12 2v3M19 6l1.5-1.5"/><circle cx="12" cy="14" r="1.5" class="fill-emerald-600"/></svg>`
   }
 };
 
@@ -273,7 +264,7 @@ const sponsors = [
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl">
         {services.map((srv) => {
           const meta = serviceVisuals[srv.id] || {
             tag: 'Expertise Pro',

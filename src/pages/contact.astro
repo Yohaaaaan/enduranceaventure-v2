@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout 
   title="Contactez-Nous & Soumissions Corporatives | Endurance Aventure" 
-  description="Contactez l'équipe d'Endurance Aventure pour une demande de soumission B2B (événements d'entreprise, production télévisuelle, chronométrage) ou une question sur nos courses."
+  description="Contactez l'équipe d'Endurance Aventure pour une demande de soumission B2B (événements d'entreprise, production télévisuelle, logistique de terrain) ou une question sur nos courses."
 >
   
   <!-- Banner Sombre -->
@@ -184,7 +184,6 @@ import Layout from '../layouts/Layout.astro';
                     >
                       <option value="organisation-evenements">Organisation clé en main d'épreuve / Défi corpo</option>
                       <option value="production-tele">Production télévisuelle, 4K & Drones certifiés</option>
-                      <option value="chronometrage">Chronométrage RFID & Télémétrie satellite live</option>
                       <option value="ingenierie-securite">Ingénierie de parcours, plans d'urgence & sécurité</option>
                       <option value="autre">Projet combiné / Autre</option>
                     </select>
@@ -369,7 +368,7 @@ import Layout from '../layouts/Layout.astro';
     tabB2b?.addEventListener('click', () => setTab('b2b'));
     tabGen?.addEventListener('click', () => setTab('general'));
 
-    // Handle URL parameters (e.g. ?type=b2b, ?service=chronometrage, ?subject=trail-des-neiges)
+    // Handle URL parameters (e.g. ?type=b2b, ?service=production-tele, ?subject=trail-des-neiges)
     const params = new URLSearchParams(window.location.search);
     if (params.get('type') === 'general' || params.has('subject')) {
       setTab('general');

@@ -247,7 +247,14 @@ app.get('/api/contacts', requireAdmin, (req, res) => {
 // Serve static Astro dist files with aggressive caching for static assets
 const distDir = path.join(__dirname, 'dist');
 
-// Direct HTML page resolution (supports with or without trailing slash seamlessly)
+// Redirect removed chronometrage service cleanly
+app.use((req, res, next) => {
+  if (req.path.startsWith('/services/chronometrage-logistique')) {
+    return res.redirect(301, '/services/');
+  }
+  next();
+});
+
 app.use((req, res, next) => {
   if (req.method !== 'GET') return next();
   const cleanPath = req.path.replace(/^\/+|\/+$/g, '');
