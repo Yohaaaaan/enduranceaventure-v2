@@ -1,5 +1,21 @@
 [
   {
+    "id": "event-jarwc-2026",
+    "title": "Championnat du Monde Junior de Raid Aventure ARWS 2026",
+    "year": "2026",
+    "location": "Témiscamingue, Québec, Canada, 2026",
+    "category": "Raid Aventure Multisport",
+    "description": "Première historique mondiale au Témiscamingue du 23 au 26 juillet 2026 : le tout premier Championnat du monde junior de raid aventure (JARWC / ARWS), conçu et coordonné par Endurance Aventure avec le Raid Témiscamingue. 38 équipes et 76 jeunes athlètes élites venus de 10 pays (Canada, France, Nouvelle-Zélande, États-Unis, Brésil, Uruguay, Australie, Afrique du Sud...) ont bravé 100 km de parcours sauvage en autonomie complète : canot sur lacs boréaux, vélo de montagne technique, trekking d’orientation carte & boussole, nage et ateliers de cordes spectaculaires. Un couronnement planétaire inoubliable pour la jeunesse de l’aventure !",
+    "images": [
+      "/assets/arws-junior-world-temiscamingue-2026-1.webp",
+      "/assets/arws-junior-world-temiscamingue-2026-2.webp",
+      "/assets/arws-junior-world-temiscamingue-2026-3.webp",
+      "/assets/arws-junior-world-temiscamingue-2026-4.webp"
+    ],
+    "video": "https://www.youtube.com/embed/Ht5lGrOHqzo",
+    "link": "#"
+  },
+  {
     "id": "event-1",
     "title": "Raid International Témiscamingue 2024",
     "year": "2024",

@@ -24,7 +24,7 @@ const countAutres = pastEvents.filter(e => getCategoryGroup(e.category) === 'aut
 
 <Layout 
   title="Nos Événements & Rétrospective Historique | Endurance Aventure" 
-  description="Découvrez les 4 événements phares d'Endurance Aventure (GBC 500, Championnat du Monde Junior ARWS, Raids Multisports, Triathlon XTRI) et l'archive complète de 30 épreuves depuis 2008."
+  description="Découvrez les 4 événements phares d'Endurance Aventure (GBC 500, Championnat du Monde Junior ARWS, Raids Multisports, Triathlon XTRI) et l'archive complète de nos épreuves historiques."
 >
   
   <!-- Banner Sombre & Immersif -->
@@ -33,14 +33,14 @@ const countAutres = pastEvents.filter(e => getCategoryGroup(e.category) === 'aut
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-slate-900 border border-slate-700 text-brand-red text-xs font-bold uppercase tracking-widest mb-4">
         <span class="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
-        Calendrier 2026/2027 & Archives Historiques Officielles
+        Calendrier & Archives Historiques Officielles (2008 – 2026)
       </div>
       <h1 class="text-4xl sm:text-6xl font-heading font-black uppercase tracking-tight text-white mb-6">
         Les Événements <br class="hidden sm:inline" />
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-400">Endurance Aventure</span>
       </h1>
       <p class="max-w-3xl text-base sm:text-lg text-slate-300 font-light leading-relaxed mb-8">
-        Depuis plus de deux décennies, nous concevons des défis pionniers d’endurance en milieu sauvage. Retrouvez ici nos <strong class="text-white font-medium">4 grands événements phares</strong> ainsi que la totalité des <strong class="text-white font-medium">30 épreuves historiques</strong> qui ont façonné notre expertise au Québec et à l'international.
+        Depuis plus de deux décennies, nous concevons des défis pionniers d’endurance en milieu sauvage. Retrouvez ici nos <strong class="text-white font-medium">4 grands événements phares</strong> ainsi que la totalité des <strong class="text-white font-medium">{totalPastEvents} épreuves historiques</strong> qui ont façonné notre expertise au Québec et à l'international.
       </p>
 
       <!-- Quick Nav Buttons -->
@@ -212,7 +212,7 @@ const countAutres = pastEvents.filter(e => getCategoryGroup(e.category) === 'aut
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
           <div class="text-3xl font-heading font-black text-brand-red mb-1">16+</div>
-          <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Années de Terrain (2008–2024)</div>
+          <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Années de Terrain (2008–2026)</div>
         </div>
         <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
           <div class="text-3xl font-heading font-black text-white mb-1">{totalPastEvents}</div>
@@ -307,7 +307,7 @@ const countAutres = pastEvents.filter(e => getCategoryGroup(e.category) === 'aut
           <!-- Status Indicator -->
           <div class="hidden lg:flex items-center gap-2.5 text-xs text-slate-500 font-medium">
             <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-            <span id="filter-status-text">30 épreuves affichées (2008 – 2024)</span>
+            <span id="filter-status-text">{totalPastEvents} épreuves affichées (2008 – 2026)</span>
           </div>
 
         </div>
@@ -485,11 +485,11 @@ const countAutres = pastEvents.filter(e => getCategoryGroup(e.category) === 'aut
     const statusText = document.getElementById('filter-status-text');
 
     const filterLabels = {
-      'all': '30 épreuves affichées (2008 – 2024)',
-      'gravel': '5 épreuves Gravel Bike & Bikepacking',
-      'xtri': '7 épreuves Triathlon Extrême XTRI',
-      'raids': '14 épreuves Raids Aventure & Expéditions',
-      'autres': '4 épreuves Trails, Nage & Spéciales'
+      'all': 'Toutes les épreuves (2008 – 2026)',
+      'gravel': 'Gravel Bike & Bikepacking',
+      'xtri': 'Triathlon Extrême XTRI',
+      'raids': 'Raids Aventure & Expéditions',
+      'autres': 'Trails, Nage & Spéciales'
     };
 
     function applyFilter(filter) {
