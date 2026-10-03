@@ -12,6 +12,7 @@
     "logo": "/assets/logo-GBC500-ARGON18.png",
     "secondaryLogo": "/assets/logo-argon-18-2.png",
     "featured": true,
+    "hasPage": true,
     "description": "Une aventure épique d'endurance en autonomie complète à travers les plus beaux chemins de terre, forêts et sommets du Québec.",
     "highlights": [
       "500 km en autonomie ou avec soutien",
@@ -19,7 +20,7 @@
       "Ravitaillements & Campings de bivouac",
       "Encadrement sécuritaire tout-terrain"
     ],
-    "registrationLink": "/contact?type=general&subject=gbc500",
+    "registrationLink": "/evenements/gbc500/",
     "status": "Inscriptions Ouvertes"
   },
   {
@@ -35,6 +36,7 @@
     "logo": "/assets/Logo-Mondiaux-Bilingue-.webp",
     "secondaryLogo": "/assets/VF-Logo-Raid-Temiscamingue-coul.webp",
     "featured": true,
+    "hasPage": true,
     "description": "Le rendez-vous planétaire de la relève de la course d'aventure : 100 km en autonomie totale (carte & boussole, canot, VTT, trail, nage et cordes) réunissant l'élite internationale U18 et U25.",
     "highlights": [
       "100 km en autonomie stricte carte & boussole",
@@ -42,49 +44,55 @@
       "Canot boréal, VTT technique, trail & cordes",
       "30 sélections nationales de 10+ pays (IARA / ARWS)"
     ],
-    "registrationLink": "https://www.arwsjuniorworld.com",
+    "registrationLink": "/evenements/championnat-monde-junior-arws/",
     "status": "Sélection & Inscriptions 2027"
   },
   {
-    "id": "raid-gaspesie",
-    "slug": "raid-gaspesie",
-    "title": "Raid International Gaspésie",
-    "subtitle": "L'aventure grandeur nature entre mer et montagnes",
+    "id": "raids-multisports",
+    "slug": "raids",
+    "title": "Raids Aventure Multisports",
+    "subtitle": "Les légendaires expéditions en milieu sauvage (Gaspésie & Témiscamingue)",
     "category": "Raid Aventure Multisport",
-    "location": "Péninsule Gaspésienne, QC",
-    "dates": "Automne",
-    "distance": "Multisport (Kayak, VTT, Trek, Corde)",
+    "location": "Gaspésie & Témiscamingue, QC",
+    "dates": "Saisons Estivales & Automnales",
+    "distance": "Expéditions 100 à 300 km • Équipes de 2 à 4",
     "image": "/assets/51582278409_86672a9a9f_k.webp",
     "logo": "/assets/ZF-LogoRIG-ombrNoir-trans.png",
+    "secondaryLogo": "/assets/VF-Logo-Raid-Temiscamingue-coul.webp",
     "featured": true,
-    "description": "Une immersion totale de plusieurs jours par équipes dans les paysages sauvages et côtiers de la Gaspésie.",
+    "hasPage": true,
+    "description": "Une immersion totale de plusieurs jours par équipes dans les paysages les plus sauvages du Québec, alliant canot, vélo tout-terrain, trail et orientation.",
     "highlights": [
-      "Orientation à la carte et boussole",
-      "Sections nautiques en mer",
-      "Équipes de 2 ou 4 athlètes"
+      "Raid International Gaspésie & Raid Témiscamingue",
+      "Orientation exclusive à la carte et à la boussole",
+      "Sections maritimes, rivières boréales et crêtes rocheuses",
+      "Esprit d'équipe et dépassement en autonomie"
     ],
-    "registrationLink": "/contact?type=general&subject=raids",
-    "status": "Sur Sélection"
+    "registrationLink": "/evenements/raids/",
+    "status": "Découvrir les Raids"
   },
   {
-    "id": "raid-temiscamingue",
-    "slug": "raid-temiscamingue",
-    "title": "Raid Témiscamingue",
-    "subtitle": "L'expédition boréale au cœur de la forêt québécoise",
-    "category": "Raid Aventure Multisport",
-    "location": "Témiscamingue, QC",
-    "dates": "Automne",
-    "distance": "3 jours d'expédition",
-    "image": "/assets/Raid-Temis-reperage4.webp",
-    "logo": "/assets/VF-Logo-Raid-Temiscamingue-coul.webp",
-    "featured": false,
-    "description": "Une épreuve légendaire de navigation et de dépassement de soi en milieu sauvage isolé.",
+    "id": "canadaman-xtri",
+    "slug": "canadaman-xtri",
+    "title": "Triathlon Extrême Canada Man / Canada Woman",
+    "subtitle": "L'épreuve nord-américaine mythique de la série XTRI World Tour",
+    "category": "Triathlon Extrême (XTRI)",
+    "location": "Lac-Mégantic & Mont Mégantic, QC",
+    "dates": "Archives & Éditions Historiques (2017 - 2024)",
+    "distance": "3.8 km Nage • 180 km Vélo • 42.2 km Trail",
+    "image": "/assets/Canadaman-xtri-copyright-Qu%C3%A9bec-Dones-3-de-5.webp",
+    "logo": "/assets/VF3-logo-Canada-ManWoman-Petit.webp",
+    "secondaryLogo": "/assets/CanadaManWoman.webp",
+    "featured": true,
+    "hasPage": false,
+    "description": "L'un des triathlons d'un jour les plus redoutables au monde : nage obscure dans le Lac-Mégantic, vélo sur les routes exigeantes de l'Estrie et arrivée au sommet du Mont Mégantic.",
     "highlights": [
-      "Canoë en eaux vives",
-      "Sections de course d'orientation",
-      "Bivouacs sauvages"
+      "Membre fondateur officiel du circuit XTRI World Tour",
+      "3,8 km nage nocturne, 180 km vélo (2500m D+)",
+      "42,2 km trail marathon jusqu'à l'observatoire astronomique",
+      "Récits et vidéos de toutes les éditions dans nos archives"
     ],
-    "registrationLink": "/contact?type=general&subject=raids",
-    "status": "Archives & Édition future"
+    "registrationLink": "#archive-canadaman",
+    "status": "Voir l'Historique XTRI"
   }
 ]

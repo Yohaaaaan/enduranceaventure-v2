@@ -1,0 +1,553 @@
+[
+  {
+    "id": "event-1",
+    "title": "Raid International Témiscamingue 2024",
+    "year": "2024",
+    "location": "Témiscamingue, Québec, Canada, 2024",
+    "category": "Raid Aventure Multisport",
+    "description": "Le Raid International Témiscamingue 2025 est une course d’endurance de 170 km sur trois jours, combinant trekking, vélo de montagne, canoë, nage et épreuves sur cordes, avec navigation à la carte et boussole. Les participants traverseront les municipalités de Rémigny, Guérin, Notre-Dame-du-Nord et Saint-Bruno-de-Guigues, offrant des paysages naturels exceptionnels.",
+    "images": [
+      "/assets/54090898065_b840e40c2f_o-scaled.webp",
+      "/assets/54090898255_4391e75f69_o-scaled.webp",
+      "/assets/54076034404_b2f54f229a_o-scaled.webp",
+      "/assets/54090693273_cf4e40b5bf_o-scaled.webp",
+      "/assets/54090898465_d1fd52b908_o-scaled.webp",
+      "/assets/54090433356_4d6b7a070d_o-scaled.webp"
+    ],
+    "video": "https://www.youtube.com/embed/TMgSAIZHs40",
+    "link": "#"
+  },
+  {
+    "id": "event-2",
+    "title": "Triathlon CanadaManWoman  2024",
+    "year": "2024",
+    "location": "Lac Mégantic, Québec, Canada, 2024",
+    "category": "Triathlon Extrême (XTRI)",
+    "description": "Le Canada Man/Woman XTRI World Tour 2024 s’est tenu le 6 octobre à Lac-Mégantic, Québec, marquant sa septième édition. Cet événement extrême comprenait le triathlon longue distance Canada Man/Woman et le Solo Point Five, une version plus courte mais tout aussi exigeante.",
+    "images": [
+      "/assets/51581607901_c23c63d19b_k.webp",
+      "/assets/53061653539_951fb49b59_k.webp",
+      "/assets/43386180011_63d8234b1a_o.webp",
+      "/assets/Canadaman-xtri-copyright-Qu%C3%A9bec-Dones-3-de-5.webp",
+      "/assets/28514399477_3839a9ca93_o-scaled.webp",
+      "/assets/52296781103_feb83284d5_k.webp"
+    ],
+    "video": "https://player.vimeo.com/video/1017701274",
+    "link": "#"
+  },
+  {
+    "id": "event-3",
+    "title": "Gravel Bike Packing Challenge 2024",
+    "year": "2024",
+    "location": "Magog, Québec, Canada, 2024",
+    "category": "Gravel Bike & Bikepacking",
+    "description": "Le Gravel Bikepacking Challenge 2024 propose deux parcours : 250 km et 500 km, à réaliser en solo ou en duo. Les participants disposent de 60 heures pour compléter le défi, avec des périodes de « dark zone » obligatoires la nuit. Les itinéraires traversent la région des Cantons-de-l’Est au Québec, offrant une aventure humaine et sportive exceptionnelle.",
+    "images": [
+      "/assets/52297032844_c0694abe2a_k.webp",
+      "/assets/52297043904_e0558ff9bc_k.webp",
+      "/assets/52297032764_294ab3c4f4_k.webp",
+      "/assets/52296779718_3f37b20ad7_k.webp",
+      "/assets/52296781103_feb83284d5_k.webp",
+      "/assets/52296780558_59d42cf14f_k.webp"
+    ],
+    "video": "https://player.vimeo.com/video/973355251",
+    "link": "#"
+  },
+  {
+    "id": "event-4",
+    "title": "Gravel Bike Packing Challenge 2023",
+    "year": "2023",
+    "location": "Magog, Québec, Canada, 2023",
+    "category": "Gravel Bike & Bikepacking",
+    "description": "L’édition 2023 du Gravel Bikepacking Challenge a marqué les esprits avec un parcours audacieux traversant des paysages spectaculaires et variés, mêlant chemins forestiers, routes de montagne et pistes côtières. Cette aventure d’ultra-distance a attiré des participants de tous horizons, séduits par l’équilibre entre défi sportif et exploration culturelle. Les points forts incluent des étapes immersives dans des régions isolées, une organisation axée sur la durabilité, et une forte camaraderie entre les cyclistes.",
+    "images": [
+      "/assets/52297035419_535beda9c7_k.webp",
+      "/assets/52295795572_fe2b964eb5_k.webp",
+      "/assets/52296776106_840bc2f990_k.webp",
+      "/assets/gbc500-endurance-aventure-mission-accomplie-4.webp",
+      "/assets/gbc500-endurance-aventure-mission-accomplie-5.webp",
+      "/assets/52296780558_59d42cf14f_k.webp"
+    ],
+    "video": "https://player.vimeo.com/video/973355251",
+    "link": "#"
+  },
+  {
+    "id": "event-5",
+    "title": "Triathlon CanadaManWoman  2023",
+    "year": "2023",
+    "location": "Lac Mégantic, Québec, Canada, 2023",
+    "category": "Triathlon Extrême (XTRI)",
+    "description": "L’édition 2023 du triathlon CanadaMan/Woman à Lac Mégantic a offert une expérience inoubliable aux athlètes et spectateurs et a mis en valeur les paysages majestueux des Cantons-de-l’Est avec un parcours exigeant en natation, vélo et course à pied. L’événement a également renforcé son aspect communautaire, mobilisant bénévoles et habitants pour une ambiance chaleureuse et conviviale.",
+    "images": [
+      "/assets/51588664244_a5ca30eb5d_k-2.webp",
+      "/assets/51582360234_70c46f1ffe_b-1-2.webp",
+      "/assets/51582517360_5ace9e0494_k-2.webp",
+      "/assets/51586236989_64f608f4ba_k-2.webp",
+      "/assets/51582359569_1ee103bd1e_b-1-2.webp",
+      "/assets/51587110257_0a9957d7f5_k-2.webp"
+    ],
+    "video": "https://player.vimeo.com/video/1017701274",
+    "link": "#"
+  },
+  {
+    "id": "event-6",
+    "title": "Raid International Témiscamingue 2023",
+    "year": "2023",
+    "location": "Ville Marie, Québec, Canada, 2023",
+    "category": "Raid Aventure Multisport",
+    "description": "Le Raid International Témiscamingue 2023, tenu du 7 au 10 septembre, a rassemblé 25 équipes locales et internationales pour une aventure de 160 km combinant canot, vélo, trekking, nage et épreuves de cordes. Le parcours a traversé les municipalités de Moffet, Latulipe, Fugèreville, Saint-Eugène-de-Guigues et Laverlochère-Angliers, mettant en valeur les paysages exceptionnels du Témiscamingue.",
+    "images": [
+      "/assets/53336338033_9140408214_k.webp",
+      "/assets/53204003478_a26491380a_k.webp",
+      "/assets/53203984538_c9c3504404_o.webp",
+      "/assets/53203763816_22a9e4ef6c_o.webp",
+      "/assets/53203783421_533453b722_k.webp",
+      "/assets/53204088638_33cccc90fc_k.webp"
+    ],
+    "video": "https://www.youtube.com/embed/TMgSAIZHs40",
+    "link": "#"
+  },
+  {
+    "id": "event-7",
+    "title": "Triathlon CanadaManWoman  2022",
+    "year": "2022",
+    "location": "Lac Mégantic, Québec, Canada, 2022",
+    "category": "Triathlon Extrême (XTRI)",
+    "description": "Le 3 juillet 2022, la ville de Lac-Mégantic a accueilli la cinquième édition du Canada Man/Woman. Le parcours traversait 14 municipalités de la MRC du Granit, offrant aux participants des paysages variés et des défis techniques significatifs. L’événement a mobilisé plus de 180 bénévoles et a attiré environ 125 athlètes, mettant en valeur la beauté naturelle et l’hospitalité de la région de Mégantic.",
+    "images": [
+      "/assets/Canadaman-xtri-copyright-Qu%C3%A9bec-Dones-3-de-5.webp",
+      "/assets/53061966028_df53f2129a_k.webp",
+      "/assets/53061958433_e041682840_k.webp",
+      "/assets/51586236989_64f608f4ba_k-2.webp",
+      "/assets/53061970608_8f16363a10_k.webp",
+      "/assets/51587110257_0a9957d7f5_k-2.webp"
+    ],
+    "video": "https://player.vimeo.com/video/1017701274",
+    "link": "#"
+  },
+  {
+    "id": "event-8",
+    "title": "Gravel Bikepacking Challenge 2022",
+    "year": "2022",
+    "location": "Magog, Québec, Canada, 2022",
+    "category": "Gravel Bike & Bikepacking",
+    "description": "Le 13 août 2022, la troisième édition du Gravel Bikepacking Challenge 500 (GBC 500) s’est déroulée dans les Cantons-de-l’Est, au Québec. Cet événement cycliste de 500 km, principalement sur des chemins de gravier, a attiré environ 220 participants de divers horizons. Parmi les faits saillants de l’événement, le Britannique Mark Beaumont, détenteur du record mondial du tour du monde à vélo, a complété le parcours en moins de 22 heures.",
+    "images": [
+      "/assets/52296783386_8767e85129_c.webp",
+      "/assets/52296784943_cb80344bad_k.webp",
+      "/assets/52296780558_59d42cf14f_k.webp",
+      "/assets/52297035419_535beda9c7_k.webp",
+      "/assets/52296786136_9e2706227e_k.webp",
+      "/assets/52296780188_ea30056838_k.webp"
+    ],
+    "video": "https://player.vimeo.com/video/973355251",
+    "link": "#"
+  },
+  {
+    "id": "event-9",
+    "title": "Raid International Témiscamingue  2021",
+    "year": "2021",
+    "location": "Lac Mégantic, Québec, Canada, 2021",
+    "category": "Raid Aventure Multisport",
+    "description": "En 2021, le Raid International Témiscamingue a tenu sa première édition dans un contexte marqué par la pandémie de COVID-19. Le parcours de cette édition inaugurale a traversé plusieurs communautés de la région, mettant en valeur la richesse naturelle et culturelle du Témiscamingue. Les athlètes ont testé leur forme physique, leur moral et leur esprit d’équipe tout en découvrant le territoire sauvage du Témiscamingue.",
+    "images": [
+      "/assets/51497103828_7c61098d2f_o-scaled.webp",
+      "/assets/51497102053_09aa204d81_o-scaled.webp",
+      "/assets/51496879416_57386c9701_o-scaled.webp",
+      "/assets/51496095457_48a8acfa01_o-scaled.webp",
+      "/assets/51497097053_900f43c038_o-scaled.webp",
+      "/assets/51496880626_b8b262802d_o-scaled.webp"
+    ],
+    "video": "https://www.youtube.com/embed/TMgSAIZHs40",
+    "link": "#"
+  },
+  {
+    "id": "event-10",
+    "title": "Gravel Bike Packing Challenge 2021",
+    "year": "2021",
+    "location": "Magog, Québec, Canada, 2021",
+    "category": "Gravel Bike & Bikepacking",
+    "description": "Le 14 août 2021, la deuxième édition du Gravel Bikepacking Challenge 500 (GBC 500) s’est tenue dans les Cantons-de-l’Est, au Québec. Cette épreuve cycliste de 500 km, principalement sur des chemins de gravier, a mis en lumière la beauté de la région et ses villages pittoresques.",
+    "images": [
+      "/assets/52297032844_c0694abe2a_k.webp",
+      "/assets/52297043904_e0558ff9bc_k.webp",
+      "/assets/52297032764_294ab3c4f4_k.webp",
+      "/assets/52296779718_3f37b20ad7_k.webp",
+      "/assets/52296781103_feb83284d5_k.webp",
+      "/assets/52296780558_59d42cf14f_k.webp"
+    ],
+    "video": "https://player.vimeo.com/video/973355251",
+    "link": "#"
+  },
+  {
+    "id": "event-11",
+    "title": "Gravel Bike Packing Challenge 2020",
+    "year": "2020",
+    "location": "Magog, Québec, Canada, 2020",
+    "category": "Gravel Bike & Bikepacking",
+    "description": "Première édition du Gravel Bikepacking Challenge en solo dans la région des cantons de l’Est avec comme partenaire principal Argon-18.",
+    "images": [
+      "/assets/52297032844_c0694abe2a_k.webp",
+      "/assets/52297043904_e0558ff9bc_k.webp",
+      "/assets/52297032764_294ab3c4f4_k.webp",
+      "/assets/52296779718_3f37b20ad7_k.webp",
+      "/assets/52296781103_feb83284d5_k.webp",
+      "/assets/52296780558_59d42cf14f_k.webp"
+    ],
+    "video": "https://player.vimeo.com/video/973355251",
+    "link": "#"
+  },
+  {
+    "id": "event-12",
+    "title": "raid international gaspésie 2019",
+    "year": "2019",
+    "location": "Carleton-sur-Mer, Québec, Canada, 2019",
+    "category": "Raid Aventure Multisport",
+    "description": "La 6e édition du RIG s’est déroulée entre les régions de Matapépia et Carleton-sur-Mer. Quatre jours de course, du 12 au 15 septembre 2019, où les quelques 80 équipes ont bravées le dénivelé et les éléments sur mer, sur rivières, sur terre et même dans les airs. Le prologue jeunesse était aussi de retour avec une collaboration étroite entre les jeunes et les participants régionaux et internationaux.",
+    "images": [
+      "/assets/RIG-2019-Canot-rivi%C3%A8re-pont.webp",
+      "/assets/RIG-2019-tyro2.webp",
+      "/assets/RIG-2019-Prologue-course.webp",
+      "/assets/RIG-2019-Portage-canots2.webp",
+      "/assets/RIG-2019-Orientation.webp",
+      "/assets/RIG-2019-Danseur-Mic-Mac.webp",
+      "/assets/RIG-2019-Coastering-Brou.webp",
+      "/assets/RIG-2019-Canots-mer-de-la-berge.webp",
+      "/assets/RIG-2019-Canot-mer-Brou.webp",
+      "/assets/RIG-2019-Canots-rivi%C3%A8re-Ristigouche.webp",
+      "/assets/RIG-2019-Canots-rivi%C3%A8re-Ristigouche.webp"
+    ],
+    "video": "https://www.youtube.com/embed/TMgSAIZHs40",
+    "link": "#"
+  },
+  {
+    "id": "event-13",
+    "title": "triathlon extrême canada man/woman 2019",
+    "year": "2019",
+    "location": "Lac Mégantic, Québec, Canada, 2019",
+    "category": "Triathlon Extrême (XTRI)",
+    "description": "Une troisième édition de l’étape Canadienne de la série Xtri World tour a eu lieu la fin de semaine du 6-7 juillet 2019. Les participants du triathlon extrême Canada Man/Woman avaient la chance d’avoir une participation pour une des places offerte pour le Championnat du monde Xtri 2020 qui se tiendra en Norvège.",
+    "images": [
+      "/assets/CAXTRI-2019-Course-grimpe.webp",
+      "/assets/CAXTRI-2019-Course-paysage.webp",
+      "/assets/CAXTRI-2019-V%C3%A9lo-Aero.webp",
+      "/assets/CAXTRI-2019-V%C3%A9lo-C%C3%B4tes.webp",
+      "/assets/CAXTRI-2019-Extr%C3%AAme-D%C3%A9part.webp",
+      "/assets/Canadaman-xtri-copyright-Qu%C3%A9bec-Dones-1-de-5-2.webp",
+      "/assets/Canadaman-xtri-copyright-Qu%C3%A9bec-Dones-3-de-5.webp",
+      "/assets/CAXTRI-2019-Course-roches.webp",
+      "/assets/Canadaman-xtri-copyright-Qu%C3%A9bec-Dones-4-de-5.webp",
+      "/assets/CAXTRI-2019-Sprint-d%C3%A9part1.webp"
+    ],
+    "video": null,
+    "link": "#"
+  },
+  {
+    "id": "event-14",
+    "title": "raid international china",
+    "year": "2019",
+    "location": "Chishui River Valley, Guizhou, Chine, 2019",
+    "category": "Raid International Asie",
+    "description": "Texte",
+    "images": [
+      "/assets/raid-international-gaspesie-2014-cascade-maria-jmm.webp",
+      "/assets/canadaman-2017-sommet-mont-megantic-ligne-arrivee.webp",
+      "/assets/raid-international-gaspesie-2016-mont-saint-joseph-slack-line.webp",
+      "/assets/raid-international-gaspesie-2016-riviere-matapedia-equipe-brou-aventura.webp",
+      "/assets/canadaman-2017-velo-cote-magnetique-chartierville-e1517948658220.webp"
+    ],
+    "video": "https://www.youtube.com/embed/TMgSAIZHs40",
+    "link": "#"
+  },
+  {
+    "id": "event-15",
+    "title": "Raid international Gaspésie",
+    "year": "2018",
+    "location": "Carleton-sur-Mer, Québec, Canada, 2018",
+    "category": "Raid Aventure Multisport",
+    "description": "Pour sa 5e édition, le Raid International Gaspésie débutait dans la région de Percé. Les 9 au 13 septembre 2018, ce sont 79 équipes qui ont pris le départ pour se rendre jusqu’à Carleton-sur-Mer. Pour le prologue du jeudi, c’est 330 jeunes du Québec ont parcouru les 25 km de course, vélo, canot et de corde.",
+    "images": [
+      "/assets/RIG-2018-J1-Perc%C3%A9-Coastering-V%C3%A9lo.webp",
+      "/assets/Capture13.webp",
+      "/assets/RIG-2018-J1-Perc%C3%A9-Faille.webp",
+      "/assets/RIG-2018-J1-Perc%C3%A9-Nage-1.webp",
+      "/assets/RIG-2018-J1-Perc%C3%A9-rappel1-1.webp",
+      "/assets/RIG-2018-J1-Perc%C3%A9-Tipi.webp",
+      "/assets/RIG-2018-J1-Perc%C3%A9-Tiro.webp",
+      "/assets/RIG-2018-J2-Perc%C3%A9-Chute.webp",
+      "/assets/RIG-2018-J2-Grande-Rivi%C3%A8re-Tiro.webp",
+      "/assets/RIG-2018-J3-Carleton-D%C3%A9part-Canot.webp",
+      "/assets/RIG-2018-J3-Carleton-V%C3%A9lo.webp",
+      "/assets/RIG-2018-J3-Quai-Carleton-Pompier.webp",
+      "/assets/RIG-2018-Prologue-Podium.webp",
+      "/assets/RIG-2018-Prologue-v%C3%A9lo-calvette.webp",
+      "/assets/RIG-2018-J3-Quai-Carleton-Pompier2.webp",
+      "/assets/RIG-2018-J1-Perc%C3%A9-rappel.webp"
+    ],
+    "video": "https://www.youtube.com/embed/TMgSAIZHs40",
+    "link": "#"
+  },
+  {
+    "id": "event-16",
+    "title": "Triathlon Extrême Canada Man/Woman",
+    "year": "2018",
+    "location": "Lac-Mégantic, Québec, Canada, 2018",
+    "category": "Triathlon Extrême (XTRI)",
+    "description": "La deuxième édition du Canada Man / Canada Woman c’est tenu les 7 et 8 juillet 2018. Suite au succès de la première édition, le nombre de participants à presque doublé tant pour le parcours Sprint du samedi que du extreme le dimanche. Il étaient 225 participants inscrits pour le départ de Lac-Mégantic à 4h30 AM! Un version française et l’autre anglaise du film 2017 est disponible ci-contre.",
+    "images": [
+      "/assets/Canada-Man-Xtreme-Arriv%C3%A9e-participante.webp",
+      "/assets/Canada-Man-2018-Xtreme-v%C3%A9lo-mont%C3%A9e.webp",
+      "/assets/Canada-Man-2018-Xtreme-V%C3%A9lo-B%C3%A9n%C3%A9voles-N-D-B.webp",
+      "/assets/Canada-Man-2018-Xtreme-Podium-Mexicains.webp",
+      "/assets/Canada-Man-2018-Xtreme-Course-sentier.webp",
+      "/assets/canada-man-2018-sprint-nage1.webp",
+      "/assets/28516470367_9f566443d8_o-1.webp",
+      "/assets/Canada-Man-2018-Xtreme-V%C3%A9lo-sourire-Roger.webp",
+      "/assets/Canada-Man-Sprint-Course-sentier.webp",
+      "/assets/Canada-Man-2018-Pieds-sales.webp",
+      "/assets/Canada-Man-2018-Xtrem-D%C3%A9part.webp",
+      "/assets/Canada-Man-2018-Sprint-Course.webp",
+      "/assets/canada-man-2018-v%C3%A9lo1-1.webp",
+      "/assets/Canada-Man-2018-Xtreme-Arriv%C3%A9e-Femme.webp",
+      "/assets/Canada-Man-2018-Observatoire1.webp",
+      "/assets/Canada-Man-2018-Observatoire-arriv%C3%A9e.webp"
+    ],
+    "video": null,
+    "link": "#"
+  },
+  {
+    "id": "event-17",
+    "title": "Raid international Gaspésie",
+    "year": "2017",
+    "location": "Carleton-sur-Mer, Québec, Canada, 2017",
+    "category": "Raid Aventure Multisport",
+    "description": "Le Raid international Gaspésie visitait le Parc de la Gaspésie lors de sa quatrième édition qui s’est tenue du 7 au 10 septembre 2017. 74 équipes provenant de 10 pays étaient inscrites sur les deux parcours de 150 km et de 300 km.",
+    "images": [
+      "/assets/37188165785_abafe57ff0_o.webp",
+      "/assets/37045546161_2c8881fdd3_k.webp",
+      "/assets/37045275351_44390bd4c9_k.webp",
+      "/assets/37031398691_0d23e05834_k.webp",
+      "/assets/37009383351_eabb78ac2f_o-1.webp",
+      "/assets/36998318656_9fc8ed583b_o.webp",
+      "/assets/36998265696_8f4cfe849a_o.webp",
+      "/assets/36921247872_07a1fd730b_o.webp",
+      "/assets/36374120323_caa1577bb1_o.webp",
+      "/assets/36373561833_e33d5118cd_k-2.webp",
+      "/assets/36351374144_deab8d3ed5_o.webp",
+      "/assets/36316445354_78db700b45_o.webp",
+      "/assets/36292456904_dc48a14d39_o.webp",
+      "/assets/raid-international-gaspesie-2017.webp"
+    ],
+    "video": "https://www.youtube.com/embed/TMgSAIZHs40",
+    "link": "#"
+  },
+  {
+    "id": "event-18",
+    "title": "Triathlon Extrême Canada Man/Woman",
+    "year": "2017",
+    "location": "Lac-Mégantic, Québec, Canada, 2017",
+    "category": "Triathlon Extrême (XTRI)",
+    "description": "La première édition du Triathlon Extrême Canada Man/Woman de Lac-Mégantic s’est tenue les 8 et 9 juillet 2017 dans la région de Lac-Mégantic. Un triathlon Sprint avait lieu le samedi et, le dimanche matin, à 4h30, 150 participants provenant d’une dizaine de pays prenaient le départ du Triathlon extrême pour terminer au sommet du mont Mégantic la nuit suivante.",
+    "images": [
+      "/assets/canadaman-2017-arrive-lyne.webp",
+      "/assets/canadaman-2017-sommet-mont-megantic-ligne-arrivee.webp",
+      "/assets/canadaman-2017-arrive-sandrine.webp",
+      "/assets/35882007156_00f38a0188_o.webp",
+      "/assets/triathlon-extreme-canada-man-lac-megantic-2017.webp"
+    ],
+    "video": null,
+    "link": "#"
+  },
+  {
+    "id": "event-19",
+    "title": "Raid international China",
+    "year": "2017",
+    "location": "Chishui River Valley, Guizhou, Chine, 2017",
+    "category": "Raid International Asie",
+    "description": "Endurance Aventure s’est rendue en Chine pour co-organiser, avec leur partenaire chinois Huway, le Raid Internationnel China. L’événement a attiré 250 coureurs du 2 au 5 avril 2017.",
+    "images": [
+      "/assets/DJI_0886.webp",
+      "/assets/DSC_3184.webp",
+      "/assets/CKK_7153.webp",
+      "/assets/20170403_193107.webp",
+      "/assets/DJI_0669.webp",
+      "/assets/DSC_4996.webp",
+      "/assets/IMG_9994.webp",
+      "/assets/DJI_0720.webp",
+      "/assets/C51A1801.webp",
+      "/assets/IMG_6182.webp",
+      "/assets/CKK_0574.webp",
+      "/assets/CKK_0456.webp",
+      "/assets/DJI_0823-%C2%A6%C3%93%C2%A1.jpg",
+      "/assets/C51A3358.webp",
+      "/assets/IMG_0002.webp",
+      "/assets/raid-international-china-2017.webp"
+    ],
+    "video": "https://www.youtube.com/embed/TMgSAIZHs40",
+    "link": "#"
+  },
+  {
+    "id": "event-20",
+    "title": "Trail des Neiges​",
+    "year": "2017",
+    "location": "Orford, Québec, Canada, 2017",
+    "category": "Course en Sentier / Trail",
+    "description": "C’est le samedi 18 mars 2017 que se tenait, au mont Orford, la 7ème édition du Trail des Neiges Endurance Aventure. Le traditionnel Trail des Neiges consiste à monter 1 ou 3 sommets de la montagne (parcours de 5 km ou 13 km) en skimo, raquette ou course à pied.",
+    "images": [
+      "/assets/IMG_1698.webp",
+      "/assets/IMG_2087.webp",
+      "/assets/IMG_2333.webp",
+      "/assets/IMG_2151.webp",
+      "/assets/IMG_3313.webp",
+      "/assets/IMG_2735.webp",
+      "/assets/IMG_2934.webp",
+      "/assets/IMG_2976.webp",
+      "/assets/IMG_3310.webp",
+      "/assets/IMG_2087.webp"
+    ],
+    "video": null,
+    "link": "#"
+  },
+  {
+    "id": "event-21",
+    "title": "Raid international Gaspésie",
+    "year": "2016",
+    "location": "Carleton-sur-Mer, Québec, Canada, 2016",
+    "category": "Raid Aventure Multisport",
+    "description": "Le Raid international Gaspésie visitait la MRC de Bonaventure et de New Richmond lors de sa troisième édition qui s’est tenue du 8 au 11 septembre 2016. 74 équipes provenant de 12 pays étaient inscrites sur les deux parcours de 150 km et de 300 km.",
+    "images": [
+      "/assets/raid-international-gaspesie-2016.webp"
+    ],
+    "video": "https://www.youtube.com/embed/TMgSAIZHs40",
+    "link": "#"
+  },
+  {
+    "id": "event-22",
+    "title": "Raid international Gaspésie",
+    "year": "2015",
+    "location": "Carleton-sur-Mer, Québec, Canada, 2015",
+    "category": "Raid Aventure Multisport",
+    "description": "",
+    "images": [
+      "/assets/raid-international-gaspesie-2015.webp"
+    ],
+    "video": "https://www.youtube.com/embed/TMgSAIZHs40",
+    "link": "#"
+  },
+  {
+    "id": "event-23",
+    "title": "Raid international Gaspésie",
+    "year": "2014",
+    "location": "Carleton-sur-Mer, Québec, Canada, 2014",
+    "category": "Raid Aventure Multisport",
+    "description": "Le Raid international Gaspésie visitait le secteur des Plateaux de la MRC d’Avignon lors de sa première édition qui s’est tenue du 11 au 14 septembre 2014. 35 équipes provenant d’une dizaine de pays étaient inscrites sur les deux parcours de 150 km et de 300 km.",
+    "images": [
+      "/assets/raid-international-gaspesie-2014-cascade-maria-jmm.webp",
+      "/assets/JMMsony-September-14-2014_DSC1559.webp",
+      "/assets/JMMsony-September-12-2014_DSC0249.webp",
+      "/assets/JMMsony-September-12-2014_DSC0623.webp",
+      "/assets/JMMsony-September-12-2014_DSC0732.webp",
+      "/assets/JMMsony-September-12-2014_DSC0800.webp",
+      "/assets/JMMsony-September-13-2014_DSC0874.webp",
+      "/assets/JMMsony-September-13-2014_DSC1007.webp",
+      "/assets/JMMsony-September-13-2014_DSC1025.webp",
+      "/assets/JMMsony-September-14-2014_DSC1341.webp",
+      "/assets/JMMsony-September-12-2014_DSC0167.webp",
+      "/assets/JMMsony-September-12-2014_DSC0167.webp"
+    ],
+    "video": "https://www.youtube.com/embed/TMgSAIZHs40",
+    "link": "#"
+  },
+  {
+    "id": "event-24",
+    "title": "Triathlon d’hiver",
+    "year": "2013",
+    "location": "Saint-Donat, Québec, Canada, 2012, 2013",
+    "category": "Triathlon Extrême (XTRI)",
+    "description": "Un triathlon et une course d’hiver à Saint-Donat. Un parcours de triathlon d’hiver de 5 km de course, 8 km de ski de fond et de 4 km de patin à glace ou le long avec 10 km de course à pied, 15 km de ski de fond et 8 km de patin à glace. Les coureurs à pied avaient le choix entre 5 km ou 10 km.\n\nLe froid et la neige n’ont pas arrêté les athlètes!",
+    "images": [
+      "/assets/St-Donat1.webp"
+    ],
+    "video": null,
+    "link": "#"
+  },
+  {
+    "id": "event-25",
+    "title": "Traversée internationale du Lac Memphrémagog",
+    "year": "2013",
+    "location": "Magog, Québec, Canada, 2013",
+    "category": "Nage en Eau Libre",
+    "description": "",
+    "images": [
+      "/assets/traversee-lac-memphremagog-2013.webp"
+    ],
+    "video": null,
+    "link": "#"
+  },
+  {
+    "id": "event-26",
+    "title": "Raid international Nunavik Adventure Challenge",
+    "year": "2012",
+    "location": "Kangiqsualujjuaq, Nunavik, Canada, 2012",
+    "category": "Expédition Arctique Multisport",
+    "description": "",
+    "images": [
+      "/assets/Raid-Nunavik2.webp",
+      "/assets/Raid-Nunavik.webp",
+      "/assets/raid-international-nunavik-adventure-challenge-2012.webp"
+    ],
+    "video": "https://www.youtube.com/embed/TMgSAIZHs40",
+    "link": "#"
+  },
+  {
+    "id": "event-27",
+    "title": "Trail de nuit",
+    "year": "2012",
+    "location": "St-Étienne-de-Bolton, Québec, Canada, 2012",
+    "category": "Course en Sentier / Trail",
+    "description": "Sortez votre frontale! Une course de nuit dans notre coin de pays. Course, vélo dans les sentiers de l’Estrie.",
+    "images": [
+      "/assets/trail-de-nuit-st-etienne-de-bolton-2012.webp"
+    ],
+    "video": null,
+    "link": "#"
+  },
+  {
+    "id": "event-28",
+    "title": "Raid St-Donat",
+    "year": "2012",
+    "location": "St-Donat, Québec, Canada, 2011, 2012",
+    "category": "Raid Aventure Multisport",
+    "description": "RAID d’aventure à Saint-Donat. Nage, vélo de montagne, course à pied, orientation. Un Raid de fou pour tous.",
+    "images": [
+      "/assets/St-Donat1.webp"
+    ],
+    "video": null,
+    "link": "#"
+  },
+  {
+    "id": "event-29",
+    "title": "Formation cordes",
+    "year": "2011",
+    "location": "Umiujaq, Nunavik, Canada, 2011",
+    "category": "Atelier & Sécurité Verticale",
+    "description": "Matériel visuel à venir.",
+    "images": [],
+    "video": null,
+    "link": "#"
+  },
+  {
+    "id": "event-30",
+    "title": "COAST Raid Endurance Aventure",
+    "year": "2008",
+    "location": "Blanc-Sablon, Basse-Côte-Nord, Québec, Canada, 2008",
+    "category": "Raid Aventure Multisport",
+    "description": "Un raid international de 4 jours sur la merveilleuse Basses-Côte-Nord",
+    "images": [
+      "/assets/logocoast.webp",
+      "/assets/raid-endurance-aventure-basse-cote-nord-2008.webp"
+    ],
+    "video": null,
+    "link": "#"
+  }
+]
