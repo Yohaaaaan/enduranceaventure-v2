@@ -15,6 +15,11 @@ function getCategoryGroup(cat: string) {
 const totalPastEvents = pastEvents.length;
 const totalPhotos = pastEvents.reduce((acc, evt) => acc + (evt.images ? evt.images.length : 0), 0);
 const totalVideos = pastEvents.filter(evt => evt.video).length;
+
+const countGravel = pastEvents.filter(e => getCategoryGroup(e.category) === 'gravel').length;
+const countXtri = pastEvents.filter(e => getCategoryGroup(e.category) === 'xtri').length;
+const countRaids = pastEvents.filter(e => getCategoryGroup(e.category) === 'raids').length;
+const countAutres = pastEvents.filter(e => getCategoryGroup(e.category) === 'autres').length;
 ---
 
 <Layout 
@@ -26,15 +31,15 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
   <header class="bg-slate-950 py-16 sm:py-24 border-b border-slate-800 relative overflow-hidden">
     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#00f0ff_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-700 text-brand-red text-xs font-bold uppercase tracking-widest mb-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-md bg-slate-900 border border-slate-700 text-brand-red text-xs font-bold uppercase tracking-widest mb-4">
         <span class="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
-        Calendrier 2026/2027 & Archives Rétrospectives (2008 – 2024)
+        Calendrier 2026/2027 & Archives Historiques Officielles
       </div>
       <h1 class="text-4xl sm:text-6xl font-heading font-black uppercase tracking-tight text-white mb-6">
         Les Événements <br class="hidden sm:inline" />
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-400">Endurance Aventure</span>
       </h1>
-      <p class="max-w-3xl text-base sm:text-xl text-slate-300 font-light leading-relaxed mb-8">
+      <p class="max-w-3xl text-base sm:text-lg text-slate-300 font-light leading-relaxed mb-8">
         Depuis plus de deux décennies, nous concevons des défis pionniers d’endurance en milieu sauvage. Retrouvez ici nos <strong class="text-white font-medium">4 grands événements phares</strong> ainsi que la totalité des <strong class="text-white font-medium">30 épreuves historiques</strong> qui ont façonné notre expertise au Québec et à l'international.
       </p>
 
@@ -42,14 +47,14 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
       <div class="flex flex-wrap gap-4 pt-2">
         <a 
           href="#phares" 
-          class="px-6 py-3 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-brand-red/25 flex items-center gap-2"
+          class="px-6 py-3 rounded-lg bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-brand-red/25 flex items-center gap-2"
         >
           <span>4 Événements Phares</span>
           <span class="text-sm">↓</span>
         </a>
         <a 
           href="#archives" 
-          class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-700 font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2"
+          class="px-6 py-3 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-700 font-heading font-bold text-xs uppercase tracking-wider transition-all flex items-center gap-2"
         >
           <span>Historique Complet ({totalPastEvents} Épreuves)</span>
           <span class="text-sm">↓</span>
@@ -61,16 +66,16 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
   <!-- ========================================== -->
   <!-- SECTION 1 : LES 4 ÉVÉNEMENTS PHARES        -->
   <!-- ========================================== -->
-  <section id="phares" class="bg-slate-100 py-16 sm:py-24 border-b border-slate-300">
+  <section id="phares" class="bg-slate-100 py-16 sm:py-20 border-b border-slate-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-slate-300 pb-6">
         <div>
-          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Sélection Majeure</span>
-          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-slate-900">
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-1">Sélection Majeure</span>
+          <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase tracking-tight text-slate-900">
             Nos 4 Événements Phares
           </h2>
-          <p class="mt-2 text-base text-slate-600 max-w-2xl">
+          <p class="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl">
             Les piliers actuels et légendaires de notre organisation : gravel bike en autonomie, championnats mondiaux de raid, expéditions multisports et triathlon extrême.
           </p>
         </div>
@@ -78,7 +83,7 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
         {events.map((evt) => (
-          <article class="rounded-3xl bg-white border border-slate-200 overflow-hidden flex flex-col group hover:border-slate-300 hover:shadow-2xl transition-all duration-300 shadow-md">
+          <article class="rounded-2xl bg-white border border-slate-200 overflow-hidden flex flex-col group hover:border-slate-300 hover:shadow-xl transition-all duration-300 shadow-sm">
             
             <!-- Hero Image & Badges -->
             <div class="relative h-72 sm:h-80 overflow-hidden bg-slate-900">
@@ -91,25 +96,25 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
               <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-black/20 to-transparent"></div>
               
               <!-- Catégorie Pill -->
-              <span class="absolute top-4 left-4 px-3.5 py-1.5 rounded-lg bg-brand-red text-white text-xs font-heading font-bold uppercase tracking-wider shadow-lg">
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-md bg-brand-red text-white text-xs font-heading font-bold uppercase tracking-wider shadow-lg">
                 {evt.category}
               </span>
 
               <!-- Badge Logos Officiels sur Fond Blanc Immaculé -->
               {evt.logo && (
-                <div class="absolute top-4 right-4 p-2 sm:p-2.5 rounded-2xl bg-white shadow-xl border border-slate-200 flex items-center gap-2.5 z-10 backdrop-blur-sm">
+                <div class="absolute top-4 right-4 p-2 rounded-xl bg-white shadow-xl border border-slate-200 flex items-center gap-2.5 z-10">
                   <img 
                     src={evt.logo} 
                     alt={`Logo officiel ${evt.title}`} 
-                    class="h-9 sm:h-11 w-auto object-contain max-w-[130px]" 
+                    class="h-9 sm:h-10 w-auto object-contain max-w-[120px]" 
                   />
                   {evt.secondaryLogo && (
                     <>
-                      <div class="h-7 w-px bg-slate-200"></div>
+                      <div class="h-6 w-px bg-slate-200"></div>
                       <img 
                         src={evt.secondaryLogo} 
                         alt={`Logo partenaire ${evt.title}`} 
-                        class="h-7 sm:h-9 w-auto object-contain max-w-[90px]" 
+                        class="h-7 sm:h-8 w-auto object-contain max-w-[85px]" 
                       />
                     </>
                   )}
@@ -117,7 +122,7 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
               )}
 
               <!-- Localisation -->
-              <span class="absolute bottom-4 left-4 px-3 py-1.5 rounded-lg bg-slate-950/85 text-white text-xs font-semibold backdrop-blur-md border border-slate-800 flex items-center gap-1.5 shadow-md">
+              <span class="absolute bottom-4 left-4 px-3 py-1 rounded-md bg-slate-950/85 text-white text-xs font-semibold backdrop-blur-md border border-slate-800 flex items-center gap-1.5 shadow-md">
                 <span>📍</span>
                 <span>{evt.location}</span>
               </span>
@@ -131,12 +136,12 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
                     <span>📅</span>
                     <span>{evt.dates}</span>
                   </span>
-                  <span class="px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-brand-cyan">
+                  <span class="px-2.5 py-0.5 rounded bg-cyan-50 border border-cyan-200 text-brand-cyan">
                     {evt.distance}
                   </span>
                 </div>
 
-                <h3 class="text-2xl sm:text-3xl font-heading font-black text-slate-900 mb-2 group-hover:text-brand-red transition-colors">
+                <h3 class="text-2xl font-heading font-black text-slate-900 mb-1 group-hover:text-brand-red transition-colors">
                   {evt.title}
                 </h3>
 
@@ -144,12 +149,12 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
                   {evt.subtitle}
                 </p>
 
-                <p class="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
+                <p class="text-sm text-slate-600 mb-6 leading-relaxed">
                   {evt.description}
                 </p>
 
                 <!-- Spécifications / Highlights -->
-                <div class="bg-slate-50 rounded-2xl p-5 mb-6 border border-slate-200">
+                <div class="bg-slate-50 rounded-xl p-4 sm:p-5 mb-6 border border-slate-200">
                   <div class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-3 flex items-center gap-1.5">
                     <span class="text-brand-red">⚡</span>
                     <span>Faits saillants & Spécifications :</span>
@@ -166,15 +171,15 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
               </div>
 
               <!-- Action Card Footer -->
-              <div class="flex items-center justify-between gap-4 pt-5 border-t border-slate-200 mt-2">
-                <span class="text-xs font-semibold px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+              <div class="flex items-center justify-between gap-4 pt-4 border-t border-slate-200">
+                <span class="text-xs font-semibold px-3 py-1 rounded-md bg-slate-100 text-slate-700 border border-slate-200">
                   {evt.status}
                 </span>
 
                 {evt.hasPage ? (
                   <a 
                     href={evt.registrationLink} 
-                    class="px-5 py-2.5 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-md shadow-brand-red/20 inline-flex items-center gap-1.5 group-hover:translate-x-1 duration-200"
+                    class="px-5 py-2.5 rounded-lg bg-brand-red hover:bg-brand-red-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-md shadow-brand-red/20 inline-flex items-center gap-1.5 group-hover:translate-x-0.5 duration-200"
                   >
                     <span>Accéder à l'épreuve</span>
                     <span>→</span>
@@ -182,7 +187,7 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
                 ) : (
                   <button 
                     type="button" 
-                    class="filter-trigger-btn px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-md inline-flex items-center gap-1.5"
+                    class="filter-trigger-btn px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-md inline-flex items-center gap-1.5"
                     data-target-filter="xtri"
                   >
                     <span>Explorer l'Historique XTRI</span>
@@ -202,86 +207,114 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
   <!-- ========================================== -->
   <!-- STATS & RETROSPECTIVE OVERVIEW             -->
   <!-- ========================================== -->
-  <section class="bg-slate-950 py-12 border-b border-slate-800 text-white">
+  <section class="bg-slate-950 py-10 border-b border-slate-800 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <div class="text-3xl sm:text-4xl font-heading font-black text-brand-red mb-1">16+</div>
-          <div class="text-xs sm:text-sm text-slate-400 font-medium uppercase tracking-wider">Années d'Organisation (2008–2024)</div>
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="text-3xl font-heading font-black text-brand-red mb-1">16+</div>
+          <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Années de Terrain (2008–2024)</div>
         </div>
-        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <div class="text-3xl sm:text-4xl font-heading font-black text-white mb-1">{totalPastEvents}</div>
-          <div class="text-xs sm:text-sm text-slate-400 font-medium uppercase tracking-wider">Événements & Éditions Documentés</div>
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="text-3xl font-heading font-black text-white mb-1">{totalPastEvents}</div>
+          <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Événements Répertoriés</div>
         </div>
-        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <div class="text-3xl sm:text-4xl font-heading font-black text-brand-cyan mb-1">{totalPhotos}+</div>
-          <div class="text-xs sm:text-sm text-slate-400 font-medium uppercase tracking-wider">Photos d'Archives Authentiques</div>
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="text-3xl font-heading font-black text-brand-cyan mb-1">{totalPhotos}+</div>
+          <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Photos d'Archives Authentiques</div>
         </div>
-        <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
-          <div class="text-3xl sm:text-4xl font-heading font-black text-amber-500 mb-1">{totalVideos}</div>
-          <div class="text-xs sm:text-sm text-slate-400 font-medium uppercase tracking-wider">Films & Vidéos Officielles</div>
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="text-3xl font-heading font-black text-amber-500 mb-1">{totalVideos}</div>
+          <div class="text-xs text-slate-400 font-medium uppercase tracking-wider">Vidéos Officielles d'Époque</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========================================== -->
-  <!-- SECTION 2 : HISTORIQUE COMPLET DES ÉVÉNEMENTS -->
+  <!-- SECTION 2 : HISTORIQUE COMPLET             -->
   <!-- ========================================== -->
   <section id="archives" class="bg-slate-50 py-16 sm:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="px-3.5 py-1.5 rounded-full bg-slate-200 text-slate-800 text-xs font-bold uppercase tracking-widest inline-block mb-3 border border-slate-300">
+      <div class="max-w-3xl mb-8">
+        <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-1">
           Rétrospective Intégrale
         </span>
-        <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-slate-900 mb-4">
+        <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase tracking-tight text-slate-900 mb-3">
           L'Historique Complet de Nos Événements
         </h2>
-        <p class="text-base sm:text-lg text-slate-600 leading-relaxed">
-          Toutes les épreuves, expéditions et championnats produits et coordonnés par l'équipe d'Endurance Aventure. Consultez les textes originaux, galeries photos intégrales et vidéos d’époque.
+        <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+          Toutes les épreuves, expéditions et championnats produits et coordonnés par l'équipe d'Endurance Aventure depuis 2008. Textes originaux intégraux, galeries photographiques et films officiels d’époque.
         </p>
       </div>
 
-      <!-- Filter Bar -->
-      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
-        <button 
-          type="button" 
-          class="archive-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-heading font-bold uppercase tracking-wider transition-all bg-slate-900 text-white shadow-md"
-          data-filter="all"
-        >
-          Tous les événements ({totalPastEvents})
-        </button>
-        <button 
-          type="button" 
-          class="archive-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-heading font-bold uppercase tracking-wider transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
-          data-filter="gravel"
-        >
-          Gravel Bike & Bikepacking (5)
-        </button>
-        <button 
-          type="button" 
-          class="archive-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-heading font-bold uppercase tracking-wider transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
-          data-filter="xtri"
-        >
-          Triathlon Extrême XTRI (7)
-        </button>
-        <button 
-          type="button" 
-          class="archive-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-heading font-bold uppercase tracking-wider transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
-          data-filter="raids"
-        >
-          Raids & Expéditions (14)
-        </button>
-        <button 
-          type="button" 
-          class="archive-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-heading font-bold uppercase tracking-wider transition-all bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
-          data-filter="autres"
-        >
-          Trails & Autres Défis (4)
-        </button>
+    </div>
+
+    <!-- Toolbar de Filtres d'Entreprise Propre & Rigide -->
+    <div class="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-y border-slate-200 py-3.5 shadow-sm mb-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          
+          <!-- Category Tabs (Design d'entreprise, structuré, droit, haute lisibilité) -->
+          <nav class="flex items-center gap-2 overflow-x-auto no-scrollbar py-0.5" aria-label="Filtres des épreuves">
+            <button 
+              type="button" 
+              class="archive-filter-btn active flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-heading font-bold uppercase tracking-wider transition-colors bg-slate-900 text-white shadow-sm border border-slate-900"
+              data-filter="all"
+            >
+              <span>Toutes les épreuves</span>
+              <span class="filter-count font-mono text-[11px] px-1.5 py-0.5 rounded bg-white/20 text-white">{totalPastEvents}</span>
+            </button>
+
+            <button 
+              type="button" 
+              class="archive-filter-btn flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-heading font-bold uppercase tracking-wider transition-colors bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
+              data-filter="gravel"
+            >
+              <span>Gravel Bike & Bikepacking</span>
+              <span class="filter-count font-mono text-[11px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600">{countGravel}</span>
+            </button>
+
+            <button 
+              type="button" 
+              class="archive-filter-btn flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-heading font-bold uppercase tracking-wider transition-colors bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
+              data-filter="xtri"
+            >
+              <span>Triathlon Extrême XTRI</span>
+              <span class="filter-count font-mono text-[11px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600">{countXtri}</span>
+            </button>
+
+            <button 
+              type="button" 
+              class="archive-filter-btn flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-heading font-bold uppercase tracking-wider transition-colors bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
+              data-filter="raids"
+            >
+              <span>Raids & Expéditions</span>
+              <span class="filter-count font-mono text-[11px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600">{countRaids}</span>
+            </button>
+
+            <button 
+              type="button" 
+              class="archive-filter-btn flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-heading font-bold uppercase tracking-wider transition-colors bg-white text-slate-700 hover:bg-slate-100 border border-slate-200"
+              data-filter="autres"
+            >
+              <span>Trails & Autres</span>
+              <span class="filter-count font-mono text-[11px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600">{countAutres}</span>
+            </button>
+          </nav>
+
+          <!-- Status Indicator -->
+          <div class="hidden lg:flex items-center gap-2.5 text-xs text-slate-500 font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span id="filter-status-text">30 épreuves affichées (2008 – 2024)</span>
+          </div>
+
+        </div>
       </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       <!-- Past Events Grid (All 30 events) -->
       <div id="past-events-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -293,7 +326,7 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
 
           return (
             <article 
-              class="past-event-card bg-white rounded-3xl border border-slate-200 overflow-hidden flex flex-col shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300"
+              class="past-event-card bg-white rounded-2xl border border-slate-200 overflow-hidden flex flex-col shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-200"
               data-group={group}
               data-year={evt.year}
               id={evt.id}
@@ -303,10 +336,10 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
               <div class="p-6 sm:p-7 pb-4">
                 <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
                   <div class="flex items-center gap-2">
-                    <span class="px-2.5 py-1 rounded-lg bg-slate-900 text-white font-heading font-black text-xs tracking-wider">
+                    <span class="px-2.5 py-1 rounded bg-slate-900 text-white font-mono font-bold text-xs tracking-wider">
                       {evt.year}
                     </span>
-                    <span class="px-3 py-1 rounded-lg bg-red-50 text-brand-red border border-red-200 text-xs font-bold uppercase tracking-wider">
+                    <span class="px-2.5 py-1 rounded bg-red-50 text-brand-red border border-red-200 text-xs font-bold uppercase tracking-wider">
                       {evt.category}
                     </span>
                   </div>
@@ -328,12 +361,12 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
               <!-- Media Tabs / Showcase Section -->
               <div class="px-6 sm:px-7 pb-6 flex-grow flex flex-col justify-end">
                 
-                {/* Media Switcher Buttons (if both video & images exist) */}
+                {/* Media Switcher Tabs (if both video & images exist) */}
                 {hasVideo && hasImages && (
-                  <div class="flex items-center gap-2 mb-3 border-b border-slate-100 pb-2">
+                  <div class="flex items-center gap-1.5 mb-3 border-b border-slate-200 pb-2">
                     <button 
                       type="button" 
-                      class="media-tab-btn active px-3 py-1 rounded-lg text-xs font-heading font-bold uppercase tracking-wider bg-slate-900 text-white transition-colors flex items-center gap-1.5"
+                      class="media-tab-btn active px-3 py-1.5 rounded text-xs font-heading font-bold uppercase tracking-wider bg-slate-900 text-white transition-colors flex items-center gap-1.5"
                       data-target="video"
                     >
                       <span>🎬</span>
@@ -341,7 +374,7 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
                     </button>
                     <button 
                       type="button" 
-                      class="media-tab-btn px-3 py-1 rounded-lg text-xs font-heading font-bold uppercase tracking-wider bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors flex items-center gap-1.5"
+                      class="media-tab-btn px-3 py-1.5 rounded text-xs font-heading font-bold uppercase tracking-wider bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors flex items-center gap-1.5"
                       data-target="photos"
                     >
                       <span>📸</span>
@@ -350,10 +383,10 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
                   </div>
                 )}
 
-                <!-- Video Viewport -->
+                <!-- Video Viewport (Authentic Vimeo/YouTube embed) -->
                 {hasVideo && (
                   <div class={`media-panel media-panel-video ${defaultTab === 'video' ? 'block' : 'hidden'} mb-4`}>
-                    <div class="relative w-full aspect-video bg-black rounded-2xl overflow-hidden shadow-inner border border-slate-800">
+                    <div class="relative w-full aspect-video bg-black rounded-xl overflow-hidden shadow-inner border border-slate-800">
                       <iframe 
                         src={evt.video} 
                         title={`Vidéo officielle : ${evt.title}`}
@@ -370,25 +403,25 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
                 {hasImages && (
                   <div class={`media-panel media-panel-photos ${defaultTab === 'photos' ? 'block' : (hasVideo ? 'hidden' : 'block')} mb-4`}>
                     <!-- Main Image Preview -->
-                    <div class="relative aspect-[16/10] bg-slate-900 rounded-2xl overflow-hidden shadow-inner border border-slate-200 mb-2 group">
+                    <div class="relative aspect-[16/10] bg-slate-900 rounded-xl overflow-hidden shadow-inner border border-slate-200 mb-2 group">
                       <img 
                         src={evt.images[0]} 
                         alt={`${evt.title} - Photo 1`}
-                        class="main-preview-img w-full h-full object-cover transition-opacity duration-300"
+                        class="main-preview-img w-full h-full object-cover transition-opacity duration-200"
                         loading="lazy"
                       />
-                      <span class="absolute bottom-2 right-2 px-2 py-1 rounded bg-black/70 text-white text-[11px] font-semibold backdrop-blur-sm pointer-events-none">
+                      <span class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-black/75 text-white text-[10px] font-mono font-medium backdrop-blur-sm pointer-events-none">
                         {evt.images.length} photos
                       </span>
                     </div>
 
-                    <!-- Thumbnails row (scrollable / wrap) -->
+                    <!-- Thumbnails row -->
                     {evt.images.length > 1 && (
                       <div class="flex gap-2 overflow-x-auto pb-1 pt-1 no-scrollbar">
                         {evt.images.map((img, idx) => (
                           <button 
                             type="button" 
-                            class={`thumb-btn flex-shrink-0 w-14 h-10 sm:w-16 sm:h-11 rounded-lg overflow-hidden border-2 transition-all ${idx === 0 ? 'border-brand-red ring-2 ring-brand-red/30' : 'border-transparent opacity-75 hover:opacity-100 hover:border-slate-300'}`}
+                            class={`thumb-btn flex-shrink-0 w-14 h-10 sm:w-16 sm:h-11 rounded overflow-hidden border-2 transition-all ${idx === 0 ? 'border-brand-red ring-1 ring-brand-red/40' : 'border-transparent opacity-75 hover:opacity-100 hover:border-slate-300'}`}
                             data-src={img}
                             data-alt={`${evt.title} - Photo ${idx + 1}`}
                             aria-label={`Afficher la photo ${idx + 1}`}
@@ -411,7 +444,7 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
                   <a 
                     href="#" 
                     onclick="event.preventDefault(); return false;" 
-                    class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-700 font-heading font-bold uppercase tracking-wider text-[11px] border border-slate-200 transition-colors cursor-not-allowed"
+                    class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-700 font-heading font-bold uppercase tracking-wider text-[11px] border border-slate-200 transition-colors cursor-not-allowed"
                     title="Archive historique documentée – consultation sur place"
                   >
                     <span>En savoir plus</span>
@@ -426,14 +459,14 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
         })}
       </div>
 
-      <!-- Empty State (fallback if all filtered out) -->
-      <div id="no-events-state" class="hidden text-center py-16 bg-white rounded-3xl border border-slate-200 mt-8 p-8">
-        <p class="text-lg font-heading font-bold text-slate-700">Aucun événement ne correspond à ce filtre.</p>
+      <!-- Empty State -->
+      <div id="no-events-state" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200 mt-8 p-8">
+        <p class="text-base font-heading font-bold text-slate-700">Aucun événement ne correspond à ce filtre.</p>
         <button 
           type="button" 
-          class="reset-filters-btn mt-4 px-4 py-2 rounded-xl bg-brand-red text-white text-xs font-bold uppercase tracking-wider"
+          class="reset-filters-btn mt-3 px-4 py-2 rounded-lg bg-brand-red text-white text-xs font-bold uppercase tracking-wider"
         >
-          Afficher tous les événements
+          Afficher toutes les épreuves
         </button>
       </div>
 
@@ -442,24 +475,43 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
 
 </Layout>
 
-<!-- Client Side Script for Interactive Filters, Media Switchers and Photo Previews -->
+<!-- Client Side Script for Corporate Filters, Media Switchers and Photo Previews -->
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     // 1. Filtering Logic
     const filterButtons = document.querySelectorAll('.archive-filter-btn');
     const cards = document.querySelectorAll('.past-event-card');
     const noEventsState = document.getElementById('no-events-state');
+    const statusText = document.getElementById('filter-status-text');
+
+    const filterLabels = {
+      'all': '30 épreuves affichées (2008 – 2024)',
+      'gravel': '5 épreuves Gravel Bike & Bikepacking',
+      'xtri': '7 épreuves Triathlon Extrême XTRI',
+      'raids': '14 épreuves Raids Aventure & Expéditions',
+      'autres': '4 épreuves Trails, Nage & Spéciales'
+    };
 
     function applyFilter(filter) {
       let visibleCount = 0;
 
       filterButtons.forEach(btn => {
         if (btn.getAttribute('data-filter') === filter) {
-          btn.classList.add('bg-slate-900', 'text-white', 'shadow-md');
-          btn.classList.remove('bg-white', 'text-slate-700', 'hover:bg-slate-100', 'border', 'border-slate-200');
+          btn.classList.add('bg-slate-900', 'text-white', 'shadow-sm', 'border-slate-900', 'active');
+          btn.classList.remove('bg-white', 'text-slate-700', 'hover:bg-slate-100', 'border-slate-200');
+          const countBadge = btn.querySelector('.filter-count');
+          if (countBadge) {
+            countBadge.classList.add('bg-white/20', 'text-white');
+            countBadge.classList.remove('bg-slate-100', 'text-slate-600');
+          }
         } else {
-          btn.classList.remove('bg-slate-900', 'text-white', 'shadow-md');
-          btn.classList.add('bg-white', 'text-slate-700', 'hover:bg-slate-100', 'border', 'border-slate-200');
+          btn.classList.remove('bg-slate-900', 'text-white', 'shadow-sm', 'border-slate-900', 'active');
+          btn.classList.add('bg-white', 'text-slate-700', 'hover:bg-slate-100', 'border-slate-200');
+          const countBadge = btn.querySelector('.filter-count');
+          if (countBadge) {
+            countBadge.classList.remove('bg-white/20', 'text-white');
+            countBadge.classList.add('bg-slate-100', 'text-slate-600');
+          }
         }
       });
 
@@ -472,6 +524,10 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
           card.classList.add('hidden');
         }
       });
+
+      if (statusText && filterLabels[filter]) {
+        statusText.textContent = `${visibleCount} épreuves affichées • ${filterLabels[filter]}`;
+      }
 
       if (noEventsState) {
         if (visibleCount === 0) {
@@ -526,14 +582,14 @@ const totalVideos = pastEvents.filter(evt => evt.video).length;
               mainImg.src = newSrc;
               if (newAlt) mainImg.alt = newAlt;
               mainImg.classList.remove('opacity-40');
-            }, 150);
+            }, 120);
           }
 
           thumbs.forEach(t => {
-            t.classList.remove('border-brand-red', 'ring-2', 'ring-brand-red/30');
+            t.classList.remove('border-brand-red', 'ring-1', 'ring-brand-red/40');
             t.classList.add('border-transparent', 'opacity-75');
           });
-          thumb.classList.add('border-brand-red', 'ring-2', 'ring-brand-red/30');
+          thumb.classList.add('border-brand-red', 'ring-1', 'ring-brand-red/40');
           thumb.classList.remove('border-transparent', 'opacity-75');
         });
       });
