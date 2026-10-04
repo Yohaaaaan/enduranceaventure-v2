@@ -292,7 +292,7 @@ import Layout from '../../layouts/Layout.astro';
     // Login Form Submit
     document.getElementById('login-form')?.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const pass = document.getElementById('admin-password').value;
+      const pass = (document.getElementById('admin-password').value || '').trim();
       const errBox = document.getElementById('login-error');
       errBox.classList.add('hidden');
 
