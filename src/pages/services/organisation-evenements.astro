@@ -7,18 +7,29 @@ import Layout from '../../layouts/Layout.astro';
   description="Conception, logistique et sécurité pour événements sportifs, courses d'entreprise et défis outdoor au Québec."
   image="/assets/organisation-evenements-sportifs-services-endurance-aventure.jpg"
 >
-  <!-- Header Sombre -->
-  <div class="bg-slate-950 py-16 sm:py-20 border-b border-slate-800">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <a href="/services/" class="text-xs text-brand-cyan font-bold uppercase tracking-wider mb-4 inline-block hover:underline">← Retour aux services</a>
-      <h1 class="text-3xl sm:text-5xl font-heading font-black uppercase text-white mb-4">
+  <!-- Header Sombre & Immersif avec Photo de Logistique Terrain -->
+  <header class="relative min-h-[48vh] sm:min-h-[55vh] flex items-center bg-slate-950 border-b border-slate-800 overflow-hidden">
+    <img 
+      src="/assets/51581607901_c23c63d19b_k.webp" 
+      alt="Organisation d'événements sportifs et logistique d'envergure" 
+      class="absolute inset-0 w-full h-full object-cover object-center opacity-70 brightness-90 contrast-105"
+      onerror="this.src='/assets/organisation-evenements-sportifs-services-endurance-aventure.jpg'"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-black/40"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-20 w-full">
+      <a href="/services/" class="text-xs text-brand-cyan hover:text-white font-bold uppercase tracking-wider mb-4 inline-flex items-center gap-1.5 transition-colors">
+        <span>←</span>
+        <span>Retour aux services</span>
+      </a>
+      <h1 class="text-3xl sm:text-5xl font-heading font-black uppercase text-white mb-4 drop-shadow-md">
         Organisation d'Événements Sportifs
       </h1>
-      <p class="text-base sm:text-lg text-slate-300 font-light leading-relaxed">
+      <p class="text-base sm:text-lg text-slate-200 font-light leading-relaxed drop-shadow max-w-3xl">
         Une prise en charge logistique, technique et sécuritaire complète pour des épreuves sportives et défis corporatifs d'envergure.
       </p>
     </div>
-  </div>
+  </header>
 
   <!-- Contenu Principal sur Fond Clair Harmonieux -->
   <div class="bg-slate-50 py-16">

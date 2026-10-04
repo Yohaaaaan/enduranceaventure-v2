@@ -66,18 +66,29 @@ const team = [
   image="/assets/bastien-michau.webp"
 >
   
-  <!-- En-tête de page sobre et sombre (Action & prestige) -->
-  <div class="bg-slate-950 py-16 sm:py-20 border-b border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Histoire & Gouvernance</span>
-      <h1 class="text-3xl sm:text-5xl font-heading font-black uppercase text-white mb-4">
+  <!-- En-tête de page immersif avec photo authentique Endurance Aventure -->
+  <header class="relative min-h-[50vh] sm:min-h-[58vh] flex items-center bg-slate-950 border-b border-slate-800 overflow-hidden">
+    <img 
+      src="/assets/EnduranceAventure.jpg" 
+      alt="L'histoire et les expéditions d'Endurance Aventure depuis 1998" 
+      class="absolute inset-0 w-full h-full object-cover object-center opacity-70 brightness-90 contrast-105"
+      onerror="this.src='/assets/51581835318_775ae15a4e_k.webp'"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-black/40"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-24">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 backdrop-blur-md border border-slate-700 text-brand-red text-xs font-bold uppercase tracking-widest mb-5 shadow-lg">
+        <span class="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
+        Histoire & Gouvernance (Depuis 1998)
+      </div>
+      <h1 class="text-3xl sm:text-6xl font-heading font-black uppercase text-white mb-6 drop-shadow-md">
         L'Entreprise & L'Équipe
       </h1>
-      <p class="max-w-3xl text-base sm:text-lg text-slate-300 font-light leading-relaxed">
+      <p class="max-w-3xl text-base sm:text-lg text-slate-200 font-light leading-relaxed drop-shadow mb-4">
         Créée en 1998 au Québec, Endurance Aventure transforme les territoires sauvages en théâtres d'épreuves d'endurance d'envergure internationale et produit des images d'expédition diffusées à travers le monde.
       </p>
     </div>
-  </div>
+  </header>
 
   <!-- Contenu Principal sur Fond Clair pour lisibilité optimale -->
   <div class="bg-slate-50 py-20">

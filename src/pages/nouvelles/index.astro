@@ -5,26 +5,37 @@ import news from '../../data/news.json';
 
 <Layout title="Actualités, Récits & Archives | Endurance Aventure" description="Découvrez les actualités, résumés de courses, vidéos et annonces d'Endurance Aventure.">
   
-  <!-- Banner Sombre -->
-  <div class="bg-slate-950 py-16 sm:py-20 border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Banner Sombre & Immersif avec Photo de Récit Épique -->
+  <header class="relative min-h-[50vh] sm:min-h-[58vh] flex items-center bg-slate-950 border-b border-slate-800 overflow-hidden">
+    <img 
+      src="/assets/CAXTRI-2019-Extreme-Depart.webp" 
+      alt="Départ d'épreuve et récits d'endurance extrême" 
+      class="absolute inset-0 w-full h-full object-cover object-center opacity-70 brightness-90 contrast-105"
+      onerror="this.src='/assets/Canada-Man-2018-Course-sentier.webp'"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-black/40"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-24 w-full">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
-          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Récits de Course & Histoire</span>
-          <h1 class="text-4xl sm:text-6xl font-heading font-black uppercase tracking-tight text-white mb-4">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 backdrop-blur-md border border-slate-700 text-brand-red text-xs font-bold uppercase tracking-widest mb-5 shadow-lg">
+            <span class="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
+            Récits de Course, Médias & Histoire
+          </div>
+          <h1 class="text-4xl sm:text-6xl font-heading font-black uppercase tracking-tight text-white mb-4 drop-shadow-md">
             Actualités & Récits
           </h1>
-          <p class="max-w-2xl text-base sm:text-lg text-slate-300 font-light leading-relaxed">
+          <p class="max-w-2xl text-base sm:text-lg text-slate-200 font-light leading-relaxed drop-shadow">
             Revivez les temps forts, les annonces officielles et les plus grands exploits d'Endurance Aventure à travers nos archives et articles.
           </p>
         </div>
 
-        <div class="bg-slate-900 px-4 py-2 rounded-xl border border-slate-800 text-xs text-slate-300">
-          <span class="font-bold text-white">{news.length}</span> récits & publications archivés
+        <div class="bg-slate-900/90 backdrop-blur-md px-5 py-3 rounded-2xl border border-slate-700/80 text-xs text-slate-300 shadow-xl self-start md:self-end">
+          <span class="font-bold text-white text-base block">{news.length}</span> récits & publications archivés
         </div>
       </div>
     </div>
-  </div>
+  </header>
 
   <!-- Contenu Principal sur Fond Clair -->
   <div class="bg-slate-50 py-20">

@@ -7,18 +7,29 @@ import Layout from '../layouts/Layout.astro';
   description="Contactez l'équipe d'Endurance Aventure pour une demande de soumission B2B (événements d'entreprise, production télévisuelle, logistique de terrain) ou une question sur nos courses."
 >
   
-  <!-- Banner Sombre -->
-  <div class="bg-slate-950 py-16 sm:py-20 border-b border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Formulaire Sécurisé & Devis Direct</span>
-      <h1 class="text-4xl sm:text-6xl font-heading font-black uppercase tracking-tight text-white mb-4">
+  <!-- Banner Sombre & Immersif avec Photo de Terrain Québécois -->
+  <header class="relative min-h-[48vh] sm:min-h-[55vh] flex items-center bg-slate-950 border-b border-slate-800 overflow-hidden">
+    <img 
+      src="/assets/Canada-Man-2018-Course-sentier.webp" 
+      alt="Sentier d'aventure et territoire québécois - Endurance Aventure" 
+      class="absolute inset-0 w-full h-full object-cover object-center opacity-70 brightness-90 contrast-105"
+      onerror="this.src='/assets/51581835318_775ae15a4e_k.webp'"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-black/40"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-24 w-full">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 backdrop-blur-md border border-slate-700 text-brand-red text-xs font-bold uppercase tracking-widest mb-5 shadow-lg">
+        <span class="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
+        Formulaire Sécurisé & Devis Direct
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-heading font-black uppercase tracking-tight text-white mb-4 drop-shadow-md">
         Contact & Soumissions
       </h1>
-      <p class="max-w-2xl text-base sm:text-lg text-slate-300 font-light leading-relaxed">
+      <p class="max-w-2xl text-base sm:text-lg text-slate-200 font-light leading-relaxed drop-shadow">
         Vous planifiez un défi corporatif, une production télévisuelle ou avez une question sur une course ? Bastien Michau, Daniel Poirier et l'équipe technique vous répondent sous 24 à 48h.
       </p>
     </div>
-  </div>
+  </header>
 
   <!-- Contenu Principal sur Fond Clair -->
   <div class="bg-slate-50 py-16 sm:py-20">
