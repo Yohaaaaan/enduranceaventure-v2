@@ -114,7 +114,19 @@ The site follows a **Hybrid High-Contrast Outdoor Expedition** design system (an
 
 AI agents frequently fall back on generic training averages. In this project, all "AI Slop" patterns are strictly forbidden.
 
-### 🚫 The Visual Stop-List (Never Use)
+### 🚫 The Visual Stop-List (Strictly Prohibited & Their Replacements)
+- **NO Glowy Crypto Badges & Pulsing Dots**:
+  - *Prohibited*: `animate-pulse`, glowing dot pills (`<span class="... animate-pulse">`), neon borders (`border-cyan-400`), translucent pill badges with heavy `backdrop-blur-md shadow-lg`.
+  - *Replacement*: Crisp athletic tags inspired by sports timing and technical bibs: clean rectangular or subtle radius tags (`rounded-sm` or `rounded px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider`), solid high-contrast backgrounds (`bg-brand-red text-white` or `bg-slate-900 text-slate-100 border border-slate-800`), or left-border kickers (`border-l-2 border-brand-red pl-2.5`).
+- **NO Bubbly / Overly Rounded Corners (`rounded-3xl`, `rounded-2xl`)**:
+  - *Prohibited*: Over-curved "bubble app" / crypto startup corners (`rounded-3xl` and `rounded-2xl`) on cards, containers, sections, modals, and images.
+  - *Replacement*: Athletic, functional, and rugged geometry (Salomon, Arc'teryx, UTMB, Ironman): use `rounded-lg` (8px) or `rounded-md` (6px) maximum. Containers and cards must feel structured, technical, and architectural, never like inflatable toy bubbles.
+- **NO Raw Unicode Emojis**:
+  - *Prohibited*: Emojis in UI elements, headings, cards, or lists (`📍`, `📅`, `⚡`, `✓`, `🏢`, `🏃`, `📱`, `💻`, `📬`, `↓`, `→`, `←`, `↗`). Emojis destroy corporate credibility and give a distinct "amateur / AI-generated" aesthetic.
+  - *Replacement*: Minimalist monochrome SVG icons (`w-3.5 h-3.5` stroke-2), clean typographic labels (`Date :`, `Lieu :`, `Format :`), subtle typographic dashes (`—`), or sleek SVG arrows.
+- **NO Neon Glow Shadows**:
+  - *Prohibited*: `shadow-2xl` on normal cards, colored neon glow drop shadows (`shadow-brand-red/30`, `shadow-cyan/40`).
+  - *Replacement*: Flat structural design with crisp 1px neutral borders (`border border-slate-200` on light, `border border-slate-800` on dark) and subtle, natural elevation (`shadow-sm` or `shadow-md`).
 - **NO SaaS Gradients**: Never use purple/indigo/violet gradients (`from-purple-500 to-indigo-600` or `from-violet-600 to-pink-500`).
 - **NO Glassmorphism & Neon Halos**: Never use frosted glass cards with glowing neon borders, glowing shadow halos, or blurred color orbs in the background.
 - **NO Bento-Box Grids**: Avoid the cliché "3 identical rounded feature cards with floating colored icons" followed by generic pricing tables.
