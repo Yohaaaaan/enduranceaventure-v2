@@ -5,17 +5,83 @@
 
 ---
 
-## 1. Project Overview & Identity
+## 1. Project Overview & Environments
 
 Endurance Aventure is a pioneer in extreme sports event organization, wilderness expeditions, and high-risk TV/documentary production based in Magog (Quebec, Canada) since 1998.
 
-- **Stack**: Astro v5 (SSG + Route Endpoints), Tailwind CSS v3, Node.js + Express (`server.js`), Chart.js, PM2.
-- **Production URL**: `https://bb-reports.duckdns.org/` (Proxied via Nginx to local port `4321`).
-- **PM2 Service Name**: `endurance-site` (ID: 4).
+- **Tech Stack**: Astro v5 (SSG + Route Endpoints), Tailwind CSS v3, Node.js + Express (`server.js`), Chart.js, PM2, Nginx reverse proxy.
+
+### Dual-Environment Architecture
+
+| Environment | Directory Path | Git Branch | Internal Port | PM2 Process | Public Live URL | Purpose |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Preview / Staging** | `/mnt/data/enduranceaventure-preview/` | `preview` | `4322` | `endurance-preview` | `https://rag-agent.duckdns.org/` | **All active dev & modifications happen here** |
+| **Production** | `/mnt/data/enduranceaventure-v2/` | `main` | `4321` | `endurance-site` | `https://bb-reports.duckdns.org/` | **Untouchable during dev. Updated ONLY after user validation** |
 
 ---
 
-## 2. Established Design System (Mandatory Aesthetic)
+## 2. Dual-Environment Workflow & Deployment Gate (STRICT MANDATORY RULE)
+
+All AI agents must strictly follow the workflow below without exception:
+
+```mermaid
+flowchart TD
+    A["User Request / Task"] --> B["Work EXCLUSIVELY in /mnt/data/enduranceaventure-preview/"]
+    B --> C["Compile & Test: npm run build"]
+    C --> D["Restart Preview: pm2 restart endurance-preview"]
+    D --> E["Present Preview Link: https://rag-agent.duckdns.org/"]
+    E --> F{"User Validates & Approves?"}
+    F -- "No / Request Changes" --> B
+    F -- "Yes ('valide', 'go prod')" --> G["Commit & Push on 'preview' branch"]
+    G --> H["Merge to 'main' & Push GitHub"]
+    H --> I["Deploy Prod in /mnt/data/enduranceaventure-v2/: git pull && npm run build && pm2 restart endurance-site"]
+    I --> J["Production is Live & Verified at https://bb-reports.duckdns.org/"]
+```
+
+### Protocol Steps:
+
+1. **Step 1: Isolated Development on Preview**:
+   - Navigate to `/mnt/data/enduranceaventure-preview/`.
+   - Verify you are on the `preview` branch (`git status`).
+   - Implement requested changes strictly within this directory.
+   - **ABSOLUTE PROHIBITION**: NEVER modify application code directly inside `/mnt/data/enduranceaventure-v2/` during development.
+
+2. **Step 2: Preview Build & Service Restart**:
+   - In `/mnt/data/enduranceaventure-preview/`:
+     ```bash
+     npm run build
+     pm2 restart endurance-preview
+     ```
+   - Verify the preview is online (`curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:4322/`).
+
+3. **Step 3: User Verification Gate**:
+   - Share the preview URL with the user (e.g. `https://rag-agent.duckdns.org/evenements/`).
+   - Ask the user to review and confirm if the modifications match expectations.
+   - **STOP**: Do NOT proceed to production deployment until the user explicitly says "c'est bon", "valide", "déploie en prod", or equivalent approval.
+
+4. **Step 4: Promotion & Production Deployment**:
+   - Once user approval is granted:
+     1. In `/mnt/data/enduranceaventure-preview/`:
+        ```bash
+        git add <explicit files by name>
+        git commit -m "feat/fix: <description in English>"
+        git push origin preview
+        git checkout main
+        git merge preview
+        git push origin main
+        git checkout preview
+        ```
+     2. In `/mnt/data/enduranceaventure-v2/` (Production directory):
+        ```bash
+        git pull origin main
+        npm run build
+        pm2 restart endurance-site
+        ```
+     3. Verify production live URL (`https://bb-reports.duckdns.org/`).
+
+---
+
+## 3. Established Design System (Mandatory Aesthetic)
 
 The site follows a **Hybrid High-Contrast Outdoor Expedition** design system (analogous to Arc'teryx, Salomon, Red Bull Media House, and Ironman).
 
@@ -40,11 +106,11 @@ The site follows a **Hybrid High-Contrast Outdoor Expedition** design system (an
 1. **Cinematic Hero Headers**: Full or near-full height (`min-h-[85vh] sm:min-h-screen`), high-resolution action photo (opacity 80–85%, brightness 90–95%), subtle dark gradient vignette (`from-slate-950/90 via-slate-950/30 to-black/40`) to preserve photo visibility while guaranteeing text readability.
 2. **Light Content Canvas**: Main content blocks use `bg-slate-50` with pure white cards (`bg-white`, `border border-slate-200`, `shadow-sm`) for schedules, technical specs, rules, and gear lists.
 3. **Dark Metric Bars**: High-impact quantitative stats bars use `bg-slate-900` with high-contrast numbers (`text-brand-red` or `text-brand-cyan`).
-4. **Logo Container Rule**: Sponsor and partner logos (Argon 18, ARWS, Desjardins, Raid Témiscamingue) MUST always sit on a pure white pill/card (`bg-white shadow-md border border-slate-200/90 rounded-2xl p-2 sm:p-2.5 flex items-center`) with `object-contain`. Never place dark/color logos naked over textured photography.
+4. **Logo Container Rule**: Sponsor and partner logos (Argon 18, ARWS, Desjardins) MUST always sit on a pure white pill/card (`bg-white shadow-md border border-slate-200/90 rounded-xl p-2 sm:p-2.5 flex items-center`) with `object-contain`. Never place dark/color logos naked over textured photography.
 
 ---
 
-## 3. Strict Anti-AI Slop Guardrails
+## 4. Strict Anti-AI Slop Guardrails
 
 AI agents frequently fall back on generic training averages. In this project, all "AI Slop" patterns are strictly forbidden.
 
@@ -71,10 +137,10 @@ AI agents frequently fall back on generic training averages. In this project, al
 
 ---
 
-## 4. Directory Structure & Key Files
+## 5. Directory Structure & Key Files
 
 ```text
-/
+/mnt/data/enduranceaventure-preview/ (and mirrored in production)
 ├── public/
 │   ├── assets/                 # 500+ optimized WebP photos, logos, graphics
 │   ├── robots.txt              # Search engine directives
@@ -85,7 +151,8 @@ AI agents frequently fall back on generic training averages. In this project, al
 │   │   ├── Header.astro        # Sticky navigation with desktop dropdowns & mobile drawer
 │   │   └── Footer.astro        # High-contrast 4-column footer with official social links
 │   ├── data/
-│   │   ├── events.json         # Active sports events data
+│   │   ├── events.json         # Active 4 flagship sports events data
+│   │   ├── pastEvents.json     # Complete historical archive of 31 events (2008–2026)
 │   │   ├── services.json       # B2B services specifications
 │   │   └── news.json           # 26 historical blog posts & archives
 │   ├── layouts/
@@ -108,35 +175,6 @@ AI agents frequently fall back on generic training averages. In this project, al
 
 ---
 
-## 5. Development & Server Operations
-
-### Build & Dev Commands
-```bash
-# Run local Astro dev server
-npm run dev
-
-# Compile production bundle (must succeed with 0 errors)
-npm run build
-
-# Start Node production server
-npm start
-```
-
-### PM2 Process Management (Absolute Rule)
-- Backend process is managed exclusively by **PM2**.
-- **NEVER** use `nohup`, `&`, `pkill`, or `killall`.
-- Restart service after every production build:
-  ```bash
-  pm2 restart endurance-site
-  ```
-- View service status and logs:
-  ```bash
-  pm2 status endurance-site
-  pm2 logs endurance-site --lines 50
-  ```
-
----
-
 ## 6. Server & Git Discipline (Mandatory for All Agents)
 
 1. **NEVER Kill Processes**:
@@ -147,8 +185,7 @@ npm start
    - Always stage files by explicit file name: `git add src/pages/example.astro`.
    - Verify staged changes before committing: `git diff --cached --name-only`.
 3. **Commit & Push Discipline**:
-   - Write commit messages in **English** using heredoc files (`git commit -F <file>`).
-   - Automatically push to `origin/main` as soon as a coherent increment is complete.
+   - Write commit messages in **English** describing the *why*.
    - Never commit `.env`, credentials, or large binary files (>10MB).
 4. **Mirror Rule**:
-   - Any modification made to `AGENTS.md` MUST simultaneously be applied to `CLAUDE.md` so both files remain 100% identical.
+   - Any modification made to `AGENTS.md` MUST simultaneously be applied to `CLAUDE.md` so both files remain 100% identical across both environments.
