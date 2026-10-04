@@ -189,3 +189,16 @@ AI agents frequently fall back on generic training averages. In this project, al
    - Never commit `.env`, credentials, or large binary files (>10MB).
 4. **Mirror Rule**:
    - Any modification made to `AGENTS.md` MUST simultaneously be applied to `CLAUDE.md` so both files remain 100% identical across both environments.
+
+---
+
+## 7. Temporary Files & Database Ingestion (ABSOLUTE MANDATORY RULE)
+
+1. **NO Direct Use of Temporary Directories**:
+   - Files located in `/home/opc/temporaire/`, `/tmp/`, scratch pads, or web scraping/download buffers are **strictly ephemeral staging areas**.
+   - **NEVER** link, reference, mount, serve, or read files directly from `temporaire/` in the website, API, or production environment.
+2. **Mandatory Ingestion into Database / Permanent Storage**:
+   - Any file, document, photo, or dataset placed in `temporaire/` must **always be formally copied / imported into the project's persistent database or assets** (e.g., SQLite DB, structured `src/data/*.json`, or permanent `public/assets/` directory) before it can be used.
+3. **Consumption Strictly from Database / Permanent Storage**:
+   - Both Preview and Production environments must consume all data, media, and documents **strictly from the database or the project's permanent storage**.
+
