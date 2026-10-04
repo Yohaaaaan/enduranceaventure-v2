@@ -20,7 +20,7 @@ import Layout from '../../layouts/Layout.astro';
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-20 w-full">
       <a href="/services/" class="text-xs text-brand-cyan hover:text-white font-bold uppercase tracking-wider mb-4 inline-flex items-center gap-1.5 transition-colors">
-        <span>←</span>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
         <span>Retour aux services</span>
       </a>
       <h1 class="text-3xl sm:text-5xl font-heading font-black uppercase text-white mb-4 drop-shadow-lg">
@@ -35,11 +35,11 @@ import Layout from '../../layouts/Layout.astro';
   <!-- Contenu Principal sur Fond Clair -->
   <div class="bg-slate-50 py-16">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="rounded-3xl overflow-hidden mb-12 shadow-md h-96 bg-slate-200">
+      <div class="rounded-lg overflow-hidden mb-12 shadow-sm border border-slate-200 h-96 bg-slate-200">
         <img src="/assets/production-tele-services-endurance-aventure-e1517973509712.jpg" alt="Production télévisuelle" class="w-full h-full object-cover" />
       </div>
 
-      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm space-y-8 text-slate-700 leading-relaxed text-sm sm:text-base">
+      <div class="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 shadow-sm space-y-8 text-slate-700 leading-relaxed text-sm sm:text-base">
         <div>
           <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">Tournage Hors Norme</span>
           <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 mb-4">Captation en milieux hostiles & Émissions TV</h2>
@@ -52,11 +52,11 @@ import Layout from '../../layouts/Layout.astro';
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <div class="bg-slate-50 p-6 rounded-md border border-slate-200">
             <h3 class="font-bold text-slate-900 mb-2">Prises de vue par Drone Certifié</h3>
             <p class="text-xs sm:text-sm text-slate-600">Pilotes certifiés Transports Canada pour opérations avancées. Survol de pelotons, canyons et paysages grandioses avec caméra cinématographique 4K.</p>
           </div>
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <div class="bg-slate-50 p-6 rounded-md border border-slate-200">
             <h3 class="font-bold text-slate-900 mb-2">Cadreurs Sportifs Embarqués</h3>
             <p class="text-xs sm:text-sm text-slate-600">Nos cadreurs suivent les athlètes à pied, en ski, en kayak de mer ou en vélo pour capter la sueur, l'effort et l'émotion brute sans ralentir l'épreuve.</p>
           </div>
@@ -71,17 +71,17 @@ import Layout from '../../layouts/Layout.astro';
             </h3>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="group rounded-2xl overflow-hidden bg-slate-200 h-56 relative shadow-sm">
+            <div class="group rounded-md overflow-hidden bg-slate-200 h-56 relative shadow-sm">
               <img src="/assets/gravel-bike-challenge-500-estrie-2020-dji-0293.webp" alt="Survol drone 4K" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='/assets/51586236989_64f608f4ba_k.webp'" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
               <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Survols par drone agréé 4K</span>
             </div>
-            <div class="group rounded-2xl overflow-hidden bg-slate-200 h-56 relative shadow-sm">
+            <div class="group rounded-md overflow-hidden bg-slate-200 h-56 relative shadow-sm">
               <img src="/assets/raid-international-gaspesie-2016-mont-saint-joseph-slack-line.webp" alt="Cadrage en falaise extrême" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='/assets/51582278409_86672a9a9f_k.webp'" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
               <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Cadreurs sur parois & falaises</span>
             </div>
-            <div class="group rounded-2xl overflow-hidden bg-slate-200 h-56 relative shadow-sm">
+            <div class="group rounded-md overflow-hidden bg-slate-200 h-56 relative shadow-sm">
               <img src="/assets/canadaman-2017-lac-megantic-ligne-depart-nuit-1920x718.jpg" alt="Tournage nocturne grand spectacle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
               <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Éclairage cinématographique</span>
@@ -90,10 +90,10 @@ import Layout from '../../layouts/Layout.astro';
         </div>
 
         <!-- Banner Action Harmonisé -->
-        <div class="bg-slate-100 rounded-2xl border border-slate-300/80 p-8 sm:p-10 text-center mt-12">
+        <div class="bg-slate-100 rounded-md border border-slate-300/80 p-8 sm:p-10 text-center mt-12">
           <h3 class="text-xl sm:text-2xl font-heading font-bold text-slate-900 mb-2">Un projet de film, documentaire ou captation d'événement ?</h3>
           <p class="text-sm text-slate-600 max-w-xl mx-auto mb-6">Parlons de votre cahier des charges et de la logistique requise sur le terrain.</p>
-          <a href="/contact/" class="px-8 py-3.5 rounded-xl bg-brand-cyan hover:bg-cyan-600 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all inline-block shadow-md shadow-brand-cyan/20">
+          <a href="/contact/" class="px-8 py-3.5 rounded-md bg-brand-cyan hover:bg-cyan-600 text-white font-heading font-bold text-xs uppercase tracking-wider transition-all inline-block shadow-sm">
             Demander un devis de tournage
           </a>
         </div>

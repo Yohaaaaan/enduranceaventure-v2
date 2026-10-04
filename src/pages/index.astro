@@ -138,7 +138,7 @@ const sponsors = [
     <div class="relative z-10 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
       <div class="flex items-center gap-6 w-max animate-infinite-scroll">
         {[...sponsors, ...sponsors].map((s) => (
-          <div class="h-16 w-36 sm:w-44 px-4 py-2 rounded-2xl bg-white shadow-sm border border-slate-200/90 flex items-center justify-center flex-shrink-0">
+          <div class="h-16 w-36 sm:w-44 px-4 py-2 rounded-md bg-white shadow-sm border border-slate-200/90 flex items-center justify-center flex-shrink-0">
             <img 
               src={s.logo} 
               alt={s.name} 
@@ -183,14 +183,15 @@ const sponsors = [
           </h2>
         </div>
         <a href="/evenements" class="text-brand-red hover:text-red-700 font-bold text-sm uppercase tracking-wider flex items-center gap-1.5 transition-colors">
-          Voir tout le calendrier →
+          <span>Voir tout le calendrier</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
       </div>
 
       <!-- Events Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {featuredEvents.map((evt) => (
-          <div class="group rounded-2xl bg-white border border-slate-200/90 shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:border-slate-300 hover:shadow-xl hover:-translate-y-1">
+          <div class="group rounded-lg bg-white border border-slate-200/90 shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:border-slate-300 hover:shadow-lg hover:-translate-y-0.5">
             <!-- Image Frame -->
             <div class="relative h-64 overflow-hidden bg-slate-200">
               <img 
@@ -201,13 +202,13 @@ const sponsors = [
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
               
               <!-- Badge Status -->
-              <span class="absolute top-4 left-4 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-brand-red text-white shadow-md">
+              <span class="absolute top-4 left-4 px-2.5 py-1 rounded-sm text-xs font-bold uppercase tracking-wider bg-brand-red text-white shadow-sm">
                 {evt.category}
               </span>
 
               <!-- Badge Logos Officiels sur capsule blanche -->
               {evt.logo && (
-                <div class="absolute top-4 right-4 p-1.5 sm:p-2 rounded-xl bg-white shadow-lg border border-slate-200/90 flex items-center gap-2 z-10">
+                <div class="absolute top-4 right-4 p-1.5 sm:p-2 rounded-md bg-white shadow-sm border border-slate-200/90 flex items-center gap-2 z-10">
                   <img 
                     src={evt.logo} 
                     alt={`Logo ${evt.title}`} 
@@ -227,8 +228,9 @@ const sponsors = [
               )}
               
               <!-- Badge Location -->
-              <span class="absolute bottom-4 left-4 px-3 py-1 rounded-md text-xs font-semibold bg-slate-950/80 text-white backdrop-blur-sm">
-                📍 {evt.location}
+              <span class="absolute bottom-4 left-4 px-2.5 py-1 rounded-sm text-xs font-semibold bg-slate-950/85 text-white backdrop-blur-sm border border-slate-800 flex items-center gap-1.5 shadow-sm">
+                <svg class="w-3.5 h-3.5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span>{evt.location}</span>
               </span>
             </div>
 
@@ -260,10 +262,12 @@ const sponsors = [
                   href={evt.registrationLink} 
                   target={evt.registrationLink.startsWith('http') ? '_blank' : undefined}
                   rel={evt.registrationLink.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  class="px-4 py-2.5 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-md shadow-brand-red/20 inline-flex items-center gap-1.5"
+                  class="px-4 py-2.5 rounded-md bg-brand-red hover:bg-brand-red-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-sm inline-flex items-center gap-1.5"
                 >
                   <span>{evt.registrationLink.startsWith('http') ? 'Site Officiel' : 'Détails & Inscription'}</span>
-                  {evt.registrationLink.startsWith('http') && <span>↗</span>}
+                  {evt.registrationLink.startsWith('http') && (
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                  )}
                 </a>
               </div>
             </div>
@@ -302,12 +306,12 @@ const sponsors = [
           };
 
           return (
-            <div class={`rounded-2xl bg-slate-50/90 border border-slate-200 p-8 flex flex-col justify-between transition-all duration-300 ${meta.borderHover} hover:shadow-xl hover:-translate-y-1`}>
+            <div class={`rounded-lg bg-slate-50/90 border border-slate-200 p-8 flex flex-col justify-between transition-all duration-300 ${meta.borderHover} hover:shadow-lg hover:-translate-y-0.5`}>
               <div>
                 <div class="flex items-center justify-between mb-6">
-                  <div class={`w-12 h-12 rounded-xl border flex items-center justify-center font-bold shadow-sm ${meta.iconBg}`} set:html={meta.iconSvg}>
+                  <div class={`w-12 h-12 rounded-md border flex items-center justify-center font-bold shadow-sm ${meta.iconBg}`} set:html={meta.iconSvg}>
                   </div>
-                  <span class={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border ${meta.badgeClass}`}>
+                  <span class={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-sm border ${meta.badgeClass}`}>
                     {meta.tag}
                   </span>
                 </div>
@@ -331,9 +335,10 @@ const sponsors = [
 
               <a 
                 href={`/services/${srv.slug}/`} 
-                class={`w-full py-3 rounded-xl border border-slate-300 text-slate-800 text-center text-xs font-bold uppercase tracking-wider transition-all shadow-sm ${meta.btnBorderHover}`}
+                class={`w-full py-3 rounded-md border border-slate-300 text-slate-800 text-center text-xs font-bold uppercase tracking-wider transition-all shadow-sm flex items-center justify-center gap-1.5 ${meta.btnBorderHover}`}
               >
-                Consulter les détails →
+                <span>Consulter les détails</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
               </a>
             </div>
           );
@@ -341,7 +346,7 @@ const sponsors = [
       </div>
 
       <!-- BANDEAU CONSULTATION & DIRECTION DE PROJET (Design sobre, épuré et authentique) -->
-      <div class="mt-16 rounded-2xl bg-slate-900 border border-slate-800 p-8 sm:p-12 text-white shadow-xl">
+      <div class="mt-16 rounded-lg bg-slate-900 border border-slate-800 p-8 sm:p-12 text-white shadow-xl">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           <!-- Colonne Titre & Pitch -->
@@ -357,17 +362,17 @@ const sponsors = [
             </p>
 
             <!-- Spécifications concrètes de terrain -->
-            <ul class="space-y-2 mb-8 text-xs text-slate-300">
+            <ul class="space-y-2.5 mb-8 text-xs text-slate-300">
               <li class="flex items-center gap-2.5">
-                <span class="text-brand-red font-bold">✓</span>
+                <span class="w-1.5 h-1.5 bg-brand-red flex-shrink-0"></span>
                 <span>Repérage cartographique GPS, conformité environnementale et plans d'urgence</span>
               </li>
               <li class="flex items-center gap-2.5">
-                <span class="text-brand-cyan font-bold">✓</span>
+                <span class="w-1.5 h-1.5 bg-brand-cyan flex-shrink-0"></span>
                 <span>Moyens de tournage 4K, cadreurs outdoor et drones homologués Transports Canada</span>
               </li>
               <li class="flex items-center gap-2.5">
-                <span class="text-emerald-400 font-bold">✓</span>
+                <span class="w-1.5 h-1.5 bg-emerald-400 flex-shrink-0"></span>
                 <span>Étude de faisabilité et estimation chiffrée remises sous 48 heures</span>
               </li>
             </ul>
@@ -376,7 +381,7 @@ const sponsors = [
             <div class="flex flex-wrap items-center gap-4">
               <a 
                 href="/contact/" 
-                class="px-7 py-3.5 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 shadow-sm"
+                class="px-7 py-3.5 rounded-md bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 shadow-sm"
               >
                 <span>Demander une soumission</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
@@ -384,7 +389,7 @@ const sponsors = [
 
               <a 
                 href="mailto:info@enduranceaventure.com" 
-                class="px-5 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-2"
+                class="px-5 py-3.5 rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-2"
               >
                 <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                 <span>info@enduranceaventure.com</span>
@@ -403,11 +408,11 @@ const sponsors = [
             </div>
 
             <!-- 1. Bastien Michau (En haut) -->
-            <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/90 border border-slate-700/80">
+            <div class="flex items-center gap-4 p-4 rounded-md bg-slate-800/90 border border-slate-700/80">
               <img 
                 src="/assets/bastien-michau.webp" 
                 alt="Bastien Michau" 
-                class="w-14 h-14 rounded-xl object-cover border border-slate-600 flex-shrink-0"
+                class="w-14 h-14 rounded-md object-cover border border-slate-600 flex-shrink-0"
                 onerror="this.src='/assets/bastien-michau.jpg'"
               />
               <div>
@@ -418,11 +423,11 @@ const sponsors = [
             </div>
 
             <!-- 2. Daniel Poirier (En dessous) -->
-            <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/90 border border-slate-700/80">
+            <div class="flex items-center gap-4 p-4 rounded-md bg-slate-800/90 border border-slate-700/80">
               <img 
                 src="/assets/daniel-poirier-endurance-aventure.webp" 
                 alt="Daniel Poirier" 
-                class="w-14 h-14 rounded-xl object-cover border border-slate-600 flex-shrink-0"
+                class="w-14 h-14 rounded-md object-cover border border-slate-600 flex-shrink-0"
                 onerror="this.src='/assets/daniel-poirier-endurance-aventure.jpg'"
               />
               <div>
@@ -452,14 +457,15 @@ const sponsors = [
             Actualités & Récits
           </h2>
         </div>
-        <a href="/nouvelles" class="text-sm font-bold text-slate-700 hover:text-brand-red uppercase tracking-wider">
-          Tous les articles ({news.length}) →
+        <a href="/nouvelles" class="text-sm font-bold text-slate-700 hover:text-brand-red uppercase tracking-wider flex items-center gap-1.5 transition-colors">
+          <span>Tous les articles ({news.length})</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {latestNews.map((n) => (
-          <article class="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden flex flex-col group hover:shadow-lg transition-all duration-300">
+          <article class="rounded-lg bg-white border border-slate-200 shadow-sm overflow-hidden flex flex-col group hover:shadow-lg transition-all duration-300">
             <div class="relative h-48 overflow-hidden bg-slate-200">
               <img 
                 src={n.image} 
@@ -467,8 +473,9 @@ const sponsors = [
                 class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 onerror="this.src='/assets/EnduranceAventure.jpg'"
               />
-              <span class="absolute top-3 right-3 px-2.5 py-1 rounded bg-black/75 text-[11px] font-semibold text-white backdrop-blur-sm">
-                📅 {n.date}
+              <span class="absolute top-3 right-3 px-2 py-0.5 rounded-sm bg-black/80 text-[11px] font-semibold text-white backdrop-blur-sm border border-slate-800 flex items-center gap-1">
+                <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                <span>{n.date}</span>
               </span>
             </div>
             <div class="p-6 flex-grow flex flex-col justify-between">
@@ -480,8 +487,9 @@ const sponsors = [
                   {n.excerpt}
                 </p>
               </div>
-              <a href={`/nouvelles/${n.slug}`} class="text-xs font-bold text-brand-red hover:underline uppercase tracking-wider">
-                Lire l'article complet →
+              <a href={`/nouvelles/${n.slug}`} class="text-xs font-bold text-brand-red hover:underline uppercase tracking-wider inline-flex items-center gap-1">
+                <span>Lire l'article complet</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
               </a>
             </div>
           </article>

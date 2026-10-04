@@ -53,7 +53,7 @@ const blogSchema = {
 
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-20 w-full">
       <a href="/nouvelles/" class="text-xs font-bold uppercase tracking-wider text-brand-red hover:underline mb-4 inline-flex items-center gap-1.5 transition-colors">
-        <span>←</span>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
         <span>Retour aux actualités</span>
       </a>
       <div class="text-xs text-brand-cyan font-bold uppercase tracking-wider mb-3">
@@ -71,7 +71,7 @@ const blogSchema = {
       
       <!-- Featured Image -->
       {post.image && (
-        <div class="rounded-3xl overflow-hidden mb-12 shadow-md bg-slate-200 max-h-[500px]">
+        <div class="rounded-lg overflow-hidden mb-12 shadow-sm border border-slate-200 bg-slate-200 max-h-[500px]">
           <img 
             src={post.image} 
             alt={post.title} 
@@ -82,15 +82,16 @@ const blogSchema = {
       )}
 
       <!-- Post Content Rendered -->
-      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm">
+      <div class="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 shadow-sm">
         <div class="prose prose-slate prose-lg max-w-none text-slate-800 leading-relaxed space-y-6" set:html={post.content} />
 
         <!-- Bottom navigation -->
         <div class="mt-16 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <a href="/nouvelles" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider transition-all">
-            ← Toutes les actualités
+          <a href="/nouvelles" class="w-full sm:w-auto text-center px-6 py-3 rounded-md bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold uppercase tracking-wider transition-all inline-flex items-center justify-center gap-1.5 border border-slate-200">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+            <span>Toutes les actualités</span>
           </a>
-          <a href="/contact" class="w-full sm:w-auto text-center px-6 py-3 rounded-xl bg-brand-red text-white text-xs font-bold uppercase tracking-wider hover:bg-brand-red-dark transition-all shadow-md">
+          <a href="/contact" class="w-full sm:w-auto text-center px-6 py-3 rounded-md bg-brand-red text-white text-xs font-heading font-bold uppercase tracking-wider hover:bg-brand-red-dark transition-all shadow-sm">
             Nous contacter
           </a>
         </div>

@@ -20,7 +20,7 @@ import Layout from '../../layouts/Layout.astro';
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-20 w-full">
       <a href="/services/" class="text-xs text-brand-cyan hover:text-white font-bold uppercase tracking-wider mb-4 inline-flex items-center gap-1.5 transition-colors">
-        <span>←</span>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
         <span>Retour aux services</span>
       </a>
       <h1 class="text-3xl sm:text-5xl font-heading font-black uppercase text-white mb-4 drop-shadow-lg">
@@ -37,12 +37,12 @@ import Layout from '../../layouts/Layout.astro';
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Photo illustrative -->
-      <div class="rounded-3xl overflow-hidden mb-12 shadow-sm border border-slate-200 h-96 bg-slate-200">
+      <div class="rounded-lg overflow-hidden mb-12 shadow-sm border border-slate-200 h-96 bg-slate-200">
         <img src="/assets/organisation-evenements-sportifs-services-endurance-aventure.jpg" alt="Organisation d'événements" class="w-full h-full object-cover" />
       </div>
 
       <!-- Corps du texte avec contrastes soignés -->
-      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm space-y-8">
+      <div class="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 shadow-sm space-y-8">
         <div>
           <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Savoir-Faire Clé en Main</span>
           <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 mb-4">
@@ -55,22 +55,22 @@ import Layout from '../../layouts/Layout.astro';
 
         <!-- Grille des 4 domaines d'expertise (Fonds gris doux, titres foncés) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-8">
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <div class="bg-slate-50 p-6 rounded-md border border-slate-200">
             <h3 class="font-heading font-bold text-slate-900 text-base mb-2">Ingénierie de Parcours</h3>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Tracé cartographique GPS, validation des droits de passage avec propriétaires et municipalités, conformité environnementale et balisage professionnel.</p>
           </div>
           
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <div class="bg-slate-50 p-6 rounded-md border border-slate-200">
             <h3 class="font-heading font-bold text-slate-900 text-base mb-2">Sécurité & Plans d'Urgence</h3>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Équipes de premiers secours tout-terrain, liaisons radio VHF et balises satellites, coordination étroite avec la sécurité civile et les ambulanciers.</p>
           </div>
           
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <div class="bg-slate-50 p-6 rounded-md border border-slate-200">
             <h3 class="font-heading font-bold text-slate-900 text-base mb-2">Logistique des Vivres & Bivouacs</h3>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Gestion des points de ravitaillement, tentes, campements éphémères en milieu isolé et alimentation énergétique adaptée pour les athlètes.</p>
           </div>
           
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <div class="bg-slate-50 p-6 rounded-md border border-slate-200">
             <h3 class="font-heading font-bold text-slate-900 text-base mb-2">Plateforme d'Inscription & Accueil</h3>
             <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Système d'inscription en ligne conforme, gestion de la billetterie, remise des trousses de coureur et accueil personnalisé des participants.</p>
           </div>
@@ -85,17 +85,17 @@ import Layout from '../../layouts/Layout.astro';
             </h3>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="group rounded-2xl overflow-hidden bg-slate-200 h-56 relative shadow-sm">
+            <div class="group rounded-md overflow-hidden bg-slate-200 h-56 relative shadow-sm">
               <img src="/assets/canadaman-2017-lac-megantic-ligne-depart-nuit-1920x718.jpg" alt="Ligne de départ de nuit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
               <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Régie de départs nocturnes</span>
             </div>
-            <div class="group rounded-2xl overflow-hidden bg-slate-200 h-56 relative shadow-sm">
+            <div class="group rounded-md overflow-hidden bg-slate-200 h-56 relative shadow-sm">
               <img src="/assets/TDN-2018-Trail-des-Neiges-Mont-Orford-Gagnants-15km-skimo.webp" alt="Podium et remise des prix" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='/assets/51581835318_775ae15a4e_k.webp'" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
               <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Podiums & Cérémonies</span>
             </div>
-            <div class="group rounded-2xl overflow-hidden bg-slate-200 h-56 relative shadow-sm">
+            <div class="group rounded-md overflow-hidden bg-slate-200 h-56 relative shadow-sm">
               <img src="/assets/51586236989_64f608f4ba_k.webp" alt="Gestion des pelotons et coureurs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
               <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Encadrement de masse</span>
@@ -104,12 +104,12 @@ import Layout from '../../layouts/Layout.astro';
         </div>
 
         <!-- CTA Card Harmonisé (Fond clair structuré, pas de bloc noir agressif) -->
-        <div class="bg-slate-100 rounded-2xl border border-slate-300/80 p-8 sm:p-10 text-center">
+        <div class="bg-slate-100 rounded-md border border-slate-300/80 p-8 sm:p-10 text-center">
           <h3 class="text-xl sm:text-2xl font-heading font-bold text-slate-900 mb-2">Vous avez un projet d'événement sportif ou d'entreprise ?</h3>
           <p class="text-sm text-slate-600 max-w-xl mx-auto mb-6">Échangez avec Daniel Poirier et Bastien Michau pour évaluer la faisabilité technique et recevoir un devis adapté à vos effectifs.</p>
           <a 
             href="/contact/" 
-            class="px-8 py-3.5 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all inline-block shadow-md shadow-brand-red/20"
+            class="px-8 py-3.5 rounded-md bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all inline-block shadow-sm"
           >
             Discuter de votre projet
           </a>
