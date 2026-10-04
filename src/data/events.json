@@ -9,6 +9,14 @@
     "dates": "Édition 2026 : Août 2026",
     "distance": "500 km / 250 km / 100 km",
     "image": "/assets/2023-08-05_GBC500_mc_1498-scaled.webp",
+    "images": [
+      "/assets/2023-08-05_GBC500_mc_1498-scaled.webp",
+      "/assets/52297032844_c0694abe2a_k.webp",
+      "/assets/52297043904_e0558ff9bc_k.webp",
+      "/assets/52297032764_294ab3c4f4_k.webp",
+      "/assets/52296779718_3f37b20ad7_k.webp"
+    ],
+    "video": "https://player.vimeo.com/video/973355251",
     "logo": "/assets/logo-GBC500-ARGON18.png",
     "secondaryLogo": "/assets/logo-argon-18-2.png",
     "featured": true,
@@ -21,8 +29,7 @@
       "Ravitaillements & Campings de bivouac",
       "Encadrement sécuritaire tout-terrain"
     ],
-    "registrationLink": "https://gbc500.com",
-    "status": "Inscriptions ouvertes"
+    "registrationLink": "https://gbc500.com"
   },
   {
     "id": "championnat-monde-junior-arws",
@@ -34,6 +41,14 @@
     "dates": "29 juillet au 2 août 2027",
     "distance": "100 km • 4 Jours • Équipes de 2",
     "image": "/assets/Raid-Temis-reperage4.webp",
+    "images": [
+      "/assets/arws-junior-world-temiscamingue-2026-1.webp",
+      "/assets/arws-junior-world-temiscamingue-2026-2.webp",
+      "/assets/arws-junior-world-temiscamingue-2026-3.webp",
+      "/assets/arws-junior-world-temiscamingue-2026-4.webp",
+      "/assets/Raid-Temis-reperage4.webp"
+    ],
+    "video": "https://www.youtube.com/embed/Ht5lGrOHqzo",
     "logo": "/assets/Logo-Mondiaux-Bilingue-.webp",
     "featured": true,
     "hasPage": true,
@@ -45,8 +60,7 @@
       "Canot boréal, VTT technique, trail & cordes",
       "30 sélections nationales de 10+ pays (IARA / ARWS)"
     ],
-    "registrationLink": "https://www.arwsjuniorworld.com",
-    "status": "Édition 2027"
+    "registrationLink": "https://www.arwsjuniorworld.com"
   },
   {
     "id": "raids-multisports",
@@ -58,6 +72,14 @@
     "dates": "Saisons Estivales & Automnales",
     "distance": "Expéditions 100 à 300 km • Équipes de 2 à 4",
     "image": "/assets/51582278409_86672a9a9f_k.webp",
+    "images": [
+      "/assets/51582278409_86672a9a9f_k.webp",
+      "/assets/54090898065_b840e40c2f_o-scaled.webp",
+      "/assets/54090898255_4391e75f69_o-scaled.webp",
+      "/assets/54076034404_b2f54f229a_o-scaled.webp",
+      "/assets/54090693273_cf4e40b5bf_o-scaled.webp"
+    ],
+    "video": "https://www.youtube.com/embed/TMgSAIZHs40",
     "logo": "/assets/ZF-LogoRIG-ombrNoir-trans.png",
     "secondaryLogo": "/assets/VF-Logo-Raid-Temiscamingue-coul.webp",
     "featured": true,
@@ -70,8 +92,7 @@
       "Sections maritimes, rivières boréales et crêtes rocheuses",
       "Esprit d'équipe et dépassement en autonomie"
     ],
-    "registrationLink": "https://raidtemiscamingue.ca",
-    "status": "Circuit actif"
+    "registrationLink": "https://raidtemiscamingue.ca"
   },
   {
     "id": "canadaman-xtri",
@@ -83,6 +104,14 @@
     "dates": "Archives & Éditions Historiques (2017 - 2024)",
     "distance": "3.8 km Nage • 180 km Vélo • 42.2 km Trail",
     "image": "/assets/51581607901_c23c63d19b_k.webp",
+    "images": [
+      "/assets/51581607901_c23c63d19b_k.webp",
+      "/assets/53061653539_951fb49b59_k.webp",
+      "/assets/43386180011_63d8234b1a_o.webp",
+      "/assets/Canadaman-xtri-copyright-Quebec-Dones-3-de-5.webp",
+      "/assets/28514399477_3839a9ca93_o-scaled.webp"
+    ],
+    "video": "https://player.vimeo.com/video/1017701274",
     "logo": "/assets/VF3-logo-Canada-ManWoman-Petit.webp",
     "secondaryLogo": "/assets/CanadaManWoman.webp",
     "featured": true,
@@ -95,7 +124,6 @@
       "42,2 km trail marathon jusqu'à l'observatoire astronomique",
       "Récits et vidéos de toutes les éditions dans nos archives"
     ],
-    "registrationLink": "https://caxtri.com",
-    "status": "Archives historiques"
+    "registrationLink": "https://caxtri.com"
   }
 ]
