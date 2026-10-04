@@ -202,3 +202,43 @@ AI agents frequently fall back on generic training averages. In this project, al
 3. **Consumption Strictly from Database / Permanent Storage**:
    - Both Preview and Production environments must consume all data, media, and documents **strictly from the database or the project's permanent storage**.
 
+---
+
+## 8. Media Assets Architecture & Database Structure (`data/media.db`)
+
+All visual assets, photos, logos, partner graphics, and documents are indexed in a native SQLite database: `data/media.db` (`media_assets` table).
+
+### Database Schema (`media_assets`)
+
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| `id` | `INTEGER PRIMARY KEY AUTOINCREMENT` | Unique asset ID |
+| `filename` | `TEXT UNIQUE NOT NULL` | Exact filename in `public/assets/` |
+| `file_path` | `TEXT NOT NULL` | Web path (e.g. `/assets/2023-08-05_GBC500_mc_1498-scaled.webp`) |
+| `media_type` | `TEXT NOT NULL` | `photo`, `logo`, `partner_sponsor`, `team_portrait`, `document_pdf`, `banner_graphic`, `font`, `other` |
+| `event_category` | `TEXT NOT NULL` | `gbc500`, `canadaman_xtri`, `raid_gaspesie`, `raid_temiscamingue`, `trail_des_neiges`, `velo_cafe`, `corporate_general`, `unassigned` |
+| `format` | `TEXT NOT NULL` | Extension (`webp`, `jpg`, `png`, `pdf`, etc.) |
+| `size_bytes` | `INTEGER NOT NULL` | File size on disk in bytes |
+| `width` | `INTEGER` | Pixel width (null for non-images) |
+| `height` | `INTEGER` | Pixel height (null for non-images) |
+| `aspect_ratio` | `TEXT` | `landscape`, `portrait`, `square`, or `null` |
+| `is_used` | `INTEGER NOT NULL DEFAULT 0` | `1` if referenced in website code/JSON, `0` if in stock |
+| `used_in` | `TEXT` | JSON array of files referencing this asset |
+| `created_at` | `TEXT NOT NULL` | ISO 8601 index timestamp |
+
+### Media Types Breakdown (1,313 assets total)
+- `photo` (1,210): Real action, outdoor terrain, athletes, and expedition photography.
+- `partner_sponsor` (30): Sponsor and partner logos (Argon 18, XACT, Näak, Leki, Karpos, Vaude, Blizzard, Coast, etc.).
+- `logo` (29): Event and corporate branding logos (Endurance Aventure, GBC 500, ARWS, RIG, etc.).
+- `document_pdf` (17): Historical race briefs, guides, and rulebooks.
+- `team_portrait` (14): Founders & associates portraits (Jean-Thomas Boily, Daniel Poirier, Bastien Michau, Marc Plante, etc.).
+- `banner_graphic` (12): Historical web headers and banners.
+- `font` (1): Typography asset.
+
+### Maintenance & Indexing Command
+To re-index or update the database after adding or modifying media assets in `public/assets/`:
+```bash
+node scripts/build_media_db.js
+```
+
+
