@@ -1,60 +1,70 @@
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
+import crypto from 'crypto';
 import { fileURLToPath } from 'url';
+import { DatabaseSync } from 'node:sqlite';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 4321;
-const DATA_FILE = path.join(__dirname, 'data', 'analytics.json');
-const CONTACTS_FILE = path.join(__dirname, 'data', 'contacts.json');
+const DATA_DIR = path.join(__dirname, 'data');
+const DB_FILE = path.join(DATA_DIR, 'analytics.db');
+const DATA_FILE = path.join(DATA_DIR, 'analytics.json');
+const CONTACTS_FILE = path.join(DATA_DIR, 'contacts.json');
 const ADMIN_PASS = process.env.ADMIN_PASSWORD || '123546789';
 const AUTH_TOKEN = 'ea_secure_session_' + Buffer.from(ADMIN_PASS).toString('base64');
 
-// Ensure data directory
-fs.mkdirSync(path.join(__dirname, 'data'), { recursive: true });
+// Ensure data directory exists
+fs.mkdirSync(DATA_DIR, { recursive: true });
 
-// Initialize analytics and contacts storage
-let contacts = [];
-if (fs.existsSync(CONTACTS_FILE)) {
-  try {
-    contacts = JSON.parse(fs.readFileSync(CONTACTS_FILE, 'utf8'));
-  } catch (e) {
-    contacts = [];
-  }
-}
+// Initialize SQLite database
+const db = new DatabaseSync(DB_FILE);
+db.exec(`
+  CREATE TABLE IF NOT EXISTS page_views (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    path TEXT NOT NULL,
+    referrer TEXT,
+    device TEXT,
+    ip_hash TEXT,
+    timestamp TEXT NOT NULL
+  );
+  CREATE INDEX IF NOT EXISTS idx_page_views_timestamp ON page_views(timestamp);
+  CREATE INDEX IF NOT EXISTS idx_page_views_path ON page_views(path);
 
-// Initialize analytics storage
-let analytics = [];
-if (fs.existsSync(DATA_FILE)) {
-  try {
-    analytics = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
-  } catch (e) {
-    analytics = [];
-  }
-}
+  CREATE TABLE IF NOT EXISTS contacts (
+    id TEXT PRIMARY KEY,
+    type TEXT,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    phone TEXT,
+    organization TEXT,
+    org_type TEXT,
+    service TEXT,
+    participants TEXT,
+    period TEXT,
+    budget TEXT,
+    subject TEXT,
+    message TEXT NOT NULL,
+    created_at TEXT NOT NULL,
+    status TEXT DEFAULT 'Nouveau'
+  );
+`);
 
-// Seed historical visits if empty
-if (analytics.length < 50) {
-  const seedPages = ['/', '/evenements/gbc500', '/evenements/trail-des-neiges', '/services', '/services/production-tele', '/entreprise', '/contact'];
-  const seedReferrers = ['Direct', 'https://www.google.com/', 'https://www.facebook.com/', 'https://www.instagram.com/', 'https://www.strava.com/'];
-  const now = Date.now();
-  for (let i = 120; i >= 0; i--) {
-    const timestamp = new Date(now - i * 3600 * 1000 * (1 + Math.random() * 2)).toISOString();
-    analytics.push({
-      path: seedPages[Math.floor(Math.random() * seedPages.length)],
-      referrer: seedReferrers[Math.floor(Math.random() * seedReferrers.length)],
-      device: Math.random() > 0.4 ? 'Mobile' : 'Desktop',
-      ipHash: `anon_${Math.floor(Math.random() * 80)}`,
-      timestamp: timestamp,
-    });
-  }
-  fs.writeFileSync(DATA_FILE, JSON.stringify(analytics, null, 2));
-}
+const stmtInsertView = db.prepare(
+  'INSERT INTO page_views (path, referrer, device, ip_hash, timestamp) VALUES (?, ?, ?, ?, ?)'
+);
 
+const stmtInsertContact = db.prepare(`
+  INSERT INTO contacts (id, type, name, email, phone, organization, org_type, service, participants, period, budget, subject, message, created_at, status)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+`);
+
+// Support both standard JSON and text/plain (used by navigator.sendBeacon)
 app.use(express.json());
+app.use(express.text({ type: ['text/plain', 'text/*'] }));
 
 // API: Verify Admin Password
 app.post('/api/auth', (req, res) => {
@@ -65,7 +75,7 @@ app.post('/api/auth', (req, res) => {
   return res.status(401).json({ success: false, error: 'Mot de passe incorrect' });
 });
 
-// Middleware to protect stats
+// Middleware to protect admin routes
 function requireAdmin(req, res, next) {
   const authHeader = req.headers['authorization'];
   const queryAuth = req.query.token || req.query.auth;
@@ -77,112 +87,191 @@ function requireAdmin(req, res, next) {
   return res.status(401).json({ error: 'Accès non autorisé. Authentification requise.' });
 }
 
-// API: Track page view (public)
+// API: Track page view (Real privacy-first analytics)
 app.post('/api/track', (req, res) => {
   try {
-    const { path: pagePath, referrer, screenWidth, timestamp } = req.body || {};
-    if (!pagePath || pagePath.startsWith('/admin')) {
+    let payload = req.body;
+    if (typeof payload === 'string') {
+      try { payload = JSON.parse(payload); } catch(e) {}
+    }
+    const { path: pagePath, referrer, screenWidth, timestamp } = payload || {};
+    if (!pagePath || pagePath.startsWith('/admin') || pagePath.startsWith('/api')) {
       return res.status(200).json({ ok: true });
     }
 
-    const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress || '127.0.0.1';
-    let hash = 0;
-    for (let i = 0; i < clientIp.length; i++) {
-      hash = (hash << 5) - hash + clientIp.charCodeAt(i);
-      hash |= 0;
+    // IP hashing for GDPR compliance (anonymized hash)
+    const clientIp = req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.socket.remoteAddress || '127.0.0.1';
+    const ipHash = 'h_' + crypto.createHash('sha256').update(clientIp + 'ea_salt_2026').digest('hex').slice(0, 12);
+
+    const ua = req.headers['user-agent'] || '';
+    let device = (screenWidth && screenWidth < 768) ? 'Mobile' : 'Desktop';
+    if (!screenWidth && ua) {
+      device = /mobile|android|iphone|ipad/i.test(ua) ? 'Mobile' : 'Desktop';
     }
 
-    const device = (screenWidth && screenWidth < 768) ? 'Mobile' : 'Desktop';
     let cleanRef = referrer || 'Direct';
     try {
       if (cleanRef.startsWith('http')) {
         const u = new URL(cleanRef);
-        cleanRef = u.hostname.replace('www.', '');
+        cleanRef = u.hostname.replace(/^www\./, '');
       }
     } catch (e) {}
 
-    const hit = {
-      path: pagePath,
-      referrer: cleanRef,
-      device: device,
-      ipHash: `h_${Math.abs(hash)}`,
-      timestamp: timestamp || new Date().toISOString(),
-    };
+    const nowIso = timestamp || new Date().toISOString();
+    stmtInsertView.run(pagePath, cleanRef, device, ipHash, nowIso);
 
-    analytics.push(hit);
-    if (analytics.length > 10000) analytics.shift();
-
-    fs.writeFileSync(DATA_FILE, JSON.stringify(analytics, null, 2));
-    res.status(200).json({ ok: true });
+    return res.status(200).json({ ok: true });
   } catch (err) {
-    res.status(200).json({ ok: true });
+    return res.status(200).json({ ok: true });
   }
 });
 
-// API: Aggregated stats (PROTECTED with password / token)
+// API: Real Aggregated Stats (Protected)
 app.get('/api/stats', requireAdmin, (req, res) => {
   try {
-    const totalViews = analytics.length;
-    const uniqueIps = new Set(analytics.map(a => a.ipHash)).size;
+    const range = req.query.range || '7d';
+    let sinceIso = '';
+    const now = new Date();
 
-    const pageCounts = {};
-    const refCounts = {};
-    const deviceCounts = { mobile: 0, desktop: 0 };
-    const dateCounts = {};
-
-    const days = [];
-    for (let i = 6; i >= 0; i--) {
-      const d = new Date(Date.now() - i * 86400000).toISOString().split('T')[0];
-      days.push(d);
-      dateCounts[d] = 0;
+    if (range === 'today') {
+      sinceIso = new Date(now.getFullYear(), now.getMonth(), now.getDate()).toISOString();
+    } else if (range === '7d') {
+      sinceIso = new Date(now.getTime() - 7 * 86400000).toISOString();
+    } else if (range === '30d') {
+      sinceIso = new Date(now.getTime() - 30 * 86400000).toISOString();
+    } else {
+      sinceIso = '1970-01-01T00:00:00.000Z'; // all
     }
 
-    analytics.forEach(a => {
-      pageCounts[a.path] = (pageCounts[a.path] || 0) + 1;
-      const ref = a.referrer || 'Direct';
-      refCounts[ref] = (refCounts[ref] || 0) + 1;
+    // Total views and unique visitors
+    const totalRow = db.prepare(
+      'SELECT COUNT(*) as totalViews, COUNT(DISTINCT ip_hash) as uniqueVisitors FROM page_views WHERE timestamp >= ?'
+    ).get(sinceIso);
 
-      if (a.device === 'Mobile') deviceCounts.mobile++;
-      else deviceCounts.desktop++;
+    const totalViews = Number(totalRow?.totalViews || 0);
+    const uniqueVisitors = Number(totalRow?.uniqueVisitors || 0);
 
-      const day = (a.timestamp || '').split('T')[0];
-      if (dateCounts[day] !== undefined) {
-        dateCounts[day]++;
-      }
+    // Top pages
+    const topPages = db.prepare(`
+      SELECT path, COUNT(*) as count 
+      FROM page_views 
+      WHERE timestamp >= ? 
+      GROUP BY path 
+      ORDER BY count DESC 
+      LIMIT 8
+    `).all(sinceIso).map(r => ({ path: r.path, count: Number(r.count) }));
+
+    // Top referrers
+    const topReferrers = db.prepare(`
+      SELECT referrer as source, COUNT(*) as count 
+      FROM page_views 
+      WHERE timestamp >= ? 
+      GROUP BY referrer 
+      ORDER BY count DESC 
+      LIMIT 8
+    `).all(sinceIso).map(r => ({ source: r.source, count: Number(r.count) }));
+
+    // Devices breakdown
+    const deviceRows = db.prepare(`
+      SELECT device, COUNT(*) as count 
+      FROM page_views 
+      WHERE timestamp >= ? 
+      GROUP BY device
+    `).all(sinceIso);
+
+    const devices = { mobile: 0, desktop: 0 };
+    deviceRows.forEach(r => {
+      if (r.device === 'Mobile') devices.mobile = Number(r.count);
+      else devices.desktop = Number(r.count);
     });
 
-    const sortedPages = Object.entries(pageCounts)
-      .map(([path, count]) => ({ path, count }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 8);
+    // Timeline calculation based on range
+    let timelineLabels = [];
+    let timelineValues = [];
 
-    const sortedRefs = Object.entries(refCounts)
-      .map(([source, count]) => ({ source, count }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 8);
+    if (range === 'today') {
+      // 24 hour buckets
+      const hourCounts = {};
+      for (let h = 0; h < 24; h++) {
+        const label = String(h).padStart(2, '0') + 'h';
+        timelineLabels.push(label);
+        hourCounts[h] = 0;
+      }
+      const todayRows = db.prepare(`
+        SELECT strftime('%H', timestamp) as hour, COUNT(*) as count 
+        FROM page_views 
+        WHERE timestamp >= ? 
+        GROUP BY hour
+      `).all(sinceIso);
+      todayRows.forEach(r => {
+        const h = parseInt(r.hour, 10);
+        if (hourCounts[h] !== undefined) hourCounts[h] = Number(r.count);
+      });
+      timelineValues = timelineLabels.map((_, idx) => hourCounts[idx]);
+    } else {
+      // Day buckets
+      const dayBuckets = {};
+      const numDays = range === '30d' ? 30 : (range === 'all' ? 45 : 7);
+      for (let i = numDays - 1; i >= 0; i--) {
+        const d = new Date(now.getTime() - i * 86400000).toISOString().split('T')[0];
+        dayBuckets[d] = 0;
+        timelineLabels.push(d.slice(5)); // 'MM-DD'
+      }
 
-    const recent = analytics.slice(-10).reverse().map(a => ({
-      path: a.path,
-      referrer: a.referrer,
-      device: a.device,
-      time: new Date(a.timestamp).toLocaleTimeString('fr-CA', { hour: '2-digit', minute: '2-digit' }),
-    }));
+      const dayRows = db.prepare(`
+        SELECT strftime('%Y-%m-%d', timestamp) as day, COUNT(*) as count 
+        FROM page_views 
+        WHERE timestamp >= ? 
+        GROUP BY day
+      `).all(sinceIso);
+
+      dayRows.forEach(r => {
+        if (dayBuckets[r.day] !== undefined) {
+          dayBuckets[r.day] = Number(r.count);
+        }
+      });
+
+      timelineValues = Object.keys(dayBuckets).map(k => dayBuckets[k]);
+    }
+
+    // Recent 10 visits
+    const recent = db.prepare(`
+      SELECT path, referrer, device, timestamp 
+      FROM page_views 
+      ORDER BY id DESC 
+      LIMIT 10
+    `).all().map(r => {
+      let timeStr = '';
+      try {
+        timeStr = new Date(r.timestamp).toLocaleTimeString('fr-CA', { hour: '2-digit', minute: '2-digit' });
+      } catch (e) {
+        timeStr = r.timestamp;
+      }
+      return {
+        path: r.path,
+        referrer: r.referrer || 'Direct',
+        device: r.device || 'Desktop',
+        time: timeStr
+      };
+    });
 
     res.json({
+      range,
       totalViews,
-      uniqueVisitors: uniqueIps,
-      topPage: sortedPages[0]?.path || '/',
-      topReferrer: sortedRefs[0]?.source || 'Direct',
-      topPages: sortedPages,
-      topReferrers: sortedRefs,
-      devices: deviceCounts,
+      uniqueVisitors,
+      topPage: topPages[0]?.path || '-',
+      topReferrer: topReferrers[0]?.source || '-',
+      topPages,
+      topReferrers,
+      devices,
       timeline: {
-        labels: days.map(d => d.slice(5)),
-        values: days.map(d => dateCounts[d] || 0),
+        labels: timelineLabels,
+        values: timelineValues
       },
-      recent,
+      recent
     });
   } catch (err) {
+    console.error('Error generating stats:', err);
     res.status(500).json({ error: err.message });
   }
 });
@@ -209,30 +298,24 @@ app.post('/api/contact', (req, res) => {
       return res.status(400).json({ success: false, error: 'Nom, courriel et message sont obligatoires.' });
     }
 
-    const newLead = {
-      id: 'lead_' + Date.now(),
-      type, // 'b2b' or 'general'
-      name,
-      email,
-      phone,
-      organization,
-      orgType,
-      service: service || subject,
-      participants,
-      period,
-      budget,
-      subject: subject || service || 'Demande générale',
-      message,
-      createdAt: new Date().toISOString(),
-      status: 'Nouveau',
-    };
+    const id = 'lead_' + Date.now();
+    const createdAt = new Date().toISOString();
+    const finalSubject = subject || service || 'Demande générale';
 
-    contacts.unshift(newLead);
-    if (contacts.length > 500) contacts.pop();
-    fs.writeFileSync(CONTACTS_FILE, JSON.stringify(contacts, null, 2));
+    stmtInsertContact.run(
+      id, type, name, email, phone, organization, orgType,
+      service || subject || '', String(participants), period, String(budget),
+      finalSubject, message, createdAt, 'Nouveau'
+    );
+
+    // Sync to contacts.json for easy inspection
+    try {
+      const allContacts = db.prepare('SELECT * FROM contacts ORDER BY created_at DESC').all();
+      fs.writeFileSync(CONTACTS_FILE, JSON.stringify(allContacts, null, 2));
+    } catch(e) {}
 
     console.log(`[Contact] Nouvelle demande reçue de ${name} (${email}) - ${type}`);
-    res.json({ success: true, id: newLead.id });
+    res.json({ success: true, id });
   } catch (err) {
     console.error('[Contact Error]', err);
     res.status(500).json({ success: false, error: 'Erreur lors de l\'enregistrement de votre demande.' });
@@ -241,7 +324,12 @@ app.post('/api/contact', (req, res) => {
 
 // API: Get Leads (Admin only)
 app.get('/api/contacts', requireAdmin, (req, res) => {
-  res.json({ contacts });
+  try {
+    const contacts = db.prepare('SELECT * FROM contacts ORDER BY created_at DESC LIMIT 100').all();
+    res.json({ contacts });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 // Serve static Astro dist files with aggressive caching for static assets

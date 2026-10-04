@@ -128,13 +128,15 @@ const defaultOrgSchema = {
             screenWidth: window.innerWidth,
             timestamp: new Date().toISOString()
           };
+          const jsonStr = JSON.stringify(data);
           if (navigator.sendBeacon) {
-            navigator.sendBeacon('/api/track', JSON.stringify(data));
+            const blob = new Blob([jsonStr], { type: 'application/json' });
+            navigator.sendBeacon('/api/track', blob);
           } else {
             fetch('/api/track', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(data),
+              body: jsonStr,
               keepalive: true
             }).catch(function() {});
           }

@@ -103,9 +103,8 @@ import Layout from '../../layouts/Layout.astro';
         <div class="rounded-2xl bg-brand-darker border border-brand-gray p-6">
           <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Vues de Pages Totales</div>
           <div id="stat-views" class="text-3xl font-heading font-black text-white">--</div>
-          <div class="text-[11px] text-green-400 font-semibold mt-2 flex items-center gap-1">
-            <span>↑ En hausse</span>
-            <span class="text-slate-500">• Vues enregistrées</span>
+          <div class="text-[11px] font-semibold mt-2 flex items-center gap-1">
+            <span id="stat-period-tag" class="text-slate-400">• Période sélectionnée</span>
           </div>
         </div>
 
@@ -119,7 +118,7 @@ import Layout from '../../layouts/Layout.astro';
 
         <div class="rounded-2xl bg-brand-darker border border-brand-gray p-6">
           <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Source Principale</div>
-          <div id="stat-top-source" class="text-xl font-heading font-bold text-brand-cyan truncate">Direct / Organique</div>
+          <div id="stat-top-source" class="text-xl font-heading font-bold text-brand-cyan truncate">--</div>
           <div class="text-[11px] text-slate-400 font-semibold mt-2">
             Premier canal de provenance
           </div>
@@ -127,12 +126,11 @@ import Layout from '../../layouts/Layout.astro';
 
         <div class="rounded-2xl bg-brand-darker border border-brand-gray p-6">
           <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Page la Plus Consultée</div>
-          <div id="stat-top-page" class="text-xl font-heading font-bold text-white truncate">/evenements/gbc500</div>
+          <div id="stat-top-page" class="text-xl font-heading font-bold text-white truncate">--</div>
           <div class="text-[11px] text-slate-400 font-semibold mt-2">
-            Intérêt athlètes maximal
+            Volume de trafic maximal
           </div>
         </div>
-
       </div>
 
       <!-- MAIN CHART -->
@@ -333,8 +331,11 @@ import Layout from '../../layouts/Layout.astro';
         return;
       }
 
+      const rangeSelect = document.getElementById('time-range');
+      const range = rangeSelect ? rangeSelect.value : '7d';
+
       try {
-        const res = await fetch('/api/stats', {
+        const res = await fetch(`/api/stats?range=${encodeURIComponent(range)}`, {
           headers: {
             'Authorization': 'Bearer ' + token
           }
@@ -348,11 +349,22 @@ import Layout from '../../layouts/Layout.astro';
 
         const data = await res.json();
 
-        // Update KPIs
-        document.getElementById('stat-views').innerText = data.totalViews || 0;
-        document.getElementById('stat-visitors').innerText = data.uniqueVisitors || 0;
-        document.getElementById('stat-top-source').innerText = data.topReferrer || 'Accès Direct';
-        document.getElementById('stat-top-page').innerText = data.topPage || '/';
+        // Update KPIs with real data
+        document.getElementById('stat-views').innerText = (data.totalViews || 0).toLocaleString('fr-CA');
+        document.getElementById('stat-visitors').innerText = (data.uniqueVisitors || 0).toLocaleString('fr-CA');
+        document.getElementById('stat-top-source').innerText = data.topReferrer || '-';
+        document.getElementById('stat-top-page').innerText = data.topPage || '-';
+
+        const periodLabelMap = {
+          today: "Aujourd'hui",
+          '7d': '7 derniers jours',
+          '30d': '30 derniers jours',
+          all: 'Historique complet'
+        };
+        const periodTag = document.getElementById('stat-period-tag');
+        if (periodTag) {
+          periodTag.innerText = `• ${periodLabelMap[range] || 'Période active'}`;
+        }
 
         // Render Chart
         const canvas = document.getElementById('views-chart');
@@ -537,6 +549,10 @@ import Layout from '../../layouts/Layout.astro';
     document.getElementById('refresh-btn')?.addEventListener('click', () => {
       loadStats();
       loadContacts();
+    });
+
+    document.getElementById('time-range')?.addEventListener('change', () => {
+      loadStats();
     });
 
     // Initial check

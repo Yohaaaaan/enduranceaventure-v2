@@ -21,6 +21,8 @@ yarn-error.log*
 # Data runtime
 data/analytics.json
 data/contacts.json
+data/*.db
+data/*.sqlite*
 
 # Public heavy media & scraped assets library
 public/assets/*
