@@ -13,6 +13,7 @@
     "secondaryLogo": "/assets/logo-argon-18-2.png",
     "featured": true,
     "hasPage": true,
+    "external": true,
     "description": "Une aventure épique d'endurance en autonomie complète à travers les plus beaux chemins de terre, forêts et sommets du Québec.",
     "highlights": [
       "500 km en autonomie ou avec soutien",
@@ -20,8 +21,8 @@
       "Ravitaillements & Campings de bivouac",
       "Encadrement sécuritaire tout-terrain"
     ],
-    "registrationLink": "/evenements/gbc500/",
-    "status": "Inscriptions Ouvertes"
+    "registrationLink": "https://gbc500.com",
+    "status": "Inscriptions & Site Officiel"
   },
   {
     "id": "championnat-monde-junior-arws",
@@ -36,6 +37,7 @@
     "logo": "/assets/Logo-Mondiaux-Bilingue-.webp",
     "featured": true,
     "hasPage": true,
+    "external": true,
     "description": "Le rendez-vous planétaire de la relève de la course d'aventure : 100 km en autonomie totale (carte & boussole, canot, VTT, trail, nage et cordes) réunissant l'élite internationale U18 et U25.",
     "highlights": [
       "100 km en autonomie stricte carte & boussole",
@@ -43,8 +45,8 @@
       "Canot boréal, VTT technique, trail & cordes",
       "30 sélections nationales de 10+ pays (IARA / ARWS)"
     ],
-    "registrationLink": "/evenements/championnat-monde-junior-arws/",
-    "status": "Sélection & Inscriptions 2027"
+    "registrationLink": "https://www.arwsjuniorworld.com",
+    "status": "Site Officiel Mondiaux"
   },
   {
     "id": "raids-multisports",
@@ -60,6 +62,7 @@
     "secondaryLogo": "/assets/VF-Logo-Raid-Temiscamingue-coul.webp",
     "featured": true,
     "hasPage": true,
+    "external": true,
     "description": "Une immersion totale de plusieurs jours par équipes dans les paysages les plus sauvages du Québec, alliant canot, vélo tout-terrain, trail et orientation.",
     "highlights": [
       "Raid International Gaspésie & Raid Témiscamingue",
@@ -67,8 +70,8 @@
       "Sections maritimes, rivières boréales et crêtes rocheuses",
       "Esprit d'équipe et dépassement en autonomie"
     ],
-    "registrationLink": "/evenements/raids/",
-    "status": "Découvrir les Raids"
+    "registrationLink": "https://raidtemiscamingue.ca",
+    "status": "Site Officiel Raid"
   },
   {
     "id": "canadaman-xtri",
@@ -83,7 +86,8 @@
     "logo": "/assets/VF3-logo-Canada-ManWoman-Petit.webp",
     "secondaryLogo": "/assets/CanadaManWoman.webp",
     "featured": true,
-    "hasPage": false,
+    "hasPage": true,
+    "external": true,
     "description": "L'un des triathlons d'un jour les plus redoutables au monde : nage obscure dans le Lac-Mégantic, vélo sur les routes exigeantes de l'Estrie et arrivée au sommet du Mont Mégantic.",
     "highlights": [
       "Membre fondateur officiel du circuit XTRI World Tour",
@@ -91,7 +95,7 @@
       "42,2 km trail marathon jusqu'à l'observatoire astronomique",
       "Récits et vidéos de toutes les éditions dans nos archives"
     ],
-    "registrationLink": "#archive-canadaman",
-    "status": "Voir l'Historique XTRI"
+    "registrationLink": "https://caxtri.com",
+    "status": "Site Officiel XTRI"
   }
 ]

@@ -257,10 +257,13 @@ const sponsors = [
               <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
                 <span class="text-xs text-slate-500 font-semibold">{evt.dates}</span>
                 <a 
-                  href={`/evenements/${evt.slug === 'raid-gaspesie' ? 'raids' : evt.slug}/`} 
-                  class="px-4 py-2.5 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-md shadow-brand-red/20"
+                  href={evt.registrationLink} 
+                  target={evt.registrationLink.startsWith('http') ? '_blank' : undefined}
+                  rel={evt.registrationLink.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  class="px-4 py-2.5 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-md shadow-brand-red/20 inline-flex items-center gap-1.5"
                 >
-                  Détails & Inscription
+                  <span>{evt.registrationLink.startsWith('http') ? 'Site Officiel' : 'Détails & Inscription'}</span>
+                  {evt.registrationLink.startsWith('http') && <span>↗</span>}
                 </a>
               </div>
             </div>
