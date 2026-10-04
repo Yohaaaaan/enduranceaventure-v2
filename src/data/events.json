@@ -22,7 +22,7 @@
       "Encadrement sécuritaire tout-terrain"
     ],
     "registrationLink": "https://gbc500.com",
-    "status": "Inscriptions & Site Officiel"
+    "status": "Inscriptions ouvertes"
   },
   {
     "id": "championnat-monde-junior-arws",
@@ -46,7 +46,7 @@
       "30 sélections nationales de 10+ pays (IARA / ARWS)"
     ],
     "registrationLink": "https://www.arwsjuniorworld.com",
-    "status": "Site Officiel Mondiaux"
+    "status": "Édition 2027"
   },
   {
     "id": "raids-multisports",
@@ -71,7 +71,7 @@
       "Esprit d'équipe et dépassement en autonomie"
     ],
     "registrationLink": "https://raidtemiscamingue.ca",
-    "status": "Site Officiel Raid"
+    "status": "Circuit actif"
   },
   {
     "id": "canadaman-xtri",
@@ -96,6 +96,6 @@
       "Récits et vidéos de toutes les éditions dans nos archives"
     ],
     "registrationLink": "https://caxtri.com",
-    "status": "Site Officiel XTRI"
+    "status": "Archives historiques"
   }
 ]
