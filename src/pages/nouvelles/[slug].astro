@@ -45,10 +45,11 @@ const blogSchema = {
     <img 
       src={post.image || '/assets/CAXTRI-2019-Extreme-Depart.webp'} 
       alt={post.title} 
-      class="absolute inset-0 w-full h-full object-cover object-center opacity-60 brightness-90 contrast-105"
+      class="absolute inset-0 w-full h-full object-cover object-center opacity-90 brightness-95 contrast-105"
       onerror="this.src='/assets/EnduranceAventure.jpg'"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-black/40"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-black/20 to-black/20"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-950/50 via-transparent to-transparent"></div>
 
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-20 w-full">
       <a href="/nouvelles/" class="text-xs font-bold uppercase tracking-wider text-brand-red hover:underline mb-4 inline-flex items-center gap-1.5 transition-colors">
@@ -58,7 +59,7 @@ const blogSchema = {
       <div class="text-xs text-brand-cyan font-bold uppercase tracking-wider mb-3">
         Publié le {post.date}
       </div>
-      <h1 class="text-3xl sm:text-5xl font-heading font-black text-white leading-tight mb-4 drop-shadow-md">
+      <h1 class="text-3xl sm:text-5xl font-heading font-black text-white leading-tight mb-4 drop-shadow-lg">
         {post.title}
       </h1>
     </div>
