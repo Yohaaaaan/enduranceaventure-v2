@@ -1,3 +1,588 @@
 ---
-return Astro.redirect('https://www.arwsjuniorworld.com', 301);
+import Layout from '../../layouts/Layout.astro';
+
+const arwsSchema = {
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Championnat du Monde Junior de Raid Aventure ARWS 2027 (ARWS Junior World Championship)",
+  "description": "Le Championnat du Monde Junior officiel de raid aventure (ARWS & IARA) accueilli au Témiscamingue : 100 km, 4 jours, canot, VTT, trek, nage, cordes et orientation carte & boussole pour les catégories U18 et U25.",
+  "startDate": "2027-07-28",
+  "endDate": "2027-07-31",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "Témiscamingue (Abitibi-Témiscamingue)",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Témiscamingue",
+      "addressRegion": "QC",
+      "addressCountry": "CA"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Endurance Aventure & Adventure Racing World Series (ARWS)",
+    "url": "https://www.arwsjuniorworld.com"
+  }
+};
 ---
+
+<Layout 
+  title="Championnat du Monde Junior de Raid Aventure ARWS 2027 | Témiscamingue | Endurance Aventure"
+  description="Du 28 au 31 juillet 2027, le Témiscamingue accueille pour la deuxième fois le Championnat du Monde Junior de Raid Aventure officiel ARWS & IARA. 100 km par étapes pour l'élite mondiale U18 & U25."
+  image="/assets/arws-junior-world-temiscamingue-2026-1.webp"
+  jsonLd={arwsSchema}
+>
+
+  <!-- BANNER HERO IMMERSIF (Photo avec jeunes athlètes, logos officiels sur badges immaculés) -->
+  <section class="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center bg-slate-950 overflow-hidden">
+    <img 
+      src="/assets/arws-junior-world-temiscamingue-2026-1.webp" 
+      alt="Jeunes athlètes en action - Championnat du Monde Junior ARWS 2027" 
+      class="absolute inset-0 w-full h-full object-cover opacity-90 brightness-100 contrast-105"
+      onerror="this.src='/assets/Raid-Temis-reperage4.webp'"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-black/15 to-black/25"></div>
+    
+    <div class="relative z-10 max-w-5xl mx-auto px-4 text-center py-20 sm:py-28">
+      
+      <!-- Double Logos Officiels : ARWS + Championnat du Monde Raid Aventure Témiscamingue -->
+      <div class="inline-flex items-center gap-3 sm:gap-6 bg-white/95 backdrop-blur-md px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl shadow-2xl border border-white mb-6">
+        <img 
+          src="/assets/Logo-Mondiaux-Bilingue-.webp" 
+          alt="Championnat du Monde Junior ARWS - Adventure Racing World Series" 
+          class="h-10 sm:h-16 w-auto object-contain"
+          onerror="this.src='/assets/Logo-Mondiaux-Bilingue-.png'"
+        />
+        <div class="h-8 sm:h-12 w-px bg-slate-300"></div>
+        <img 
+          src="/assets/logo-championnat-monde-raid-temiscamingue.png" 
+          alt="Championnat du Monde Raid Aventure Témiscamingue" 
+          class="h-8 sm:h-14 w-auto object-contain"
+        />
+      </div>
+
+      <div class="block mb-4">
+        <span class="px-4 py-1.5 rounded-full bg-brand-red text-white text-xs sm:text-sm font-bold uppercase tracking-wider inline-block shadow-lg">
+          28 juillet au 31 juillet 2027 • Témiscamingue, Québec, Canada
+        </span>
+      </div>
+
+      <h1 class="text-3xl sm:text-6xl md:text-7xl font-heading font-black uppercase text-white mb-6 tracking-tight drop-shadow-lg leading-tight">
+        Championnat du Monde Junior <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-white to-cyan-400">
+          de Raid Aventure ARWS
+        </span>
+      </h1>
+      
+      <p class="text-base sm:text-xl text-slate-200 font-light max-w-3xl mx-auto mb-10 leading-relaxed drop-shadow">
+        Le rendez-vous planétaire officiel de la relève de la course d'aventure : <strong class="text-white font-semibold">100 km par étapes</strong> au cœur des forêts et des immenses lacs boréaux du Témiscamingue. Équipes de 2 dans les catégories <strong class="text-brand-cyan-light font-semibold">U18 et U25</strong>.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a 
+          href="https://www.arwsjuniorworld.com" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="px-8 py-4 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-sm uppercase tracking-wider transition-all shadow-xl shadow-brand-red/30 flex items-center gap-2"
+        >
+          <span>Portail Officiel des Mondiaux</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+        <a 
+          href="#programme" 
+          class="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 font-heading font-bold text-sm uppercase tracking-wider transition-all"
+        >
+          Découvrir le Programme
+        </a>
+        <a 
+          href="/contact?type=general&subject=championnat-monde-junior-arws" 
+          class="px-8 py-4 rounded-xl bg-slate-900/80 hover:bg-slate-900 text-slate-200 border border-slate-700 font-heading font-bold text-sm uppercase tracking-wider transition-all"
+        >
+          Contacter l'Organisation
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANDEAU DES CHIFFRES CLÉS DE L'ÉPREUVE (Sans le nombre de pays) -->
+  <div class="bg-slate-900 border-b border-slate-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
+        <div class="p-3">
+          <div class="text-3xl sm:text-4xl font-heading font-black text-brand-red">100 KM</div>
+          <div class="text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">Expédition Sauvage</div>
+        </div>
+        <div class="p-3">
+          <div class="text-3xl sm:text-4xl font-heading font-black text-white">4 JOURS</div>
+          <div class="text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">Immersion Boréale</div>
+        </div>
+        <div class="p-3">
+          <div class="text-3xl sm:text-4xl font-heading font-black text-brand-cyan">U18 & U25</div>
+          <div class="text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">2 Catégories Officielles</div>
+        </div>
+        <div class="p-3">
+          <div class="text-3xl sm:text-4xl font-heading font-black text-white">DUO (x2)</div>
+          <div class="text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">Mixte, Fille, Garçon</div>
+        </div>
+        <div class="p-3">
+          <div class="text-3xl sm:text-4xl font-heading font-black text-brand-red">0 GPS</div>
+          <div class="text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">Carte & Boussole Pure</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENU PRINCIPAL SUR FOND CLAIR -->
+  <div class="bg-slate-50 py-20 space-y-24">
+    
+    <!-- PRÉSENTATION OFFICIELLE : LE CHAMPIONNAT DU MONDE JUNIOR ARWS -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 text-brand-red text-xs font-bold uppercase tracking-wider">
+            <span>Événement Historique Mondial</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase text-slate-900 leading-tight">
+            L'Élite Mondiale de la Relève au Cœur de la Boréalie
+          </h2>
+          <p class="text-base text-slate-700 leading-relaxed">
+            Pour la deuxième fois de l'histoire du raid aventure, la série mondiale <strong class="text-slate-900 font-semibold">ARWS (Adventure Racing World Series)</strong> et l'<strong class="text-slate-900 font-semibold">IARA (International Adventure Racing Association)</strong> s'associent à l'expertise d'<strong class="text-slate-900 font-semibold">Endurance Aventure</strong> pour célébrer le Championnat du Monde Junior officiel.
+          </p>
+          <p class="text-base text-slate-700 leading-relaxed">
+            Du <strong class="text-slate-900 font-semibold">28 juillet au 31 juillet 2027</strong>, les meilleurs jeunes raideurs de la planète convergeront vers le Témiscamingue pour se mesurer sur un parcours de 100 kilomètres en format course par étapes (stage race avec pause nocturne entre les deux journées de compétition), taillé dans les roches anciennes du Bouclier Canadien, les rivières sauvages et les immenses lacs boréaux du territoire témiscamien.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group">
+            <img 
+              src="/assets/arws-junior-world-temiscamingue-2026-4.webp" 
+              alt="Jeunes athlètes en action sur le Raid Aventure Junior ARWS" 
+              class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='/assets/Raid-Temis-reperage4.webp'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="px-2.5 py-1 rounded bg-brand-cyan text-white text-[11px] font-bold uppercase tracking-wider mb-2 inline-block">
+                Parc national d'Opémican & Grands Lacs Boréaux
+              </span>
+              <p class="text-sm font-semibold leading-snug">
+                Un terrain de jeu boréal unique au monde, entre forêts denses, falaises escarpées et corridors aquatiques infinis.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- LES DISCIPLINES OFFICIELLES -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Multisport d'Endurance</span>
+        <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase text-slate-900">
+          Les Disciplines au Programme
+        </h2>
+        <p class="text-sm text-slate-600 mt-2">
+          L'équipe gère son orientation, sa cohésion et sa vitesse de progression à travers 6 épreuves combinées.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Canot & Portage -->
+        <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center font-bold mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="font-heading font-bold text-slate-900 text-xl mb-2">Canot Boréal & Portages</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              Navigation en canot biplace sur les immenses lacs boréaux témiscamiens et rivières sinueuses. Gestion d'efforts intenses, portages de canots en sous-bois et passages de rapides.
+            </p>
+          </div>
+          <div class="text-xs font-semibold text-blue-600 border-t border-slate-100 pt-3">
+            Gilets de sauvetage et matériel nautique homologué
+          </div>
+        </div>
+
+        <!-- VTT Technique -->
+        <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-red-100 text-brand-red flex items-center justify-center font-bold mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h3 class="font-heading font-bold text-slate-900 text-xl mb-2">Vélo de Montagne (VTT)</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              Pistes forestières sauvages, sentiers de gravelle meuble, singletracks rocheux et montées abruptes du Bouclier Canadien testant la motricité et l'endurance mécanique des duos.
+            </p>
+          </div>
+          <div class="text-xs font-semibold text-brand-red border-t border-slate-100 pt-3">
+            Autonomie mécanique totale & casque obligatoire
+          </div>
+        </div>
+
+        <!-- Trek & Bushwhack -->
+        <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+            </div>
+            <h3 class="font-heading font-bold text-slate-900 text-xl mb-2">Trek Boréal & Hors-Piste</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              Progression pédestre à travers la taïga et les collines rocheuses. Sections hors-piste intégrales ("bushwhacking"), franchissements de marais et passages sur crêtes escarpées.
+            </p>
+          </div>
+          <div class="text-xs font-semibold text-emerald-600 border-t border-slate-100 pt-3">
+            Chaussures tout-terrain & robustesse physique
+          </div>
+        </div>
+
+        <!-- Orientation Carte & Boussole -->
+        <div class="bg-white p-7 rounded-3xl border-2 border-brand-red shadow-md flex flex-col justify-between hover:shadow-xl transition-all">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-red-100 text-brand-red flex items-center justify-center font-bold">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-brand-red text-white">
+                Règle Absolue
+              </span>
+            </div>
+            <h3 class="font-heading font-bold text-slate-900 text-xl mb-2">Navigation Carte & Boussole</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              Aucun GPS, montre connectée ou téléphone avec cartographie autorisé. Les équipages naviguent exclusivement à l'aide de cartes topographiques officielles fournies au départ et de boussoles magnétiques.
+            </p>
+          </div>
+          <div class="text-xs font-bold text-brand-red border-t border-red-100 pt-3">
+            Précision d'azimut & lecture de relief décisives
+          </div>
+        </div>
+
+        <!-- Nage en Eau Libre -->
+        <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-cyan-100 text-brand-cyan flex items-center justify-center font-bold mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            </div>
+            <h3 class="font-heading font-bold text-slate-900 text-xl mb-2">Nage & Passages Aquatiques</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              Sections de traversée à la nage entre îlots et berges sauvages. Sacs étanches obligatoires pour préserver le matériel de survie et les vêtements de rechange.
+            </p>
+          </div>
+          <div class="text-xs font-semibold text-brand-cyan border-t border-slate-100 pt-3">
+            Flottabilité réglementaire & sacs étanches
+          </div>
+        </div>
+
+        <!-- Ateliers Verticaux de Cordes -->
+        <div class="bg-white p-7 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-all">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11"/></svg>
+            </div>
+            <h3 class="font-heading font-bold text-slate-900 text-xl mb-2">Ateliers de Cordes & Hauteurs</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+              Rappels en falaise, tyroliennes et manœuvres sur cordes installées et supervisées par les spécialistes de sécurité verticale d'Endurance Aventure.
+            </p>
+          </div>
+          <div class="text-xs font-semibold text-amber-700 border-t border-slate-100 pt-3">
+            Harnais et casques d'escalade certifiés
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FORMAT DE COMPÉTITION : U18 & U25 -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 rounded-3xl p-8 sm:p-14 text-white shadow-2xl border border-slate-800">
+        
+        <div class="max-w-3xl mb-12">
+          <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">Structure & Catégories Mondiales</span>
+          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase text-white mb-4">
+            Deux Catégories Mondiales Officielles
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Chaque équipe est composée de <strong class="text-white">2 athlètes</strong> concourant sous les couleurs de leur fédération nationale ou sous dossard wildcard international.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Bloc U18 -->
+          <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 rounded-full bg-brand-cyan text-slate-950 font-black text-sm uppercase tracking-wider">
+                  Catégorie U18
+                </span>
+                <span class="text-xs font-semibold text-slate-400">15 à 17 ans</span>
+              </div>
+              <h3 class="text-2xl font-heading font-black text-white mb-3">La Jeune Garde Internationale</h3>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                Réservé aux compétiteurs âgés de 15 à 17 ans au 31 décembre 2027. Encadrement de sécurité rapproché par balises satellites de suivi sans assistance sur le parcours.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-300">
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-cyan font-bold">✓</span>
+                  <span>Podium Mixte (1 Femme + 1 Homme)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-cyan font-bold">✓</span>
+                  <span>Podium Féminin (2 Femmes)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-cyan font-bold">✓</span>
+                  <span>Podium Masculin (2 Hommes)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Bloc U25 -->
+          <div class="p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 rounded-full bg-brand-red text-white font-black text-sm uppercase tracking-wider">
+                  Catégorie U25
+                </span>
+                <span class="text-xs font-semibold text-slate-400">18 à 25 ans</span>
+              </div>
+              <h3 class="text-2xl font-heading font-black text-white mb-3">L'Antichambre de l'Élite Mondiale</h3>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
+                Réservé aux raideurs de 18 à 25 ans au 31 décembre 2027. Exigence d'autonomie et d'intensité de navigation équivalente aux étapes des World Series élite.
+              </p>
+              <ul class="space-y-2 text-xs text-slate-300">
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-red font-bold">✓</span>
+                  <span>Podium Mixte (1 Femme + 1 Homme)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-red font-bold">✓</span>
+                  <span>Podium Féminin (2 Femmes)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-red font-bold">✓</span>
+                  <span>Podium Masculin (2 Hommes)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROGRAMME DES 4 JOURS (DÉROULEMENT ÉTAPE PAR ÉTAPE) -->
+    <div id="programme" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">28 au 31 Juillet 2027</span>
+        <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase text-slate-900">
+          Le Programme Estimé des Mondiaux
+        </h2>
+        <p class="text-sm text-slate-600 mt-2">
+          Quatre journées d'intensité sportive, de découverte culturelle et de célébration internationale au Témiscamingue.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Jour 1 -->
+        <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-brand-red mb-1">Mercredi 28 Juillet 2027</div>
+            <div class="text-xl font-heading font-black text-slate-900 mb-3">Accueil & Contrôles</div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Arrivée des délégations internationales à Ville-Marie et Témiscaming. Vérification technique obligatoire du matériel de survie et tests de cordes.
+            </p>
+            <ul class="space-y-1.5 text-xs text-slate-600">
+              <li class="flex items-start gap-1.5">• <span>Enregistrement & contrôle médical</span></li>
+              <li class="flex items-start gap-1.5">• <span>Briefing technique des capitaines</span></li>
+              <li class="flex items-start gap-1.5">• <span>Cérémonie d'accueil des nations</span></li>
+            </ul>
+          </div>
+          <div class="text-[11px] font-semibold text-slate-400 border-t border-slate-100 pt-3 mt-4">
+            Village des Athlètes
+          </div>
+        </div>
+
+        <!-- Jour 2 -->
+        <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-brand-cyan mb-1">Jeudi 29 Juillet 2027</div>
+            <div class="text-xl font-heading font-black text-slate-900 mb-3">Prologue & Relève Locale</div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Prologue avec le lancement du Raid Jeunesse Desjardins pour les jeunes régionaux.
+            </p>
+            <ul class="space-y-1.5 text-xs text-slate-600">
+              <li class="flex items-start gap-1.5">• <span>Épreuve prologue spectaculaire</span></li>
+              <li class="flex items-start gap-1.5">• <span>Raid Découverte Jeunesse Desjardins</span></li>
+              <li class="flex items-start gap-1.5">• <span>Remise officielle des cartes scellées</span></li>
+            </ul>
+          </div>
+          <div class="text-[11px] font-semibold text-brand-cyan border-t border-slate-100 pt-3 mt-4">
+            Spectacle grand public & jeunesse
+          </div>
+        </div>
+
+        <!-- Jour 3 -->
+        <div class="bg-white p-6 rounded-3xl border-2 border-brand-red shadow-md flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-brand-red mb-1">Vendredi 30 Juillet 2027</div>
+            <div class="text-xl font-heading font-black text-slate-900 mb-3">Jour 1 Grand Départ</div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Coup d'envoi de la grande course d'expédition sauvage. Enchaînement canot boréal, transitions VTT et trek d'orientation dans les recoins les plus isolés du territoire.
+            </p>
+            <ul class="space-y-1.5 text-xs text-slate-600">
+              <li class="flex items-start gap-1.5">• <span>Départ massif en ligne</span></li>
+              <li class="flex items-start gap-1.5">• <span>Choix stratégique de navigation</span></li>
+              <li class="flex items-start gap-1.5">• <span>Suivi satellite des balises en direct</span></li>
+            </ul>
+          </div>
+          <div class="text-[11px] font-bold text-brand-red border-t border-red-100 pt-3 mt-4">
+            Course par étapes • Étape 1
+          </div>
+        </div>
+
+        <!-- Jour 4 -->
+        <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-1">Samedi 31 Juillet 2027</div>
+            <div class="text-xl font-heading font-black text-slate-900 mb-3">Jour 2 départ deuxième journée et arrivée avec sacre mondial</div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Deuxième journée de course. Couronnement des champions du monde et banquet officiel des nations.
+            </p>
+            <ul class="space-y-1.5 text-xs text-slate-600">
+              <li class="flex items-start gap-1.5">• <span>Arrivée des vainqueurs U18 & U25</span></li>
+              <li class="flex items-start gap-1.5">• <span>Cérémonie protocolaire de remise des médailles</span></li>
+              <li class="flex items-start gap-1.5">• <span>Banquet boréal et festivités de clôture</span></li>
+            </ul>
+          </div>
+          <div class="text-[11px] font-semibold text-emerald-600 border-t border-slate-100 pt-3 mt-4">
+            Célébration internationale
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- LE TERRITOIRE D'ACCUEIL : LE TÉMISCAMINGUE SAUVAGE -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <div class="lg:col-span-6 space-y-5">
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-1">Le Terrain de Jeu</span>
+          <h3 class="text-2xl sm:text-4xl font-heading font-black uppercase text-slate-900 leading-tight">
+            Le Témiscamingue : Sanctuaire d'Aventure et Grands Espaces
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Situé à la frontière de l'Ontario et du nord-ouest québécois, le Témiscamingue est une terre de légendes et de contrastes géologiques : des forêts mixtes denses, des falaises vertigineuses bordant le lac Témiscamingue et le labyrinthe féérique des immenses lacs boréaux.
+          </p>
+          <div class="space-y-3 text-xs sm:text-sm text-slate-700">
+            <div class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-lg bg-red-100 text-brand-red flex items-center justify-center font-bold flex-shrink-0">✓</span>
+              <span><strong class="text-slate-900">Parc national d'Opémican :</strong> Territoire protégé grandiose de la Sépaq, mêlant pins blancs centenaires, falaises rocheuses et rivières encaissées.</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-lg bg-red-100 text-brand-red flex items-center justify-center font-bold flex-shrink-0">✓</span>
+              <span><strong class="text-slate-900">Héritage Anishinaabe & Kebaowek :</strong> Collaboration étroite et respect des territoires ancestraux des Premières Nations au cœur du parcours.</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-lg bg-red-100 text-brand-red flex items-center justify-center font-bold flex-shrink-0">✓</span>
+              <span><strong class="text-slate-900">Hospitalité Témiscamienne :</strong> L'engagement exceptionnel des municipalités, des bénévoles et de toute une communauté passionnée de plein air.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+          <div class="rounded-2xl overflow-hidden shadow-md h-52 bg-slate-100 group">
+            <img 
+              src="/assets/arws-junior-world-temiscamingue-2026-2.webp" 
+              alt="Canoë d'expédition sur les lacs du Témiscamingue" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='/assets/Raid-Temis-reperage4.webp'"
+            />
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-md h-52 bg-slate-100 group">
+            <img 
+              src="/assets/arws-junior-world-temiscamingue-2026-3.webp" 
+              alt="Franchissement aquatique en raid aventure" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='/assets/Raid-Temis-reperage4.webp'"
+            />
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-md h-52 bg-slate-100 group">
+            <img 
+              src="/assets/28514399477_3839a9ca93_o-scaled.webp" 
+              alt="Transition VTT dans la forêt boréale" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="rounded-2xl overflow-hidden shadow-md h-52 bg-slate-100 group">
+            <img 
+              src="/assets/35792635631_c33a7fd7d0_o.webp" 
+              alt="Orientation sur crête rocheuse" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SECTION PARTENAIRES & APPEL À L'ACTION -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Comité d'Organisation & Partenaires</span>
+          <h3 class="text-2xl font-heading font-bold text-slate-900 mb-4">Un Front Commun International</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+            L'organisation du Championnat du Monde Junior ARWS 2027 rassemble les plus grandes instances de la course d'aventure : <strong class="text-slate-800">ARWS</strong>, <strong class="text-slate-800">IARA</strong>, <strong class="text-slate-800">Endurance Aventure</strong>, en concertation avec la <strong class="text-slate-800">MRC de Témiscamingue</strong>, les communautés autochtones et les partenaires régionaux.
+          </p>
+          <div class="flex items-center gap-4">
+            <img 
+              src="/assets/Logo-Mondiaux-Bilingue-.webp" 
+              alt="ARWS Junior World Championship" 
+              class="h-12 w-auto object-contain"
+            />
+            <div class="h-8 w-px bg-slate-200"></div>
+            <img 
+              src="/assets/logo-championnat-monde-raid-temiscamingue.png" 
+              alt="Championnat du Monde Raid Aventure Témiscamingue" 
+              class="h-10 w-auto object-contain"
+            />
+          </div>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-center">
+          <div class="text-base font-heading font-bold text-slate-900 mb-2">Vous êtes un athlète, une fédération ou un partenaire ?</div>
+          <p class="text-xs text-slate-500 mb-6">Consultez les informations officielles ou contactez directement l'équipe d'Endurance Aventure pour toute question logistique ou partenariat.</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a 
+              href="https://www.arwsjuniorworld.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="w-full sm:w-auto px-6 py-3 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-colors shadow-md shadow-brand-red/20"
+            >
+              Site Officiel des Mondiaux ↗
+            </a>
+            <a 
+              href="/contact?type=general&subject=championnat-monde-junior-arws" 
+              class="w-full sm:w-auto px-6 py-3 rounded-xl bg-white border border-slate-300 hover:bg-slate-100 text-slate-800 text-xs font-heading font-bold uppercase tracking-wider transition-colors"
+            >
+              Contacter l'Équipe
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</Layout>

@@ -5,7 +5,7 @@
     "title": "Gravel Bikepacking Challenge 500 (GBC 500)",
     "subtitle": "L'ultime défi de vélo gravelle et bikepacking au Québec",
     "category": "Gravel Bike / Bikepacking",
-    "location": "Cantons-de-l'Est / Mont Mégantic, QC",
+    "location": "Cantons-de-l'Est, QC",
     "dates": "Date à venir",
     "distance": "250 km",
     "image": "/assets/2023-08-05_GBC500_mc_1498-scaled.webp",
@@ -20,7 +20,7 @@
     "logo": "/assets/logo-gbc500-coul-vf.webp",
     "featured": true,
     "hasPage": true,
-    "external": true,
+    "external": false,
     "description": "Une aventure épique d'endurance en autonomie complète à travers les plus beaux chemins de terre, forêts et sommets du Québec.",
     "highlights": [
       "250 km en autonomie ou avec soutien",
@@ -28,7 +28,7 @@
       "Ravitaillements",
       "Encadrement sécuritaire tout-terrain"
     ],
-    "registrationLink": "https://gbc500.com"
+    "registrationLink": "/evenements/gbc500/"
   },
   {
     "id": "championnat-monde-junior-arws",
@@ -44,22 +44,22 @@
       "/assets/arws-junior-world-temiscamingue-2026-3.webp",
       "/assets/arws-junior-world-temiscamingue-2026-1.webp",
       "/assets/arws-junior-world-temiscamingue-2026-2.webp",
-      "/assets/arws-junior-world-temiscamingue-2026-4.webp",
-      "/assets/Raid-Temis-reperage4.webp"
+      "/assets/arws-junior-world-temiscamingue-2026-4.webp"
     ],
     "video": "https://www.youtube.com/embed/Ht5lGrOHqzo",
-    "logo": "/assets/Logo-Mondiaux-Bilingue-.webp",
+    "logo": "/assets/logo-championnat-monde-raid-temiscamingue.png",
+    "secondaryLogo": "/assets/Logo-Mondiaux-Bilingue-.webp",
     "featured": true,
     "hasPage": true,
-    "external": true,
+    "external": false,
     "description": "Le rendez-vous planétaire de la relève de la course d'aventure : 100 km en autonomie totale (carte & boussole, canot, VTT, trail, nage et cordes) réunissant l'élite internationale U18 et U25.",
     "highlights": [
       "100 km en autonomie stricte carte & boussole",
       "Équipes de 2 (U18 et U25 : mixte, féminine, masculine)",
       "Canot boréal, VTT technique, trail & cordes",
-      "30 sélections nationales de 10+ pays (IARA / ARWS)"
+      "Course par étapes officielle ARWS & IARA"
     ],
-    "registrationLink": "https://www.arwsjuniorworld.com"
+    "registrationLink": "/evenements/championnat-monde-junior-arws/"
   },
   {
     "id": "raids-multisports",
