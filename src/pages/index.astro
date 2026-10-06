@@ -2,10 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import events from '../data/events.json';
 import services from '../data/services.json';
-import news from '../data/news.json';
 
 const featuredEvents = events.filter(e => e.featured);
-const latestNews = news.slice(0, 3);
 
 const serviceVisuals: Record<string, {
   tag: string;
@@ -35,21 +33,6 @@ const serviceVisuals: Record<string, {
     iconSvg: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/><circle cx="9" cy="13" r="2.2" class="fill-brand-cyan/20" stroke="currentColor" stroke-width="1.5"/><path stroke-linecap="round" stroke-width="1.8" d="M5 4h7"/></svg>`
   }
 };
-
-const sponsors = [
-  { name: 'Argon 18', logo: '/assets/logo-argon-18-2.webp' },
-  { name: 'XACT Nutrition', logo: '/assets/xactnutrition_Logo_L-blk.webp' },
-  { name: 'Näak Nutrition', logo: '/assets/logoNAAK.webp' },
-  { name: 'Leki', logo: '/assets/LEKI-Logo.webp' },
-  { name: 'Karpos', logo: '/assets/LOGOKARPOS.webp' },
-  { name: 'Vaude', logo: '/assets/VAUDE.webp' },
-  { name: 'Blizzard', logo: '/assets/Blizzard.webp' },
-  { name: 'Sépaq Mont-Orford', logo: '/assets/orford_logo-original_fond_transparent.webp' },
-  { name: 'Coast Headlamps', logo: '/assets/logocoast.webp' },
-  { name: 'Skimo East', logo: '/assets/Skimoeast.webp' },
-  { name: 'Clinique Santé Performance', logo: '/assets/Clinique-sante-performance.webp' },
-  { name: 'ARWS Mondial Juniors', logo: '/assets/Logo-Mondiaux-Bilingue-.webp' }
-];
 ---
 
 <Layout title="Endurance Aventure | Événements Plein Air & Production Audiovisuelle Extrême">
@@ -107,50 +90,6 @@ const sponsors = [
     </div>
   </section>
 
-  <!-- BANDEAU PARTENAIRES & SPONSORS (Carrousel Infini de Logos avec Formes Dynamiques Athlétiques) -->
-  <section class="py-8 bg-slate-900 border-t border-b border-slate-800 overflow-hidden relative">
-    <!-- Formes Géométriques Athlétiques Style Ironman (Slashes & Profils d'Élévation) -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
-      <!-- Chevrons / Slashes de vitesse en filigrane répété -->
-      <svg class="absolute inset-0 w-full h-full opacity-[0.04] text-white" viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <pattern id="sponsor-slashes" width="80" height="120" patternUnits="userSpaceOnUse" patternTransform="rotate(25)">
-          <line x1="0" y1="0" x2="0" y2="120" stroke="currentColor" stroke-width="1.5" />
-          <line x1="25" y1="0" x2="25" y2="120" stroke="currentColor" stroke-width="4" opacity="0.6" />
-          <line x1="50" y1="0" x2="50" y2="120" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 4" />
-        </pattern>
-        <rect width="100%" height="100%" fill="url(#sponsor-slashes)" />
-      </svg>
-      <!-- Lignes de crêtes topographiques subtiles rouge et cyan -->
-      <svg class="absolute -bottom-1 left-0 right-0 w-full h-10 opacity-20 text-brand-red pointer-events-none" viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none">
-        <path d="M0 35 C 320 10, 680 38, 1020 18 C 1240 5, 1380 28, 1440 22" stroke="currentColor" stroke-width="1.5" />
-      </svg>
-      <svg class="absolute -top-1 left-0 right-0 w-full h-10 opacity-15 text-brand-cyan pointer-events-none" viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none">
-        <path d="M0 10 C 280 32, 620 8, 960 25 C 1180 35, 1360 12, 1440 15" stroke="currentColor" stroke-width="1.5" stroke-dasharray="8 6" />
-      </svg>
-    </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 text-center">
-      <span class="text-[11px] font-heading font-bold uppercase tracking-widest text-brand-red block mb-1">Partenaires & Équipementiers Officiels</span>
-      <p class="text-xs text-slate-400">Ils équipent et soutiennent les athlètes et les épreuves d'Endurance Aventure sur le terrain</p>
-    </div>
-    
-    <!-- Carrousel continu infini (Logos Uniquement) -->
-    <div class="relative z-10 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
-      <div class="flex items-center gap-6 w-max animate-infinite-scroll">
-        {[...sponsors, ...sponsors].map((s) => (
-          <div class="h-16 w-36 sm:w-44 px-4 py-2 rounded-md bg-white shadow-sm border border-slate-200/90 flex items-center justify-center flex-shrink-0">
-            <img 
-              src={s.logo} 
-              alt={s.name} 
-              class="max-h-10 max-w-[120px] sm:max-w-[140px] w-auto h-auto object-contain filter grayscale hover:grayscale-0 transition-all opacity-85 hover:opacity-100" 
-              loading="lazy"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- SECTION ÉVÉNEMENTS PHARES (Fond clair avec relief topographique de terrain) -->
   <section id="evenements" class="py-24 bg-slate-100/70 border-t border-slate-200 relative overflow-hidden">
     <!-- Formes de Relief Topographique Style Carte IGN / Outdoor (Courbes de niveau & Dénivelé) -->
@@ -189,7 +128,7 @@ const sponsors = [
       </div>
 
       <!-- Events Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {featuredEvents.map((evt) => (
           <div class="group rounded-lg bg-white border border-slate-200/90 shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:border-slate-300 hover:shadow-lg hover:-translate-y-0.5">
             <!-- Image Frame -->
@@ -258,17 +197,23 @@ const sponsors = [
               <!-- Button -->
               <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
                 <span class="text-xs text-slate-500 font-semibold">{evt.dates}</span>
-                <a 
-                  href={evt.registrationLink} 
-                  target={evt.registrationLink.startsWith('http') ? '_blank' : undefined}
-                  rel={evt.registrationLink.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  class="px-4 py-2.5 rounded-md bg-brand-red hover:bg-brand-red-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-sm inline-flex items-center gap-1.5"
-                >
-                  <span>{evt.registrationLink.startsWith('http') ? 'Visiter le site' : 'Détails & Inscription'}</span>
-                  {evt.registrationLink.startsWith('http') && (
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
-                  )}
-                </a>
+                {evt.registrationLink && evt.registrationLink !== '#' ? (
+                  <a 
+                    href={evt.registrationLink} 
+                    target={evt.registrationLink.startsWith('http') ? '_blank' : undefined}
+                    rel={evt.registrationLink.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    class="px-4 py-2.5 rounded-md bg-brand-red hover:bg-brand-red-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-sm inline-flex items-center gap-1.5"
+                  >
+                    <span>{evt.registrationLink.startsWith('http') ? 'Visiter le site' : 'Détails & Inscription'}</span>
+                    {evt.registrationLink.startsWith('http') && (
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    )}
+                  </a>
+                ) : (
+                  <span class="px-4 py-2.5 rounded-md bg-slate-100 text-slate-400 border border-slate-200 text-xs font-heading font-bold uppercase tracking-wider inline-flex items-center gap-1.5 cursor-not-allowed">
+                    À venir
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -358,7 +303,7 @@ const sponsors = [
               Un projet d'événement ou un tournage extrême ?
             </h3>
             <p class="text-base text-slate-300 leading-relaxed mb-6">
-              Échangez directement avec <strong class="text-white font-semibold">Bastien Michau</strong> et <strong class="text-white font-semibold">Daniel Poirier</strong> pour évaluer la faisabilité technique de votre projet et obtenir une soumission détaillée.
+              Échangez directement avec <strong class="text-white font-semibold">Daniel Poirier</strong>, <strong class="text-white font-semibold">Bastien Michau</strong> et <strong class="text-white font-semibold">Marc Plante</strong> pour évaluer la faisabilité technique de votre projet et obtenir une soumission détaillée.
             </p>
 
             <!-- Spécifications concrètes de terrain -->
@@ -373,7 +318,7 @@ const sponsors = [
               </li>
               <li class="flex items-center gap-2.5">
                 <span class="w-1.5 h-1.5 bg-emerald-400 flex-shrink-0"></span>
-                <span>Étude de faisabilité et estimation chiffrée remises sous 48 heures</span>
+                <span>Étude de faisabilité technique et estimation budgétaire détaillée</span>
               </li>
             </ul>
 
@@ -401,39 +346,54 @@ const sponsors = [
             </div>
           </div>
 
-          <!-- Colonne Interlocuteurs : Bastien Michau en premier, puis Daniel Poirier -->
-          <div class="lg:col-span-5 flex flex-col gap-3.5">
+          <!-- Colonne Interlocuteurs : Daniel Poirier, Bastien Michau, Marc Plante -->
+          <div class="lg:col-span-5 flex flex-col gap-3">
             <div class="text-[11px] uppercase font-heading font-bold tracking-widest text-slate-400 mb-0.5">
               Direction opérationnelle :
             </div>
 
-            <!-- 1. Bastien Michau (En haut) -->
-            <div class="flex items-center gap-4 p-4 rounded-md bg-slate-800/90 border border-slate-700/80">
-              <img 
-                src="/assets/bastien-michau.webp" 
-                alt="Bastien Michau" 
-                class="w-14 h-14 rounded-md object-cover border border-slate-600 flex-shrink-0"
-                onerror="this.src='/assets/bastien-michau.jpg'"
-              />
-              <div>
-                <div class="text-white font-heading font-bold text-base leading-snug">Bastien Michau</div>
-                <div class="text-xs text-brand-cyan font-semibold">Directeur de Production & Réalisateur</div>
-                <div class="text-[11px] text-slate-400 mt-0.5">Captation outdoor extrême, drones certifiés & documentaires télévisés</div>
-              </div>
-            </div>
-
-            <!-- 2. Daniel Poirier (En dessous) -->
-            <div class="flex items-center gap-4 p-4 rounded-md bg-slate-800/90 border border-slate-700/80">
+            <!-- 1. Daniel Poirier -->
+            <div class="flex items-center gap-3.5 p-3.5 rounded-md bg-slate-800/90 border border-slate-700/80">
               <img 
                 src="/assets/daniel-poirier-endurance-aventure.webp" 
                 alt="Daniel Poirier" 
-                class="w-14 h-14 rounded-md object-cover border border-slate-600 flex-shrink-0"
+                class="w-12 h-12 rounded-md object-cover border border-slate-600 flex-shrink-0"
                 onerror="this.src='/assets/daniel-poirier-endurance-aventure.jpg'"
               />
               <div>
-                <div class="text-white font-heading font-bold text-base leading-snug">Daniel Poirier</div>
-                <div class="text-xs text-brand-red font-semibold">Fondateur & Directeur d'Épreuves</div>
-                <div class="text-[11px] text-slate-400 mt-0.5">25 ans d'ingénierie de parcours, logistique en région isolée & sécurité civile</div>
+                <div class="text-white font-heading font-bold text-sm leading-snug">Daniel Poirier</div>
+                <div class="text-xs text-brand-red font-semibold">Fondateur et directeur production et réalisation</div>
+                <div class="text-[11px] text-slate-400 mt-0.5">Captation outdoor extrême, documentaires télévisés & réalisation grand format</div>
+              </div>
+            </div>
+
+            <!-- 2. Bastien Michau -->
+            <div class="flex items-center gap-3.5 p-3.5 rounded-md bg-slate-800/90 border border-slate-700/80">
+              <img 
+                src="/assets/bastien-michau.webp" 
+                alt="Bastien Michau" 
+                class="w-12 h-12 rounded-md object-cover border border-slate-600 flex-shrink-0"
+                onerror="this.src='/assets/bastien-michau.jpg'"
+              />
+              <div>
+                <div class="text-white font-heading font-bold text-sm leading-snug">Bastien Michau</div>
+                <div class="text-xs text-brand-cyan font-semibold">Associé et directeur d'épreuve</div>
+                <div class="text-[11px] text-slate-400 mt-0.5">Ingénierie de parcours, logistique en région isolée & sécurité civile</div>
+              </div>
+            </div>
+
+            <!-- 3. Marc Plante -->
+            <div class="flex items-center gap-3.5 p-3.5 rounded-md bg-slate-800/90 border border-slate-700/80">
+              <img 
+                src="/assets/marc-plante.webp" 
+                alt="Marc Plante" 
+                class="w-12 h-12 rounded-md object-cover border border-slate-600 flex-shrink-0"
+                onerror="this.src='/assets/marc-plante.jpg'"
+              />
+              <div>
+                <div class="text-white font-heading font-bold text-sm leading-snug">Marc Plante</div>
+                <div class="text-xs text-slate-300 font-semibold">Producteur exécutif</div>
+                <div class="text-[11px] text-slate-400 mt-0.5">Production exécutive des projets documentaires, partenariats & diffusion internationale</div>
               </div>
             </div>
 
@@ -444,76 +404,5 @@ const sponsors = [
 
     </div>
   </section>
-
-
-  <!-- SECTION DERNIÈRES NOUVELLES (Fond clair pour confort de lecture) -->
-  <section class="py-24 bg-slate-100/70 border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="flex items-center justify-between mb-16">
-        <div>
-          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Récits de Terrain</span>
-          <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase tracking-tight text-slate-900">
-            Actualités & Récits
-          </h2>
-        </div>
-        <a href="/nouvelles" class="text-sm font-bold text-slate-700 hover:text-brand-red uppercase tracking-wider flex items-center gap-1.5 transition-colors">
-          <span>Tous les articles ({news.length})</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {latestNews.map((n) => (
-          <article class="rounded-lg bg-white border border-slate-200 shadow-sm overflow-hidden flex flex-col group hover:shadow-lg transition-all duration-300">
-            <div class="relative h-48 overflow-hidden bg-slate-200">
-              <img 
-                src={n.image} 
-                alt={n.title} 
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                onerror="this.src='/assets/EnduranceAventure.jpg'"
-              />
-              <span class="absolute top-3 right-3 px-2 py-0.5 rounded-sm bg-black/80 text-[11px] font-semibold text-white backdrop-blur-sm border border-slate-800 flex items-center gap-1">
-                <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                <span>{n.date}</span>
-              </span>
-            </div>
-            <div class="p-6 flex-grow flex flex-col justify-between">
-              <div>
-                <h3 class="text-lg font-heading font-bold text-slate-900 mb-2 group-hover:text-brand-red transition-colors line-clamp-2">
-                  <a href={`/nouvelles/${n.slug}`}>{n.title}</a>
-                </h3>
-                <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed mb-4">
-                  {n.excerpt}
-                </p>
-              </div>
-              <a href={`/nouvelles/${n.slug}`} class="text-xs font-bold text-brand-red hover:underline uppercase tracking-wider inline-flex items-center gap-1">
-                <span>Lire l'article complet</span>
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
-
-    </div>
-  </section>
-
-  <style>
-    @keyframes infinite-scroll {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
-    }
-    .animate-infinite-scroll {
-      animation: infinite-scroll 32s linear infinite;
-    }
-    .animate-infinite-scroll:hover {
-      animation-play-state: paused;
-    }
-  </style>
 
 </Layout>
