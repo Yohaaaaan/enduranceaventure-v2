@@ -3,12 +3,13 @@ import Layout from '../../layouts/Layout.astro';
 import events from '../../data/events.json';
 import pastEvents from '../../data/pastEvents.json';
 
+const featuredEvents = events.filter(e => e.featured);
 const totalPastEvents = pastEvents.length;
 ---
 
 <Layout 
   title="Nos Événements & Rétrospective Historique | Endurance Aventure" 
-  description="Découvrez les 4 événements phares d'Endurance Aventure (GBC 500, Championnat du Monde Junior ARWS, Raids Multisports, Triathlon XTRI) et l'archive complète de nos épreuves historiques."
+  description="Découvrez les 3 événements phares d'Endurance Aventure (GBC 500, Championnat du Monde Junior ARWS, Triathlon XTRI) et l'archive complète de nos épreuves historiques."
 >
   
   <!-- Banner Sombre & Immersif avec Photo d'Action Réelle -->
@@ -16,7 +17,7 @@ const totalPastEvents = pastEvents.length;
     <img 
       src="/assets/Raid-Temis-reperage4.webp" 
       alt="Événements et expéditions sportives Endurance Aventure" 
-      class="absolute inset-0 w-full h-full object-cover object-center opacity-100 brightness-105 contrast-105"
+      class="absolute inset-0 w-full h-full object-cover object-center opacity-100 brightness-105 contrast-105" 
       onerror="this.src='/assets/51585599881_b5e2815724_o-scaled.webp'"
     />
     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-black/10 to-transparent"></div>
@@ -31,7 +32,7 @@ const totalPastEvents = pastEvents.length;
         <span class="text-white drop-shadow">Endurance Aventure</span>
       </h1>
       <p class="max-w-3xl text-base sm:text-lg text-slate-100 font-normal leading-relaxed mb-8 drop-shadow-md">
-        Depuis plus de deux décennies, nous concevons des défis pionniers d’endurance en milieu sauvage. Retrouvez ici nos <strong class="text-white font-semibold">4 grands événements phares</strong> ainsi que la totalité des <strong class="text-white font-semibold">{totalPastEvents} épreuves historiques</strong> qui ont façonné notre expertise au Québec et à l'international.
+        Depuis plus de deux décennies, nous concevons des défis pionniers d’endurance en milieu sauvage. Retrouvez ici nos <strong class="text-white font-semibold">3 grands événements phares</strong> ainsi que la totalité des <strong class="text-white font-semibold">{totalPastEvents} épreuves historiques</strong> qui ont façonné notre expertise au Québec et à l'international.
       </p>
 
       <!-- Quick Nav Buttons -->
@@ -40,7 +41,7 @@ const totalPastEvents = pastEvents.length;
           href="#phares" 
           class="px-5 py-2.5 rounded-md bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all shadow-sm flex items-center gap-2"
         >
-          <span>4 Événements Phares</span>
+          <span>3 Événements Phares</span>
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
         </a>
         <a 
@@ -55,7 +56,7 @@ const totalPastEvents = pastEvents.length;
   </header>
 
   <!-- ========================================== -->
-  <!-- SECTION 1 : LES 4 ÉVÉNEMENTS PHARES        -->
+  <!-- SECTION 1 : LES 3 ÉVÉNEMENTS PHARES        -->
   <!-- ========================================== -->
   <section id="phares" class="bg-slate-100 py-16 sm:py-20 border-b border-slate-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,16 +65,16 @@ const totalPastEvents = pastEvents.length;
         <div>
           <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-1">Sélection Majeure</span>
           <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase tracking-tight text-slate-900">
-            Nos 4 Événements Phares
+            Nos 3 Événements Phares
           </h2>
           <p class="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl">
-            Les piliers actuels et légendaires de notre organisation : gravel bike en autonomie, championnats mondiaux de raid, expéditions multisports et triathlon extrême.
+            Les piliers actuels et légendaires de notre organisation : gravel bike en autonomie, championnats mondiaux de raid et triathlon extrême.
           </p>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10">
-        {events.map((evt) => {
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {featuredEvents.map((evt) => {
           const hasVideo = Boolean(evt.video);
           const hasImages = evt.images && evt.images.length > 0;
           const defaultTab = hasVideo ? 'video' : 'photos';
@@ -146,7 +147,7 @@ const totalPastEvents = pastEvents.length;
                     <span class="w-1.5 h-1.5 bg-brand-red flex-shrink-0"></span>
                     <span>Faits saillants & Spécifications</span>
                   </div>
-                  <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-slate-600">
+                  <ul class="grid grid-cols-1 gap-2 text-xs text-slate-600">
                     {evt.highlights.map(h => (
                       <li class="flex items-start gap-2">
                         <span class="w-1.5 h-1.5 bg-brand-red mt-1.5 flex-shrink-0"></span>
