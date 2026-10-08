@@ -28,6 +28,7 @@
       "Ravitaillements",
       "Encadrement sécuritaire tout-terrain"
     ],
+    "buttonText": "Détails",
     "registrationLink": "/evenements/gbc500/"
   },
   {
@@ -37,7 +38,7 @@
     "subtitle": "Le championnat du monde officiel des jeunes aventuriers U18 & U25",
     "category": "Championnat Mondial / ARWS Series",
     "location": "Témiscamingue, Québec, Canada",
-    "dates": "28 juillet au 31 juillet 2027",
+    "dates": "Du 28 au 1er juillet 2027",
     "distance": "100 km • 4 Jours • Équipes de 2",
     "image": "/assets/arws-junior-world-temiscamingue-2026-3.webp",
     "images": [
@@ -100,7 +101,7 @@
     "category": "Triathlon Extrême (XTRI)",
     "location": "Région exceptionnelle à découvrir prochainement",
     "dates": "Information à venir prochainement",
-    "distance": "3.8 km Nage • 180 km Vélo • 42.2 km Trail",
+    "distance": "2 km Nage • 90 km Vélo • 21 km Trail",
     "image": "/assets/51581607901_c23c63d19b_k.webp",
     "images": [
       "/assets/51581607901_c23c63d19b_k.webp",
@@ -117,8 +118,8 @@
     "description": "Nous travaillons activement à l'implantation de ce triathlon extrême dans une région exceptionnelle que nous avons hâte de vous annoncer.",
     "highlights": [
       "Membre fondateur officiel du circuit XTRI World Tour",
-      "3,8 km nage nocturne, 180 km vélo (2500m D+)",
-      "42,2 km trail marathon jusqu'à l'observatoire astronomique",
+      "2 km nage, 90 km de vélo",
+      "21 km de trail",
       "Récits et vidéos de toutes les éditions dans nos archives"
     ],
     "registrationLink": "#"
