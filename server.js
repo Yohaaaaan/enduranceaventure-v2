@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import fs from 'fs';
 import crypto from 'crypto';
+import { spawn } from 'child_process';
 import { fileURLToPath } from 'url';
 import { DatabaseSync } from 'node:sqlite';
 
@@ -282,6 +283,42 @@ app.get('/api/stats', requireAdmin, (req, res) => {
   }
 });
 
+// Notification email dispatcher
+const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'info@enduranceaventure.com';
+
+function sendLeadEmail(lead) {
+  const subject = `[Soumission Site Web] ${lead.subject || lead.service || 'Nouvelle demande'} - ${lead.name}`;
+  const body = [
+    `Nouvelle soumission reçue depuis le site web Endurance Aventure :`,
+    ``,
+    `Type: ${lead.type === 'b2b' ? 'Devis B2B & Municipalités' : 'Coureurs & Question générale'}`,
+    `Nom: ${lead.name}`,
+    `Courriel: ${lead.email}`,
+    `Téléphone: ${lead.phone || 'Non renseigné'}`,
+    lead.organization ? `Organisation: ${lead.organization}` : null,
+    lead.orgType ? `Type d'entité: ${lead.orgType}` : null,
+    lead.service ? `Prestation: ${lead.service}` : null,
+    lead.subject ? `Sujet: ${lead.subject}` : null,
+    `Date: ${new Date().toLocaleString('fr-CA', { timeZone: 'America/Toronto' })}`,
+    ``,
+    `Message:`,
+    `--------------------------------------------------`,
+    lead.message,
+    `--------------------------------------------------`
+  ].filter(Boolean).join('\n');
+
+  try {
+    const mailProcess = spawn('/usr/sbin/sendmail', ['-t', '-i']);
+    mailProcess.stdin.write(`To: ${NOTIFICATION_EMAIL}\nFrom: web@enduranceaventure.com\nSubject: ${subject}\nContent-Type: text/plain; charset=UTF-8\n\n${body}\n`);
+    mailProcess.stdin.end();
+    mailProcess.on('error', (err) => {
+      console.warn('[Mail Warning] Sendmail non disponible:', err.message);
+    });
+  } catch (err) {
+    console.warn('[Mail Warning] Erreur dispatch courriel:', err.message);
+  }
+}
+
 // API: Submit Contact / B2B Quote
 app.post('/api/contact', (req, res) => {
   try {
@@ -319,6 +356,9 @@ app.post('/api/contact', (req, res) => {
       const allContacts = db.prepare('SELECT * FROM contacts ORDER BY created_at DESC').all();
       fs.writeFileSync(CONTACTS_FILE, JSON.stringify(allContacts, null, 2));
     } catch(e) {}
+
+    // Dispatch email notification to info@enduranceaventure.com
+    sendLeadEmail({ type, name, email, phone, organization, orgType, service, subject: finalSubject, message });
 
     console.log(`[Contact] Nouvelle demande reçue de ${name} (${email}) - ${type}`);
     res.json({ success: true, id });
