@@ -2,8 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import events from '../data/events.json';
 import services from '../data/services.json';
+import news from '../data/news.json';
 
 const featuredEvents = events.filter(e => e.featured);
+const latestNews = news.slice(0, 3);
 
 const serviceVisuals: Record<string, {
   tag: string;
@@ -12,6 +14,8 @@ const serviceVisuals: Record<string, {
   borderHover: string;
   btnBorderHover: string;
   bulletColor: string;
+  image: string;
+  imageAlt: string;
   iconSvg: string;
 }> = {
   'organisation-evenements': {
@@ -21,6 +25,8 @@ const serviceVisuals: Record<string, {
     borderHover: 'hover:border-brand-red/50 hover:shadow-red-500/10',
     btnBorderHover: 'hover:border-brand-red hover:bg-brand-red hover:text-white',
     bulletColor: 'text-brand-red',
+    image: '/assets/canadaman-2017-sommet-mont-megantic-ligne-arrivee.webp',
+    imageAlt: 'Organisation clé en main et logistique tout-terrain',
     iconSvg: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/><circle cx="12" cy="11.5" r="2.2" class="fill-brand-red/20" stroke="currentColor" stroke-width="1.5"/></svg>`
   },
   'production-tele': {
@@ -30,6 +36,8 @@ const serviceVisuals: Record<string, {
     borderHover: 'hover:border-brand-cyan/50 hover:shadow-cyan-500/10',
     btnBorderHover: 'hover:border-brand-cyan hover:bg-brand-cyan hover:text-white',
     bulletColor: 'text-brand-cyan',
+    image: '/assets/JMMsony-September-13-2014_DSC1007.webp',
+    imageAlt: 'Captation vidéo et production documentaire en milieux isolés',
     iconSvg: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/><circle cx="9" cy="13" r="2.2" class="fill-brand-cyan/20" stroke="currentColor" stroke-width="1.5"/><path stroke-linecap="round" stroke-width="1.8" d="M5 4h7"/></svg>`
   }
 };
@@ -223,6 +231,98 @@ const serviceVisuals: Record<string, {
     </div>
   </section>
 
+  <!-- SECTION ADN D'EXPÉDITION & IMPACT DE TERRAIN (Design Sombre Haute Lisibilité) -->
+  <section class="py-24 bg-slate-950 text-white border-t border-slate-800 relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/60 to-slate-950 pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Colonne Texte & Vision -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-900 border-l-2 border-brand-red text-slate-200 text-xs font-heading font-bold uppercase tracking-wider">
+            <span>Depuis 1998 au Québec</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-white leading-tight">
+            25 Ans d'Expédition & d'Ingénierie Sportive
+          </h2>
+          <p class="text-base text-slate-300 leading-relaxed">
+            Endurance Aventure collabore étroitement avec les régions pour concevoir, tracer et produire des événements sportifs d’envergure internationale qui mettent en valeur des territoires d’exception.
+          </p>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            De la régie de départ aux plans de secours en région isolée, nos traceurs et réalisateurs créent des leviers majeurs de rayonnement touristique et économique amplifiés par des captations télévisuelles diffusées à travers le monde.
+          </p>
+
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a 
+              href="/entreprise/" 
+              class="px-7 py-3.5 rounded-md bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 shadow-sm"
+            >
+              <span>Découvrir l'histoire & l'équipe</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a 
+              href="/evenements/" 
+              class="px-6 py-3.5 rounded-md bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-heading font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2"
+            >
+              <span>Archives des courses</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Colonne Chiffres Clés & Photos de Terrain -->
+        <div class="lg:col-span-6 space-y-6">
+          <!-- 4 Stats Cards -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-5 rounded-lg bg-slate-900/90 border border-slate-800">
+              <div class="text-3xl sm:text-4xl font-heading font-black text-brand-red mb-1">1998</div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-200">Fondation au Québec</div>
+              <div class="text-[11px] text-slate-400 mt-1">+25 ans d'organisation pionnière</div>
+            </div>
+            <div class="p-5 rounded-lg bg-slate-900/90 border border-slate-800">
+              <div class="text-3xl sm:text-4xl font-heading font-black text-brand-cyan mb-1">+10 000</div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-200">Kilomètres Tracés</div>
+              <div class="text-[11px] text-slate-400 mt-1">En nature sauvage et territoires boréaux</div>
+            </div>
+            <div class="p-5 rounded-lg bg-slate-900/90 border border-slate-800">
+              <div class="text-3xl sm:text-4xl font-heading font-black text-white mb-1">150+</div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-200">Pros de Terrain</div>
+              <div class="text-[11px] text-slate-400 mt-1">Traceurs, secouristes & cadreurs</div>
+            </div>
+            <div class="p-5 rounded-lg bg-slate-900/90 border border-slate-800">
+              <div class="text-3xl sm:text-4xl font-heading font-black text-emerald-400 mb-1">4K & TV</div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-200">Diffusion Mondiale</div>
+              <div class="text-[11px] text-slate-400 mt-1">Émissions télévisées & documentaires</div>
+            </div>
+          </div>
+
+          <!-- Duo Photos de Terrain Authentiques -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="rounded-lg overflow-hidden bg-slate-900 border border-slate-800 h-44 relative group">
+              <img 
+                src="/assets/51581835318_775ae15a4e_k.webp" 
+                alt="Repérages cartographiques en pleine nature boréale" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Repérage de sentiers sauvages</span>
+            </div>
+            <div class="rounded-lg overflow-hidden bg-slate-900 border border-slate-800 h-44 relative group">
+              <img 
+                src="/assets/JMMsony-September-12-2014_DSC0167.webp" 
+                alt="Logistique tout-terrain et coordination des épreuves" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Logistique d'expédition & régie</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 
   <!-- SECTION SERVICES CORPORATIFS & B2B (Modèle Hybride : Fond blanc avec cartes structurées) -->
   <section class="py-24 bg-white border-t border-slate-200">
@@ -247,44 +347,60 @@ const serviceVisuals: Record<string, {
             borderHover: 'hover:border-slate-400',
             btnBorderHover: 'hover:border-slate-800 hover:bg-slate-800 hover:text-white',
             bulletColor: 'text-brand-cyan',
+            image: '/assets/canadaman-2017-sommet-mont-megantic-ligne-arrivee.webp',
+            imageAlt: srv.title,
             iconSvg: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`
           };
 
           return (
-            <div class={`rounded-lg bg-slate-50/90 border border-slate-200 p-8 flex flex-col justify-between transition-all duration-300 ${meta.borderHover} hover:shadow-lg hover:-translate-y-0.5`}>
+            <div class={`rounded-lg bg-white border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between transition-all duration-300 ${meta.borderHover} hover:shadow-lg hover:-translate-y-0.5 group`}>
               <div>
-                <div class="flex items-center justify-between mb-6">
-                  <div class={`w-12 h-12 rounded-md border flex items-center justify-center font-bold shadow-sm ${meta.iconBg}`} set:html={meta.iconSvg}>
-                  </div>
-                  <span class={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-sm border ${meta.badgeClass}`}>
+                <!-- Bannière Photo Authentique -->
+                <div class="h-48 overflow-hidden bg-slate-900 relative">
+                  <img 
+                    src={meta.image} 
+                    alt={meta.imageAlt} 
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-black/15 to-transparent"></div>
+                  <span class={`absolute top-3 right-3 text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-sm border shadow-sm ${meta.badgeClass}`}>
                     {meta.tag}
                   </span>
                 </div>
 
-                <h3 class="text-xl font-heading font-bold text-slate-900 mb-3">
-                  {srv.title}
-                </h3>
-                <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                  {srv.description}
-                </p>
+                <div class="p-6 sm:p-8">
+                  <div class="flex items-center gap-3 mb-4">
+                    <div class={`w-10 h-10 rounded-md border flex items-center justify-center font-bold shadow-sm flex-shrink-0 ${meta.iconBg}`} set:html={meta.iconSvg}>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-900">
+                      {srv.title}
+                    </h3>
+                  </div>
 
-                <ul class="space-y-2.5 mb-8 text-xs text-slate-700">
-                  {srv.features.map((f) => (
-                    <li class="flex items-start gap-2.5">
-                      <span class={`font-bold mt-0.5 ${meta.bulletColor}`}>•</span>
-                      <span class="leading-relaxed">{f}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                    {srv.description}
+                  </p>
+
+                  <ul class="space-y-2.5 mb-8 text-xs text-slate-700">
+                    {srv.features.map((f) => (
+                      <li class="flex items-start gap-2.5">
+                        <span class={`font-bold mt-0.5 ${meta.bulletColor}`}>•</span>
+                        <span class="leading-relaxed">{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
-              <a 
-                href={`/services/${srv.slug}/`} 
-                class={`w-full py-3 rounded-md border border-slate-300 text-slate-800 text-center text-xs font-bold uppercase tracking-wider transition-all shadow-sm flex items-center justify-center gap-1.5 ${meta.btnBorderHover}`}
-              >
-                <span>Consulter les détails</span>
-                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-              </a>
+              <div class="px-6 sm:px-8 pb-6 sm:pb-8 pt-0">
+                <a 
+                  href={`/services/${srv.slug}/`} 
+                  class={`w-full py-3 rounded-md border border-slate-300 text-slate-800 text-center text-xs font-bold uppercase tracking-wider transition-all shadow-sm flex items-center justify-center gap-1.5 ${meta.btnBorderHover}`}
+                >
+                  <span>Consulter les détails</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+              </div>
             </div>
           );
         })}
@@ -381,9 +497,217 @@ const serviceVisuals: Record<string, {
 
           </div>
 
-        </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- SECTION GALERIE IMMERSION & ÉPREUVES HISTORIQUES (Fond Clair avec relief) -->
+  <section class="py-24 bg-slate-100/70 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Preuves de Terrain & Récits Visuels</span>
+          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-slate-900">
+            L'Aventure au Cœur de l'Action
+          </h2>
+          <p class="text-base text-slate-600 max-w-2xl mt-3 leading-relaxed">
+            De la baie des Chaleurs aux crêtes de Mégantic, nos caméras et nos équipes immortalisent l'effort brut et la beauté sauvage des épreuves d'endurance.
+          </p>
+        </div>
+        <a 
+          href="/evenements/" 
+          class="text-brand-red hover:text-red-700 font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors self-start md:self-end"
+        >
+          <span>Voir toutes les épreuves</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Mosaïque 4 Photos de Terrain -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 1. Gravel GBC 500 -->
+        <a href="/evenements/gbc500/" class="group rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative h-80 flex flex-col justify-end p-5 transition-all hover:shadow-lg hover:-translate-y-0.5">
+          <img 
+            src="/assets/gravelbike-grange-scaled.webp" 
+            alt="GBC 500 dans les Cantons-de-l'Est" 
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+          <span class="relative z-10 self-start px-2.5 py-1 rounded-sm text-[10px] font-bold uppercase tracking-wider bg-brand-red text-white mb-2 shadow-sm">
+            Gravel & Bikepacking
+          </span>
+          <h3 class="relative z-10 text-lg font-heading font-bold text-white mb-1 group-hover:text-brand-cyan transition-colors">
+            GBC 500
+          </h3>
+          <p class="relative z-10 text-xs text-slate-300 line-clamp-2">
+            500 km d'autonomie et de chemins forestiers dans les Cantons-de-l'Est.
+          </p>
+        </a>
+
+        <!-- 2. Raid Gaspésie -->
+        <a href="/evenements/" class="group rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative h-80 flex flex-col justify-end p-5 transition-all hover:shadow-lg hover:-translate-y-0.5">
+          <img 
+            src="/assets/raid-international-gaspesie-2016-mont-saint-joseph-slack-line.webp" 
+            alt="Raid International Gaspésie sur les parois rocheuses" 
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onerror="this.src='/assets/51582278409_86672a9a9f_k.webp'"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+          <span class="relative z-10 self-start px-2.5 py-1 rounded-sm text-[10px] font-bold uppercase tracking-wider bg-brand-cyan text-white mb-2 shadow-sm">
+            Raid Aventure & Cordes
+          </span>
+          <h3 class="relative z-10 text-lg font-heading font-bold text-white mb-1 group-hover:text-brand-cyan transition-colors">
+            Raid Gaspésie
+          </h3>
+          <p class="relative z-10 text-xs text-slate-300 line-clamp-2">
+            Orientation carte & boussole, canot en mer et progression en falaise.
+          </p>
+        </a>
+
+        <!-- 3. Canada Man / Woman XTRI -->
+        <a href="/evenements/" class="group rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative h-80 flex flex-col justify-end p-5 transition-all hover:shadow-lg hover:-translate-y-0.5">
+          <img 
+            src="/assets/canadaman-2017-lac-megantic-ligne-depart-nuit.webp" 
+            alt="Départ nocturne du Triathlon Canada Man à Lac-Mégantic" 
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+          <span class="relative z-10 self-start px-2.5 py-1 rounded-sm text-[10px] font-bold uppercase tracking-wider bg-emerald-600 text-white mb-2 shadow-sm">
+            Triathlon Extrême
+          </span>
+          <h3 class="relative z-10 text-lg font-heading font-bold text-white mb-1 group-hover:text-brand-cyan transition-colors">
+            Canada Man / Woman
+          </h3>
+          <p class="relative z-10 text-xs text-slate-300 line-clamp-2">
+            Le départ légendaire dans la nuit froide de Lac-Mégantic vers le Mont Mégantic.
+          </p>
+        </a>
+
+        <!-- 4. Mondiaux ARWS Témiscamingue -->
+        <a href="/evenements/championnat-monde-junior-arws/" class="group rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative h-80 flex flex-col justify-end p-5 transition-all hover:shadow-lg hover:-translate-y-0.5">
+          <img 
+            src="/assets/Raid-Temis-reperage4.webp" 
+            alt="Championnat du Monde Junior ARWS au Témiscamingue" 
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onerror="this.src='/assets/Raid-Temis-reperage4.jpg'"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+          <span class="relative z-10 self-start px-2.5 py-1 rounded-sm text-[10px] font-bold uppercase tracking-wider bg-amber-600 text-white mb-2 shadow-sm">
+            Mondiaux Juniors ARWS
+          </span>
+          <h3 class="relative z-10 text-lg font-heading font-bold text-white mb-1 group-hover:text-brand-cyan transition-colors">
+            Témiscamingue 2027
+          </h3>
+          <p class="relative z-10 text-xs text-slate-300 line-clamp-2">
+            La relève mondiale du raid aventure au cœur des grands lacs boréaux.
+          </p>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SECTION ACTUALITÉS & RÉCITS DE TERRAIN (Fond Blanc structuré) -->
+  <section class="py-24 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">Récits & Médias</span>
+          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-slate-900">
+            Dernières Nouvelles du Terrain
+          </h2>
+          <p class="text-base text-slate-600 max-w-2xl mt-3 leading-relaxed">
+            Suivez nos annonces de courses, nos résumés d'épreuves et nos coulisses de tournages documentaires.
+          </p>
+        </div>
+        <a 
+          href="/nouvelles/" 
+          class="text-brand-red hover:text-red-700 font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors self-start md:self-end"
+        >
+          <span>Toutes les actualités</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Grille des 3 dernières nouvelles -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {latestNews.map((n) => (
+          <article class="rounded-lg bg-white border border-slate-200 overflow-hidden flex flex-col group hover:border-slate-300 hover:shadow-lg transition-all duration-300 shadow-sm">
+            <div class="relative h-52 overflow-hidden bg-slate-900">
+              <img 
+                src={n.image} 
+                alt={n.title} 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                onerror="this.src='/assets/canadaman-2017-sommet-mont-megantic-ligne-arrivee.webp'"
+              />
+              <span class="absolute top-3 right-3 px-2 py-0.5 rounded-sm bg-black/80 text-[11px] font-semibold text-white backdrop-blur-sm border border-slate-800 flex items-center gap-1">
+                <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                <span>{n.date}</span>
+              </span>
+            </div>
+
+            <div class="p-6 flex-grow flex flex-col justify-between">
+              <div>
+                <h3 class="text-lg font-heading font-bold text-slate-900 mb-3 group-hover:text-brand-red transition-colors line-clamp-2">
+                  <a href={`/nouvelles/${n.slug}`}>{n.title}</a>
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed mb-6">
+                  {n.excerpt}
+                </p>
+              </div>
+
+              <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                <span class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Endurance Aventure</span>
+                <a href={`/nouvelles/${n.slug}`} class="text-xs font-bold uppercase tracking-wider text-brand-red hover:underline flex items-center gap-1.5">
+                  <span>Lire l'article</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SECTION BANDEAU FINAL CTA (Design Sombre & Percutant) -->
+  <section class="py-20 bg-slate-950 border-t border-slate-800 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-slate-800 p-8 sm:p-14 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+        <div class="max-w-2xl">
+          <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2 font-heading">
+            Collaboration & Territoires
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase tracking-tight text-white mb-4">
+            Vous avez un projet d'événement, de course ou de film ?
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Mettez 25 ans d'ingénierie sportive, de logistique d'expédition et de captation extrême au service de votre vision. Échangez directement avec notre équipe.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 flex-shrink-0">
+          <a 
+            href="/contact/" 
+            class="px-8 py-4 rounded-lg bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-brand-red/25 text-center flex items-center justify-center gap-2"
+          >
+            <span>Demander une soumission</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a 
+            href="/services/organisation-evenements/" 
+            class="px-7 py-4 rounded-lg bg-slate-800/90 hover:bg-slate-800 text-slate-200 border border-slate-700 font-heading font-bold text-xs uppercase tracking-wider transition-all text-center"
+          >
+            Découvrir nos services
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
