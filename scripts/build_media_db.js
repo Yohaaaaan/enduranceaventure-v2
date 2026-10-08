@@ -166,6 +166,9 @@ db.exec(`
     aspect_ratio TEXT,
     is_used INTEGER NOT NULL DEFAULT 0,
     used_in TEXT,
+    description TEXT,
+    alt_text TEXT,
+    tags TEXT,
     created_at TEXT NOT NULL
   );
 
@@ -178,11 +181,111 @@ db.exec(`
 const files = fs.readdirSync(ASSETS_DIR);
 console.log(`Processing ${files.length} assets...`);
 
+function generateVisualDescription(f, mediaType, eventCategory) {
+  const name = f.toLowerCase();
+  if (name.includes("daniel-poirier")) {
+    return {
+      description: "Portrait de Daniel Poirier, cofondateur d'Endurance Aventure et réalisateur de documentaires sportifs télévisés.",
+      alt: "Portrait officiel de Daniel Poirier - Cofondateur et directeur de production",
+      tags: ["daniel-poirier", "equipe", "fondateur", "portrait", "realisateur"]
+    };
+  }
+  if (name.includes("jean-thomas-boily")) {
+    return {
+      description: "Portrait de Jean-Thomas Boily, cofondateur d'Endurance Aventure, paralympien et responsable des opérations logistiques terrain.",
+      alt: "Portrait officiel de Jean-Thomas Boily - Cofondateur et logistique terrain",
+      tags: ["jean-thomas-boily", "equipe", "fondateur", "portrait", "logistique"]
+    };
+  }
+  if (name.includes("bastien-michau")) {
+    return {
+      description: "Portrait de Bastien Michau, associé, directeur de course, guide spéléo et concepteur officiel des parcours d'expédition.",
+      alt: "Portrait officiel de Bastien Michau - Directeur de course et associé",
+      tags: ["bastien-michau", "equipe", "directeur-course", "portrait", "associe"]
+    };
+  }
+  if (name.includes("marc-plante")) {
+    return {
+      description: "Portrait de Marc Plante, associé et producteur exécutif chargé de la distribution internationale.",
+      alt: "Portrait de Marc Plante - Producteur exécutif et associé",
+      tags: ["marc-plante", "equipe", "producteur", "portrait", "associe"]
+    };
+  }
+  if (name.includes("patricia-desgagne")) {
+    return {
+      description: "Portrait de Patricia Desgagné, chargée des relations médias et de l'accueil des délégations internationales.",
+      alt: "Portrait de Patricia Desgagné - Relations médias et délégations",
+      tags: ["patricia-desgagne", "equipe", "medias", "portrait"]
+    };
+  }
+  if (name.includes("canadaman-2017-sommet-mont-megantic-ligne-arrivee")) {
+    return {
+      description: "Arche d'arrivée spectaculaire au sommet du Mont-Mégantic lors de l'épreuve extrême Canada Man / Canada Woman XTRI, vue panoramique sur les massifs québécois.",
+      alt: "Arrivée grandiose au sommet du Mont-Mégantic - Triathlon Canada Man / Canada Woman XTRI",
+      tags: ["canadaman", "xtri", "mont-megantic", "arrivee", "sommet", "triathlon", "paysage"]
+    };
+  }
+  if (name.includes("jmmsony-september-13-2014_dsc1007") || name.includes("jmmsony-september-13-2014_dsc1025")) {
+    return {
+      description: "Cadreurs et photographes de l'équipe Endurance Aventure en pleine action sur le terrain avec caméras professionnelles pour captation télévisuelle et documentaire.",
+      alt: "Cadreurs et photographes d'Endurance Aventure en action sur le terrain",
+      tags: ["production-tele", "cameraman", "cadreur", "photographe", "tournage", "action"]
+    };
+  }
+  if (name.includes("canadaman-xtri-copyright-quebec-dones")) {
+    return {
+      description: "Survol aérien cinématographique 4K par drone lors de l'épreuve Canada Man XTRI au-dessus des lacs et forêts québécoises.",
+      alt: "Survol par drone cinématographique 4K en pleine nature - Canada Man XTRI",
+      tags: ["drone", "production-tele", "aerien", "canadaman", "foret", "lac", "4k"]
+    };
+  }
+  if (name.includes("gbc500") || name.includes("gravelbike") || name.includes("gravel-bike")) {
+    return {
+      description: "Épreuve de vélo de gravelle et bikepacking GBC500 à travers les chemins forestiers et routes de terre sauvages des Cantons-de-l'Est.",
+      alt: "Cyclistes sur les routes de gravelle sauvages du GBC 500 dans les Cantons-de-l'Est",
+      tags: ["gbc500", "gravel", "velo", "bikepacking", "cantons-de-lest", "autonomie"]
+    };
+  }
+  if (name.includes("temiscamingue") || name.includes("arws") || name.includes("raid-international-gaspesie")) {
+    return {
+      description: "Épreuve d'expédition et raid multisport (canoë, VTT, trek d'orientation, franchissement de rivières et cordes) en milieu sauvage isolé.",
+      alt: "Épreuve de raid aventure multisport en nature sauvage canadienne",
+      tags: ["raid-aventure", "arws", "temiscamingue", "gaspesie", "multisport", "orientation", "expedition"]
+    };
+  }
+  if (name.includes("canadaman") || name.includes("triathlon")) {
+    return {
+      description: "Triathlon extrême Canada Man / Canada Woman XTRI : nage en eau libre au lever du soleil, vélo sur routes vallonnées et course de sentier vers le sommet.",
+      alt: "Triathlon extrême Canada Man / Woman XTRI au Lac-Mégantic",
+      tags: ["triathlon", "canadaman", "xtri", "nage", "velo", "trail", "lac-megantic"]
+    };
+  }
+  if (name.includes("trail-des-neiges") || name.includes("tdn") || name.includes("skimo")) {
+    return {
+      description: "Épreuve hivernale Trail des Neiges et ski alpinisme en conditions nordiques québécoises, neige damée et sous-bois féeriques.",
+      alt: "Coureurs en plein effort sur les sentiers enneigés du Trail des Neiges",
+      tags: ["trail-des-neiges", "hiver", "neige", "course-a-pied", "skimo", "nordique"]
+    };
+  }
+  if (mediaType === "logo") {
+    return {
+      description: `Logo officiel et identité visuelle liée à ${f.replace(/[-_]/g, " ")}.`,
+      alt: `Logo officiel ${f.replace(/[-_]/g, " ")}`,
+      tags: ["logo", "branding", "vecteur"]
+    };
+  }
+  return {
+    description: `Archive visuelle d'expédition et événementiel de terrain (${eventCategory || "multisport"}).`,
+    alt: `Endurance Aventure - ${eventCategory || "Événement de plein air"}`,
+    tags: [eventCategory || "multisport", mediaType || "photo"]
+  };
+}
+
 const insertStmt = db.prepare(`
   INSERT INTO media_assets (
-    filename, file_path, media_type, event_category, format, size_bytes, width, height, aspect_ratio, is_used, used_in, created_at
+    filename, file_path, media_type, event_category, format, size_bytes, width, height, aspect_ratio, is_used, used_in, description, alt_text, tags, created_at
   ) VALUES (
-    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
   )
   ON CONFLICT(filename) DO UPDATE SET
     media_type=excluded.media_type,
@@ -193,7 +296,10 @@ const insertStmt = db.prepare(`
     height=excluded.height,
     aspect_ratio=excluded.aspect_ratio,
     is_used=excluded.is_used,
-    used_in=excluded.used_in
+    used_in=excluded.used_in,
+    description=COALESCE(excluded.description, media_assets.description),
+    alt_text=COALESCE(excluded.alt_text, media_assets.alt_text),
+    tags=COALESCE(excluded.tags, media_assets.tags)
 `);
 
 let count = 0;
@@ -225,6 +331,7 @@ for (const f of files) {
   const eventCategory = classifyEvent(f);
   const usages = findUsages(f);
   const isUsed = usages.length > 0 ? 1 : 0;
+  const visualMeta = generateVisualDescription(f, mediaType, eventCategory);
 
   insertStmt.run(
     f,
@@ -238,6 +345,9 @@ for (const f of files) {
     aspectRatio,
     isUsed,
     JSON.stringify(usages),
+    visualMeta.description,
+    visualMeta.alt,
+    JSON.stringify(visualMeta.tags),
     now
   );
   count++;
