@@ -43,7 +43,10 @@ const serviceVisuals: Record<string, {
 };
 ---
 
-<Layout title="Endurance Aventure | Événements Plein Air & Production Audiovisuelle Extrême">
+<Layout 
+  title="Organisation d'Événements Sportifs & Production Plein Air au Québec | Endurance Aventure"
+  description="Pionnier depuis 1998 : organisation d'épreuves sportives clés en main, logistique tout-terrain, teambuilding entreprise et captation télévisuelle par drones 4K au Québec."
+>
   
   <!-- HERO SECTION CINÉMATIQUE SOMBRE (Visuel d'action authentique) -->
   <section class="relative min-h-[88vh] sm:min-h-screen flex flex-col justify-center overflow-hidden bg-slate-950">
@@ -231,29 +234,27 @@ const serviceVisuals: Record<string, {
     </div>
   </section>
 
-  <!-- SECTION ADN D'EXPÉDITION & IMPACT DE TERRAIN (Design Sombre Haute Lisibilité) -->
-  <section class="py-24 bg-slate-950 text-white border-t border-slate-800 relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/60 to-slate-950 pointer-events-none"></div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- SECTION ADN D'EXPÉDITION & IMPACT DE TERRAIN (Design Clair Élégant & Preuves Concrètes) -->
+  <section class="py-20 bg-slate-150/70 border-t border-slate-200 relative overflow-hidden bg-gradient-to-b from-slate-100/90 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <!-- Colonne Texte & Vision -->
         <div class="lg:col-span-6 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-900 border-l-2 border-brand-red text-slate-200 text-xs font-heading font-bold uppercase tracking-wider">
-            <span>Depuis 1998 au Québec</span>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-white border border-slate-200 border-l-2 border-l-brand-red text-slate-800 text-xs font-heading font-bold uppercase tracking-wider shadow-sm">
+            <span>Pionniers du Plein Air au Québec depuis 1998</span>
           </div>
-          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-white leading-tight">
+          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-slate-900 leading-tight">
             25 Ans d'Expédition & d'Ingénierie Sportive
           </h2>
-          <p class="text-base text-slate-300 leading-relaxed">
-            Endurance Aventure collabore étroitement avec les régions pour concevoir, tracer et produire des événements sportifs d’envergure internationale qui mettent en valeur des territoires d’exception.
+          <p class="text-base text-slate-700 leading-relaxed">
+            Endurance Aventure collabore étroitement avec les municipalités, parcs nationaux et diffuseurs pour concevoir, tracer et produire des événements d’envergure qui révèlent la beauté sauvage du Québec.
           </p>
-          <p class="text-sm text-slate-400 leading-relaxed">
-            De la régie de départ aux plans de secours en région isolée, nos traceurs et réalisateurs créent des leviers majeurs de rayonnement touristique et économique amplifiés par des captations télévisuelles diffusées à travers le monde.
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Du repérage cartographique GPS à la coordination des secours en région isolée, nos traceurs et réalisateurs créent des leviers majeurs d'attractivité touristique et économique, amplifiés par des captations audiovisuelles diffusées à travers le monde.
           </p>
 
-          <div class="pt-4 flex flex-wrap gap-4">
+          <div class="pt-2 flex flex-wrap gap-4">
             <a 
               href="/entreprise/" 
               class="px-7 py-3.5 rounded-md bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 shadow-sm"
@@ -262,58 +263,58 @@ const serviceVisuals: Record<string, {
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
             <a 
-              href="/evenements/" 
-              class="px-6 py-3.5 rounded-md bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-heading font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2"
+              href="/services/municipalites-tourisme/" 
+              class="px-6 py-3.5 rounded-md bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-heading font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 shadow-sm"
             >
-              <span>Archives des courses</span>
+              <span>Offre Municipalités & Régions</span>
             </a>
           </div>
         </div>
 
-        <!-- Colonne Chiffres Clés & Photos de Terrain -->
+        <!-- Colonne Preuves Sociales Réelles & Photos de Terrain -->
         <div class="lg:col-span-6 space-y-6">
-          <!-- 4 Stats Cards -->
+          <!-- 4 Stats Cards Claires et Professionnelles -->
           <div class="grid grid-cols-2 gap-4">
-            <div class="p-5 rounded-lg bg-slate-900/90 border border-slate-800">
+            <div class="p-5 rounded-lg bg-white border border-slate-200 shadow-sm">
               <div class="text-3xl sm:text-4xl font-heading font-black text-brand-red mb-1">1998</div>
-              <div class="text-xs font-bold uppercase tracking-wider text-slate-200">Fondation au Québec</div>
-              <div class="text-[11px] text-slate-400 mt-1">+25 ans d'organisation pionnière</div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-900">Fondation au Québec</div>
+              <div class="text-[11px] text-slate-600 mt-1">+25 ans d'organisation pionnière</div>
             </div>
-            <div class="p-5 rounded-lg bg-slate-900/90 border border-slate-800">
-              <div class="text-3xl sm:text-4xl font-heading font-black text-brand-cyan mb-1">+10 000</div>
-              <div class="text-xs font-bold uppercase tracking-wider text-slate-200">Kilomètres Tracés</div>
-              <div class="text-[11px] text-slate-400 mt-1">En nature sauvage et territoires boréaux</div>
+            <div class="p-5 rounded-lg bg-white border border-slate-200 shadow-sm">
+              <div class="text-3xl sm:text-4xl font-heading font-black text-brand-cyan mb-1">10 000+</div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-900">Athlètes Accueillis</div>
+              <div class="text-[11px] text-slate-600 mt-1">Coureurs, cyclistes & raideurs internationaux</div>
             </div>
-            <div class="p-5 rounded-lg bg-slate-900/90 border border-slate-800">
-              <div class="text-3xl sm:text-4xl font-heading font-black text-white mb-1">150+</div>
-              <div class="text-xs font-bold uppercase tracking-wider text-slate-200">Pros de Terrain</div>
-              <div class="text-[11px] text-slate-400 mt-1">Traceurs, secouristes & cadreurs</div>
+            <div class="p-5 rounded-lg bg-white border border-slate-200 shadow-sm">
+              <div class="text-3xl sm:text-4xl font-heading font-black text-slate-800 mb-1">30+</div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-900">Régions & Villes Partenaires</div>
+              <div class="text-[11px] text-slate-600 mt-1">Gaspésie, Témiscamingue, Estrie, Cantons</div>
             </div>
-            <div class="p-5 rounded-lg bg-slate-900/90 border border-slate-800">
-              <div class="text-3xl sm:text-4xl font-heading font-black text-emerald-400 mb-1">4K & TV</div>
-              <div class="text-xs font-bold uppercase tracking-wider text-slate-200">Diffusion Mondiale</div>
-              <div class="text-[11px] text-slate-400 mt-1">Émissions télévisées & documentaires</div>
+            <div class="p-5 rounded-lg bg-white border border-slate-200 shadow-sm">
+              <div class="text-3xl sm:text-4xl font-heading font-black text-emerald-600 mb-1">RDS & TVA</div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-900">Diffusion Média Nationale</div>
+              <div class="text-[11px] text-slate-600 mt-1">Documentaires sportifs & séries d'aventure</div>
             </div>
           </div>
 
           <!-- Duo Photos de Terrain Authentiques -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-            <div class="rounded-lg overflow-hidden bg-slate-900 border border-slate-800 h-44 relative group">
+            <div class="rounded-lg overflow-hidden bg-slate-100 border border-slate-200 h-44 relative group shadow-sm">
               <img 
                 src="/assets/51581835318_775ae15a4e_k.webp" 
                 alt="Repérages cartographiques en pleine nature boréale" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
               <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Repérage de sentiers sauvages</span>
             </div>
-            <div class="rounded-lg overflow-hidden bg-slate-900 border border-slate-800 h-44 relative group">
+            <div class="rounded-lg overflow-hidden bg-slate-100 border border-slate-200 h-44 relative group shadow-sm">
               <img 
                 src="/assets/JMMsony-September-12-2014_DSC0167.webp" 
                 alt="Logistique tout-terrain et coordination des épreuves" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
               <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Logistique d'expédition & régie</span>
             </div>
           </div>
@@ -324,12 +325,12 @@ const serviceVisuals: Record<string, {
   </section>
 
 
-  <!-- SECTION SERVICES CORPORATIFS & B2B (Modèle Hybride : Fond blanc avec cartes structurées) -->
+  <!-- SECTION SERVICES CORPORATIFS, B2B & MUNICIPALITÉS (Fond Blanc Épuré) -->
   <section class="py-24 bg-white border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="max-w-3xl mb-16">
-        <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">Expertise B2B & Municipalités</span>
+        <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">Expertise B2B, Villes & Entreprises</span>
         <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-slate-900 mb-4">
           Services Événementiels & Production Audiovisuelle
         </h2>
@@ -356,7 +357,7 @@ const serviceVisuals: Record<string, {
             <div class={`rounded-lg bg-white border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between transition-all duration-300 ${meta.borderHover} hover:shadow-lg hover:-translate-y-0.5 group`}>
               <div>
                 <!-- Bannière Photo Authentique -->
-                <div class="h-48 overflow-hidden bg-slate-900 relative">
+                <div class="h-48 overflow-hidden bg-slate-100 relative">
                   <img 
                     src={meta.image} 
                     alt={meta.imageAlt} 
@@ -406,97 +407,80 @@ const serviceVisuals: Record<string, {
         })}
       </div>
 
-      <!-- BANDEAU CONSULTATION & DIRECTION DE PROJET (Design sobre, épuré et authentique) -->
-      <div class="mt-16 rounded-lg bg-slate-900 border border-slate-800 p-8 sm:p-12 text-white shadow-xl">
+      <!-- BANDEAU INSTITUTIONNEL & PARTENAIRES TERRITORIAUX (Fond Clair Structuré et Sobre) -->
+      <div class="mt-16 rounded-xl bg-slate-50 border border-slate-200 p-8 sm:p-12 shadow-sm">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          <!-- Colonne Titre & Pitch -->
           <div class="lg:col-span-7">
-            <span class="text-xs font-heading font-bold uppercase tracking-widest text-slate-400 block mb-2">
-              Ingénierie & Direction de Projet
+            <span class="text-xs font-heading font-bold uppercase tracking-widest text-brand-red block mb-2">
+              Ingénierie & Direction Opérationnelle
             </span>
-            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-heading font-black uppercase tracking-tight text-white mb-4 leading-tight">
-              Un projet d'événement ou un tournage extrême ?
+            <h3 class="text-2xl sm:text-3xl font-heading font-black uppercase tracking-tight text-slate-900 mb-4 leading-tight">
+              Une direction de projet chevronnée sur le terrain
             </h3>
-            <p class="text-base text-slate-300 leading-relaxed mb-6">
-              Échangez directement avec <strong class="text-white font-semibold">Daniel Poirier</strong> et <strong class="text-white font-semibold">Bastien Michau</strong> pour évaluer la faisabilité technique de votre projet et obtenir une soumission détaillée.
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
+              Chaque mandat est supervisé directement par <strong class="text-slate-900 font-semibold">Daniel Poirier</strong> (réalisation TV) et <strong class="text-slate-900 font-semibold">Bastien Michau</strong> (direction de course et sécurité) pour garantir rigueur, conformité et retombées concrètes.
             </p>
 
-            <!-- Spécifications concrètes de terrain -->
-            <ul class="space-y-2.5 mb-8 text-xs text-slate-300">
-              <li class="flex items-center gap-2.5">
-                <span class="w-1.5 h-1.5 bg-brand-red flex-shrink-0"></span>
-                <span>Repérage cartographique GPS, conformité environnementale et plans d'urgence</span>
-              </li>
-              <li class="flex items-center gap-2.5">
-                <span class="w-1.5 h-1.5 bg-brand-cyan flex-shrink-0"></span>
-                <span>Moyens de tournage 4K, cadreurs outdoor et drones homologués Transports Canada</span>
-              </li>
-              <li class="flex items-center gap-2.5">
-                <span class="w-1.5 h-1.5 bg-emerald-400 flex-shrink-0"></span>
-                <span>Étude de faisabilité technique et estimation budgétaire détaillée</span>
-              </li>
-            </ul>
-
-            <!-- Actions claires et directes -->
             <div class="flex flex-wrap items-center gap-4">
               <a 
-                href="/contact/" 
-                class="px-7 py-3.5 rounded-md bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 shadow-sm"
+                href="/services/municipalites-tourisme/" 
+                class="px-6 py-3 rounded-md bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 shadow-sm"
               >
-                <span>Demander une soumission</span>
+                <span>Offre Villes & Municipalités</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
               </a>
-
               <a 
-                href="mailto:info@enduranceaventure.com" 
-                class="px-5 py-3.5 rounded-md bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-2"
+                href="/services/entreprises-teambuilding/" 
+                class="px-6 py-3 rounded-md bg-white hover:bg-slate-100 border border-slate-300 text-slate-800 font-heading font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 shadow-sm"
               >
-                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                <span>info@enduranceaventure.com</span>
+                <span>Teambuilding Entreprise</span>
+              </a>
+              <a 
+                href="/contact/?type=b2b" 
+                class="px-6 py-3 rounded-md bg-slate-800 hover:bg-slate-900 text-white font-heading font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 shadow-sm"
+              >
+                <span>Demander un devis B2B</span>
               </a>
             </div>
           </div>
 
-          <!-- Colonne Interlocuteurs : Daniel Poirier, Bastien Michau -->
+          <!-- Duo Direction : Daniel Poirier & Bastien Michau sur fond blanc -->
           <div class="lg:col-span-5 flex flex-col gap-3">
-            <div class="text-[11px] uppercase font-heading font-bold tracking-widest text-slate-400 mb-0.5">
+            <div class="text-[11px] uppercase font-heading font-bold tracking-widest text-slate-500 mb-0.5">
               Direction opérationnelle :
             </div>
 
-            <!-- 1. Daniel Poirier -->
-            <div class="flex items-center gap-3.5 p-3.5 rounded-md bg-slate-800/90 border border-slate-700/80">
+            <div class="flex items-center gap-3.5 p-3.5 rounded-lg bg-white border border-slate-200 shadow-sm">
               <img 
                 src="/assets/daniel-poirier-endurance-aventure.webp" 
                 alt="Daniel Poirier" 
-                class="w-12 h-12 rounded-md object-cover border border-slate-600 flex-shrink-0"
+                class="w-12 h-12 rounded-md object-cover border border-slate-200 flex-shrink-0"
                 onerror="this.src='/assets/daniel-poirier-endurance-aventure.jpg'"
               />
               <div>
-                <div class="text-white font-heading font-bold text-sm leading-snug">Daniel Poirier</div>
-                <div class="text-xs text-brand-red font-semibold">Fondateur et directeur production et réalisation</div>
-                <div class="text-[11px] text-slate-400 mt-0.5">Captation outdoor extrême, documentaires télévisés & réalisation grand format</div>
+                <div class="text-slate-900 font-heading font-bold text-sm leading-snug">Daniel Poirier</div>
+                <div class="text-xs text-brand-red font-semibold">Fondateur & Directeur Réalisation TV</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">Captation outdoor extrême, documentaires & diffusion grands réseaux</div>
               </div>
             </div>
 
-            <!-- 2. Bastien Michau -->
-            <div class="flex items-center gap-3.5 p-3.5 rounded-md bg-slate-800/90 border border-slate-700/80">
+            <div class="flex items-center gap-3.5 p-3.5 rounded-lg bg-white border border-slate-200 shadow-sm">
               <img 
                 src="/assets/bastien-michau.webp" 
                 alt="Bastien Michau" 
-                class="w-12 h-12 rounded-md object-cover border border-slate-600 flex-shrink-0"
+                class="w-12 h-12 rounded-md object-cover border border-slate-200 flex-shrink-0"
                 onerror="this.src='/assets/bastien-michau.jpg'"
               />
               <div>
-                <div class="text-white font-heading font-bold text-sm leading-snug">Bastien Michau</div>
-                <div class="text-xs text-brand-cyan font-semibold">Associé et directeur d'épreuve</div>
-                <div class="text-[11px] text-slate-400 mt-0.5">Ingénierie de parcours, logistique en région isolée & service de secours</div>
+                <div class="text-slate-900 font-heading font-bold text-sm leading-snug">Bastien Michau</div>
+                <div class="text-xs text-brand-cyan font-semibold">Associé & Directeur d'Épreuves</div>
+                <div class="text-[11px] text-slate-500 mt-0.5">Ingénierie de parcours, logistique en région isolée & sécurité de terrain</div>
               </div>
             </div>
-
-
           </div>
 
+        </div>
       </div>
 
     </div>
@@ -676,33 +660,33 @@ const serviceVisuals: Record<string, {
   </section>
 
 
-  <!-- SECTION BANDEAU FINAL CTA (Design Sombre & Percutant) -->
-  <section class="py-20 bg-slate-950 border-t border-slate-800 text-white relative overflow-hidden">
+  <!-- SECTION BANDEAU FINAL CTA (Design Clair, Professionnel & Sobre) -->
+  <section class="py-20 bg-slate-100 border-t border-slate-200 text-slate-900 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="rounded-2xl bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border border-slate-800 p-8 sm:p-14 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+      <div class="rounded-2xl bg-white border border-slate-200 p-8 sm:p-14 shadow-md relative overflow-hidden flex flex-col lg:flex-row lg:items-center justify-between gap-8">
         <div class="max-w-2xl">
-          <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2 font-heading">
-            Collaboration & Territoires
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2 font-heading">
+            Collaboration, Territoires & Entreprises
           </span>
-          <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase tracking-tight text-white mb-4">
-            Vous avez un projet d'événement, de course ou de film ?
+          <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase tracking-tight text-slate-900 mb-4">
+            Vous avez un projet d'événement, de défi de plein air ou de film ?
           </h2>
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-            Mettez 25 ans d'ingénierie sportive, de logistique d'expédition et de captation extrême au service de votre vision. Échangez directement avec notre équipe.
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Mettez 25 ans d'ingénierie sportive, de logistique d'expédition et de captation extrême au service de votre vision. Échangez directement avec Daniel Poirier et Bastien Michau.
           </p>
         </div>
 
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 flex-shrink-0">
           <a 
-            href="/contact/" 
-            class="px-8 py-4 rounded-lg bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-brand-red/25 text-center flex items-center justify-center gap-2"
+            href="/contact/?type=b2b" 
+            class="px-8 py-4 rounded-lg bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all shadow-md text-center flex items-center justify-center gap-2"
           >
             <span>Demander une soumission</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
           <a 
             href="/services/organisation-evenements/" 
-            class="px-7 py-4 rounded-lg bg-slate-800/90 hover:bg-slate-800 text-slate-200 border border-slate-700 font-heading font-bold text-xs uppercase tracking-wider transition-all text-center"
+            class="px-7 py-4 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-800 border border-slate-300 font-heading font-bold text-xs uppercase tracking-wider transition-all text-center"
           >
             Découvrir nos services
           </a>

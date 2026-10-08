@@ -20,62 +20,84 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://enduranc
 
 const defaultOrgSchema = {
   "@context": "https://schema.org",
-  "@type": "SportsOrganization",
-  "name": "Endurance Aventure",
-  "url": "https://enduranceaventure.com",
-  "logo": "https://enduranceaventure.com/assets/endurance-aventure-logo-blanc.png",
-  "description": description,
-  "founder": {
-    "@type": "Person",
-    "name": "Daniel Poirier",
-    "jobTitle": "Fondateur & Directeur d'Épreuves"
-  },
-  "member": [
+  "@graph": [
     {
-      "@type": "Person",
-      "name": "Bastien Michau",
-      "jobTitle": "Directeur de Production & Réalisateur"
+      "@type": "SportsOrganization",
+      "@id": "https://enduranceaventure.com/#organization",
+      "name": "Endurance Aventure",
+      "url": "https://enduranceaventure.com",
+      "logo": "https://enduranceaventure.com/assets/endurance-aventure-logo-blanc.png",
+      "description": description,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Magog",
+        "addressRegion": "QC",
+        "addressCountry": "CA"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@enduranceaventure.com",
+        "telephone": "+1-819-342-5220",
+        "contactType": "customer service"
+      }
     },
     {
-      "@type": "Person",
-      "name": "Daniel Poirier",
-      "jobTitle": "Fondateur & Directeur d'Épreuves"
-    }
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Services Événementiels et Audiovisuels Tout-Terrain",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Organisation d'Événements Sportifs & Corporatifs",
-          "url": "https://enduranceaventure.com/services/organisation-evenements/"
-        }
+      "@type": ["ProfessionalService", "LocalBusiness"],
+      "@id": "https://enduranceaventure.com/#service",
+      "name": "Endurance Aventure - Services Événementiels & Audiovisuels",
+      "url": "https://enduranceaventure.com/services/organisation-evenements/",
+      "image": "https://enduranceaventure.com/assets/canadaman-2017-sommet-mont-megantic-ligne-arrivee.webp",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Magog",
+        "addressRegion": "QC",
+        "addressCountry": "CA"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Production Télévisuelle & Audiovisuelle Tout-Terrain",
-          "url": "https://enduranceaventure.com/services/production-tele/"
-        }
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Québec, Canada"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services Événementiels et Audiovisuels Tout-Terrain",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Organisation d'Événements Sportifs Clés en Main & Défis Corporatifs",
+              "url": "https://enduranceaventure.com/services/organisation-evenements/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Production Télévisuelle & Audiovisuelle Tout-Terrain",
+              "url": "https://enduranceaventure.com/services/production-tele/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Événements Sportifs & Rayonnement Touristique pour Municipalités",
+              "url": "https://enduranceaventure.com/services/municipalites-tourisme/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Teambuilding Nature & Défis d'Entreprise",
+              "url": "https://enduranceaventure.com/services/entreprises-teambuilding/"
+            }
+          }
+        ]
       }
-    ]
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Magog",
-    "addressRegion": "QC",
-    "addressCountry": "CA"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "info@enduranceaventure.com",
-    "telephone": "+1-450-659-9944",
-    "contactType": "customer service"
-  }
+    }
+  ]
 };
 ---
 

@@ -285,9 +285,11 @@ app.get('/api/stats', requireAdmin, (req, res) => {
 
 // Notification email dispatcher
 const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'info@enduranceaventure.com';
+const PENDING_LEADS_FILE = path.join(DATA_DIR, 'pending_email_leads.json');
 
 function sendLeadEmail(lead) {
   const subject = `[Soumission Site Web] ${lead.subject || lead.service || 'Nouvelle demande'} - ${lead.name}`;
+  const dateStr = new Date().toLocaleString('fr-CA', { timeZone: 'America/Toronto' });
   const body = [
     `Nouvelle soumission reçue depuis le site web Endurance Aventure :`,
     ``,
@@ -299,7 +301,7 @@ function sendLeadEmail(lead) {
     lead.orgType ? `Type d'entité: ${lead.orgType}` : null,
     lead.service ? `Prestation: ${lead.service}` : null,
     lead.subject ? `Sujet: ${lead.subject}` : null,
-    `Date: ${new Date().toLocaleString('fr-CA', { timeZone: 'America/Toronto' })}`,
+    `Date: ${dateStr}`,
     ``,
     `Message:`,
     `--------------------------------------------------`,
@@ -307,12 +309,39 @@ function sendLeadEmail(lead) {
     `--------------------------------------------------`
   ].filter(Boolean).join('\n');
 
+  console.log(`[Lead Dispatch] Préparation envoi notification vers ${NOTIFICATION_EMAIL} pour ${lead.name}`);
+
+  // Archiver dans pending_email_leads.json en secours infaillible
+  try {
+    let pending = [];
+    if (fs.existsSync(PENDING_LEADS_FILE)) {
+      pending = JSON.parse(fs.readFileSync(PENDING_LEADS_FILE, 'utf8'));
+    }
+    pending.unshift({
+      timestamp: new Date().toISOString(),
+      to: NOTIFICATION_EMAIL,
+      subject,
+      lead
+    });
+    fs.writeFileSync(PENDING_LEADS_FILE, JSON.stringify(pending.slice(0, 50), null, 2));
+  } catch (e) {
+    console.warn('[Lead Backup Warning]', e.message);
+  }
+
+  // Tenter sendmail système
   try {
     const mailProcess = spawn('/usr/sbin/sendmail', ['-t', '-i']);
     mailProcess.stdin.write(`To: ${NOTIFICATION_EMAIL}\nFrom: web@enduranceaventure.com\nSubject: ${subject}\nContent-Type: text/plain; charset=UTF-8\n\n${body}\n`);
     mailProcess.stdin.end();
     mailProcess.on('error', (err) => {
       console.warn('[Mail Warning] Sendmail non disponible:', err.message);
+    });
+    mailProcess.on('close', (code) => {
+      if (code === 0) {
+        console.log(`[Mail Success] Courriel envoyé à ${NOTIFICATION_EMAIL}`);
+      } else {
+        console.warn(`[Mail Process] Code sortie sendmail: ${code}`);
+      }
     });
   } catch (err) {
     console.warn('[Mail Warning] Erreur dispatch courriel:', err.message);

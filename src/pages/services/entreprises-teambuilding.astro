@@ -1,0 +1,149 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Défis Corporatifs & Teambuilding Nature au Québec | Endurance Aventure" 
+  description="Consolidation d'équipe, raids d'orientation sur mesure et journées plein air clés en main pour entreprises de 15 à 300 employés au Québec."
+  image="/assets/gravelbike-grange-scaled.webp"
+>
+  <!-- Header Immersif & Professionnel avec Photo d'Action Collective -->
+  <header class="relative min-h-[48vh] sm:min-h-[55vh] flex items-center bg-slate-900 border-b border-slate-200 overflow-hidden">
+    <img 
+      src="/assets/gravelbike-grange-scaled.webp" 
+      alt="Groupe de collaborateurs en pleine activité de défi de plein air" 
+      class="absolute inset-0 w-full h-full object-cover object-center opacity-85 brightness-95"
+      onerror="this.src='/assets/canadaman-2017-sommet-mont-megantic-ligne-arrivee.webp'"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-black/30 to-black/20"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-20 w-full">
+      <a href="/services/" class="text-xs text-brand-cyan hover:text-white font-bold uppercase tracking-wider mb-4 inline-flex items-center gap-1.5 transition-colors">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span>Retour aux services</span>
+      </a>
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-900/90 border-l-2 border-brand-red text-slate-200 text-xs font-heading font-bold uppercase tracking-wider mb-4">
+        <span>Entreprises, RH & Comités de Direction</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-heading font-black uppercase text-white mb-4 drop-shadow-lg">
+        Teambuilding & Défis Corporatifs
+      </h1>
+      <p class="text-base sm:text-lg text-slate-100 font-normal leading-relaxed drop-shadow-md max-w-3xl">
+        Renforcez l'esprit d'équipe, l'agilité collective et le dépassement de soi grâce à des aventures nature sur mesure, encadrées par des professionnels de l'expédition.
+      </p>
+    </div>
+  </header>
+
+  <!-- Contenu Principal sur Fond Clair -->
+  <div class="bg-slate-50 py-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <!-- Présentation Entreprises -->
+      <div class="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 shadow-sm space-y-8">
+        <div>
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Cohésion par l'Aventure</span>
+          <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 mb-4">
+            Sortez vos équipes de leur zone de confort dans un cadre ultra-sécurisé
+          </h2>
+          <p class="text-slate-700 leading-relaxed text-sm sm:text-base">
+            Loin des salles de réunion aseptisées et des animations d'entreprise génériques, Endurance Aventure crée des journées et séjours de cohésion grandeur nature. Conçus pour être stimulants mais accessibles à tous les niveaux de condition physique, nos formats favorisent l'écoute, la stratégie collaborative et la confiance mutuelle.
+          </p>
+        </div>
+
+        <!-- 3 Formats Clés en Main -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+          
+          <div class="bg-slate-50 p-6 rounded-md border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-md bg-red-50 border border-red-200 text-brand-red flex items-center justify-center font-bold mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
+              </div>
+              <h3 class="font-heading font-bold text-slate-900 text-base mb-2">Raid d'Orientation Corporatif</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Parcours par équipes avec cartes topographiques et boussoles. Balises réparties en forêt, franchissements d'obstacles naturels et énigmes stratégiques.
+              </p>
+            </div>
+            <div class="text-[11px] font-semibold text-slate-500 border-t border-slate-200 pt-3">
+              Format : 1/2 journée ou journée complète • 20 à 250 participants
+            </div>
+          </div>
+
+          <div class="bg-slate-50 p-6 rounded-md border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-md bg-cyan-50 border border-cyan-200 text-brand-cyan flex items-center justify-center font-bold mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <h3 class="font-heading font-bold text-slate-900 text-base mb-2">Défi Multisport Collaboratif</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Alternance douce de canot en lac calme, vélo/gravel sur pistes faciles et marche d'orientation. Chaque membre du groupe apporte sa force au collectif.
+              </p>
+            </div>
+            <div class="text-[11px] font-semibold text-slate-500 border-t border-slate-200 pt-3">
+              Format : Journée complète avec repas traiteur du terroir
+            </div>
+          </div>
+
+          <div class="bg-slate-50 p-6 rounded-md border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center font-bold mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              </div>
+              <h3 class="font-heading font-bold text-slate-900 text-base mb-2">Séjour Expédition Privatisé</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Pour comités de direction ou équipes clés. Bivouac haut de gamme ou hébergement de charme, ateliers sur la gestion de crise et le leadership en milieu isolé.
+              </p>
+            </div>
+            <div class="text-[11px] font-semibold text-slate-500 border-t border-slate-200 pt-3">
+              Format : 2 à 3 jours • Groupes restreints (10 à 35 pers.)
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Ce qui est inclus -->
+        <div class="pt-6 border-t border-slate-100">
+          <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">Prise en Charge Intégrale</span>
+          <h3 class="text-xl sm:text-2xl font-heading font-bold text-slate-900 mb-6">
+            Votre tranquillité d'esprit est notre priorité
+          </h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm text-slate-700">
+            <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-md border border-slate-200">
+              <span class="w-2 h-2 rounded-full bg-brand-red flex-shrink-0"></span>
+              <span>Encadrement certifié par des guides et secouristes d'expérience</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-md border border-slate-200">
+              <span class="w-2 h-2 rounded-full bg-brand-cyan flex-shrink-0"></span>
+              <span>Matériel fourni et inspecté (canots, gilets, GPS, balises)</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-md border border-slate-200">
+              <span class="w-2 h-2 rounded-full bg-emerald-600 flex-shrink-0"></span>
+              <span>Restauration du terroir québécois et ravitaillements énergétiques</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-slate-50 rounded-md border border-slate-200">
+              <span class="w-2 h-2 rounded-full bg-slate-700 flex-shrink-0"></span>
+              <span>Assurance responsabilité civile professionnelle complète</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Direct -->
+        <div class="bg-slate-100 rounded-md border border-slate-300/80 p-8 sm:p-10 text-center mt-10">
+          <h3 class="text-xl sm:text-2xl font-heading font-bold text-slate-900 mb-2">
+            Organisez le prochain défi de votre entreprise
+          </h3>
+          <p class="text-sm text-slate-600 max-w-xl mx-auto mb-6">
+            Indiquez-nous la taille de votre équipe, la période envisagée et votre région de prédilection : nous bâtissons une proposition sur mesure sous 48 heures.
+          </p>
+          <a 
+            href="/contact/?type=b2b&service=teambuilding" 
+            class="px-8 py-3.5 rounded-md bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all inline-block shadow-sm"
+          >
+            Demander un devis teambuilding
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</Layout>
