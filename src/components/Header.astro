@@ -50,12 +50,12 @@ const currentPath = Astro.url.pathname;
               </div>
               <div class="text-xs text-slate-400 group-hover/item:text-slate-100">Témiscamingue • Championnat Mondial</div>
             </a>
-            <a href="https://raidtemiscamingue.ca" target="_blank" rel="noopener noreferrer" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-red hover:text-white transition-colors group/item">
+            <a href="https://raidtemiscamingue.ca/jeunesse/" target="_blank" rel="noopener noreferrer" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-red hover:text-white transition-colors group/item">
               <div class="font-bold text-slate-100 flex items-center justify-between">
-                <span>Raid Témiscamingue</span>
+                <span>Raid Jeunesse Desjardins</span>
                 <svg class="w-3.5 h-3.5 text-slate-400 group-hover/item:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
               </div>
-              <div class="text-xs text-slate-400 group-hover/item:text-slate-100">Raid Aventure Expédition (Site Officiel)</div>
+              <div class="text-xs text-slate-400 group-hover/item:text-slate-100">Raid Aventure Jeunesse (Site Officiel)</div>
             </a>
             <a href="https://caxtri.com" target="_blank" rel="noopener noreferrer" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-red hover:text-white transition-colors group/item">
               <div class="font-bold text-slate-100 flex items-center justify-between">
@@ -75,7 +75,7 @@ const currentPath = Astro.url.pathname;
         <!-- Dropdown Services Pro -->
         <div class="relative group py-2">
           <a 
-            href="/services/" 
+            href="/services/organisation-evenements/" 
             class={`inline-flex items-center gap-1 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${currentPath.startsWith('/services') ? 'text-brand-red' : 'text-slate-200 hover:text-brand-cyan-light'}`}
           >
             Services Pro
@@ -91,11 +91,6 @@ const currentPath = Astro.url.pathname;
             <a href="/services/production-tele/" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-cyan hover:text-white transition-colors">
               <div class="font-bold text-slate-100">Production Télé & Vidéo</div>
               <div class="text-xs text-slate-400">Captation extrême, drones 4K, émissions TV</div>
-            </a>
-            <div class="border-t border-slate-800 my-1"></div>
-            <a href="/services/" class="block px-4 py-2 text-xs font-semibold text-brand-cyan hover:text-white uppercase tracking-wider flex items-center justify-between">
-              <span>Voir tous les services pro</span>
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
           </div>
         </div>
@@ -165,8 +160,8 @@ const currentPath = Astro.url.pathname;
           <span>Mondiaux Juniors ARWS 2027</span>
           <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
-        <a href="https://raidtemiscamingue.ca" target="_blank" rel="noopener noreferrer" class="block text-sm text-slate-300 hover:text-brand-red flex items-center justify-between">
-          <span>Raid Témiscamingue</span>
+        <a href="https://raidtemiscamingue.ca/jeunesse/" target="_blank" rel="noopener noreferrer" class="block text-sm text-slate-300 hover:text-brand-red flex items-center justify-between">
+          <span>Raid Jeunesse Desjardins</span>
           <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
         </a>
         <a href="https://caxtri.com" target="_blank" rel="noopener noreferrer" class="block text-sm text-slate-300 hover:text-brand-red flex items-center justify-between">
@@ -177,7 +172,7 @@ const currentPath = Astro.url.pathname;
     </div>
 
     <div>
-      <a href="/services/" class="block py-2 text-base font-semibold text-slate-100 hover:text-brand-cyan">Services Pro & B2B</a>
+      <a href="/services/organisation-evenements/" class="block py-2 text-base font-semibold text-slate-100 hover:text-brand-cyan">Services Pro & B2B</a>
       <div class="pl-4 py-1 space-y-2.5 border-l-2 border-slate-800 ml-1">
         <a href="/services/organisation-evenements/" class="block text-sm text-slate-300 hover:text-brand-red">Organisation Clé en Main</a>
         <a href="/services/production-tele/" class="block text-sm text-slate-300 hover:text-brand-cyan">Production Télé & Drones 4K</a>

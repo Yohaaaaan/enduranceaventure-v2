@@ -341,10 +341,10 @@ app.get('/api/contacts', requireAdmin, (req, res) => {
 // Serve static Astro dist files with aggressive caching for static assets
 const distDir = path.join(__dirname, 'dist');
 
-// Redirect removed chronometrage service cleanly
+// Redirect removed services cleanly
 app.use((req, res, next) => {
-  if (req.path.startsWith('/services/chronometrage-logistique')) {
-    return res.redirect(301, '/services/');
+  if (req.path === '/services' || req.path === '/services/' || req.path.startsWith('/services/chronometrage-logistique')) {
+    return res.redirect(301, '/services/organisation-evenements/');
   }
   if (req.path.startsWith('/evenements/trail-des-neiges')) {
     return res.redirect(301, '/evenements/championnat-monde-junior-arws/');
