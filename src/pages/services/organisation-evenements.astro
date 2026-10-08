@@ -36,9 +36,21 @@ import Layout from '../../layouts/Layout.astro';
   <div class="bg-slate-50 py-16">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Photo illustrative -->
-      <div class="rounded-lg overflow-hidden mb-12 shadow-sm border border-slate-200 h-96 bg-slate-200">
-        <img src="/assets/organisation-evenements-sportifs-services-endurance-aventure.jpg" alt="Organisation d'événements" class="w-full h-full object-cover" />
+      <!-- Photo illustrative haute résolution (Arrivée grandiose au sommet) -->
+      <div class="rounded-lg overflow-hidden mb-12 shadow-md border border-slate-200 h-[420px] bg-slate-900 relative group">
+        <img 
+          src="/assets/canadaman-2017-sommet-mont-megantic-ligne-arrivee.webp" 
+          alt="Arrivée grandiose au sommet du Mont-Mégantic - Triathlon Canada Man / Canada Woman XTRI" 
+          class="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-500"
+          onerror="this.src='/assets/canadaman-2017-sommet-mont-megantic-ligne-arrivee.jpg'"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-6 right-6 text-white flex items-center justify-between">
+          <div>
+            <span class="text-xs uppercase font-bold tracking-wider text-brand-red">Arrivée d'Étape Mythique</span>
+            <div class="text-sm sm:text-base font-bold">Arche d'arrivée au sommet • Vue panoramique sur les massifs québécois</div>
+          </div>
+        </div>
       </div>
 
       <!-- Corps du texte avec contrastes soignés -->
@@ -62,7 +74,7 @@ import Layout from '../../layouts/Layout.astro';
           
           <div class="bg-slate-50 p-6 rounded-md border border-slate-200">
             <h3 class="font-heading font-bold text-slate-900 text-base mb-2">Sécurité & Plans d'Urgence</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Équipes de premiers secours tout-terrain, liaisons radio VHF et balises satellites, coordination étroite avec la sécurité civile et les ambulanciers.</p>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Équipes de premiers secours tout-terrain, liaisons radio VHF et balises satellites, coordination étroite avec les services de secours et les ambulanciers.</p>
           </div>
           
           <div class="bg-slate-50 p-6 rounded-md border border-slate-200">
@@ -72,36 +84,123 @@ import Layout from '../../layouts/Layout.astro';
           
           <div class="bg-slate-50 p-6 rounded-md border border-slate-200">
             <h3 class="font-heading font-bold text-slate-900 text-base mb-2">Plateforme d'Inscription & Accueil</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Système d'inscription en ligne conforme, gestion de la billetterie, remise des trousses de coureur et accueil personnalisé des participants.</p>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Système d'inscription en ligne, gestion des inscriptions, accueil personnalisé des coureurs, remises des dossards, validation du matériel...</p>
           </div>
         </div>
 
-        <!-- Galerie Réalisations Terrain -->
+        <!-- Carrousel Réalisations Terrain Vivant & Alterné -->
         <div class="pt-6 border-t border-slate-100">
-          <div class="text-center max-w-xl mx-auto mb-8">
-            <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-1">Preuves de Terrain</span>
-            <h3 class="text-xl sm:text-2xl font-heading font-bold text-slate-900">
-              Nos Réalisations Événementielles en Images
-            </h3>
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+            <div>
+              <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-1">Preuves de Terrain</span>
+              <h3 class="text-xl sm:text-2xl font-heading font-bold text-slate-900">
+                Nos Réalisations Événementielles en Images
+              </h3>
+              <p class="text-xs text-slate-500 mt-1">Triathlon Extrême, Raids Aventure, Gravel Bikepacking GBC500 et arrivées au sommet.</p>
+            </div>
+            
+            <!-- Contrôles du Carrousel -->
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <button 
+                id="carousel-prev-btn"
+                type="button" 
+                class="w-10 h-10 rounded-full bg-slate-100 hover:bg-brand-red hover:text-white border border-slate-300 flex items-center justify-center text-slate-700 transition-colors shadow-sm"
+                aria-label="Image précédente"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+              </button>
+              <button 
+                id="carousel-next-btn"
+                type="button" 
+                class="w-10 h-10 rounded-full bg-slate-100 hover:bg-brand-red hover:text-white border border-slate-300 flex items-center justify-center text-slate-700 transition-colors shadow-sm"
+                aria-label="Image suivante"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="group rounded-md overflow-hidden bg-slate-200 h-56 relative shadow-sm">
-              <img src="/assets/canadaman-2017-lac-megantic-ligne-depart-nuit-1920x718.jpg" alt="Ligne de départ de nuit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Régie de départs nocturnes</span>
+
+          <!-- Piste de défilement du carrousel -->
+          <div 
+            id="event-photo-carousel" 
+            class="flex gap-4 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory"
+            style="scrollbar-width: thin;"
+          >
+            <!-- 1. Triathlon XTRI -->
+            <div class="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-start rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm group">
+              <div class="h-60 overflow-hidden relative">
+                <img src="/assets/51581607901_c23c63d19b_k.webp" alt="Canada Man Triathlon départ natation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-brand-red text-white">Triathlon XTRI</span>
+                <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Départ & Transitions Nautiques</span>
+              </div>
             </div>
-            <div class="group rounded-md overflow-hidden bg-slate-200 h-56 relative shadow-sm">
-              <img src="/assets/TDN-2018-Trail-des-Neiges-Mont-Orford-Gagnants-15km-skimo.webp" alt="Podium et remise des prix" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='/assets/51581835318_775ae15a4e_k.webp'" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Podiums & Cérémonies</span>
+
+            <!-- 2. Raid Aventure Gaspésie -->
+            <div class="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-start rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm group">
+              <div class="h-60 overflow-hidden relative">
+                <img src="/assets/51582278409_86672a9a9f_k.webp" alt="Raid Gaspésie VTT en crête" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-brand-cyan text-white">Raid Aventure</span>
+                <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">VTT sur Crêtes Sauvages • Gaspésie</span>
+              </div>
             </div>
-            <div class="group rounded-md overflow-hidden bg-slate-200 h-56 relative shadow-sm">
-              <img src="/assets/51586236989_64f608f4ba_k.webp" alt="Gestion des pelotons et coureurs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Encadrement de masse</span>
+
+            <!-- 3. Gravel Bikepacking GBC500 -->
+            <div class="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-start rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm group">
+              <div class="h-60 overflow-hidden relative">
+                <img src="/assets/2023-08-05_GBC500_mc_1498-scaled.webp" alt="GBC 500 Gravel bikepacking" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-amber-500 text-white">GBC 500</span>
+                <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Bikepacking & Gravelle en Forêt</span>
+              </div>
+            </div>
+
+            <!-- 4. Raid Témiscamingue -->
+            <div class="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-start rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm group">
+              <div class="h-60 overflow-hidden relative">
+                <img src="/assets/Raid-Temis-reperage4.webp" alt="Canot boréal Témiscamingue" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-brand-cyan text-white">Raid Boréal</span>
+                <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Sections Canot & Orientation</span>
+              </div>
+            </div>
+
+            <!-- 5. Ambiance Départ Nocturne -->
+            <div class="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-start rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm group">
+              <div class="h-60 overflow-hidden relative">
+                <img src="/assets/canadaman-2017-lac-megantic-ligne-depart-nuit-1920x718.jpg" alt="Ligne de départ de nuit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-brand-red text-white">Spectacle & Logistique</span>
+                <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Régie de Départs Nocturnes</span>
+              </div>
+            </div>
+
+            <!-- 6. Podiums et Cérémonies -->
+            <div class="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-start rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm group">
+              <div class="h-60 overflow-hidden relative">
+                <img src="/assets/TDN-2018-Trail-des-Neiges-Mont-Orford-Gagnants-15km-skimo.webp" alt="Podium et remise des prix" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='/assets/51581835318_775ae15a4e_k.webp'" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
+                <span class="absolute top-3 left-3 px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-emerald-600 text-white">Cérémonies</span>
+                <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Podiums & Remise des Prix</span>
+              </div>
             </div>
           </div>
         </div>
+
+        <script is:inline>
+          const carousel = document.getElementById('event-photo-carousel');
+          const prevBtn = document.getElementById('carousel-prev-btn');
+          const nextBtn = document.getElementById('carousel-next-btn');
+          if (carousel && prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+              carousel.scrollBy({ left: -360, behavior: 'smooth' });
+            });
+            nextBtn.addEventListener('click', () => {
+              carousel.scrollBy({ left: 360, behavior: 'smooth' });
+            });
+          }
+        </script>
 
         <!-- CTA Card Harmonisé (Fond clair structuré, pas de bloc noir agressif) -->
         <div class="bg-slate-100 rounded-md border border-slate-300/80 p-8 sm:p-10 text-center">
