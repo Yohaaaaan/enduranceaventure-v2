@@ -123,18 +123,18 @@ const currentPath = Astro.url.pathname;
       </div>
 
       <!-- Mobile / Tablet Hamburger button (Visible on screens < 1024px) -->
-      <div class="flex lg:hidden items-center gap-3">
+      <div class="flex lg:hidden items-center gap-2.5">
         <a 
           href="/contact/" 
-          class="inline-flex sm:hidden px-3 py-1.5 rounded-sm bg-brand-red text-white font-heading font-bold text-xs uppercase"
+          class="inline-flex sm:hidden px-3 py-2 rounded bg-brand-red text-white font-heading font-bold text-xs uppercase tracking-wider min-h-[40px] items-center"
         >
           Contact
         </a>
         <button 
           id="mobile-menu-btn" 
           type="button" 
-          class="text-slate-200 hover:text-white p-2 rounded-md border border-slate-800 bg-slate-900 focus:outline-none"
-          aria-label="Ouvrir le menu"
+          class="text-slate-200 hover:text-white p-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-md border border-slate-800 bg-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-red transition-colors"
+          aria-label="Ouvrir le menu de navigation"
         >
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -145,26 +145,26 @@ const currentPath = Astro.url.pathname;
     </div>
   </div>
 
-  <!-- Mobile & Tablet Drawer (Full width, clear touch targets) -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-b border-slate-800 px-6 pt-4 pb-8 space-y-4 shadow-2xl">
-    <a href="/" class="block py-2 text-base font-semibold text-slate-100 hover:text-brand-red border-b border-slate-900">Accueil</a>
+  <!-- Mobile & Tablet Drawer (Full width, clear 44px+ touch targets) -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-b border-slate-800 px-5 pt-4 pb-8 space-y-4 shadow-2xl max-h-[calc(100vh-5rem)] overflow-y-auto">
+    <a href="/" class="flex items-center min-h-[44px] py-2.5 text-base font-semibold text-slate-100 hover:text-brand-red border-b border-slate-900">Accueil</a>
     
     <div>
-      <a href="/evenements/" class="block py-2 text-base font-semibold text-slate-100 hover:text-brand-red">Événements Sportifs</a>
-      <div class="pl-4 py-1 space-y-2.5 border-l-2 border-slate-800 ml-1">
-        <a href="/evenements/gbc500/" class="block text-sm text-slate-300 hover:text-brand-red flex items-center justify-between">
+      <a href="/evenements/" class="flex items-center min-h-[44px] py-2.5 text-base font-semibold text-slate-100 hover:text-brand-red">Événements Sportifs</a>
+      <div class="pl-3.5 py-1 space-y-1.5 border-l-2 border-slate-800 ml-1">
+        <a href="/evenements/gbc500/" class="flex items-center justify-between min-h-[44px] py-2 text-sm text-slate-300 hover:text-brand-red">
           <span>GBC 500 (Gravel Bike)</span>
           <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
-        <a href="/evenements/championnat-monde-junior-arws/" class="block text-sm text-slate-300 hover:text-brand-red flex items-center justify-between">
+        <a href="/evenements/championnat-monde-junior-arws/" class="flex items-center justify-between min-h-[44px] py-2 text-sm text-slate-300 hover:text-brand-red">
           <span>Mondiaux Juniors ARWS 2027</span>
           <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
-        <a href="https://raidtemiscamingue.ca/jeunesse/" target="_blank" rel="noopener noreferrer" class="block text-sm text-slate-300 hover:text-brand-red flex items-center justify-between">
+        <a href="https://raidtemiscamingue.ca/jeunesse/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between min-h-[44px] py-2 text-sm text-slate-300 hover:text-brand-red">
           <span>Raid Jeunesse Desjardins</span>
           <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
         </a>
-        <a href="https://caxtri.com" target="_blank" rel="noopener noreferrer" class="block text-sm text-slate-300 hover:text-brand-red flex items-center justify-between">
+        <a href="https://caxtri.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between min-h-[44px] py-2 text-sm text-slate-300 hover:text-brand-red">
           <span>Canada Man / Woman XTRI</span>
           <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
         </a>
@@ -172,22 +172,22 @@ const currentPath = Astro.url.pathname;
     </div>
 
     <div>
-      <a href="/services/organisation-evenements/" class="block py-2 text-base font-semibold text-slate-100 hover:text-brand-cyan">Services Pro & B2B</a>
-      <div class="pl-4 py-1 space-y-2.5 border-l-2 border-slate-800 ml-1">
-        <a href="/services/organisation-evenements/" class="block text-sm text-slate-300 hover:text-brand-red">Organisation Clé en Main</a>
-        <a href="/services/production-tele/" class="block text-sm text-slate-300 hover:text-brand-cyan">Production Télé & Drones 4K</a>
+      <a href="/services/organisation-evenements/" class="flex items-center min-h-[44px] py-2.5 text-base font-semibold text-slate-100 hover:text-brand-cyan">Services Pro & B2B</a>
+      <div class="pl-3.5 py-1 space-y-1.5 border-l-2 border-slate-800 ml-1">
+        <a href="/services/organisation-evenements/" class="flex items-center min-h-[44px] py-2 text-sm text-slate-300 hover:text-brand-red">Organisation Clé en Main</a>
+        <a href="/services/production-tele/" class="flex items-center min-h-[44px] py-2 text-sm text-slate-300 hover:text-brand-cyan">Production Télé & Drones 4K</a>
       </div>
     </div>
 
-    <a href="/entreprise/" class="block py-2 text-base font-semibold text-slate-100 hover:text-brand-red border-b border-slate-900">L'Entreprise & L'Équipe</a>
+    <a href="/entreprise/" class="flex items-center min-h-[44px] py-2.5 text-base font-semibold text-slate-100 hover:text-brand-red border-b border-slate-900">L'Entreprise & L'Équipe</a>
     
     <!-- Mobile Actualités Link -->
-    <a href="/nouvelles/" class="block py-2 text-base font-semibold text-brand-red hover:underline border-b border-slate-900">
+    <a href="/nouvelles/" class="flex items-center min-h-[44px] py-2.5 text-base font-semibold text-brand-red hover:underline border-b border-slate-900">
       Actualités & Récits
     </a>
 
     <div class="pt-2">
-      <a href="/contact/" class="block text-center w-full py-3.5 rounded-md bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold uppercase tracking-wider text-sm shadow-sm">
+      <a href="/contact/" class="flex items-center justify-center min-h-[48px] w-full py-3.5 px-4 rounded-md bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold uppercase tracking-wider text-sm shadow-sm transition-colors">
         Nous Contacter / Devis
       </a>
     </div>

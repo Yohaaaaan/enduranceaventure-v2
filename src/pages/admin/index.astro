@@ -72,18 +72,18 @@ import Layout from '../../layouts/Layout.astro';
         </div>
 
         <!-- Actions -->
-        <div class="flex items-center gap-3">
-          <select id="time-range" class="bg-brand-dark border border-brand-gray text-slate-200 text-xs font-semibold rounded-md px-3 py-2 focus:outline-none focus:border-brand-cyan">
+        <div class="flex flex-wrap items-center gap-2 sm:gap-3 w-full sm:w-auto">
+          <select id="time-range" class="flex-1 sm:flex-initial bg-brand-dark border border-brand-gray text-slate-200 text-xs font-semibold rounded-md px-3 py-2.5 min-h-[44px] focus:outline-none focus:border-brand-cyan">
             <option value="today">Aujourd'hui</option>
             <option value="7d" selected>7 Derniers Jours</option>
             <option value="30d">30 Derniers Jours</option>
             <option value="all">Tout l'historique</option>
           </select>
-          <button id="refresh-btn" class="px-3 py-2 rounded-md bg-brand-gray hover:bg-slate-700 text-white text-xs font-bold transition-all flex items-center gap-1.5">
+          <button id="refresh-btn" class="px-3.5 py-2.5 min-h-[44px] rounded-md bg-brand-gray hover:bg-slate-700 text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
             Actualiser
           </button>
-          <button id="logout-btn" class="px-3 py-2 rounded-md border border-red-900/60 hover:bg-red-950 text-red-300 text-xs font-bold transition-all flex items-center gap-1.5">
+          <button id="logout-btn" class="px-3.5 py-2.5 min-h-[44px] rounded-md border border-red-900/60 hover:bg-red-950 text-red-300 text-xs font-bold transition-all flex items-center justify-center gap-1.5">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
             Déconnexion
           </button>

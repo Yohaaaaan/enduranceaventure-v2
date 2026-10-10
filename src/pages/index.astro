@@ -72,27 +72,27 @@ const serviceVisuals: Record<string, {
       </div>
 
       <!-- Titre d'impact sans dégradé arc-en-ciel artificiel -->
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-heading font-black uppercase tracking-tight text-white leading-tight max-w-4xl mb-6">
+      <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black uppercase tracking-tight text-white leading-tight max-w-4xl mb-6 break-words">
         L'aventure sportive <br class="hidden sm:inline" />
         <span class="text-brand-red">grandeur nature.</span>
       </h1>
 
       <!-- Descriptif ancré dans la réalité québécoise -->
-      <p class="max-w-2xl text-base sm:text-xl text-slate-200 font-normal leading-relaxed mb-8">
+      <p class="max-w-2xl text-sm sm:text-lg md:text-xl text-slate-200 font-normal leading-relaxed mb-8">
         Endurance Aventure conçoit et organise des épreuves d'endurance uniques à travers les territoires les plus sauvages du Québec, et réalise des tournages extrêmes pour la télévision et le web.
       </p>
 
-      <!-- Actions directes -->
-      <div class="flex flex-wrap items-center gap-4">
+      <!-- Actions directes adaptées mobile -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
         <a 
           href="#evenements" 
-          class="px-8 py-4 rounded-lg bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-sm uppercase tracking-wider transition-colors shadow-lg"
+          class="px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors shadow-lg text-center min-h-[48px] flex items-center justify-center"
         >
           Calendrier des Épreuves 2026/2027
         </a>
         <a 
           href="/services" 
-          class="px-8 py-4 rounded-lg bg-slate-900/80 hover:bg-slate-900 text-slate-100 border border-slate-700 hover:border-slate-500 font-heading font-bold text-sm uppercase tracking-wider transition-colors backdrop-blur-sm"
+          class="px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg bg-slate-900/80 hover:bg-slate-900 text-slate-100 border border-slate-700 hover:border-slate-500 font-heading font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors backdrop-blur-sm text-center min-h-[48px] flex items-center justify-center"
         >
           Services Corporatifs & Tournages
         </a>
@@ -102,7 +102,7 @@ const serviceVisuals: Record<string, {
   </section>
 
   <!-- SECTION ÉVÉNEMENTS PHARES (Fond clair avec relief topographique de terrain) -->
-  <section id="evenements" class="py-24 bg-slate-100/70 border-t border-slate-200 relative overflow-hidden">
+  <section id="evenements" class="py-14 sm:py-20 lg:py-24 bg-slate-100/70 border-t border-slate-200 relative overflow-hidden">
     <!-- Formes de Relief Topographique Style Carte IGN / Outdoor (Courbes de niveau & Dénivelé) -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
       <svg class="absolute -top-10 left-1/2 -translate-x-1/2 w-[160%] sm:w-full h-[120%] opacity-[0.035] text-slate-900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -125,14 +125,14 @@ const serviceVisuals: Record<string, {
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 sm:mb-16 gap-4 sm:gap-6">
         <div>
           <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Grand Public & Athlètes</span>
-          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-slate-900">
+          <h2 class="text-2xl sm:text-4xl md:text-5xl font-heading font-black uppercase tracking-tight text-slate-900 leading-tight">
             Nos Événements Sportifs
           </h2>
         </div>
-        <a href="/evenements" class="text-brand-red hover:text-red-700 font-bold text-sm uppercase tracking-wider flex items-center gap-1.5 transition-colors">
+        <a href="/evenements" class="text-brand-red hover:text-red-700 font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center gap-1.5 transition-colors self-start sm:self-auto py-1">
           <span>Voir tout le calendrier</span>
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
@@ -704,17 +704,17 @@ const serviceVisuals: Record<string, {
           </p>
         </div>
 
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 flex-shrink-0">
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 flex-shrink-0 w-full lg:w-auto">
           <a 
             href="/contact/?type=b2b" 
-            class="px-8 py-4 rounded-lg bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all shadow-md text-center flex items-center justify-center gap-2"
+            class="px-8 py-4 rounded-lg bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all shadow-md text-center flex items-center justify-center gap-2 min-h-[48px] w-full sm:w-auto"
           >
             <span>Demander une soumission</span>
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
           <a 
             href="/services/organisation-evenements/" 
-            class="px-7 py-4 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-800 border border-slate-300 font-heading font-bold text-xs uppercase tracking-wider transition-all text-center"
+            class="px-7 py-4 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-800 border border-slate-300 font-heading font-bold text-xs uppercase tracking-wider transition-all text-center min-h-[48px] flex items-center justify-center w-full sm:w-auto"
           >
             Découvrir nos services
           </a>
