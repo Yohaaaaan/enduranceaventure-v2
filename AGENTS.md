@@ -144,8 +144,27 @@ AI agents frequently fall back on generic training averages. In this project, al
 
 ### 📷 Imagery & Real Assets Rule
 - **100% Authentic Photography**: Every image must come from `/public/assets/` (over 500 real photos from the Endurance Aventure archives).
-- Photos must depict real athletes, mud, sweat, canoes, mountain bikes, wilderness bivouacs, and genuine Quebec terrain (Gaspésie, Témiscamingue, Cantons-de-l'Est, Lac-Mégantic, Nunavik).
 - **NO Stock Fitness Models**: Never use generic stock photography of smiling gym-goers or paved park joggers.
+
+### 📱 100% Mobile-First Responsive Architecture (Zero Content Loss)
+When adapting components or pages for mobile:
+1. **Strict Mobile-First Tailwind Layering**:
+   - Write base styles for the smallest mobile screens (320px–639px), then layer up with prefixes: `sm:` (640px+), `md:` (768px+), `lg:` (1024px+), `xl:` (1280px+).
+   - Never design desktop-down or rely on fixed desktop pixel widths (`w-[1200px]`).
+2. **Touch-Target Compliance (WCAG / Apple HIG)**:
+   - All interactive elements (buttons, mobile drawer links, accordions, filter chips) must have a minimum tap area of **44x44 CSS pixels** (`min-h-[44px]`, `min-w-[44px]`, `p-3`).
+3. **Zero Horizontal Overflow**:
+   - The body and page wrappers must enforce `overflow-x-hidden`.
+   - Embeds, videos, and iframes must use responsive aspect ratios (`aspect-video w-full rounded-lg`) rather than fixed width/height attributes.
+   - Decorative background SVGs must be constrained with `pointer-events-none max-w-full overflow-hidden`.
+4. **Fluid Typography & Headings**:
+   - Scale headings smoothly across viewports (`text-3xl sm:text-5xl lg:text-7xl`) to prevent word clipping on French composite nouns (e.g., *"Témiscamingue"*, *"Organisation"*).
+   - Use `break-words` or `hyphens-auto` where tight viewports risk horizontal push.
+5. **Form & Input Ergonomics**:
+   - Forms on mobile stack strictly into a single column (`grid-cols-1 md:grid-cols-2`).
+   - Use mobile-optimized input attributes (`type="tel"`, `type="email"`, `inputmode="numeric"`) to invoke appropriate virtual keyboards.
+6. **Structure Only, Content Intact**:
+   - Mobile optimization must purely adapt CSS layout, flex directions, grid columns, and touch spacing. Never hide, truncate, or delete informative text, event data, badges, or archive links on mobile viewports.
 
 ---
 
