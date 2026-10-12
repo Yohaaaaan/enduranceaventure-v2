@@ -150,7 +150,7 @@ const team = [
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-5">
           {team.map((member, idx) => (
-            <div class={`rounded-lg bg-white border overflow-hidden flex flex-col justify-between transition-all duration-300 shadow-sm ${idx === 4 ? 'col-span-2 sm:col-span-1 max-w-sm mx-auto w-full' : ''} ${member.highlight ? 'border-slate-300 hover:border-brand-red hover:shadow-lg' : 'border-slate-200 hover:border-slate-300 hover:shadow-md'}`}>
+            <div class={`rounded-lg bg-white border overflow-hidden flex flex-col justify-between transition-all duration-300 shadow-sm ${member.highlight ? 'border-slate-300 hover:border-brand-red hover:shadow-lg' : 'border-slate-200 hover:border-slate-300 hover:shadow-md'}`}>
               <div>
                 <div class="aspect-[4/5] sm:h-52 sm:aspect-auto overflow-hidden bg-slate-200 relative">
                   <img 

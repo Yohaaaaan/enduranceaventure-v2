@@ -280,8 +280,8 @@ const totalPastEvents = pastEvents.length;
         </p>
       </div>
 
-      <!-- Past Events Grid (2 colonnes sur mobile, 3 sur tablette/laptop, 4 sur desktop) -->
-      <div id="past-events-grid" class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2.5 sm:gap-6">
+      <!-- Past Events Grid (Affichés comme les 3 événements phares : 1 col sur mobile, 3 sur desktop, aérés et complets) -->
+      <div id="past-events-grid" class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {pastEvents.map((evt) => {
           const hasVideo = Boolean(evt.video);
           const hasImages = evt.images && evt.images.length > 0;
@@ -295,33 +295,33 @@ const totalPastEvents = pastEvents.length;
             >
               
               <!-- Card Header Info -->
-              <div class="p-2.5 sm:p-5 pb-2 sm:pb-3">
-                <div class="flex flex-wrap items-center justify-between gap-1 mb-1.5 sm:mb-2">
-                  <div class="flex items-center gap-1">
-                    <span class="px-1.5 py-0.5 rounded-xs bg-slate-900 text-white font-mono font-bold text-[9px] sm:text-[11px] tracking-wider">
+              <div class="p-6 sm:p-8 pb-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                  <div class="flex items-center gap-1.5">
+                    <span class="px-2 py-0.5 rounded-xs bg-slate-900 text-white font-mono font-bold text-xs tracking-wider">
                       {evt.year}
                     </span>
-                    <span class="px-1.5 py-0.5 rounded-xs bg-red-50 text-brand-red border border-red-200 text-[8px] sm:text-[10px] font-bold uppercase tracking-wider truncate max-w-[90px] sm:max-w-[150px]">
+                    <span class="px-2 py-0.5 rounded-xs bg-red-50 text-brand-red border border-red-200 text-xs font-bold uppercase tracking-wider">
                       {evt.category}
                     </span>
                   </div>
-                  <span class="text-[9px] sm:text-[11px] text-slate-500 font-medium flex items-center gap-1 truncate max-w-[100px] sm:max-w-none">
-                    <svg class="w-2.5 h-2.5 sm:w-3 sm:h-3 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    <span class="truncate">{evt.location}</span>
+                  <span class="text-xs text-slate-500 font-medium flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    <span>{evt.location}</span>
                   </span>
                 </div>
 
-                <h3 class="text-xs sm:text-lg font-heading font-black text-slate-900 mb-1 sm:mb-2 hover:text-brand-red transition-colors line-clamp-1 sm:line-clamp-2" title={evt.title}>
+                <h3 class="text-xl sm:text-2xl font-heading font-black text-slate-900 mb-2 hover:text-brand-red transition-colors" title={evt.title}>
                   {evt.title}
                 </h3>
 
-                <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed line-clamp-2 sm:line-clamp-4 font-light">
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-light mb-4">
                   {evt.description}
                 </p>
               </div>
 
               <!-- Media Tabs / Showcase Section -->
-              <div class="px-2.5 sm:px-5 pt-0 pb-2.5 sm:pb-4 flex-grow flex flex-col justify-end">
+              <div class="px-6 sm:px-8 pt-0 pb-6 flex-grow flex flex-col justify-end">
                 
                 {/* Media Switcher Tabs (if both video & images exist) */}
                 {hasVideo && hasImages && (

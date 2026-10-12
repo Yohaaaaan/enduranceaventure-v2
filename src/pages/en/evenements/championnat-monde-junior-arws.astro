@@ -213,7 +213,7 @@ const arwsSchema = {
       <div class="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6">
         
         <!-- Canoe & Portage -->
-        <div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
+        <div class="discipline-card bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
           <div>
             <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
               <img 
@@ -227,9 +227,12 @@ const arwsSchema = {
             </div>
             <div class="p-2.5 sm:p-5">
               <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Boreal Canoe & Portages</h3>
-              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+              <p class="discipline-desc text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
                 Tandem open canoeing on vast boreal lakes and winding rivers. Demands intense paddling, forest portages and moving water.
               </p>
+              <button type="button" class="expand-btn sm:hidden text-[10px] font-bold text-brand-red flex items-center gap-1 mb-2">
+                <span>Read more</span>
+              </button>
             </div>
           </div>
           <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-semibold text-blue-600 border-t border-slate-100 mt-1 line-clamp-1">
@@ -238,7 +241,7 @@ const arwsSchema = {
         </div>
 
         <!-- Technical MTB -->
-        <div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
+        <div class="discipline-card bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
           <div>
             <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
               <img 
@@ -252,9 +255,12 @@ const arwsSchema = {
             </div>
             <div class="p-2.5 sm:p-5">
               <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Mountain Biking (MTB)</h3>
-              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+              <p class="discipline-desc text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
                 Wild forestry double-tracks, loose gravel, rocky singletracks, and punchy climbs testing mechanical durability.
               </p>
+              <button type="button" class="expand-btn sm:hidden text-[10px] font-bold text-brand-red flex items-center gap-1 mb-2">
+                <span>Read more</span>
+              </button>
             </div>
           </div>
           <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-semibold text-brand-red border-t border-slate-100 mt-1 line-clamp-1">
@@ -263,7 +269,7 @@ const arwsSchema = {
         </div>
 
         <!-- Trek & Bushwhack -->
-        <div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
+        <div class="discipline-card bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
           <div>
             <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
               <img 
@@ -277,9 +283,12 @@ const arwsSchema = {
             </div>
             <div class="p-2.5 sm:p-5">
               <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Boreal Trek & Bushwhack</h3>
-              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+              <p class="discipline-desc text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
                 On-foot progression through dense taiga and rugged rocky ridges. Full off-trail bushwhacking and bog crossings.
               </p>
+              <button type="button" class="expand-btn sm:hidden text-[10px] font-bold text-brand-red flex items-center gap-1 mb-2">
+                <span>Read more</span>
+              </button>
             </div>
           </div>
           <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-semibold text-emerald-600 border-t border-slate-100 mt-1 line-clamp-1">
@@ -288,7 +297,7 @@ const arwsSchema = {
         </div>
 
         <!-- Map & Compass Navigation -->
-        <div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
+        <div class="discipline-card bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
           <div>
             <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
               <img 
@@ -302,9 +311,12 @@ const arwsSchema = {
             </div>
             <div class="p-2.5 sm:p-5">
               <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Map & Compass Navigation</h3>
-              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+              <p class="discipline-desc text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
                 Zero GPS or phones allowed. Teams navigate solely using official topographic maps and magnetic compasses.
               </p>
+              <button type="button" class="expand-btn sm:hidden text-[10px] font-bold text-brand-red flex items-center gap-1 mb-2">
+                <span>Read more</span>
+              </button>
             </div>
           </div>
           <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-bold text-brand-red border-t border-slate-100 mt-1 line-clamp-1">
@@ -313,7 +325,7 @@ const arwsSchema = {
         </div>
 
         <!-- Open Water Swimming -->
-        <div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
+        <div class="discipline-card bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
           <div>
             <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
               <img 
@@ -327,9 +339,12 @@ const arwsSchema = {
             </div>
             <div class="p-2.5 sm:p-5">
               <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Open Water Swims</h3>
-              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+              <p class="discipline-desc text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
                 Open water swims crossing bays between islands and wild shorelines. Waterproof drybags required.
               </p>
+              <button type="button" class="expand-btn sm:hidden text-[10px] font-bold text-brand-red flex items-center gap-1 mb-2">
+                <span>Read more</span>
+              </button>
             </div>
           </div>
           <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-semibold text-brand-cyan border-t border-slate-100 mt-1 line-clamp-1">
@@ -338,7 +353,7 @@ const arwsSchema = {
         </div>
 
         <!-- Rope Work & Vertical Sections -->
-        <div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
+        <div class="discipline-card bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
           <div>
             <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
               <img 
@@ -352,9 +367,12 @@ const arwsSchema = {
             </div>
             <div class="p-2.5 sm:p-5">
               <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Ropes & Heights</h3>
-              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+              <p class="discipline-desc text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
                 Cliff rappels, tyrolean traverses, and rope maneuvers rigged and supervised by certified safety specialists.
               </p>
+              <button type="button" class="expand-btn sm:hidden text-[10px] font-bold text-brand-red flex items-center gap-1 mb-2">
+                <span>Read more</span>
+              </button>
             </div>
           </div>
           <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-semibold text-amber-700 border-t border-slate-100 mt-1 line-clamp-1">
@@ -367,34 +385,34 @@ const arwsSchema = {
 
     <!-- COMPETITION FORMAT: U18 & U25 -->
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-slate-900 rounded-lg p-8 sm:p-14 text-white shadow-sm border border-slate-800">
+      <div class="bg-white rounded-lg p-5 sm:p-10 text-slate-900 shadow-sm border border-slate-200">
         
-        <div class="max-w-3xl mb-12">
-          <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">Structure & World Categories</span>
-          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase text-white mb-4">
+        <div class="max-w-3xl mb-6 sm:mb-8">
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-1">Race Structure</span>
+          <h2 class="text-xl sm:text-3xl font-heading font-black uppercase text-slate-900 mb-2">
             Two Official World Divisions
           </h2>
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-            Each team consists of <strong class="text-white">2 athletes</strong> racing under their national federation or an international wildcard entry.
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            Each team consists of <strong class="text-slate-900">2 athletes</strong> racing under their national federation or an international wildcard entry.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           
           <!-- U18 Division -->
-          <div class="p-8 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm flex flex-col justify-between">
+          <div class="p-4 sm:p-6 rounded-lg bg-slate-50 border border-slate-200 flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-3 py-1 rounded-sm bg-brand-cyan text-slate-950 font-black text-sm uppercase tracking-wider">
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 rounded-xs bg-brand-cyan text-slate-950 font-black text-xs uppercase tracking-wider">
                   U18 Division
                 </span>
-                <span class="text-xs font-semibold text-slate-400">15 to 17 years old</span>
+                <span class="text-xs font-semibold text-slate-500">15 to 17 years old</span>
               </div>
-              <h3 class="text-2xl font-heading font-black text-white mb-3">The International Junior Vanguard</h3>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
-                Open to competitors aged 15 to 17. Close safety tracking via live satellite beacons with unassisted racing along the route.
+              <h3 class="text-base sm:text-lg font-heading font-bold text-slate-900 mb-2">Junior Championship U18</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Open to racers aged 15 to 17. Live satellite beacon safety tracking with complete unassisted wilderness racing along the route.
               </p>
-              <ul class="space-y-2 text-xs text-slate-300">
+              <ul class="space-y-1.5 text-xs text-slate-700">
                 <li class="flex items-center gap-2">
                   <span class="text-brand-cyan font-bold">✓</span>
                   <span>Co-ed Podium (1 Female + 1 Male)</span>
@@ -412,19 +430,19 @@ const arwsSchema = {
           </div>
 
           <!-- U25 Division -->
-          <div class="p-8 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm flex flex-col justify-between">
+          <div class="p-4 sm:p-6 rounded-lg bg-slate-50 border border-slate-200 flex flex-col justify-between">
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="px-3 py-1 rounded-sm bg-brand-red text-white font-black text-sm uppercase tracking-wider">
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 rounded-xs bg-brand-red text-white font-black text-xs uppercase tracking-wider">
                   U25 Division
                 </span>
-                <span class="text-xs font-semibold text-slate-400">18 to 25 years old</span>
+                <span class="text-xs font-semibold text-slate-500">18 to 25 years old</span>
               </div>
-              <h3 class="text-2xl font-heading font-black text-white mb-3">Gateway to the World Series Elite</h3>
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
-                Open to racers aged 18 to 25. Complete autonomy and navigation rigors identical to premier elite ARWS stages.
+              <h3 class="text-base sm:text-lg font-heading font-bold text-slate-900 mb-2">Espoir Championship U25</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Open to competitors aged 18 to 25. Complete autonomy and navigation rigor modeled directly on premier ARWS World Series stages.
               </p>
-              <ul class="space-y-2 text-xs text-slate-300">
+              <ul class="space-y-1.5 text-xs text-slate-700">
                 <li class="flex items-center gap-2">
                   <span class="text-brand-red font-bold">✓</span>
                   <span>Co-ed Podium (1 Female + 1 Male)</span>
@@ -644,3 +662,26 @@ const arwsSchema = {
   </div>
 
 </Layout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.discipline-card').forEach(card => {
+      const btn = card.querySelector('.expand-btn');
+      const desc = card.querySelector('.discipline-desc');
+      if (btn && desc) {
+        btn.addEventListener('click', () => {
+          const isExpanded = desc.classList.contains('line-clamp-none');
+          if (isExpanded) {
+            desc.classList.remove('line-clamp-none');
+            desc.classList.add('line-clamp-3');
+            btn.querySelector('span').textContent = 'Read more';
+          } else {
+            desc.classList.remove('line-clamp-3');
+            desc.classList.add('line-clamp-none');
+            btn.querySelector('span').textContent = 'Show less';
+          }
+        });
+      }
+    });
+  });
+</script>
