@@ -148,38 +148,38 @@ const team = [
           </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-5">
           {team.map((member) => (
             <div class={`rounded-lg bg-white border overflow-hidden flex flex-col justify-between transition-all duration-300 shadow-sm ${member.highlight ? 'border-slate-300 hover:border-brand-red hover:shadow-lg' : 'border-slate-200 hover:border-slate-300 hover:shadow-md'}`}>
               <div>
-                <div class="h-48 sm:h-52 overflow-hidden bg-slate-200 relative">
+                <div class="aspect-[4/5] sm:h-52 sm:aspect-auto overflow-hidden bg-slate-200 relative">
                   <img 
                     src={member.image} 
                     alt={member.name} 
                     class="w-full h-full object-cover object-top transition-all duration-300 hover:scale-105"
                     onerror={`this.src='${member.fallback}'`}
                   />
-                  <span class={`absolute top-2 right-2 px-2 py-0.5 rounded-sm ${member.badgeClass || 'bg-slate-900 text-white'} text-[10px] font-bold uppercase tracking-wider shadow-sm`}>
+                  <span class={`absolute top-1.5 right-1.5 px-1.5 py-0.5 rounded-xs ${member.badgeClass || 'bg-slate-900 text-white'} text-[8px] sm:text-[10px] font-bold uppercase tracking-wider shadow-sm`}>
                     {member.badge}
                   </span>
                 </div>
-                <div class="p-4 sm:p-5">
-                  <h3 class="text-base sm:text-lg font-heading font-bold text-slate-900 mb-1">
+                <div class="p-2.5 sm:p-5">
+                  <h3 class="text-xs sm:text-lg font-heading font-bold text-slate-900 mb-0.5 sm:mb-1 line-clamp-1">
                     {member.name}
                   </h3>
-                  <div class="text-[11px] font-bold text-brand-cyan mb-3 font-heading uppercase tracking-wider line-clamp-2">
+                  <div class="text-[10px] sm:text-[11px] font-bold text-brand-cyan mb-1.5 sm:mb-3 font-heading uppercase tracking-wider line-clamp-1 sm:line-clamp-2">
                     {member.role}
                   </div>
-                  <p class="text-xs text-slate-600 leading-relaxed">
+                  <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed line-clamp-3 sm:line-clamp-none font-light">
                     {member.bio}
                   </p>
                 </div>
               </div>
 
-              <div class="px-4 sm:px-5 pb-4 pt-1">
+              <div class="px-2.5 sm:px-5 pb-2.5 sm:pb-4 pt-1">
                 <a 
                   href={`mailto:${member.email}`} 
-                  class="text-[11px] font-semibold text-slate-500 hover:text-brand-red flex items-center gap-1.5 transition-colors truncate"
+                  class="text-[10px] sm:text-[11px] font-semibold text-slate-500 hover:text-brand-red flex items-center gap-1.5 transition-colors truncate"
                   title={member.email}
                 >
                   <svg class="w-3 h-3 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
@@ -188,34 +188,35 @@ const team = [
               </div>
             </div>
           ))}
+        </div>
       </div>
 
-      <!-- Piliers Opérationnels Authentiques (Remplacement des 4 emojis génériques) -->
-      <div class="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 shadow-sm">
-        <div class="max-w-2xl mb-10">
+      <!-- Piliers Opérationnels Authentiques (2 colonnes sur mobile) -->
+      <div class="bg-white rounded-lg border border-slate-200 p-4 sm:p-12 shadow-sm">
+        <div class="max-w-2xl mb-6 sm:mb-10">
           <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-1">Standards de Terrain</span>
-          <h3 class="text-2xl font-heading font-bold text-slate-900 mb-3">Nos Piliers Opérationnels</h3>
-          <p class="text-sm text-slate-600 leading-relaxed">
+          <h3 class="text-xl sm:text-2xl font-heading font-bold text-slate-900 mb-2 sm:mb-3">Nos Piliers Opérationnels</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
             Chez Endurance Aventure, chaque défi est construit avec une rigueur logistique éprouvée et un ancrage profond dans les communautés québécoises hôtes.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="p-6 rounded-md bg-slate-50 border border-slate-200">
-            <div class="text-brand-red font-heading font-black text-xl mb-2">01. Sécurité en Milieu Isolé</div>
-            <div class="text-xs text-slate-600 leading-relaxed">Protocoles d'évacuation d'urgence, coordination avec les services de secours locaux et liaisons radio tout-terrain.</div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6">
+          <div class="p-3 sm:p-6 rounded-md bg-slate-50 border border-slate-200">
+            <div class="text-brand-red font-heading font-black text-sm sm:text-xl mb-1 sm:mb-2">01. Sécurité</div>
+            <div class="text-[11px] sm:text-xs text-slate-600 leading-relaxed font-light">Protocoles d'évacuation d'urgence, coordination secours locaux et liaisons radio tout-terrain.</div>
           </div>
-          <div class="p-6 rounded-md bg-slate-50 border border-slate-200">
-            <div class="text-brand-cyan font-heading font-black text-xl mb-2">02. Concertation Territoriale</div>
-            <div class="text-xs text-slate-600 leading-relaxed">Ententes officielles avec la Sépaq, les MRC et les municipalités. Respect strict de l'éthique « Sans Trace » en nature.</div>
+          <div class="p-3 sm:p-6 rounded-md bg-slate-50 border border-slate-200">
+            <div class="text-brand-cyan font-heading font-black text-sm sm:text-xl mb-1 sm:mb-2">02. Territoire</div>
+            <div class="text-[11px] sm:text-xs text-slate-600 leading-relaxed font-light">Ententes officielles avec la Sépaq et les MRC. Respect strict de l'éthique « Sans Trace ».</div>
           </div>
-          <div class="p-6 rounded-md bg-slate-50 border border-slate-200">
-            <div class="text-slate-900 font-heading font-black text-xl mb-2">03. Formation de la Relève</div>
-            <div class="text-xs text-slate-600 leading-relaxed">Organisation du Championnat du monde junior de raid aventure (ARWS Youth) et inclusion des jeunes athlètes.</div>
+          <div class="p-3 sm:p-6 rounded-md bg-slate-50 border border-slate-200">
+            <div class="text-slate-900 font-heading font-black text-sm sm:text-xl mb-1 sm:mb-2">03. Relève</div>
+            <div class="text-[11px] sm:text-xs text-slate-600 leading-relaxed font-light">Organisation du Championnat du monde junior de raid (ARWS Youth) et inclusion des jeunes athlètes.</div>
           </div>
-          <div class="p-6 rounded-md bg-slate-50 border border-slate-200">
-            <div class="text-brand-red font-heading font-black text-xl mb-2">04. Ingénierie de Tracés</div>
-            <div class="text-xs text-slate-600 leading-relaxed">+10 000 km explorés et validés par nos directeurs de course pour offrir des parcours inédits, équilibrés et sécuritaires.</div>
+          <div class="p-3 sm:p-6 rounded-md bg-slate-50 border border-slate-200">
+            <div class="text-brand-red font-heading font-black text-sm sm:text-xl mb-1 sm:mb-2">04. Ingénierie</div>
+            <div class="text-[11px] sm:text-xs text-slate-600 leading-relaxed font-light">+10 000 km explorés et validés par nos directeurs de course pour des parcours sécuritaires et inédits.</div>
           </div>
         </div>
       </div>

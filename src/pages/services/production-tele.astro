@@ -51,40 +51,40 @@ import Layout from '../../layouts/Layout.astro';
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-          <div class="bg-slate-50 p-6 rounded-md border border-slate-200">
-            <h3 class="font-bold text-slate-900 mb-2">Prises de vue par Drone Certifié</h3>
-            <p class="text-xs sm:text-sm text-slate-600">Pilotes certifiés Transports Canada pour opérations avancées. Survol de pelotons, canyons et paysages grandioses avec caméra cinématographique 4K.</p>
+        <div class="grid grid-cols-2 gap-2.5 sm:gap-6 my-6 sm:my-8">
+          <div class="bg-slate-50 p-3 sm:p-6 rounded-md border border-slate-200">
+            <h3 class="font-bold text-slate-900 text-xs sm:text-base mb-1 sm:mb-2">Prises de Vue par Drone</h3>
+            <p class="text-[11px] sm:text-sm text-slate-600 font-light line-clamp-4 sm:line-clamp-none">Pilotes certifiés Transports Canada. Survols de pelotons, canyons et paysages grandioses en 4K.</p>
           </div>
-          <div class="bg-slate-50 p-6 rounded-md border border-slate-200">
-            <h3 class="font-bold text-slate-900 mb-2">Cadreurs Sportifs Embarqués</h3>
-            <p class="text-xs sm:text-sm text-slate-600">Nos cadreurs suivent les athlètes à pied, en ski, en kayak de mer ou en vélo pour capter la sueur, l'effort et l'émotion brute sans ralentir l'épreuve.</p>
+          <div class="bg-slate-50 p-3 sm:p-6 rounded-md border border-slate-200">
+            <h3 class="font-bold text-slate-900 text-xs sm:text-base mb-1 sm:mb-2">Cadreurs Embarqués</h3>
+            <p class="text-[11px] sm:text-sm text-slate-600 font-light line-clamp-4 sm:line-clamp-none">Nos cadreurs suivent les athlètes à pied, en ski, en kayak ou en vélo pour capter l'effort brut.</p>
           </div>
         </div>
 
-        <!-- Galerie Tournages Extrêmes -->
+        <!-- Galerie Tournages Extrêmes (2 colonnes sur mobile) -->
         <div class="pt-6 border-t border-slate-100">
-          <div class="text-center max-w-xl mx-auto mb-8">
+          <div class="text-center max-w-xl mx-auto mb-6 sm:mb-8">
             <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-1">Moyens de Production</span>
             <h3 class="text-xl sm:text-2xl font-heading font-bold text-slate-900">
               Captation Tout-Terrain en Milieux Isolés
             </h3>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="group rounded-md overflow-hidden bg-slate-200 h-56 relative shadow-sm">
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-4">
+            <div class="group rounded-md overflow-hidden bg-slate-200 aspect-[4/3] sm:h-56 sm:aspect-auto relative shadow-sm">
               <img src="/assets/Canadaman-xtri-copyright-Quebec-Dones-3-de-5.webp" alt="Survol drone 4K en pleine nature" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Survols par drone agréé 4K</span>
+              <span class="absolute bottom-2 left-2 text-white text-[10px] sm:text-xs font-semibold line-clamp-1">Drone agréé 4K</span>
             </div>
-            <div class="group rounded-md overflow-hidden bg-slate-200 h-56 relative shadow-sm">
+            <div class="group rounded-md overflow-hidden bg-slate-200 aspect-[4/3] sm:h-56 sm:aspect-auto relative shadow-sm">
               <img src="/assets/JMMsony-September-13-2014_DSC1025.webp" alt="Photographes et cadreurs au cœur de l'action" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Cadreurs & photographes en action</span>
+              <span class="absolute bottom-2 left-2 text-white text-[10px] sm:text-xs font-semibold line-clamp-1">Cadreurs de terrain</span>
             </div>
-            <div class="group rounded-md overflow-hidden bg-slate-200 h-56 relative shadow-sm">
+            <div class="group rounded-md overflow-hidden bg-slate-200 aspect-[4/3] sm:h-56 sm:aspect-auto relative shadow-sm col-span-2 sm:col-span-1">
               <img src="/assets/raid-international-gaspesie-2016-mont-saint-joseph-slack-line.webp" alt="Cadrage en falaise extrême" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='/assets/51582278409_86672a9a9f_k.webp'" />
               <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Cadreurs sur parois & falaises</span>
+              <span class="absolute bottom-2 left-2 text-white text-[10px] sm:text-xs font-semibold line-clamp-1">Cadrage sur parois</span>
             </div>
           </div>
         </div>

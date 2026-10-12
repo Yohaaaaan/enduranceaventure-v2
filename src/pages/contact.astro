@@ -32,26 +32,26 @@ import Layout from '../layouts/Layout.astro';
   </header>
 
   <!-- Contenu Principal sur Fond Clair -->
-  <div class="bg-slate-50 py-16 sm:py-20">
+  <div class="bg-slate-50 py-8 sm:py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12">
         
         <!-- Sidebar Coordonnées -->
-        <div class="lg:col-span-4 space-y-6">
-          <div class="bg-white p-8 rounded-lg border border-slate-200 shadow-sm space-y-6">
-            <h2 class="text-xl font-heading font-bold text-slate-900 border-l-2 border-brand-red pl-3">
+        <div class="lg:col-span-4 space-y-4 sm:space-y-6">
+          <div class="bg-white p-5 sm:p-8 rounded-lg border border-slate-200 shadow-sm space-y-4 sm:space-y-6">
+            <h2 class="text-lg sm:text-xl font-heading font-bold text-slate-900 border-l-2 border-brand-red pl-3">
               Coordonnées Directes
             </h2>
             
-            <div class="space-y-4 text-sm text-slate-700">
+            <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm text-slate-700">
               <div>
-                <div class="text-xs text-slate-500 uppercase font-bold mb-1">Siège social</div>
+                <div class="text-[10px] sm:text-xs text-slate-500 uppercase font-bold mb-0.5 sm:mb-1">Siège social</div>
                 <div class="text-slate-900 font-medium">Magog, Cantons-de-l'Est</div>
                 <div class="text-slate-500">Québec, Canada</div>
               </div>
 
               <div>
-                <div class="text-xs text-slate-500 uppercase font-bold mb-1">Téléphone</div>
+                <div class="text-[10px] sm:text-xs text-slate-500 uppercase font-bold mb-0.5 sm:mb-1">Téléphone</div>
                 <div class="flex items-center justify-between text-xs sm:text-sm">
                   <span class="text-slate-500">Bureau Magog :</span>
                   <a href="tel:8193425220" class="text-slate-900 font-bold hover:text-brand-red transition-colors">(819) 342-5220</a>
@@ -59,42 +59,42 @@ import Layout from '../layouts/Layout.astro';
               </div>
 
               <div>
-                <div class="text-xs text-slate-500 uppercase font-bold mb-1">Courriel officiel</div>
+                <div class="text-[10px] sm:text-xs text-slate-500 uppercase font-bold mb-0.5 sm:mb-1">Courriel officiel</div>
                 <a href="mailto:info@enduranceaventure.com" class="text-brand-cyan hover:underline font-semibold">
                   info@enduranceaventure.com
                 </a>
               </div>
 
               <div class="pt-2 border-t border-slate-100">
-                <div class="text-xs text-slate-500 uppercase font-bold mb-1">Direction technique</div>
+                <div class="text-[10px] sm:text-xs text-slate-500 uppercase font-bold mb-0.5 sm:mb-1">Direction technique</div>
                 <div class="font-semibold text-slate-900">Bastien Michau</div>
-                <div class="text-xs text-slate-500">bmichau@enduranceaventure.com</div>
+                <div class="text-[11px] sm:text-xs text-slate-500">bmichau@enduranceaventure.com</div>
               </div>
 
               <div>
-                <div class="text-xs text-slate-500 uppercase font-bold mb-1">Direction générale</div>
+                <div class="text-[10px] sm:text-xs text-slate-500 uppercase font-bold mb-0.5 sm:mb-1">Direction générale</div>
                 <div class="font-semibold text-slate-900">Daniel Poirier</div>
-                <div class="text-xs text-slate-500">dpoirier@enduranceaventure.com</div>
+                <div class="text-[11px] sm:text-xs text-slate-500">dpoirier@enduranceaventure.com</div>
               </div>
             </div>
           </div>
 
           <!-- Carte Engagements -->
-          <div class="bg-white p-8 rounded-lg border border-slate-200 shadow-sm space-y-4">
-            <h3 class="text-base font-heading font-bold text-slate-900 border-l-2 border-brand-cyan pl-3">
+          <div class="bg-white p-5 sm:p-8 rounded-lg border border-slate-200 shadow-sm space-y-3 sm:space-y-4">
+            <h3 class="text-sm sm:text-base font-heading font-bold text-slate-900 border-l-2 border-brand-cyan pl-3">
               Engagements & Sécurité
             </h3>
-            <ul class="text-xs text-slate-600 space-y-2 leading-relaxed">
+            <ul class="text-[11px] sm:text-xs text-slate-600 space-y-1.5 sm:space-y-2 leading-relaxed">
               <li class="flex items-start gap-2">
-                <span class="w-1.5 h-1.5 bg-brand-cyan mt-1.5 flex-shrink-0"></span>
+                <span class="w-1.5 h-1.5 bg-brand-cyan mt-1 sm:mt-1.5 flex-shrink-0"></span>
                 <span>Étude technique et réponse personnalisée.</span>
               </li>
               <li class="flex items-start gap-2">
-                <span class="w-1.5 h-1.5 bg-brand-cyan mt-1.5 flex-shrink-0"></span>
+                <span class="w-1.5 h-1.5 bg-brand-cyan mt-1 sm:mt-1.5 flex-shrink-0"></span>
                 <span>Assurance responsabilité civile tout-terrain.</span>
               </li>
               <li class="flex items-start gap-2">
-                <span class="w-1.5 h-1.5 bg-brand-cyan mt-1.5 flex-shrink-0"></span>
+                <span class="w-1.5 h-1.5 bg-brand-cyan mt-1 sm:mt-1.5 flex-shrink-0"></span>
                 <span>Données strictement confidentielles, sans spam.</span>
               </li>
             </ul>
@@ -103,7 +103,7 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Formulaire avec Onglets B2B / Coureurs -->
         <div class="lg:col-span-8">
-          <div class="bg-white p-8 sm:p-10 rounded-lg border border-slate-200 shadow-sm relative">
+          <div class="bg-white p-4 sm:p-10 rounded-lg border border-slate-200 shadow-sm relative">
             
             <!-- Sélecteur d'Onglets adaptatif mobile -->
             <div class="flex flex-col sm:flex-row border-b border-slate-200 mb-8 pb-1 gap-2">

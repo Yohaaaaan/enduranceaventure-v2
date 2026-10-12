@@ -537,29 +537,29 @@ const serviceVisuals: Record<string, {
         </a>
       </div>
 
-      <!-- Mosaïque 4 Photos de Terrain -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Mosaïque 4 Photos de Terrain (2 colonnes sur mobile) -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6">
         <!-- 1. Gravel GBC 500 -->
-        <a href="/evenements/gbc500/" class="group rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative h-80 flex flex-col justify-end p-5 transition-all hover:shadow-lg hover:-translate-y-0.5">
+        <a href="/evenements/gbc500/" class="group rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative aspect-[4/5] sm:h-80 sm:aspect-auto flex flex-col justify-end p-2.5 sm:p-5 transition-all hover:shadow-lg hover:-translate-y-0.5">
           <img 
             src="/assets/gravelbike-grange-scaled.webp" 
             alt="GBC 500 dans les Cantons-de-l'Est" 
             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
-          <span class="relative z-10 self-start px-2.5 py-1 rounded-sm text-[10px] font-bold uppercase tracking-wider bg-brand-red text-white mb-2 shadow-sm">
-            Gravel & Bikepacking
+          <span class="relative z-10 self-start px-1.5 py-0.5 rounded-xs text-[8px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-red text-white mb-1 sm:mb-2 shadow-sm">
+            Gravel
           </span>
-          <h3 class="relative z-10 text-lg font-heading font-bold text-white mb-1 group-hover:text-brand-cyan transition-colors">
+          <h3 class="relative z-10 text-xs sm:text-lg font-heading font-bold text-white mb-0.5 sm:mb-1 group-hover:text-brand-cyan transition-colors line-clamp-1">
             GBC 500
           </h3>
-          <p class="relative z-10 text-xs text-slate-300 line-clamp-2">
-            500 km d'autonomie et de chemins forestiers dans les Cantons-de-l'Est.
+          <p class="relative z-10 text-[10px] sm:text-xs text-slate-300 line-clamp-2 font-light">
+            500 km de chemins forestiers en autonomie.
           </p>
         </a>
 
         <!-- 2. Raid Gaspésie -->
-        <a href="/evenements/" class="group rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative h-80 flex flex-col justify-end p-5 transition-all hover:shadow-lg hover:-translate-y-0.5">
+        <a href="/evenements/" class="group rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative aspect-[4/5] sm:h-80 sm:aspect-auto flex flex-col justify-end p-2.5 sm:p-5 transition-all hover:shadow-lg hover:-translate-y-0.5">
           <img 
             src="/assets/raid-international-gaspesie-2016-mont-saint-joseph-slack-line.webp" 
             alt="Raid International Gaspésie sur les parois rocheuses" 
@@ -567,38 +567,38 @@ const serviceVisuals: Record<string, {
             onerror="this.src='/assets/51582278409_86672a9a9f_k.webp'"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
-          <span class="relative z-10 self-start px-2.5 py-1 rounded-sm text-[10px] font-bold uppercase tracking-wider bg-brand-cyan text-white mb-2 shadow-sm">
-            Raid Aventure & Cordes
+          <span class="relative z-10 self-start px-1.5 py-0.5 rounded-xs text-[8px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-cyan text-white mb-1 sm:mb-2 shadow-sm">
+            Raid & Cordes
           </span>
-          <h3 class="relative z-10 text-lg font-heading font-bold text-white mb-1 group-hover:text-brand-cyan transition-colors">
+          <h3 class="relative z-10 text-xs sm:text-lg font-heading font-bold text-white mb-0.5 sm:mb-1 group-hover:text-brand-cyan transition-colors line-clamp-1">
             Raid Gaspésie
           </h3>
-          <p class="relative z-10 text-xs text-slate-300 line-clamp-2">
-            Orientation carte & boussole, canot en mer et progression en falaise.
+          <p class="relative z-10 text-[10px] sm:text-xs text-slate-300 line-clamp-2 font-light">
+            Orientation boussole et progression falaise.
           </p>
         </a>
 
         <!-- 3. Canada Man / Woman XTRI -->
-        <a href="/evenements/" class="group rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative h-80 flex flex-col justify-end p-5 transition-all hover:shadow-lg hover:-translate-y-0.5">
+        <a href="/evenements/" class="group rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative aspect-[4/5] sm:h-80 sm:aspect-auto flex flex-col justify-end p-2.5 sm:p-5 transition-all hover:shadow-lg hover:-translate-y-0.5">
           <img 
             src="/assets/canadaman-2017-lac-megantic-ligne-depart-nuit.webp" 
             alt="Départ nocturne du Triathlon Canada Man à Lac-Mégantic" 
             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
-          <span class="relative z-10 self-start px-2.5 py-1 rounded-sm text-[10px] font-bold uppercase tracking-wider bg-emerald-600 text-white mb-2 shadow-sm">
-            Triathlon Extrême
+          <span class="relative z-10 self-start px-1.5 py-0.5 rounded-xs text-[8px] sm:text-[10px] font-bold uppercase tracking-wider bg-emerald-600 text-white mb-1 sm:mb-2 shadow-sm">
+            Triathlon
           </span>
-          <h3 class="relative z-10 text-lg font-heading font-bold text-white mb-1 group-hover:text-brand-cyan transition-colors">
-            Canada Man / Woman
+          <h3 class="relative z-10 text-xs sm:text-lg font-heading font-bold text-white mb-0.5 sm:mb-1 group-hover:text-brand-cyan transition-colors line-clamp-1">
+            Canada Man/Woman
           </h3>
-          <p class="relative z-10 text-xs text-slate-300 line-clamp-2">
-            Le départ légendaire dans la nuit froide de Lac-Mégantic vers le Mont Mégantic.
+          <p class="relative z-10 text-[10px] sm:text-xs text-slate-300 line-clamp-2 font-light">
+            Départ de nuit vers le sommet du Mont Mégantic.
           </p>
         </a>
 
         <!-- 4. Mondiaux ARWS Témiscamingue -->
-        <a href="/evenements/championnat-monde-junior-arws/" class="group rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative h-80 flex flex-col justify-end p-5 transition-all hover:shadow-lg hover:-translate-y-0.5">
+        <a href="/evenements/championnat-monde-junior-arws/" class="group rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative aspect-[4/5] sm:h-80 sm:aspect-auto flex flex-col justify-end p-2.5 sm:p-5 transition-all hover:shadow-lg hover:-translate-y-0.5">
           <img 
             src="/assets/Raid-Temis-reperage4.webp" 
             alt="Championnat du Monde Junior ARWS au Témiscamingue" 
@@ -606,14 +606,14 @@ const serviceVisuals: Record<string, {
             onerror="this.src='/assets/Raid-Temis-reperage4.jpg'"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
-          <span class="relative z-10 self-start px-2.5 py-1 rounded-sm text-[10px] font-bold uppercase tracking-wider bg-amber-600 text-white mb-2 shadow-sm">
-            Mondiaux Juniors ARWS
+          <span class="relative z-10 self-start px-1.5 py-0.5 rounded-xs text-[8px] sm:text-[10px] font-bold uppercase tracking-wider bg-amber-600 text-white mb-1 sm:mb-2 shadow-sm">
+            Mondiaux ARWS
           </span>
-          <h3 class="relative z-10 text-lg font-heading font-bold text-white mb-1 group-hover:text-brand-cyan transition-colors">
+          <h3 class="relative z-10 text-xs sm:text-lg font-heading font-bold text-white mb-0.5 sm:mb-1 group-hover:text-brand-cyan transition-colors line-clamp-1">
             Témiscamingue 2027
           </h3>
-          <p class="relative z-10 text-xs text-slate-300 line-clamp-2">
-            La relève mondiale du raid aventure au cœur des grands lacs boréaux.
+          <p class="relative z-10 text-[10px] sm:text-xs text-slate-300 line-clamp-2 font-light">
+            La relève mondiale du raid aventure boréal.
           </p>
         </a>
       </div>

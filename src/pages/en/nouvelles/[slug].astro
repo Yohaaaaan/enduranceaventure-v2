@@ -67,12 +67,12 @@ const blogSchema = {
   </header>
 
   <!-- Article Body -->
-  <article class="py-16 bg-slate-50">
+  <article class="py-10 sm:py-16 bg-slate-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Featured Image -->
       {post.image && (
-        <div class="rounded-lg overflow-hidden mb-12 shadow-sm border border-slate-200 bg-slate-200 max-h-[500px]">
+        <div class="rounded-lg overflow-hidden mb-6 sm:mb-12 shadow-sm border border-slate-200 bg-slate-200 max-h-[500px]">
           <img 
             src={post.image} 
             alt={post.title} 
@@ -83,8 +83,8 @@ const blogSchema = {
       )}
 
       <!-- Post Content Rendered -->
-      <div class="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 shadow-sm">
-        <div class="prose prose-slate prose-lg max-w-none text-slate-800 leading-relaxed space-y-6" set:html={post.content} />
+      <div class="bg-white rounded-lg border border-slate-200 p-4 sm:p-12 shadow-sm">
+        <div class="prose prose-slate prose-lg max-w-none text-slate-800 leading-relaxed space-y-4 sm:space-y-6" set:html={post.content} />
 
         <!-- Bottom navigation -->
         <div class="mt-16 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">

@@ -151,7 +151,7 @@ const arwsSchema = {
   </section>
 
   <!-- CONTENU PRINCIPAL SUR FOND CLAIR -->
-  <div class="bg-slate-50 py-20 space-y-24">
+  <div class="bg-slate-50 py-10 sm:py-20 space-y-12 sm:space-y-20">
     
     <!-- PRÉSENTATION OFFICIELLE : LE CHAMPIONNAT DU MONDE JUNIOR ARWS -->
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -207,155 +207,155 @@ const arwsSchema = {
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6">
         
         <!-- Canot & Portage (Avec vraie photo d'action) -->
         <div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
           <div>
-            <div class="h-48 overflow-hidden bg-slate-100 relative">
+            <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
               <img 
                 src="/assets/raid-temiscamingue-2025-1.webp" 
                 alt="Section canot d'expédition en raid boréal" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <span class="absolute top-3 left-3 px-2 py-0.5 rounded-sm bg-black/80 text-white text-[10px] font-bold uppercase tracking-wider">
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded-xs bg-black/80 text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">
                 Nautique
               </span>
             </div>
-            <div class="p-6">
-              <h3 class="font-heading font-bold text-slate-900 text-xl mb-2">Canot Boréal & Portages</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-                Navigation en canot biplace sur les immenses lacs boréaux témiscamiens et rivières sinueuses. Gestion d'efforts intenses, portages de canots en sous-bois et passages de rapides.
+            <div class="p-2.5 sm:p-5">
+              <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Canot Boréal & Portages</h3>
+              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+                Navigation en canot biplace sur les immenses lacs boréaux témiscamiens et rivières sinueuses. Portages de canots en sous-bois et rapides.
               </p>
             </div>
           </div>
-          <div class="p-6 pt-0 text-xs font-semibold text-blue-600 border-t border-slate-100 mt-2">
-            Gilets de sauvetage et matériel nautique homologué
+          <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-semibold text-blue-600 border-t border-slate-100 mt-1 line-clamp-1">
+            Gilets & matériel homologué
           </div>
         </div>
 
         <!-- VTT Technique (Avec vraie photo d'action) -->
         <div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
           <div>
-            <div class="h-48 overflow-hidden bg-slate-100 relative">
+            <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
               <img 
                 src="/assets/28514399477_3839a9ca93_o-scaled.webp" 
                 alt="Transition vélo de montagne et singletrack" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <span class="absolute top-3 left-3 px-2 py-0.5 rounded-sm bg-black/80 text-white text-[10px] font-bold uppercase tracking-wider">
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded-xs bg-black/80 text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">
                 VTT
               </span>
             </div>
-            <div class="p-6">
-              <h3 class="font-heading font-bold text-slate-900 text-xl mb-2">Vélo de Montagne (VTT)</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-                Pistes forestières sauvages, sentiers de gravelle meuble, singletracks rocheux et montées abruptes du Bouclier Canadien testant la motricité et l'endurance mécanique des duos.
+            <div class="p-2.5 sm:p-5">
+              <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Vélo de Montagne (VTT)</h3>
+              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+                Pistes forestières, gravelle meuble, singletracks rocheux et montées abruptes du Bouclier Canadien testant la motricité des duos.
               </p>
             </div>
           </div>
-          <div class="p-6 pt-0 text-xs font-semibold text-brand-red border-t border-slate-100 mt-2">
-            Autonomie mécanique totale & casque obligatoire
+          <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-semibold text-brand-red border-t border-slate-100 mt-1 line-clamp-1">
+            Autonomie mécanique totale
           </div>
         </div>
 
         <!-- Trek & Bushwhack (Avec vraie photo d'action) -->
         <div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
           <div>
-            <div class="h-48 overflow-hidden bg-slate-100 relative">
+            <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
               <img 
                 src="/assets/arws-junior-world-photo1.webp" 
                 alt="Progression pédestre hors-piste en forêt boréale" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <span class="absolute top-3 left-3 px-2 py-0.5 rounded-sm bg-black/80 text-white text-[10px] font-bold uppercase tracking-wider">
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded-xs bg-black/80 text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">
                 Trek
               </span>
             </div>
-            <div class="p-6">
-              <h3 class="font-heading font-bold text-slate-900 text-xl mb-2">Trek Boréal & Hors-Piste</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-                Progression pédestre à travers la taïga et les collines rocheuses. Sections hors-piste intégrales ("bushwhacking"), franchissements de marais et passages sur crêtes escarpées.
+            <div class="p-2.5 sm:p-5">
+              <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Trek Boréal & Hors-Piste</h3>
+              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+                Progression pédestre à travers la taïga. Sections hors-piste intégrales ("bushwhacking"), franchissements de marais et crêtes.
               </p>
             </div>
           </div>
-          <div class="p-6 pt-0 text-xs font-semibold text-emerald-600 border-t border-slate-100 mt-2">
-            Chaussures tout-terrain & robustesse physique
+          <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-semibold text-emerald-600 border-t border-slate-100 mt-1 line-clamp-1">
+            Chaussures tout-terrain
           </div>
         </div>
 
         <!-- Orientation Carte & Boussole (Avec vraie photo d'action) -->
         <div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
           <div>
-            <div class="h-48 overflow-hidden bg-slate-100 relative">
+            <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
               <img 
                 src="/assets/raid-temiscamingue-2025-3.webp" 
                 alt="Orientation carte topographique et boussole sur le terrain" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <span class="absolute top-3 left-3 px-2 py-0.5 rounded-sm bg-brand-red text-white text-[10px] font-bold uppercase tracking-wider">
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded-xs bg-brand-red text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">
                 Règle Absolue
               </span>
             </div>
-            <div class="p-6">
-              <h3 class="font-heading font-bold text-slate-900 text-xl mb-2">Navigation Carte & Boussole</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-                Aucun GPS, montre connectée ou téléphone avec cartographie autorisé. Les équipages naviguent exclusivement à l'aide de cartes topographiques officielles fournies au départ et de boussoles magnétiques.
+            <div class="p-2.5 sm:p-5">
+              <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Orientation & Boussole</h3>
+              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+                Aucun GPS ni téléphone autorisé. Navigation exclusive aux cartes topographiques officielles fournies et boussoles magnétiques.
               </p>
             </div>
           </div>
-          <div class="p-6 pt-0 text-xs font-bold text-brand-red border-t border-slate-100 mt-2">
-            Précision d'azimut & lecture de relief décisives
+          <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-bold text-brand-red border-t border-slate-100 mt-1 line-clamp-1">
+            0 GPS • Carte & azimut
           </div>
         </div>
 
         <!-- Nage en Eau Libre (Avec vraie photo d'action) -->
         <div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
           <div>
-            <div class="h-48 overflow-hidden bg-slate-100 relative">
+            <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
               <img 
                 src="/assets/arws-junior-world-temiscamingue-2026-3.webp" 
                 alt="Section de nage et franchissement aquatique en milieu sauvage" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <span class="absolute top-3 left-3 px-2 py-0.5 rounded-sm bg-black/80 text-white text-[10px] font-bold uppercase tracking-wider">
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded-xs bg-black/80 text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">
                 Aquatique
               </span>
             </div>
-            <div class="p-6">
-              <h3 class="font-heading font-bold text-slate-900 text-xl mb-2">Nage & Passages Aquatiques</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-                Sections de traversée à la nage entre îlots et berges sauvages. Sacs étanches obligatoires pour préserver le matériel de survie et les vêtements de rechange.
+            <div class="p-2.5 sm:p-5">
+              <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Nage & Franchissements</h3>
+              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+                Sections de traversée à la nage entre îlots et berges sauvages. Sacs étanches obligatoires pour le matériel de survie.
               </p>
             </div>
           </div>
-          <div class="p-6 pt-0 text-xs font-semibold text-brand-cyan border-t border-slate-100 mt-2">
-            Flottabilité réglementaire & sacs étanches
+          <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-semibold text-brand-cyan border-t border-slate-100 mt-1 line-clamp-1">
+            Sacs étanches certifiés
           </div>
         </div>
 
         <!-- Ateliers Verticaux de Cordes (Avec vraie photo d'action) -->
         <div class="bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
           <div>
-            <div class="h-48 overflow-hidden bg-slate-100 relative">
+            <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
               <img 
                 src="/assets/raid-international-gaspesie-2016-mont-saint-joseph-slack-line.webp" 
                 alt="Ateliers verticaux de cordes et rappel sur falaise" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <span class="absolute top-3 left-3 px-2 py-0.5 rounded-sm bg-black/80 text-white text-[10px] font-bold uppercase tracking-wider">
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded-xs bg-black/80 text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">
                 Cordes
               </span>
             </div>
-            <div class="p-6">
-              <h3 class="font-heading font-bold text-slate-900 text-xl mb-2">Ateliers de Cordes & Hauteurs</h3>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-                Rappels en falaise, tyroliennes et manœuvres sur cordes installées et supervisées par les spécialistes de sécurité verticale d'Endurance Aventure.
+            <div class="p-2.5 sm:p-5">
+              <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Ateliers de Cordes</h3>
+              <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+                Rappels en falaise et tyroliennes installés et supervisés par les spécialistes de sécurité verticale d'Endurance Aventure.
               </p>
             </div>
           </div>
-          <div class="p-6 pt-0 text-xs font-semibold text-amber-700 border-t border-slate-100 mt-2">
-            Harnais et casques d'escalade certifiés
+          <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-semibold text-amber-700 border-t border-slate-100 mt-1 line-clamp-1">
+            Harnais & casques certifiés
           </div>
         </div>
 
@@ -456,80 +456,80 @@ const arwsSchema = {
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6">
         
         <!-- Jour 1 -->
-        <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div class="bg-white p-3 sm:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
           <div>
-            <div class="text-xs font-bold uppercase tracking-wider text-brand-red mb-1">Jeudi 29 Juillet 2027</div>
-            <div class="text-xl font-heading font-black text-slate-900 mb-3">Accueil & Contrôles</div>
-            <p class="text-xs text-slate-600 leading-relaxed mb-4">
-              Arrivée des délégations internationales à Ville-Marie et Témiscaming. Vérification technique obligatoire du matériel de survie et tests de cordes.
+            <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brand-red mb-1">29 Juil. 2027</div>
+            <div class="text-sm sm:text-xl font-heading font-black text-slate-900 mb-1.5 sm:mb-3">Accueil & Contrôles</div>
+            <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-4 line-clamp-3 sm:line-clamp-none font-light">
+              Arrivée des délégations à Ville-Marie et Témiscaming. Vérification technique du matériel de survie et tests de cordes.
             </p>
-            <ul class="space-y-1.5 text-xs text-slate-600">
+            <ul class="space-y-1 text-[10px] sm:text-xs text-slate-600 hidden sm:block">
               <li class="flex items-start gap-1.5">• <span>Enregistrement & contrôle médical</span></li>
               <li class="flex items-start gap-1.5">• <span>Briefing technique des capitaines</span></li>
               <li class="flex items-start gap-1.5">• <span>Cérémonie d'accueil des nations</span></li>
             </ul>
           </div>
-          <div class="text-[11px] font-semibold text-slate-400 border-t border-slate-100 pt-3 mt-4">
+          <div class="text-[9px] sm:text-[11px] font-semibold text-slate-400 border-t border-slate-100 pt-2 sm:pt-3 mt-2 sm:mt-4">
             Village des Athlètes
           </div>
         </div>
 
         <!-- Jour 2 -->
-        <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div class="bg-white p-3 sm:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
           <div>
-            <div class="text-xs font-bold uppercase tracking-wider text-brand-cyan mb-1">Vendredi 30 Juillet 2027</div>
-            <div class="text-xl font-heading font-black text-slate-900 mb-3">Prologue & Relève Locale</div>
-            <p class="text-xs text-slate-600 leading-relaxed mb-4">
-              Prologue avec le lancement du Raid Jeunesse Desjardins pour les jeunes régionaux.
+            <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brand-red mb-1">30 Juil. 2027</div>
+            <div class="text-sm sm:text-xl font-heading font-black text-slate-900 mb-1.5 sm:mb-3">Départ & Étape 1</div>
+            <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-4 line-clamp-3 sm:line-clamp-none font-light">
+              Coup d'envoi officiel. Première immersion en pleine nature boréale avec alternance de canot, trek et orientation sur carte.
             </p>
-            <ul class="space-y-1.5 text-xs text-slate-600">
-              <li class="flex items-start gap-1.5">• <span>Épreuve prologue spectaculaire</span></li>
-              <li class="flex items-start gap-1.5">• <span>Raid Découverte Jeunesse Desjardins</span></li>
-              <li class="flex items-start gap-1.5">• <span>Remise officielle des cartes scellées</span></li>
+            <ul class="space-y-1 text-[10px] sm:text-xs text-slate-600 hidden sm:block">
+              <li class="flex items-start gap-1.5">• <span>Section canot boréal longue</span></li>
+              <li class="flex items-start gap-1.5">• <span>Balises d'orientation isolées</span></li>
+              <li class="flex items-start gap-1.5">• <span>Premier bivouac sous tente</span></li>
             </ul>
           </div>
-          <div class="text-[11px] font-semibold text-brand-cyan border-t border-slate-100 pt-3 mt-4">
-            Spectacle grand public & jeunesse
+          <div class="text-[9px] sm:text-[11px] font-semibold text-brand-red border-t border-slate-100 pt-2 sm:pt-3 mt-2 sm:mt-4">
+            Départ de la course
           </div>
         </div>
 
         <!-- Jour 3 -->
-        <div class="bg-white p-6 rounded-lg border-2 border-brand-red shadow-sm flex flex-col justify-between">
+        <div class="bg-white p-3 sm:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
           <div>
-            <div class="text-xs font-bold uppercase tracking-wider text-brand-red mb-1">Samedi 31 Juillet 2027</div>
-            <div class="text-xl font-heading font-black text-slate-900 mb-3">Jour 1 Grand Départ</div>
-            <p class="text-xs text-slate-600 leading-relaxed mb-4">
-              Coup d'envoi de la grande course d'expédition sauvage. Enchaînement canot boréal, transitions VTT et trek d'orientation dans les recoins les plus isolés du territoire.
+            <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brand-red mb-1">31 Juil. 2027</div>
+            <div class="text-sm sm:text-xl font-heading font-black text-slate-900 mb-1.5 sm:mb-3">Étape Reine & Nuit</div>
+            <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-4 line-clamp-3 sm:line-clamp-none font-light">
+              Journée charnière et transition de nuit. Enchaînement de VTT technique, rappel en falaise et nage en eau libre.
             </p>
-            <ul class="space-y-1.5 text-xs text-slate-600">
-              <li class="flex items-start gap-1.5">• <span>Départ massif en ligne</span></li>
-              <li class="flex items-start gap-1.5">• <span>Choix stratégique de navigation</span></li>
-              <li class="flex items-start gap-1.5">• <span>Suivi satellite des balises en direct</span></li>
+            <ul class="space-y-1 text-[10px] sm:text-xs text-slate-600 hidden sm:block">
+              <li class="flex items-start gap-1.5">• <span>Parcours VTT exigeant</span></li>
+              <li class="flex items-start gap-1.5">• <span>Section cordes et tyrolienne</span></li>
+              <li class="flex items-start gap-1.5">• <span>Gestion de l'effort continu</span></li>
             </ul>
           </div>
-          <div class="text-[11px] font-bold text-brand-red border-t border-red-100 pt-3 mt-4">
-            Course par étapes • Étape 1
+          <div class="text-[9px] sm:text-[11px] font-semibold text-brand-cyan border-t border-slate-100 pt-2 sm:pt-3 mt-2 sm:mt-4">
+            Étape décisive
           </div>
         </div>
 
         <!-- Jour 4 -->
-        <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div class="bg-white p-3 sm:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
           <div>
-            <div class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-1">Dimanche 1er Août 2027</div>
-            <div class="text-xl font-heading font-black text-slate-900 mb-3">Jour 2 départ deuxième journée et arrivée avec sacre mondial</div>
-            <p class="text-xs text-slate-600 leading-relaxed mb-4">
-              Deuxième journée de course. Couronnement des champions du monde et banquet officiel des nations.
+            <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-emerald-600 mb-1">Dim. 1er Août 2027</div>
+            <div class="text-sm sm:text-xl font-heading font-black text-slate-900 mb-1.5 sm:mb-3">Arrivée & Sacre Mondial</div>
+            <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-4 line-clamp-3 sm:line-clamp-none font-light">
+              Deuxième journée et sacre mondial. Couronnement des champions du monde U18/U25 et banquet officiel de clôture.
             </p>
-            <ul class="space-y-1.5 text-xs text-slate-600">
+            <ul class="space-y-1 text-[10px] sm:text-xs text-slate-600 hidden sm:block">
               <li class="flex items-start gap-1.5">• <span>Arrivée des vainqueurs U18 & U25</span></li>
-              <li class="flex items-start gap-1.5">• <span>Cérémonie protocolaire de remise des médailles</span></li>
-              <li class="flex items-start gap-1.5">• <span>Banquet boréal et festivités de clôture</span></li>
+              <li class="flex items-start gap-1.5">• <span>Remise officielle des médailles</span></li>
+              <li class="flex items-start gap-1.5">• <span>Banquet boréal et festivités</span></li>
             </ul>
           </div>
-          <div class="text-[11px] font-semibold text-emerald-600 border-t border-slate-100 pt-3 mt-4">
+          <div class="text-[9px] sm:text-[11px] font-semibold text-emerald-600 border-t border-slate-100 pt-2 sm:pt-3 mt-2 sm:mt-4">
             Célébration internationale
           </div>
         </div>
@@ -561,8 +561,8 @@ const arwsSchema = {
           </div>
         </div>
 
-        <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="rounded-lg overflow-hidden shadow-sm h-52 bg-slate-100 group">
+        <div class="lg:col-span-6 grid grid-cols-2 gap-2.5 sm:gap-4">
+          <div class="rounded-lg overflow-hidden shadow-sm aspect-[4/3] bg-slate-100 group">
             <img 
               src="/assets/arws-junior-world-temiscamingue-2026-2.webp" 
               alt="Canoë d'expédition sur les lacs du Témiscamingue" 
@@ -570,7 +570,7 @@ const arwsSchema = {
               onerror="this.src='/assets/Raid-Temis-reperage4.webp'"
             />
           </div>
-          <div class="rounded-lg overflow-hidden shadow-sm h-52 bg-slate-100 group">
+          <div class="rounded-lg overflow-hidden shadow-sm aspect-[4/3] bg-slate-100 group">
             <img 
               src="/assets/arws-junior-world-temiscamingue-2026-3.webp" 
               alt="Franchissement aquatique en raid aventure" 
@@ -578,14 +578,14 @@ const arwsSchema = {
               onerror="this.src='/assets/Raid-Temis-reperage4.webp'"
             />
           </div>
-          <div class="rounded-lg overflow-hidden shadow-sm h-52 bg-slate-100 group">
+          <div class="rounded-lg overflow-hidden shadow-sm aspect-[4/3] bg-slate-100 group">
             <img 
               src="/assets/28514399477_3839a9ca93_o-scaled.webp" 
               alt="Transition VTT dans la forêt boréale" 
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <div class="rounded-lg overflow-hidden shadow-sm h-52 bg-slate-100 group">
+          <div class="rounded-lg overflow-hidden shadow-sm aspect-[4/3] bg-slate-100 group">
             <img 
               src="/assets/35792635631_c33a7fd7d0_o.webp" 
               alt="Orientation sur crête rocheuse" 

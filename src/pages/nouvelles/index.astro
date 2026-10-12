@@ -35,38 +35,41 @@ import news from '../../data/news.json';
   <div class="bg-slate-50 py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- News Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- News Grid : cartes horizontales compactes sur mobile, 3 colonnes sur desktop -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-8">
         {news.map((n) => (
-          <article class="rounded-lg bg-white border border-slate-200 overflow-hidden flex flex-col group hover:border-slate-300 hover:shadow-lg transition-all duration-300 shadow-sm">
-            <div class="relative h-52 overflow-hidden bg-slate-200">
+          <article class="rounded-lg bg-white border border-slate-200 overflow-hidden flex flex-row md:flex-col group hover:border-slate-300 hover:shadow-md transition-all duration-300 shadow-sm">
+            <div class="relative w-28 sm:w-36 md:w-full flex-shrink-0 aspect-square md:aspect-auto md:h-52 overflow-hidden bg-slate-200">
               <img 
                 src={n.image} 
                 alt={n.title} 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 onerror="this.src='/assets/EnduranceAventure.jpg'"
               />
-              <span class="absolute top-3 right-3 px-2 py-0.5 rounded-sm bg-black/80 text-[11px] font-semibold text-white backdrop-blur-sm border border-slate-800 flex items-center gap-1">
+              <span class="absolute top-2 right-2 px-1.5 py-0.5 rounded-xs bg-black/80 text-[9px] sm:text-[11px] font-semibold text-white backdrop-blur-sm border border-slate-800 hidden md:flex items-center gap-1">
                 <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                 <span>{n.date}</span>
               </span>
             </div>
 
-            <div class="p-6 flex-grow flex flex-col justify-between">
+            <div class="p-3 sm:p-6 flex-grow flex flex-col justify-between min-w-0">
               <div>
-                <h2 class="text-lg font-heading font-bold text-slate-900 mb-3 group-hover:text-brand-red transition-colors line-clamp-2">
+                <div class="md:hidden text-[10px] text-brand-red font-semibold mb-1 flex items-center gap-1">
+                  <span>{n.date}</span>
+                </div>
+                <h2 class="text-xs sm:text-base font-heading font-bold text-slate-900 mb-1 sm:mb-3 group-hover:text-brand-red transition-colors line-clamp-2">
                   <a href={`/nouvelles/${n.slug}`}>{n.title}</a>
                 </h2>
-                <p class="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed mb-6">
+                <p class="text-[11px] sm:text-sm text-slate-600 line-clamp-2 sm:line-clamp-3 leading-relaxed mb-2 sm:mb-6 font-light">
                   {n.excerpt}
                 </p>
               </div>
 
-              <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                <span class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Endurance Aventure</span>
-                <a href={`/nouvelles/${n.slug}`} class="text-xs font-bold uppercase tracking-wider text-brand-red hover:underline flex items-center gap-1.5">
-                  <span>Lire l'article</span>
-                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+              <div class="pt-2 sm:pt-4 border-t border-slate-100 flex items-center justify-between">
+                <span class="text-[10px] sm:text-[11px] uppercase tracking-wider text-slate-400 font-semibold hidden sm:inline">Endurance Aventure</span>
+                <a href={`/nouvelles/${n.slug}`} class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-brand-red hover:underline flex items-center gap-1">
+                  <span>Lire</span>
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
               </div>
             </div>
