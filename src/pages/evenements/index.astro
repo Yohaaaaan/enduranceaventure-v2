@@ -383,7 +383,7 @@ const totalPastEvents = pastEvents.length;
                         {evt.images.map((img, idx) => (
                           <button 
                             type="button" 
-                            class={`thumb-btn flex-shrink-0 w-11 h-8 rounded-xs overflow-hidden border transition-all ${idx === 0 ? 'border-brand-red ring-1 ring-brand-red/40' : 'border-transparent opacity-75 hover:opacity-100 hover:border-slate-300'}`}
+                            class={`thumb-btn flex-shrink-0 w-14 h-10 sm:w-11 sm:h-8 rounded-xs overflow-hidden border transition-all ${idx === 0 ? 'border-brand-red ring-1 ring-brand-red/40' : 'border-transparent opacity-75 hover:opacity-100 hover:border-slate-300'}`}
                             data-src={img}
                             data-alt={`${evt.title} - Photo ${idx + 1}`}
                             aria-label={`Afficher la photo ${idx + 1}`}
