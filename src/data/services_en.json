@@ -1,0 +1,30 @@
+[
+  {
+    "id": "organisation-evenements",
+    "slug": "organisation-evenements",
+    "title": "Turnkey Sporting & Corporate Event Management",
+    "subtitle": "Over 25 years of field expertise for your custom outdoor challenges",
+    "image": "/assets/organisation-evenements-sportifs-services-endurance-aventure.jpg",
+    "description": "From extreme route engineering to complete logistical and medical coordination, Endurance Aventure designs and delivers unforgettable outdoor events for destinations, brands, and corporations.",
+    "features": [
+      "Route engineering and course design (topography, safety, permits)",
+      "Hospitality logistics, aid stations, and basecamp management",
+      "Coordination of field teams, officials, and volunteers",
+      "Civil safety, emergency evacuation plans, and wilderness first aid"
+    ]
+  },
+  {
+    "id": "production-tele",
+    "slug": "production-tele",
+    "title": "Television & Audiovisual Production",
+    "subtitle": "Extreme filming in harsh and wild environments",
+    "image": "/assets/production-tele-services-endurance-aventure-e1517973509712.jpg",
+    "description": "Our all-terrain film crews (certified drones, athletic camera operators, broadcast television) capture the raw emotion and intensity of your endurance events and expedition documentaries.",
+    "features": [
+      "Outdoor 4K / HDR filming and certified commercial drone cinematography",
+      "Broadcast TV sports documentaries and adventure series production",
+      "Promotional highlights, same-day recaps, and daily social media reels",
+      "Full post-production suite, dynamic sound design, and color grading"
+    ]
+  }
+]

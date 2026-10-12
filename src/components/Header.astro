@@ -1,5 +1,88 @@
 ---
+interface Props {
+  lang?: 'fr' | 'en';
+}
+
+const { lang } = Astro.props;
+const isEn = lang ? lang === 'en' : Astro.url.pathname.startsWith('/en');
 const currentPath = Astro.url.pathname;
+
+// Calculate counterpart URLs
+let frUrl = '/';
+let enUrl = '/en/';
+
+if (isEn) {
+  const pathWithoutEn = currentPath.replace(/^\/en(\/|$)/, '/');
+  frUrl = pathWithoutEn.startsWith('/') ? pathWithoutEn : '/' + pathWithoutEn;
+  enUrl = currentPath;
+} else {
+  frUrl = currentPath;
+  enUrl = '/en' + (currentPath === '/' ? '/' : (currentPath.startsWith('/') ? currentPath : '/' + currentPath));
+}
+
+// Ensure trailing slashes match site conventions
+if (!frUrl.endsWith('/') && !frUrl.includes('.')) frUrl += '/';
+if (!enUrl.endsWith('/') && !enUrl.includes('.')) enUrl += '/';
+
+const t = isEn ? {
+  home: 'Home',
+  events: 'Events',
+  gbcTitle: 'GBC 500',
+  gbcSub: 'Gravel Bikepacking Challenge',
+  jarwcTitle: 'ARWS Junior Worlds 2027',
+  jarwcSub: 'Témiscamingue • World Championship',
+  youthTitle: 'Desjardins Youth Raid',
+  youthSub: 'Youth Adventure Raid (Official Site)',
+  xtriTitle: 'Canada Man / Woman XTRI',
+  xtriSub: 'Extreme Triathlon Lac-Mégantic (Official Site)',
+  allEvents: 'View all events',
+  services: 'Pro Services',
+  eventsOrgTitle: 'Turnkey Event Management',
+  eventsOrgSub: 'Sporting events, logistics & safety',
+  tvProdTitle: 'TV & Video Production',
+  tvProdSub: 'Extreme filming, 4K drones, TV shows',
+  about: 'About Us',
+  news: 'News',
+  contact: 'Contact / Quote',
+  homeLink: '/en/',
+  eventsLink: '/en/evenements/',
+  gbcLink: '/en/evenements/gbc500/',
+  jarwcLink: '/en/evenements/championnat-monde-junior-arws/',
+  servicesLink: '/en/services/organisation-evenements/',
+  tvLink: '/en/services/production-tele/',
+  aboutLink: '/en/entreprise/',
+  newsLink: '/en/nouvelles/',
+  contactLink: '/en/contact/'
+} : {
+  home: 'Accueil',
+  events: 'Événements',
+  gbcTitle: 'GBC 500',
+  gbcSub: 'Gravel Bikepacking Challenge',
+  jarwcTitle: 'Mondiaux Juniors ARWS 2027',
+  jarwcSub: 'Témiscamingue • Championnat Mondial',
+  youthTitle: 'Raid Jeunesse Desjardins',
+  youthSub: 'Raid Aventure Jeunesse (Site Officiel)',
+  xtriTitle: 'Canada Man / Woman XTRI',
+  xtriSub: 'Triathlon Extrême Lac-Mégantic (Site Officiel)',
+  allEvents: 'Voir tous les événements',
+  services: 'Services Pro',
+  eventsOrgTitle: 'Organisation Clé en Main',
+  eventsOrgSub: 'Événements sportifs, logistique & sécurité',
+  tvProdTitle: 'Production Télé & Vidéo',
+  tvProdSub: 'Captation extrême, drones 4K, émissions TV',
+  about: 'L\'Entreprise',
+  news: 'Actualités',
+  contact: 'Contact / Devis',
+  homeLink: '/',
+  eventsLink: '/evenements/',
+  gbcLink: '/evenements/gbc500/',
+  jarwcLink: '/evenements/championnat-monde-junior-arws/',
+  servicesLink: '/services/organisation-evenements/',
+  tvLink: '/services/production-tele/',
+  aboutLink: '/entreprise/',
+  newsLink: '/nouvelles/',
+  contactLink: '/contact/'
+};
 ---
 
 <header class="sticky top-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-slate-800 transition-all duration-300">
@@ -7,7 +90,7 @@ const currentPath = Astro.url.pathname;
     <div class="flex items-center justify-between h-20 gap-4">
       
       <!-- Brand Logo -->
-      <a href="/" class="flex items-center gap-3 group flex-shrink-0">
+      <a href={t.homeLink} class="flex items-center gap-3 group flex-shrink-0">
         <img 
           src="/assets/endurance-aventure-logo-blanc.png" 
           alt="Endurance Aventure Logo" 
@@ -18,55 +101,55 @@ const currentPath = Astro.url.pathname;
       <!-- Desktop Navigation Links (Visible on lg: 1024px+ where full width is guaranteed) -->
       <nav class="hidden lg:flex items-center gap-5 xl:gap-7 flex-shrink-0">
         <a 
-          href="/" 
-          class={`text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${currentPath === '/' ? 'text-brand-red' : 'text-slate-200 hover:text-brand-cyan-light'}`}
+          href={t.homeLink} 
+          class={`text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${(currentPath === '/' || currentPath === '/en/') ? 'text-brand-red' : 'text-slate-200 hover:text-brand-cyan-light'}`}
         >
-          Accueil
+          {t.home}
         </a>
 
         <!-- Dropdown Événements -->
         <div class="relative group py-2">
           <a 
-            href="/evenements/" 
-            class={`inline-flex items-center gap-1 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${currentPath.startsWith('/evenements') ? 'text-brand-red' : 'text-slate-200 hover:text-brand-cyan-light'}`}
+            href={t.eventsLink} 
+            class={`inline-flex items-center gap-1 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${currentPath.includes('/evenements') ? 'text-brand-red' : 'text-slate-200 hover:text-brand-cyan-light'}`}
           >
-            Événements
+            {t.events}
             <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </a>
           <div class="absolute left-0 mt-2 w-72 rounded-md bg-slate-900 border border-slate-700 shadow-2xl opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-150 transform origin-top-left py-2 z-50">
-            <a href="/evenements/gbc500/" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-red hover:text-white transition-colors group/item">
+            <a href={t.gbcLink} class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-red hover:text-white transition-colors group/item">
               <div class="font-bold text-slate-100 flex items-center justify-between">
-                <span>GBC 500</span>
+                <span>{t.gbcTitle}</span>
                 <svg class="w-3.5 h-3.5 text-slate-400 group-hover/item:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
               </div>
-              <div class="text-xs text-slate-400 group-hover/item:text-slate-100">Gravel Bikepacking Challenge</div>
+              <div class="text-xs text-slate-400 group-hover/item:text-slate-100">{t.gbcSub}</div>
             </a>
-            <a href="/evenements/championnat-monde-junior-arws/" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-red hover:text-white transition-colors group/item">
+            <a href={t.jarwcLink} class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-red hover:text-white transition-colors group/item">
               <div class="font-bold text-slate-100 flex items-center justify-between">
-                <span>Mondiaux Juniors ARWS 2027</span>
+                <span>{t.jarwcTitle}</span>
                 <svg class="w-3.5 h-3.5 text-slate-400 group-hover/item:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
               </div>
-              <div class="text-xs text-slate-400 group-hover/item:text-slate-100">Témiscamingue • Championnat Mondial</div>
+              <div class="text-xs text-slate-400 group-hover/item:text-slate-100">{t.jarwcSub}</div>
             </a>
             <a href="https://raidtemiscamingue.ca/jeunesse/" target="_blank" rel="noopener noreferrer" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-red hover:text-white transition-colors group/item">
               <div class="font-bold text-slate-100 flex items-center justify-between">
-                <span>Raid Jeunesse Desjardins</span>
+                <span>{t.youthTitle}</span>
                 <svg class="w-3.5 h-3.5 text-slate-400 group-hover/item:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
               </div>
-              <div class="text-xs text-slate-400 group-hover/item:text-slate-100">Raid Aventure Jeunesse (Site Officiel)</div>
+              <div class="text-xs text-slate-400 group-hover/item:text-slate-100">{t.youthSub}</div>
             </a>
             <a href="https://caxtri.com" target="_blank" rel="noopener noreferrer" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-red hover:text-white transition-colors group/item">
               <div class="font-bold text-slate-100 flex items-center justify-between">
-                <span>Canada Man / Woman XTRI</span>
+                <span>{t.xtriTitle}</span>
                 <svg class="w-3.5 h-3.5 text-slate-400 group-hover/item:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
               </div>
-              <div class="text-xs text-slate-400 group-hover/item:text-slate-100">Triathlon Extrême Lac-Mégantic (Site Officiel)</div>
+              <div class="text-xs text-slate-400 group-hover/item:text-slate-100">{t.xtriSub}</div>
             </a>
             <div class="border-t border-slate-800 my-1"></div>
-            <a href="/evenements/" class="block px-4 py-2 text-xs font-semibold text-brand-cyan hover:text-white uppercase tracking-wider flex items-center justify-between">
-              <span>Voir tous les événements</span>
+            <a href={t.eventsLink} class="block px-4 py-2 text-xs font-semibold text-brand-cyan hover:text-white uppercase tracking-wider flex items-center justify-between">
+              <span>{t.allEvents}</span>
               <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
             </a>
           </div>
@@ -75,66 +158,101 @@ const currentPath = Astro.url.pathname;
         <!-- Dropdown Services Pro -->
         <div class="relative group py-2">
           <a 
-            href="/services/organisation-evenements/" 
-            class={`inline-flex items-center gap-1 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${currentPath.startsWith('/services') ? 'text-brand-red' : 'text-slate-200 hover:text-brand-cyan-light'}`}
+            href={t.servicesLink} 
+            class={`inline-flex items-center gap-1 text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${currentPath.includes('/services') ? 'text-brand-red' : 'text-slate-200 hover:text-brand-cyan-light'}`}
           >
-            Services Pro
+            {t.services}
             <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </a>
           <div class="absolute left-0 mt-2 w-72 rounded-md bg-slate-900 border border-slate-700 shadow-2xl opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-150 transform origin-top-left py-2 z-50">
-            <a href="/services/organisation-evenements/" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-red hover:text-white transition-colors">
-              <div class="font-bold text-slate-100">Organisation Clé en Main</div>
-              <div class="text-xs text-slate-400">Événements sportifs, logistique & sécurité</div>
+            <a href={t.servicesLink} class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-red hover:text-white transition-colors">
+              <div class="font-bold text-slate-100">{t.eventsOrgTitle}</div>
+              <div class="text-xs text-slate-400">{t.eventsOrgSub}</div>
             </a>
-            <a href="/services/production-tele/" class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-cyan hover:text-white transition-colors">
-              <div class="font-bold text-slate-100">Production Télé & Vidéo</div>
-              <div class="text-xs text-slate-400">Captation extrême, drones 4K, émissions TV</div>
+            <a href={t.tvLink} class="block px-4 py-2.5 text-sm text-slate-200 hover:bg-brand-cyan hover:text-white transition-colors">
+              <div class="font-bold text-slate-100">{t.tvProdTitle}</div>
+              <div class="text-xs text-slate-400">{t.tvProdSub}</div>
             </a>
           </div>
         </div>
 
         <a 
-          href="/entreprise/" 
-          class={`text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${currentPath.startsWith('/entreprise') ? 'text-brand-red' : 'text-slate-200 hover:text-brand-cyan-light'}`}
+          href={t.aboutLink} 
+          class={`text-sm font-semibold tracking-wide uppercase transition-colors duration-200 ${currentPath.includes('/entreprise') ? 'text-brand-red' : 'text-slate-200 hover:text-brand-cyan-light'}`}
         >
-          L'Entreprise
+          {t.about}
         </a>
 
         <!-- BOUTON ACTUALITÉS DIRECT & CLAYANT -->
         <a 
-          href="/nouvelles/" 
+          href={t.newsLink} 
           id="nav-link-nouvelles"
-          class={`text-sm font-semibold tracking-wide uppercase transition-colors duration-200 relative z-10 cursor-pointer ${currentPath.startsWith('/nouvelles') ? 'text-brand-red font-bold' : 'text-slate-200 hover:text-brand-cyan-light'}`}
+          class={`text-sm font-semibold tracking-wide uppercase transition-colors duration-200 relative z-10 cursor-pointer ${currentPath.includes('/nouvelles') ? 'text-brand-red font-bold' : 'text-slate-200 hover:text-brand-cyan-light'}`}
         >
-          Actualités
+          {t.news}
         </a>
       </nav>
 
-      <!-- CTA Button Desktop (Visible on lg+) -->
-      <div class="hidden lg:flex items-center gap-4 flex-shrink-0">
+      <!-- Desktop Right Actions: Lang Switcher & CTA -->
+      <div class="hidden lg:flex items-center gap-3.5 flex-shrink-0">
+        <!-- Language Switcher Pill (Desktop) -->
+        <div class="inline-flex items-center p-0.5 rounded-full bg-slate-900 border border-slate-700/80 text-xs font-heading font-bold uppercase tracking-wider shadow-sm">
+          <a 
+            href={frUrl} 
+            class={`px-2.5 py-1 min-h-[30px] inline-flex items-center justify-center rounded-full transition-all duration-200 ${!isEn ? 'bg-brand-red text-white shadow-xs' : 'text-slate-400 hover:text-white'}`}
+            aria-label="Passer en version française"
+          >
+            FR
+          </a>
+          <a 
+            href={enUrl} 
+            class={`px-2.5 py-1 min-h-[30px] inline-flex items-center justify-center rounded-full transition-all duration-200 ${isEn ? 'bg-brand-red text-white shadow-xs' : 'text-slate-400 hover:text-white'}`}
+            aria-label="Switch to English version"
+          >
+            EN
+          </a>
+        </div>
+
+        <!-- CTA Button Desktop -->
         <a 
-          href="/contact/" 
+          href={t.contactLink} 
           class="inline-flex items-center justify-center px-5 py-2.5 rounded-md bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-sm tracking-wider uppercase transition-all duration-200 shadow-sm"
         >
-          Contact / Devis
+          {t.contact}
         </a>
       </div>
 
-      <!-- Mobile / Tablet Hamburger button (Visible on screens < 1024px) -->
-      <div class="flex lg:hidden items-center gap-2.5">
+      <!-- Mobile / Tablet Hamburger & Quick Lang (Visible on screens < 1024px) -->
+      <div class="flex lg:hidden items-center gap-2">
+        <!-- Compact Lang Pill on Mobile Bar -->
+        <div class="inline-flex items-center p-0.5 rounded-full bg-slate-900 border border-slate-700 text-[11px] font-heading font-bold uppercase tracking-wider">
+          <a 
+            href={frUrl} 
+            class={`px-2 py-0.5 rounded-full transition-all ${!isEn ? 'bg-brand-red text-white' : 'text-slate-400'}`}
+          >
+            FR
+          </a>
+          <a 
+            href={enUrl} 
+            class={`px-2 py-0.5 rounded-full transition-all ${isEn ? 'bg-brand-red text-white' : 'text-slate-400'}`}
+          >
+            EN
+          </a>
+        </div>
+
         <a 
-          href="/contact/" 
+          href={t.contactLink} 
           class="inline-flex sm:hidden px-3 py-2 rounded bg-brand-red text-white font-heading font-bold text-xs uppercase tracking-wider min-h-[40px] items-center"
         >
-          Contact
+          {isEn ? 'Contact' : 'Contact'}
         </a>
         <button 
           id="mobile-menu-btn" 
           type="button" 
           class="text-slate-200 hover:text-white p-2.5 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-md border border-slate-800 bg-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-red transition-colors"
-          aria-label="Ouvrir le menu de navigation"
+          aria-label={isEn ? "Open navigation menu" : "Ouvrir le menu de navigation"}
         >
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -147,48 +265,57 @@ const currentPath = Astro.url.pathname;
 
   <!-- Mobile & Tablet Drawer (Full width, clear 44px+ touch targets) -->
   <div id="mobile-menu" class="hidden lg:hidden bg-slate-950 border-b border-slate-800 px-5 pt-4 pb-8 space-y-4 shadow-2xl max-h-[calc(100vh-5rem)] overflow-y-auto">
-    <a href="/" class="flex items-center min-h-[44px] py-2.5 text-base font-semibold text-slate-100 hover:text-brand-red border-b border-slate-900">Accueil</a>
+    <!-- Language Switcher in Drawer -->
+    <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+      <span class="text-xs uppercase tracking-wider font-semibold text-slate-400">{isEn ? 'Language' : 'Langue'} :</span>
+      <div class="inline-flex items-center p-1 rounded-full bg-slate-900 border border-slate-700 text-xs font-heading font-bold uppercase tracking-wider">
+        <a href={frUrl} class={`px-3 py-1 rounded-full transition-all ${!isEn ? 'bg-brand-red text-white' : 'text-slate-400'}`}>Français</a>
+        <a href={enUrl} class={`px-3 py-1 rounded-full transition-all ${isEn ? 'bg-brand-red text-white' : 'text-slate-400'}`}>English</a>
+      </div>
+    </div>
+
+    <a href={t.homeLink} class="flex items-center min-h-[44px] py-2.5 text-base font-semibold text-slate-100 hover:text-brand-red border-b border-slate-900">{t.home}</a>
     
     <div>
-      <a href="/evenements/" class="flex items-center min-h-[44px] py-2.5 text-base font-semibold text-slate-100 hover:text-brand-red">Événements Sportifs</a>
+      <a href={t.eventsLink} class="flex items-center min-h-[44px] py-2.5 text-base font-semibold text-slate-100 hover:text-brand-red">{t.events}</a>
       <div class="pl-3.5 py-1 space-y-1.5 border-l-2 border-slate-800 ml-1">
-        <a href="/evenements/gbc500/" class="flex items-center justify-between min-h-[44px] py-2 text-sm text-slate-300 hover:text-brand-red">
-          <span>GBC 500 (Gravel Bike)</span>
+        <a href={t.gbcLink} class="flex items-center justify-between min-h-[44px] py-2 text-sm text-slate-300 hover:text-brand-red">
+          <span>{t.gbcTitle} ({t.gbcSub})</span>
           <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
-        <a href="/evenements/championnat-monde-junior-arws/" class="flex items-center justify-between min-h-[44px] py-2 text-sm text-slate-300 hover:text-brand-red">
-          <span>Mondiaux Juniors ARWS 2027</span>
+        <a href={t.jarwcLink} class="flex items-center justify-between min-h-[44px] py-2 text-sm text-slate-300 hover:text-brand-red">
+          <span>{t.jarwcTitle}</span>
           <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
         <a href="https://raidtemiscamingue.ca/jeunesse/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between min-h-[44px] py-2 text-sm text-slate-300 hover:text-brand-red">
-          <span>Raid Jeunesse Desjardins</span>
+          <span>{t.youthTitle}</span>
           <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
         </a>
         <a href="https://caxtri.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between min-h-[44px] py-2 text-sm text-slate-300 hover:text-brand-red">
-          <span>Canada Man / Woman XTRI</span>
+          <span>{t.xtriTitle}</span>
           <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
         </a>
       </div>
     </div>
 
     <div>
-      <a href="/services/organisation-evenements/" class="flex items-center min-h-[44px] py-2.5 text-base font-semibold text-slate-100 hover:text-brand-cyan">Services Pro & B2B</a>
+      <a href={t.servicesLink} class="flex items-center min-h-[44px] py-2.5 text-base font-semibold text-slate-100 hover:text-brand-cyan">{t.services}</a>
       <div class="pl-3.5 py-1 space-y-1.5 border-l-2 border-slate-800 ml-1">
-        <a href="/services/organisation-evenements/" class="flex items-center min-h-[44px] py-2 text-sm text-slate-300 hover:text-brand-red">Organisation Clé en Main</a>
-        <a href="/services/production-tele/" class="flex items-center min-h-[44px] py-2 text-sm text-slate-300 hover:text-brand-cyan">Production Télé & Drones 4K</a>
+        <a href={t.servicesLink} class="flex items-center min-h-[44px] py-2 text-sm text-slate-300 hover:text-brand-red">{t.eventsOrgTitle}</a>
+        <a href={t.tvLink} class="flex items-center min-h-[44px] py-2 text-sm text-slate-300 hover:text-brand-cyan">{t.tvProdTitle}</a>
       </div>
     </div>
 
-    <a href="/entreprise/" class="flex items-center min-h-[44px] py-2.5 text-base font-semibold text-slate-100 hover:text-brand-red border-b border-slate-900">L'Entreprise & L'Équipe</a>
+    <a href={t.aboutLink} class="flex items-center min-h-[44px] py-2.5 text-base font-semibold text-slate-100 hover:text-brand-red border-b border-slate-900">{t.about}</a>
     
     <!-- Mobile Actualités Link -->
-    <a href="/nouvelles/" class="flex items-center min-h-[44px] py-2.5 text-base font-semibold text-brand-red hover:underline border-b border-slate-900">
-      Actualités & Récits
+    <a href={t.newsLink} class="flex items-center min-h-[44px] py-2.5 text-base font-semibold text-brand-red hover:underline border-b border-slate-900">
+      {t.news}
     </a>
 
     <div class="pt-2">
-      <a href="/contact/" class="flex items-center justify-center min-h-[48px] w-full py-3.5 px-4 rounded-md bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold uppercase tracking-wider text-sm shadow-sm transition-colors">
-        Nous Contacter / Devis
+      <a href={t.contactLink} class="flex items-center justify-center min-h-[48px] w-full py-3.5 px-4 rounded-md bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold uppercase tracking-wider text-sm shadow-sm transition-colors">
+        {t.contact}
       </a>
     </div>
   </div>

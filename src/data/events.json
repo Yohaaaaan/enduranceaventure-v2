@@ -7,7 +7,7 @@
     "category": "Gravel Bike / Bikepacking",
     "location": "Cantons-de-l'Est, QC",
     "dates": "Date à venir",
-    "distance": "250 km",
+    "distance": "100 km et 250 km",
     "image": "/assets/2023-08-05_GBC500_mc_1498-scaled.webp",
     "images": [
       "/assets/2023-08-05_GBC500_mc_1498-scaled.webp",
@@ -23,7 +23,7 @@
     "external": false,
     "description": "Une aventure épique d'endurance en autonomie complète à travers les plus beaux chemins de terre, forêts et sommets du Québec.",
     "highlights": [
-      "250 km en autonomie ou avec soutien",
+      "100 km et 250 km en autonomie ou avec soutien",
       "Parcours GPS balisé",
       "Ravitaillements",
       "Encadrement sécuritaire tout-terrain"
@@ -40,14 +40,14 @@
     "location": "Témiscamingue, Québec, Canada",
     "dates": "Du 28 au 1er juillet 2027",
     "distance": "100 km • 4 Jours • Équipes de 2",
-    "image": "/assets/arws-junior-world-temiscamingue-2026-3.webp",
+    "image": "/assets/arws-junior-world-photo1.webp",
     "images": [
-      "/assets/arws-junior-world-temiscamingue-2026-3.webp",
-      "/assets/arws-junior-world-temiscamingue-2026-1.webp",
-      "/assets/arws-junior-world-temiscamingue-2026-2.webp",
-      "/assets/arws-junior-world-temiscamingue-2026-4.webp"
+      "/assets/arws-junior-world-photo1.webp",
+      "/assets/arws-junior-world-photo2.webp",
+      "/assets/arws-junior-world-photo3.webp",
+      "/assets/arws-junior-world-photo4.webp"
     ],
-    "video": "https://www.youtube.com/embed/Ht5lGrOHqzo",
+    "video": "https://player.vimeo.com/video/1234973447",
     "logo": "/assets/logo-championnat-monde-raid-temiscamingue.png",
     "featured": true,
     "hasPage": true,
@@ -119,7 +119,7 @@
     "highlights": [
       "2 km nage, 90 km de vélo",
       "21 km de trail",
-      "Membre fondateur officiel du circuit XTRI World Tour",
+      "Membre officiel du circuit XTRI World Tour",
       "Récits et vidéos de toutes les éditions dans nos archives"
     ],
     "registrationLink": "#"

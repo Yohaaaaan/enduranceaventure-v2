@@ -1,4 +1,10 @@
 ---
+interface Props {
+  lang?: 'fr' | 'en';
+}
+
+const { lang } = Astro.props;
+const isEn = lang ? lang === 'en' : Astro.url.pathname.startsWith('/en');
 const currentYear = new Date().getFullYear();
 ---
 
@@ -8,13 +14,17 @@ const currentYear = new Date().getFullYear();
       
       <!-- Col 1: About & Logo -->
       <div class="space-y-4">
-        <img 
-          src="/assets/endurance-aventure-logo-blanc.png" 
-          alt="Endurance Aventure" 
-          class="h-10 w-auto object-contain mb-4"
-        />
+        <a href={isEn ? "/en/" : "/"}>
+          <img 
+            src="/assets/endurance-aventure-logo-blanc.png" 
+            alt="Endurance Aventure" 
+            class="h-10 w-auto object-contain mb-4"
+          />
+        </a>
         <p class="text-sm text-slate-400 leading-relaxed">
-          Pionnier de l'aventure sportive et de la production audiovisuelle extrême au Québec depuis plus de 20 ans. Créateur d'expéditions inoubliables.
+          {isEn 
+            ? "Pioneers in adventure sports and extreme outdoor television production in Quebec for over 25 years. Creators of world-class expeditions."
+            : "Pionnier de l'aventure sportive et de la production audiovisuelle extrême au Québec depuis plus de 25 ans. Créateur d'expéditions inoubliables."}
         </p>
         <div class="flex items-center gap-3 pt-2">
           <a href="https://www.facebook.com/endurance.aventure/" target="_blank" rel="noopener noreferrer" class="min-h-[44px] min-w-[44px] rounded-md bg-brand-gray/80 flex items-center justify-center text-slate-300 hover:text-white hover:bg-brand-red transition-all" aria-label="Facebook Endurance Aventure">
@@ -32,33 +42,33 @@ const currentYear = new Date().getFullYear();
       <!-- Col 2: Événements -->
       <div>
         <h4 class="text-sm font-heading font-bold uppercase tracking-wider text-white mb-4 border-l-2 border-brand-red pl-3">
-          Événements Sportifs
+          {isEn ? "Sports Events" : "Événements Sportifs"}
         </h4>
         <ul class="space-y-2.5 text-sm">
           <li><a href="https://gbc500.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-red transition-colors inline-flex items-center gap-1.5"><span>GBC 500 (Gravel Bikepacking)</span><svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></li>
-          <li><a href="https://www.arwsjuniorworld.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-red transition-colors inline-flex items-center gap-1.5"><span>Mondiaux Juniors ARWS 2027</span><svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></li>
-          <li><a href="https://raidtemiscamingue.ca" target="_blank" rel="noopener noreferrer" class="hover:text-brand-red transition-colors inline-flex items-center gap-1.5"><span>Raid Témiscamingue</span><svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></li>
+          <li><a href="https://www.arwsjuniorworld.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-red transition-colors inline-flex items-center gap-1.5"><span>{isEn ? "ARWS Junior Worlds 2027" : "Mondiaux Juniors ARWS 2027"}</span><svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></li>
+          <li><a href="https://raidtemiscamingue.ca" target="_blank" rel="noopener noreferrer" class="hover:text-brand-red transition-colors inline-flex items-center gap-1.5"><span>{isEn ? "Témiscamingue Raid" : "Raid Témiscamingue"}</span><svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></li>
           <li><a href="https://caxtri.com" target="_blank" rel="noopener noreferrer" class="hover:text-brand-red transition-colors inline-flex items-center gap-1.5"><span>Canada Man / Woman XTRI</span><svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></li>
-          <li><a href="/evenements" class="text-brand-cyan hover:text-white transition-colors pt-1 flex items-center gap-1.5"><span>Tous les événements</span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a></li>
+          <li><a href={isEn ? "/en/evenements/" : "/evenements/"} class="text-brand-cyan hover:text-white transition-colors pt-1 flex items-center gap-1.5"><span>{isEn ? "All events" : "Tous les événements"}</span><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></a></li>
         </ul>
       </div>
 
       <!-- Col 3: Services B2B -->
       <div>
         <h4 class="text-sm font-heading font-bold uppercase tracking-wider text-white mb-4 border-l-2 border-brand-cyan pl-3">
-          Services Corporatifs
+          {isEn ? "Corporate Services" : "Services Corporatifs"}
         </h4>
         <ul class="space-y-2.5 text-sm">
-          <li><a href="/services/organisation-evenements/" class="hover:text-brand-cyan transition-colors">Organisation Clé en Main</a></li>
-          <li><a href="/services/production-tele/" class="hover:text-brand-cyan transition-colors">Production Télé & Drones</a></li>
-          <li><a href="/entreprise/" class="hover:text-brand-cyan transition-colors">L'Équipe & Expérience</a></li>
+          <li><a href={isEn ? "/en/services/organisation-evenements/" : "/services/organisation-evenements/"} class="hover:text-brand-cyan transition-colors">{isEn ? "Turnkey Event Management" : "Organisation Clé en Main"}</a></li>
+          <li><a href={isEn ? "/en/services/production-tele/" : "/services/production-tele/"} class="hover:text-brand-cyan transition-colors">{isEn ? "TV & Drone Production" : "Production Télé & Drones"}</a></li>
+          <li><a href={isEn ? "/en/entreprise/" : "/entreprise/"} class="hover:text-brand-cyan transition-colors">{isEn ? "Team & Experience" : "L'Équipe & Expérience"}</a></li>
         </ul>
       </div>
 
       <!-- Col 4: Contact rapide -->
       <div>
         <h4 class="text-sm font-heading font-bold uppercase tracking-wider text-white mb-4 border-l-2 border-brand-red pl-3">
-          Contact & Siège
+          {isEn ? "Contact & Headquarters" : "Contact & Siège"}
         </h4>
         <ul class="space-y-3 text-sm text-slate-400">
           <li class="flex items-start gap-3">
@@ -71,8 +81,8 @@ const currentYear = new Date().getFullYear();
           </li>
         </ul>
         <div class="mt-5">
-          <a href="/contact" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-sm bg-brand-gray text-white hover:bg-brand-red transition-all">
-            <span>Formulaire de Contact</span>
+          <a href={isEn ? "/en/contact/" : "/contact/"} class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-sm bg-brand-gray text-white hover:bg-brand-red transition-all">
+            <span>{isEn ? "Contact Form" : "Formulaire de Contact"}</span>
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
           </a>
         </div>
@@ -83,10 +93,10 @@ const currentYear = new Date().getFullYear();
     <!-- Bottom Bar -->
     <div class="pt-8 border-t border-brand-gray/60 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
       <div>
-        © {currentYear} Endurance Aventure Inc. Tous droits réservés.
+        © {currentYear} Endurance Aventure Inc. {isEn ? "All rights reserved." : "Tous droits réservés."}
       </div>
       <div class="flex items-center gap-6">
-        <span>Site nouvelle génération ultra-sécurisé</span>
+        <span>{isEn ? "Ultra-secure modern web architecture" : "Site nouvelle génération ultra-sécurisé"}</span>
         <span>•</span>
         <span>Québec, Canada</span>
       </div>
