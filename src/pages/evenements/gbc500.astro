@@ -45,7 +45,7 @@ const gbcSchema = {
     
     <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 sm:py-28">
       <!-- Logo Officiel GBC 500 épuré (sans Argon 18) -->
-      <div class="inline-flex items-center justify-center px-8 sm:px-12 py-5 sm:py-6 rounded-3xl bg-white shadow-2xl border-2 border-white/80 mb-8 mx-auto">
+      <div class="inline-flex items-center justify-center px-8 sm:px-12 py-5 sm:py-6 rounded-lg bg-white shadow-sm border border-slate-200 mb-8 mx-auto">
         <img 
           src="/assets/logo-gbc500-coul-vf.webp" 
           alt="Logo GBC 500" 
@@ -61,7 +61,7 @@ const gbcSchema = {
 
       <div class="flex flex-wrap items-center justify-center gap-4">
         <span 
-          class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-md bg-brand-red text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg inline-block text-center min-h-[44px] flex items-center justify-center"
+          class="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg bg-brand-red text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-wider shadow-sm inline-block text-center min-h-[44px] flex items-center justify-center"
         >
           Prochaine édition à définir...
         </span>
@@ -85,7 +85,7 @@ const gbcSchema = {
       <div class="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-8">
         
         <!-- Format 250 km -->
-        <div class="rounded-3xl bg-white border border-slate-200 p-8 sm:p-10 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all">
+        <div class="rounded-lg bg-white border border-slate-200 p-8 sm:p-10 flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
           <div>
             <div class="text-4xl font-heading font-black text-slate-900 mb-1">250 KM</div>
             <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-4">Semi-Bikepacking Immersion</div>
@@ -98,13 +98,13 @@ const gbcSchema = {
               <li class="flex items-center gap-2"><span class="text-brand-cyan font-bold">✓</span> Repas d'arrivée festif</li>
             </ul>
           </div>
-          <span class="w-full py-3.5 rounded-md bg-slate-100 text-slate-500 border border-slate-200 font-heading font-bold text-center text-xs uppercase tracking-wider block cursor-not-allowed">
+          <span class="w-full py-3.5 rounded-lg bg-slate-100 text-slate-500 border border-slate-200 font-heading font-bold text-center text-xs uppercase tracking-wider block cursor-not-allowed">
             Lien inscription à venir
           </span>
         </div>
 
         <!-- Format 100 km -->
-        <div class="rounded-3xl bg-white border border-slate-200 p-8 sm:p-10 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all">
+        <div class="rounded-lg bg-white border border-slate-200 p-8 sm:p-10 flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
           <div>
             <div class="text-4xl font-heading font-black text-brand-cyan mb-1">100 KM</div>
             <div class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-4">Gravel Day Challenge</div>
@@ -117,7 +117,7 @@ const gbcSchema = {
               <li class="flex items-center gap-2"><span class="text-slate-900 font-bold">✓</span> Médaille commémorative Finisher</li>
             </ul>
           </div>
-          <span class="w-full py-3.5 rounded-md bg-slate-100 text-slate-500 border border-slate-200 font-heading font-bold text-center text-xs uppercase tracking-wider block cursor-not-allowed">
+          <span class="w-full py-3.5 rounded-lg bg-slate-100 text-slate-500 border border-slate-200 font-heading font-bold text-center text-xs uppercase tracking-wider block cursor-not-allowed">
             Lien inscription à venir
           </span>
         </div>
@@ -128,7 +128,7 @@ const gbcSchema = {
 
     <!-- SECTION MATÉRIEL OBLIGATOIRE & SÉCURITÉ -->
     <section id="reglements" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm">
+      <div class="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 shadow-sm">
         
         <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-10 pb-8 border-b border-slate-100">
           <div class="max-w-2xl">
@@ -142,7 +142,7 @@ const gbcSchema = {
           </div>
 
           <!-- Illustration Vélo Équipé -->
-          <div class="w-full lg:w-72 flex-shrink-0 rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-100 group">
+          <div class="w-full lg:w-72 flex-shrink-0 rounded-lg overflow-hidden border border-slate-200 shadow-sm bg-slate-100 group">
             <img 
               src="/assets/gravelbike-complet.webp" 
               alt="Configuration vélo gravel bikepacking complète" 
@@ -158,13 +158,13 @@ const gbcSchema = {
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           <!-- 1. Éclairage & Visibilité -->
-          <div class="p-6 rounded-2xl bg-slate-50/90 border border-slate-200 flex flex-col justify-between">
+          <div class="p-6 rounded-lg bg-slate-50/90 border border-slate-200 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-4">
-                <div class="w-10 h-10 rounded-xl bg-red-100 text-brand-red flex items-center justify-center font-bold">
+                <div class="w-10 h-10 rounded-sm bg-red-100 text-brand-red flex items-center justify-center font-bold">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
                 </div>
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-red-100 text-brand-red border border-red-200">
+                <span class="px-2.5 py-0.5 rounded-sm text-[10px] font-bold uppercase tracking-wider bg-red-100 text-brand-red border border-red-200">
                   Obligatoire de Nuit
                 </span>
               </div>
@@ -187,13 +187,13 @@ const gbcSchema = {
           </div>
 
           <!-- 2. Navigation & Communication -->
-          <div class="p-6 rounded-2xl bg-slate-50/90 border border-slate-200 flex flex-col justify-between">
+          <div class="p-6 rounded-lg bg-slate-50/90 border border-slate-200 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-4">
-                <div class="w-10 h-10 rounded-xl bg-cyan-100 text-brand-cyan flex items-center justify-center font-bold">
+                <div class="w-10 h-10 rounded-sm bg-cyan-100 text-brand-cyan flex items-center justify-center font-bold">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg>
                 </div>
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-cyan-100 text-brand-cyan border border-cyan-200">
+                <span class="px-2.5 py-0.5 rounded-sm text-[10px] font-bold uppercase tracking-wider bg-cyan-100 text-brand-cyan border border-cyan-200">
                   Contrôlé au Départ
                 </span>
               </div>
@@ -216,13 +216,13 @@ const gbcSchema = {
           </div>
 
           <!-- 3. Survie & Premiers Soins -->
-          <div class="p-6 rounded-2xl bg-slate-50/90 border border-slate-200 flex flex-col justify-between">
+          <div class="p-6 rounded-lg bg-slate-50/90 border border-slate-200 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-4">
-                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
+                <div class="w-10 h-10 rounded-sm bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
                 </div>
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-700 border border-emerald-200">
+                <span class="px-2.5 py-0.5 rounded-sm text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-700 border border-emerald-200">
                   Sécurité Vitale
                 </span>
               </div>
@@ -245,13 +245,13 @@ const gbcSchema = {
           </div>
 
           <!-- 4. Mécanique & Dépannage -->
-          <div class="p-6 rounded-2xl bg-slate-50/90 border border-slate-200 flex flex-col justify-between">
+          <div class="p-6 rounded-lg bg-slate-50/90 border border-slate-200 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-4">
-                <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold">
+                <div class="w-10 h-10 rounded-sm bg-amber-100 text-amber-700 flex items-center justify-center font-bold">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 </div>
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-800 border border-amber-200">
+                <span class="px-2.5 py-0.5 rounded-sm text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-800 border border-amber-200">
                   Autonomie Totale
                 </span>
               </div>
@@ -290,7 +290,7 @@ const gbcSchema = {
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-        <div class="group rounded-2xl overflow-hidden bg-slate-200 shadow-md relative h-72">
+        <div class="group rounded-lg overflow-hidden bg-slate-200 shadow-sm relative h-72">
           <img 
             src="/assets/gravelbike-gbc500-1-scaled.webp" 
             alt="Cycliste de gravel en action sur les chemins des Cantons-de-l'Est" 
@@ -298,7 +298,7 @@ const gbcSchema = {
           />
         </div>
 
-        <div class="group rounded-2xl overflow-hidden bg-slate-200 shadow-md relative h-72">
+        <div class="group rounded-lg overflow-hidden bg-slate-200 shadow-sm relative h-72">
           <img 
             src="/assets/52295790607_9f99627483_k.webp" 
             alt="Peloton de gravel bikepacking sur piste ensoleillée" 
@@ -306,7 +306,7 @@ const gbcSchema = {
           />
         </div>
 
-        <div class="group rounded-2xl overflow-hidden bg-slate-200 shadow-md relative h-72">
+        <div class="group rounded-lg overflow-hidden bg-slate-200 shadow-sm relative h-72">
           <img 
             src="/assets/gbc500-endurance-aventure-mission-accomplie-2-scaled.webp" 
             alt="Cyclistes de gravel profitant des grands espaces québécois" 
@@ -314,7 +314,7 @@ const gbcSchema = {
           />
         </div>
 
-        <div class="group rounded-2xl overflow-hidden bg-slate-200 shadow-md relative h-72">
+        <div class="group rounded-lg overflow-hidden bg-slate-200 shadow-sm relative h-72">
           <img 
             src="/assets/2023-08-05_GBC500_mc_1498-scaled.webp" 
             alt="Gravel bike en autonomie sur chemin forestier" 
@@ -326,7 +326,7 @@ const gbcSchema = {
 
     <!-- SECTION TRACES GPX & CARTOGRAPHIE (250 km & 100 km, stats avec "en moyenne", téléchargement "À venir") -->
     <section id="gpx" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm">
+      <div class="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 shadow-sm">
         <div class="mb-8">
           <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">Navigation & Tracés</span>
           <h3 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900">
@@ -338,7 +338,7 @@ const gbcSchema = {
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+          <div class="p-6 rounded-lg bg-slate-50 border border-slate-200 flex flex-col justify-between">
             <div>
               <div class="text-[11px] font-bold uppercase text-slate-600 mb-1">Semi-Bikepacking</div>
               <div class="text-xl font-heading font-black text-slate-900 mb-2">Trace GPX 250 KM</div>
@@ -355,7 +355,7 @@ const gbcSchema = {
             </span>
           </div>
 
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+          <div class="p-6 rounded-lg bg-slate-50 border border-slate-200 flex flex-col justify-between">
             <div>
               <div class="text-[11px] font-bold uppercase text-brand-cyan mb-1">Gravel Day</div>
               <div class="text-xl font-heading font-black text-slate-900 mb-2">Trace GPX 100 KM</div>
