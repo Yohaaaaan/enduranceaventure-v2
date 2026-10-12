@@ -91,7 +91,7 @@ const defaultOrgSchema = {
 ---
 
 <!doctype html>
-<html lang={pageLang} class="scroll-smooth overflow-x-hidden">
+<html lang={pageLang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -155,9 +155,9 @@ const defaultOrgSchema = {
       })();
     </script>
   </head>
-  <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-red selection:text-white overflow-x-hidden w-full relative">
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-red selection:text-white w-full relative">
     <Header lang={pageLang} />
-    <main class="flex-grow w-full">
+    <main class="flex-grow w-full overflow-x-hidden">
       <slot />
     </main>
     <Footer lang={pageLang} />
