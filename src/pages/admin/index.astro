@@ -95,37 +95,37 @@ import Layout from '../../layouts/Layout.astro';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
       
       <!-- KPI CARDS -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         
-        <div class="rounded-lg bg-brand-darker border border-brand-gray p-6">
-          <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Vues de Pages Totales</div>
-          <div id="stat-views" class="text-3xl font-heading font-black text-white">--</div>
-          <div class="text-[11px] font-semibold mt-2 flex items-center gap-1">
-            <span id="stat-period-tag" class="text-slate-400">• Période sélectionnée</span>
+        <div class="rounded-lg bg-brand-darker border border-brand-gray p-3.5 sm:p-6">
+          <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Vues Totales</div>
+          <div id="stat-views" class="text-2xl sm:text-3xl font-heading font-black text-white">--</div>
+          <div class="text-[10px] sm:text-[11px] font-semibold mt-1 sm:mt-2 flex items-center gap-1">
+            <span id="stat-period-tag" class="text-slate-400 truncate">• Période</span>
           </div>
         </div>
 
-        <div class="rounded-lg bg-brand-darker border border-brand-gray p-6">
-          <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Visiteurs Uniques</div>
-          <div id="stat-visitors" class="text-3xl font-heading font-black text-brand-red">--</div>
-          <div class="text-[11px] text-slate-400 font-semibold mt-2">
-            Adresses uniques anonymisées
+        <div class="rounded-lg bg-brand-darker border border-brand-gray p-3.5 sm:p-6">
+          <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Visiteurs Uniques</div>
+          <div id="stat-visitors" class="text-2xl sm:text-3xl font-heading font-black text-brand-red">--</div>
+          <div class="text-[10px] sm:text-[11px] text-slate-400 font-semibold mt-1 sm:mt-2 truncate">
+            Anonymisés RGPD
           </div>
         </div>
 
-        <div class="rounded-lg bg-brand-darker border border-brand-gray p-6">
-          <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Source Principale</div>
-          <div id="stat-top-source" class="text-xl font-heading font-bold text-brand-cyan truncate">--</div>
-          <div class="text-[11px] text-slate-400 font-semibold mt-2">
-            Premier canal de provenance
+        <div class="rounded-lg bg-brand-darker border border-brand-gray p-3.5 sm:p-6">
+          <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Source Principale</div>
+          <div id="stat-top-source" class="text-base sm:text-xl font-heading font-bold text-brand-cyan truncate">--</div>
+          <div class="text-[10px] sm:text-[11px] text-slate-400 font-semibold mt-1 sm:mt-2 truncate">
+            Canal majeur
           </div>
         </div>
 
-        <div class="rounded-lg bg-brand-darker border border-brand-gray p-6">
-          <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Page la Plus Consultée</div>
-          <div id="stat-top-page" class="text-xl font-heading font-bold text-white truncate">--</div>
-          <div class="text-[11px] text-slate-400 font-semibold mt-2">
-            Volume de trafic maximal
+        <div class="rounded-lg bg-brand-darker border border-brand-gray p-3.5 sm:p-6">
+          <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Page Phare</div>
+          <div id="stat-top-page" class="text-base sm:text-xl font-heading font-bold text-white truncate">--</div>
+          <div class="text-[10px] sm:text-[11px] text-slate-400 font-semibold mt-1 sm:mt-2 truncate">
+            Trafic maximal
           </div>
         </div>
       </div>

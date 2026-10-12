@@ -69,9 +69,9 @@ const blogSchema = {
   <article class="py-10 sm:py-16 bg-slate-50">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Featured Image -->
+      <!-- Featured Image (Masquée sur mobile pour éviter le doublon avec le header) -->
       {post.image && (
-        <div class="rounded-lg overflow-hidden mb-6 sm:mb-12 shadow-sm border border-slate-200 bg-slate-200 max-h-[500px]">
+        <div class="hidden sm:block rounded-lg overflow-hidden mb-6 sm:mb-12 shadow-sm border border-slate-200 bg-slate-200 max-h-[500px]">
           <img 
             src={post.image} 
             alt={post.title} 

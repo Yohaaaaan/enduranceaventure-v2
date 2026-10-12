@@ -71,25 +71,25 @@ const arwsSchema = {
         Le rendez-vous planétaire officiel de la relève de la course d'aventure : <strong class="text-white font-semibold">100 km par étapes</strong> au cœur des forêts et des immenses lacs boréaux du Témiscamingue. Équipes de 2 dans les catégories <strong class="text-brand-cyan-light font-semibold">U18 et U25</strong>.
       </p>
 
-      <div class="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 max-w-2xl mx-auto">
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-xl mx-auto">
         <a 
           href="https://www.arwsjuniorworld.com" 
           target="_blank" 
           rel="noopener noreferrer" 
-          class="inline-flex items-center justify-center px-5 py-2.5 min-h-[44px] rounded-lg bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all shadow-sm gap-2"
+          class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 min-h-[44px] rounded-lg bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all shadow-sm gap-2 text-center"
         >
           <span>Portail Officiel des Mondiaux</span>
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
         </a>
         <a 
           href="#programme" 
-          class="inline-flex items-center justify-center px-5 py-2.5 min-h-[44px] rounded-lg bg-slate-900/90 hover:bg-slate-800 text-white border border-slate-700 font-heading font-bold text-xs uppercase tracking-wider transition-all"
+          class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 min-h-[44px] rounded-lg bg-slate-900/90 hover:bg-slate-800 text-white border border-slate-700 font-heading font-bold text-xs uppercase tracking-wider transition-all text-center"
         >
           Découvrir le Programme
         </a>
         <a 
           href="/contact?type=general&subject=championnat-monde-junior-arws" 
-          class="inline-flex items-center justify-center px-5 py-2.5 min-h-[44px] rounded-lg bg-slate-900/70 hover:bg-slate-900 text-slate-200 border border-slate-700 font-heading font-bold text-xs uppercase tracking-wider transition-all"
+          class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 min-h-[44px] rounded-lg bg-slate-900/70 hover:bg-slate-900 text-slate-200 border border-slate-700 font-heading font-bold text-xs uppercase tracking-wider transition-all text-center"
         >
           Contacter l'Organisation
         </a>
@@ -98,28 +98,28 @@ const arwsSchema = {
   </section>
 
   <!-- BANDEAU DES CHIFFRES CLÉS DE L'ÉPREUVE (Sans le nombre de pays) -->
-  <div class="bg-slate-900 border-b border-slate-800 py-8">
+  <div class="bg-slate-900 border-b border-slate-800 py-6 sm:py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center">
-        <div class="p-3">
-          <div class="text-3xl sm:text-4xl font-heading font-black text-brand-red">100 KM</div>
-          <div class="text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">Expédition Sauvage</div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6 text-center">
+        <div class="p-3 bg-white/5 rounded-md lg:bg-transparent">
+          <div class="text-2xl sm:text-4xl font-heading font-black text-brand-red">100 KM</div>
+          <div class="text-[10px] sm:text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">Expédition Sauvage</div>
         </div>
-        <div class="p-3">
-          <div class="text-3xl sm:text-4xl font-heading font-black text-white">4 JOURS</div>
-          <div class="text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">Immersion Boréale</div>
+        <div class="p-3 bg-white/5 rounded-md lg:bg-transparent">
+          <div class="text-2xl sm:text-4xl font-heading font-black text-white">4 JOURS</div>
+          <div class="text-[10px] sm:text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">Immersion Boréale</div>
         </div>
-        <div class="p-3">
-          <div class="text-3xl sm:text-4xl font-heading font-black text-brand-cyan">U18 & U25</div>
-          <div class="text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">2 Catégories Officielles</div>
+        <div class="p-3 bg-white/5 rounded-md lg:bg-transparent">
+          <div class="text-2xl sm:text-4xl font-heading font-black text-brand-cyan">U18 & U25</div>
+          <div class="text-[10px] sm:text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">2 Catégories Officielles</div>
         </div>
-        <div class="p-3">
-          <div class="text-3xl sm:text-4xl font-heading font-black text-white">DUO (x2)</div>
-          <div class="text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">Mixte, Fille, Garçon</div>
+        <div class="p-3 bg-white/5 rounded-md lg:bg-transparent">
+          <div class="text-2xl sm:text-4xl font-heading font-black text-white">DUO (x2)</div>
+          <div class="text-[10px] sm:text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">Mixte, Fille, Garçon</div>
         </div>
-        <div class="p-3">
-          <div class="text-3xl sm:text-4xl font-heading font-black text-brand-red">0 GPS</div>
-          <div class="text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">Carte & Boussole Pure</div>
+        <div class="p-3 bg-white/5 rounded-md lg:bg-transparent col-span-2 md:col-span-1">
+          <div class="text-2xl sm:text-4xl font-heading font-black text-brand-red">0 GPS</div>
+          <div class="text-[10px] sm:text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">Carte & Boussole Pure</div>
         </div>
       </div>
     </div>
@@ -456,80 +456,80 @@ const arwsSchema = {
         </p>
       </div>
 
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         
         <!-- Jour 1 -->
-        <div class="bg-white p-3 sm:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div class="bg-white p-4 sm:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
           <div>
             <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brand-red mb-1">29 Juil. 2027</div>
-            <div class="text-sm sm:text-xl font-heading font-black text-slate-900 mb-1.5 sm:mb-3">Accueil & Contrôles</div>
-            <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-4 line-clamp-3 sm:line-clamp-none font-light">
+            <div class="text-base sm:text-xl font-heading font-black text-slate-900 mb-1.5 sm:mb-3">Accueil & Contrôles</div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3 sm:mb-4 font-light">
               Arrivée des délégations à Ville-Marie et Témiscaming. Vérification technique du matériel de survie et tests de cordes.
             </p>
-            <ul class="space-y-1 text-[10px] sm:text-xs text-slate-600 hidden sm:block">
-              <li class="flex items-start gap-1.5">• <span>Enregistrement & contrôle médical</span></li>
-              <li class="flex items-start gap-1.5">• <span>Briefing technique des capitaines</span></li>
-              <li class="flex items-start gap-1.5">• <span>Cérémonie d'accueil des nations</span></li>
+            <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 border-t border-slate-100 pt-2.5">
+              <li class="flex items-start gap-1.5"><span class="text-brand-red font-bold">•</span> <span>Enregistrement & contrôle médical</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-brand-red font-bold">•</span> <span>Briefing technique des capitaines</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-brand-red font-bold">•</span> <span>Cérémonie d'accueil des nations</span></li>
             </ul>
           </div>
-          <div class="text-[9px] sm:text-[11px] font-semibold text-slate-400 border-t border-slate-100 pt-2 sm:pt-3 mt-2 sm:mt-4">
+          <div class="text-[10px] sm:text-[11px] font-semibold text-slate-500 border-t border-slate-100 pt-2.5 sm:pt-3 mt-3 sm:mt-4">
             Village des Athlètes
           </div>
         </div>
 
         <!-- Jour 2 -->
-        <div class="bg-white p-3 sm:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div class="bg-white p-4 sm:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
           <div>
             <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brand-red mb-1">30 Juil. 2027</div>
-            <div class="text-sm sm:text-xl font-heading font-black text-slate-900 mb-1.5 sm:mb-3">Départ & Étape 1</div>
-            <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-4 line-clamp-3 sm:line-clamp-none font-light">
+            <div class="text-base sm:text-xl font-heading font-black text-slate-900 mb-1.5 sm:mb-3">Départ & Étape 1</div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3 sm:mb-4 font-light">
               Coup d'envoi officiel. Première immersion en pleine nature boréale avec alternance de canot, trek et orientation sur carte.
             </p>
-            <ul class="space-y-1 text-[10px] sm:text-xs text-slate-600 hidden sm:block">
-              <li class="flex items-start gap-1.5">• <span>Section canot boréal longue</span></li>
-              <li class="flex items-start gap-1.5">• <span>Balises d'orientation isolées</span></li>
-              <li class="flex items-start gap-1.5">• <span>Premier bivouac sous tente</span></li>
+            <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 border-t border-slate-100 pt-2.5">
+              <li class="flex items-start gap-1.5"><span class="text-brand-red font-bold">•</span> <span>Section canot boréal longue</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-brand-red font-bold">•</span> <span>Balises d'orientation isolées</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-brand-red font-bold">•</span> <span>Premier bivouac sous tente</span></li>
             </ul>
           </div>
-          <div class="text-[9px] sm:text-[11px] font-semibold text-brand-red border-t border-slate-100 pt-2 sm:pt-3 mt-2 sm:mt-4">
+          <div class="text-[10px] sm:text-[11px] font-semibold text-brand-red border-t border-slate-100 pt-2.5 sm:pt-3 mt-3 sm:mt-4">
             Départ de la course
           </div>
         </div>
 
         <!-- Jour 3 -->
-        <div class="bg-white p-3 sm:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div class="bg-white p-4 sm:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
           <div>
             <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brand-red mb-1">31 Juil. 2027</div>
-            <div class="text-sm sm:text-xl font-heading font-black text-slate-900 mb-1.5 sm:mb-3">Étape Reine & Nuit</div>
-            <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-4 line-clamp-3 sm:line-clamp-none font-light">
+            <div class="text-base sm:text-xl font-heading font-black text-slate-900 mb-1.5 sm:mb-3">Étape Reine & Nuit</div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3 sm:mb-4 font-light">
               Journée charnière et transition de nuit. Enchaînement de VTT technique, rappel en falaise et nage en eau libre.
             </p>
-            <ul class="space-y-1 text-[10px] sm:text-xs text-slate-600 hidden sm:block">
-              <li class="flex items-start gap-1.5">• <span>Parcours VTT exigeant</span></li>
-              <li class="flex items-start gap-1.5">• <span>Section cordes et tyrolienne</span></li>
-              <li class="flex items-start gap-1.5">• <span>Gestion de l'effort continu</span></li>
+            <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 border-t border-slate-100 pt-2.5">
+              <li class="flex items-start gap-1.5"><span class="text-brand-cyan font-bold">•</span> <span>Parcours VTT exigeant</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-brand-cyan font-bold">•</span> <span>Section cordes et tyrolienne</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-brand-cyan font-bold">•</span> <span>Gestion de l'effort continu</span></li>
             </ul>
           </div>
-          <div class="text-[9px] sm:text-[11px] font-semibold text-brand-cyan border-t border-slate-100 pt-2 sm:pt-3 mt-2 sm:mt-4">
+          <div class="text-[10px] sm:text-[11px] font-semibold text-brand-cyan border-t border-slate-100 pt-2.5 sm:pt-3 mt-3 sm:mt-4">
             Étape décisive
           </div>
         </div>
 
         <!-- Jour 4 -->
-        <div class="bg-white p-3 sm:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+        <div class="bg-white p-4 sm:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
           <div>
             <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-emerald-600 mb-1">Dim. 1er Août 2027</div>
-            <div class="text-sm sm:text-xl font-heading font-black text-slate-900 mb-1.5 sm:mb-3">Arrivée & Sacre Mondial</div>
-            <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-4 line-clamp-3 sm:line-clamp-none font-light">
+            <div class="text-base sm:text-xl font-heading font-black text-slate-900 mb-1.5 sm:mb-3">Arrivée & Sacre Mondial</div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3 sm:mb-4 font-light">
               Deuxième journée et sacre mondial. Couronnement des champions du monde U18/U25 et banquet officiel de clôture.
             </p>
-            <ul class="space-y-1 text-[10px] sm:text-xs text-slate-600 hidden sm:block">
-              <li class="flex items-start gap-1.5">• <span>Arrivée des vainqueurs U18 & U25</span></li>
-              <li class="flex items-start gap-1.5">• <span>Remise officielle des médailles</span></li>
-              <li class="flex items-start gap-1.5">• <span>Banquet boréal et festivités</span></li>
+            <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 border-t border-slate-100 pt-2.5">
+              <li class="flex items-start gap-1.5"><span class="text-emerald-600 font-bold">•</span> <span>Arrivée des vainqueurs U18 & U25</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-emerald-600 font-bold">•</span> <span>Remise officielle des médailles</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-emerald-600 font-bold">•</span> <span>Banquet boréal et festivités</span></li>
             </ul>
           </div>
-          <div class="text-[9px] sm:text-[11px] font-semibold text-emerald-600 border-t border-slate-100 pt-2 sm:pt-3 mt-2 sm:mt-4">
+          <div class="text-[10px] sm:text-[11px] font-semibold text-emerald-600 border-t border-slate-100 pt-2.5 sm:pt-3 mt-3 sm:mt-4">
             Célébration internationale
           </div>
         </div>
