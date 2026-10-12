@@ -157,7 +157,7 @@ import Layout from '../layouts/Layout.astro';
                       id="org-name" 
                       name="organization" 
                       placeholder="Ex: Ville de Magog / Groupe Canam"
-                      class="w-full px-4 py-3 rounded-md bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red text-sm"
+                      class="w-full px-4 py-3 min-h-[44px] rounded-md bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red text-base sm:text-sm"
                     />
                   </div>
 
@@ -168,7 +168,7 @@ import Layout from '../layouts/Layout.astro';
                     <select 
                       id="org-type" 
                       name="orgType"
-                      class="w-full px-4 py-3 rounded-md bg-slate-50 border border-slate-300 text-slate-900 focus:outline-none focus:border-brand-red text-sm"
+                      class="w-full px-4 py-3 min-h-[44px] rounded-md bg-slate-50 border border-slate-300 text-slate-900 focus:outline-none focus:border-brand-red text-base sm:text-sm"
                     >
                       <option value="entreprise">Entreprise privée / Corporatif</option>
                       <option value="municipalite">Ville / MRC / Municipalité</option>
@@ -186,7 +186,7 @@ import Layout from '../layouts/Layout.astro';
                   <select 
                     id="service-needed" 
                     name="service"
-                    class="w-full px-4 py-3 rounded-md bg-slate-50 border border-slate-300 text-slate-900 focus:outline-none focus:border-brand-red text-sm"
+                    class="w-full px-4 py-3 min-h-[44px] rounded-md bg-slate-50 border border-slate-300 text-slate-900 focus:outline-none focus:border-brand-red text-base sm:text-sm"
                   >
                     <option value="organisation-evenements">Organisation clé en main d'épreuve sportive</option>
                     <option value="production-tele">Production télévisuelle, 4K & Drones certifiés</option>
@@ -209,7 +209,7 @@ import Layout from '../layouts/Layout.astro';
                     name="name" 
                     required 
                     placeholder="Ex: Marie Gagnon"
-                    class="w-full px-4 py-3 rounded-md bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red text-sm"
+                    class="w-full px-4 py-3 min-h-[44px] rounded-md bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red text-base sm:text-sm"
                   />
                 </div>
 
@@ -223,9 +223,10 @@ import Layout from '../layouts/Layout.astro';
                       type="email" 
                       id="contact-email" 
                       name="email" 
+                      inputmode="email"
                       required 
                       placeholder="marie@organisation.qc.ca"
-                      class="w-full px-4 py-3 rounded-md bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red text-sm"
+                      class="w-full px-4 py-3 min-h-[44px] rounded-md bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red text-base sm:text-sm"
                     />
                   </div>
 
@@ -237,8 +238,9 @@ import Layout from '../layouts/Layout.astro';
                       type="tel" 
                       id="contact-phone" 
                       name="phone" 
+                      inputmode="tel"
                       placeholder="(450) 000-0000"
-                      class="w-full px-4 py-3 rounded-md bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red text-sm"
+                      class="w-full px-4 py-3 min-h-[44px] rounded-md bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red text-base sm:text-sm"
                     />
                   </div>
                 </div>
@@ -252,7 +254,7 @@ import Layout from '../layouts/Layout.astro';
                 <select 
                   id="contact-subject" 
                   name="subject"
-                  class="w-full px-4 py-3 rounded-md bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brand-red text-sm"
+                  class="w-full px-4 py-3 min-h-[44px] rounded-md bg-white border border-slate-300 text-slate-900 focus:outline-none focus:border-brand-red text-base sm:text-sm"
                 >
                   <option value="gbc500">GBC 500 (Gravel Bikepacking Challenge)</option>
                   <option value="championnat-monde-junior-arws">Championnat du Monde Junior ARWS 2027 (Témiscamingue)</option>
@@ -272,7 +274,7 @@ import Layout from '../layouts/Layout.astro';
                   rows="5" 
                   required 
                   placeholder="Décrivez votre vision, vos objectifs, les spécificités du territoire ou vos questions..."
-                  class="w-full px-4 py-3 rounded-md bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red text-sm"
+                  class="w-full px-4 py-3 rounded-md bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brand-red text-base sm:text-sm"
                 ></textarea>
               </div>
 
