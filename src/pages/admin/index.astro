@@ -98,10 +98,10 @@ import Layout from '../../layouts/Layout.astro';
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         
         <div class="rounded-lg bg-brand-darker border border-brand-gray p-3.5 sm:p-6">
-          <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Vues Totales</div>
+          <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Pages Vues Réelles</div>
           <div id="stat-views" class="text-2xl sm:text-3xl font-heading font-black text-white">--</div>
           <div class="text-[10px] sm:text-[11px] font-semibold mt-1 sm:mt-2 flex items-center gap-1">
-            <span id="stat-period-tag" class="text-slate-400 truncate">• Période</span>
+            <span id="stat-period-tag" class="text-slate-400 truncate">• Sans rechargements F5</span>
           </div>
         </div>
 
@@ -109,7 +109,7 @@ import Layout from '../../layouts/Layout.astro';
           <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Visiteurs Uniques</div>
           <div id="stat-visitors" class="text-2xl sm:text-3xl font-heading font-black text-brand-red">--</div>
           <div class="text-[10px] sm:text-[11px] text-slate-400 font-semibold mt-1 sm:mt-2 truncate">
-            Anonymisés RGPD
+            Individus réels (Fenêtre 30 min)
           </div>
         </div>
 
@@ -273,10 +273,12 @@ import Layout from '../../layouts/Layout.astro';
 
     function setToken(token) {
       sessionStorage.setItem(TOKEN_KEY, token);
+      try { localStorage.setItem('ea_is_admin', 'true'); } catch(e) {}
     }
 
     function clearToken() {
       sessionStorage.removeItem(TOKEN_KEY);
+      try { localStorage.removeItem('ea_is_admin'); } catch(e) {}
     }
 
     function checkAuth() {

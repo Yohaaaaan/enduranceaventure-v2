@@ -134,6 +134,7 @@ const defaultOrgSchema = {
         try {
           if (window.location.pathname.startsWith('/admin')) return;
           if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') return;
+          if (sessionStorage.getItem('ea_admin_token') || localStorage.getItem('ea_is_admin')) return;
           const data = {
             path: window.location.pathname,
             referrer: document.referrer || 'Direct',
