@@ -284,14 +284,33 @@ app.get('/api/stats', requireAdmin, (req, res) => {
 });
 
 // Notification email dispatcher
-const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'info@enduranceaventure.com';
+const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'bmichau@enduranceaventure.com';
 const PENDING_LEADS_FILE = path.join(DATA_DIR, 'pending_email_leads.json');
+const GMAIL_SENDER_SCRIPT = '/home/opc/.agents/skills/gmail-sender/scripts/send_email.py';
+
+function fallbackSendmail(subject, body) {
+  try {
+    const mailProcess = spawn('/usr/sbin/sendmail', ['-t', '-i']);
+    mailProcess.stdin.write(`To: ${NOTIFICATION_EMAIL}\nFrom: web@enduranceaventure.com\nSubject: ${subject}\nContent-Type: text/plain; charset=UTF-8\n\n${body}\n`);
+    mailProcess.stdin.end();
+    mailProcess.on('error', (err) => {
+      console.warn('[Mail Warning] Sendmail non disponible:', err.message);
+    });
+    mailProcess.on('close', (code) => {
+      if (code === 0) {
+        console.log(`[Mail Sendmail] Courriel expédié via sendmail système à ${NOTIFICATION_EMAIL}`);
+      }
+    });
+  } catch (err) {
+    console.warn('[Mail Warning] Erreur fallback sendmail:', err.message);
+  }
+}
 
 function sendLeadEmail(lead) {
-  const subject = `[Soumission Site Web] ${lead.subject || lead.service || 'Nouvelle demande'} - ${lead.name}`;
+  const subject = `[Demande Site Web] ${lead.subject || lead.service || 'Nouveau contact'} - ${lead.name}`;
   const dateStr = new Date().toLocaleString('fr-CA', { timeZone: 'America/Toronto' });
   const body = [
-    `Nouvelle soumission reçue depuis le site web Endurance Aventure :`,
+    `Nouvelle demande reçue depuis le site web Endurance Aventure :`,
     ``,
     `Type: ${lead.type === 'b2b' ? 'Devis B2B & Municipalités' : 'Coureurs & Question générale'}`,
     `Nom: ${lead.name}`,
@@ -311,7 +330,7 @@ function sendLeadEmail(lead) {
 
   console.log(`[Lead Dispatch] Préparation envoi notification vers ${NOTIFICATION_EMAIL} pour ${lead.name}`);
 
-  // Archiver dans pending_email_leads.json en secours infaillible
+  // Archiver dans pending_email_leads.json en secours permanent
   try {
     let pending = [];
     if (fs.existsSync(PENDING_LEADS_FILE)) {
@@ -328,23 +347,30 @@ function sendLeadEmail(lead) {
     console.warn('[Lead Backup Warning]', e.message);
   }
 
-  // Tenter sendmail système
-  try {
-    const mailProcess = spawn('/usr/sbin/sendmail', ['-t', '-i']);
-    mailProcess.stdin.write(`To: ${NOTIFICATION_EMAIL}\nFrom: web@enduranceaventure.com\nSubject: ${subject}\nContent-Type: text/plain; charset=UTF-8\n\n${body}\n`);
-    mailProcess.stdin.end();
-    mailProcess.on('error', (err) => {
-      console.warn('[Mail Warning] Sendmail non disponible:', err.message);
-    });
-    mailProcess.on('close', (code) => {
-      if (code === 0) {
-        console.log(`[Mail Success] Courriel envoyé à ${NOTIFICATION_EMAIL}`);
-      } else {
-        console.warn(`[Mail Process] Code sortie sendmail: ${code}`);
-      }
-    });
-  } catch (err) {
-    console.warn('[Mail Warning] Erreur dispatch courriel:', err.message);
+  // Envoi prioritaire par passerelle SMTP authentifiée
+  if (fs.existsSync(GMAIL_SENDER_SCRIPT)) {
+    try {
+      const py = spawn('python3', [
+        GMAIL_SENDER_SCRIPT,
+        '--to', NOTIFICATION_EMAIL,
+        '--subject', subject,
+        '--body', body,
+        '--reply-to', lead.email
+      ]);
+      py.stdout.on('data', (d) => console.log(`[Mail Success] ${d.toString().trim()}`));
+      py.stderr.on('data', (d) => console.warn(`[Mail Warning] ${d.toString().trim()}`));
+      py.on('close', (code) => {
+        if (code !== 0) {
+          console.warn('[Mail Warning] Échec passerelle SMTP, tentative sendmail fallback...');
+          fallbackSendmail(subject, body);
+        }
+      });
+    } catch (err) {
+      console.warn('[Mail Warning] Exception passerelle SMTP:', err.message);
+      fallbackSendmail(subject, body);
+    }
+  } else {
+    fallbackSendmail(subject, body);
   }
 }
 
