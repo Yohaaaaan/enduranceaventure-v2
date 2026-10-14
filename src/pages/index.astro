@@ -14,45 +14,39 @@ const serviceVisuals: Record<string, {
   borderHover: string;
   btnBorderHover: string;
   bulletColor: string;
+  image: string;
+  imageAlt: string;
   iconSvg: string;
 }> = {
   'organisation-evenements': {
     tag: 'Logistique & Sécurité',
     badgeClass: 'bg-red-50 text-brand-red border-red-200/80',
     iconBg: 'bg-red-50 border-red-200 text-brand-red',
-    borderHover: 'hover:border-brand-red/50 hover:shadow-red-500/10',
+    borderHover: 'hover:border-brand-red/50',
     btnBorderHover: 'hover:border-brand-red hover:bg-brand-red hover:text-white',
     bulletColor: 'text-brand-red',
+    image: '/assets/canadaman-2017-sommet-mont-megantic-ligne-arrivee.webp',
+    imageAlt: 'Organisation clé en main et logistique tout-terrain',
     iconSvg: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/><circle cx="12" cy="11.5" r="2.2" class="fill-brand-red/20" stroke="currentColor" stroke-width="1.5"/></svg>`
   },
   'production-tele': {
     tag: 'Captation Extrême & 4K',
     badgeClass: 'bg-cyan-50 text-brand-cyan border-cyan-200/80',
     iconBg: 'bg-cyan-50 border-cyan-200 text-brand-cyan',
-    borderHover: 'hover:border-brand-cyan/50 hover:shadow-cyan-500/10',
+    borderHover: 'hover:border-brand-cyan/50',
     btnBorderHover: 'hover:border-brand-cyan hover:bg-brand-cyan hover:text-white',
     bulletColor: 'text-brand-cyan',
+    image: '/assets/JMMsony-September-13-2014_DSC1007.webp',
+    imageAlt: 'Captation vidéo et production documentaire en milieux isolés',
     iconSvg: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/><circle cx="9" cy="13" r="2.2" class="fill-brand-cyan/20" stroke="currentColor" stroke-width="1.5"/><path stroke-linecap="round" stroke-width="1.8" d="M5 4h7"/></svg>`
   }
 };
-
-const sponsors = [
-  { name: 'Argon 18', logo: '/assets/logo-argon-18-2.webp' },
-  { name: 'XACT Nutrition', logo: '/assets/xactnutrition_Logo_L-blk.webp' },
-  { name: 'Näak Nutrition', logo: '/assets/logoNAAK.webp' },
-  { name: 'Leki', logo: '/assets/LEKI-Logo.webp' },
-  { name: 'Karpos', logo: '/assets/LOGOKARPOS.webp' },
-  { name: 'Vaude', logo: '/assets/VAUDE.webp' },
-  { name: 'Blizzard', logo: '/assets/Blizzard.webp' },
-  { name: 'Sépaq Mont-Orford', logo: '/assets/orford_logo-original_fond_transparent.webp' },
-  { name: 'Coast Headlamps', logo: '/assets/logocoast.webp' },
-  { name: 'Skimo East', logo: '/assets/Skimoeast.webp' },
-  { name: 'Clinique Santé Performance', logo: '/assets/Clinique-sante-performance.webp' },
-  { name: 'ARWS Mondial Juniors', logo: '/assets/Logo-Mondiaux-Bilingue-.webp' }
-];
 ---
 
-<Layout title="Endurance Aventure | Événements Plein Air & Production Audiovisuelle Extrême">
+<Layout 
+  title="Organisation d'Événements Sportifs & Production Plein Air au Québec | Endurance Aventure"
+  description="Pionnier depuis 1998 : organisation d'épreuves sportives clés en main, logistique tout-terrain, teambuilding entreprise et captation télévisuelle par drones 4K au Québec."
+>
   
   <!-- HERO SECTION CINÉMATIQUE SOMBRE (Visuel d'action authentique) -->
   <section class="relative min-h-[88vh] sm:min-h-screen flex flex-col justify-center overflow-hidden bg-slate-950">
@@ -61,10 +55,11 @@ const sponsors = [
       <img 
         src="/assets/2023-08-05_GBC500_mc_1498-scaled.webp" 
         alt="GBC 500 Gravel Bike Endurance Aventure" 
-        class="w-full h-full object-cover object-center opacity-85 brightness-80 contrast-105"
+        class="w-full h-full object-cover object-center opacity-90 brightness-95 contrast-105"
         onerror="this.src='/assets/2023-08-05_GBC500_mc_1498-scaled.jpg'"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-black/25 to-black/35"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-black/15 to-black/25"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/60 via-transparent to-transparent"></div>
     </div>
 
     <!-- Contenu Principal du Hero -->
@@ -77,81 +72,86 @@ const sponsors = [
       </div>
 
       <!-- Titre d'impact sans dégradé arc-en-ciel artificiel -->
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-heading font-black uppercase tracking-tight text-white leading-tight max-w-4xl mb-6">
+      <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-black uppercase tracking-tight text-white leading-tight max-w-4xl mb-6 break-words">
         L'aventure sportive <br class="hidden sm:inline" />
         <span class="text-brand-red">grandeur nature.</span>
       </h1>
 
       <!-- Descriptif ancré dans la réalité québécoise -->
-      <p class="max-w-2xl text-base sm:text-xl text-slate-200 font-normal leading-relaxed mb-8">
-        Endurance Aventure conçoit et organise des épreuves d'endurance uniques à travers les territoires les plus sauvages du Québec, et réalise des tournages extrêmes pour la télévision et le web.
+      <p class="max-w-2xl text-sm sm:text-lg md:text-xl text-slate-200 font-normal leading-relaxed mb-8">
+        Endurance Aventure conçoit et organise des épreuves d’endurance uniques au Québec et à l’international, dans des milieux naturels exceptionnels, et réalise des productions pour la télévision et le web qui mettent en valeur l’aventure et les territoires.
       </p>
 
-      <!-- Actions directes -->
-      <div class="flex flex-wrap items-center gap-4">
+      <!-- Actions directes adaptées mobile -->
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full sm:w-auto">
         <a 
           href="#evenements" 
-          class="px-8 py-4 rounded-lg bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-sm uppercase tracking-wider transition-colors shadow-lg"
+          class="px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors shadow-lg text-center min-h-[48px] flex items-center justify-center"
         >
           Calendrier des Épreuves 2026/2027
         </a>
         <a 
           href="/services" 
-          class="px-8 py-4 rounded-lg bg-slate-900/80 hover:bg-slate-900 text-slate-100 border border-slate-700 hover:border-slate-500 font-heading font-bold text-sm uppercase tracking-wider transition-colors backdrop-blur-sm"
+          class="px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg bg-slate-900/80 hover:bg-slate-900 text-slate-100 border border-slate-700 hover:border-slate-500 font-heading font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors backdrop-blur-sm text-center min-h-[48px] flex items-center justify-center"
         >
           Services Corporatifs & Tournages
+        </a>
+      </div>
+
+      <!-- Encart Hébergement Airbnb : Votre camp de base Magog-Orford -->
+      <div class="mt-8 sm:mt-10 max-w-3xl">
+        <a 
+          href="https://www.airbnb.fr/rooms/49649506?check_in=2026-10-22&check_out=2026-10-29&guests=1&adults=1&s=67&unique_share_id=547586b8-02d7-43bf-a70e-72e122ebeacd" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="group block p-4 sm:p-5 rounded-lg bg-slate-900/85 hover:bg-slate-900 border border-slate-700/80 hover:border-slate-500 backdrop-blur-md transition-all duration-300 shadow-xl"
+        >
+          <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
+            <!-- Vignette photo authentique de l'appartement -->
+            <div class="relative w-full sm:w-44 md:w-52 aspect-[16/10] sm:aspect-[4/3] rounded-md overflow-hidden bg-slate-950 border border-slate-800 flex-shrink-0">
+              <img 
+                src="/assets/Screenshot-2021-11-24-155550.webp" 
+                alt="Appartement Vélo Café Endurance Aventure à Magog-Orford avec vue sur le Mont Orford" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.src='/assets/Velo-Cafe-Eandurance-Aventure.webp'"
+                loading="lazy"
+              />
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded-xs text-[9px] font-heading font-bold uppercase tracking-wider bg-brand-red text-white shadow-xs">
+                Airbnb
+              </span>
+            </div>
+
+            <!-- Contenu texte & Lien -->
+            <div class="flex-grow">
+              <div class="flex items-center gap-2 mb-1.5">
+                <span class="text-[10px] font-heading font-bold uppercase tracking-widest text-brand-cyan-light">
+                  Hébergement Outdoor
+                </span>
+                <span class="text-slate-600">•</span>
+                <span class="text-[11px] text-slate-400 font-medium">Magog-Orford</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-heading font-black text-white group-hover:text-brand-red transition-colors mb-1.5 leading-snug">
+                Votre camp de base pour explorer Magog-Orford
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-light mb-3">
+                Vélo, trail, ski… et un bon café ! Séjournez dans notre appartement Vélo Café – Endurance Aventure, au-dessus de la boutique, avec vue sur le mont Orford et à quelques minutes du parc national. L’endroit idéal pour partir à l’aventure et se détendre au retour.
+              </p>
+              <div class="inline-flex items-center gap-1.5 text-xs font-heading font-bold uppercase tracking-wider text-brand-red group-hover:text-white transition-colors">
+                <span>Découvrez l’appartement sur Airbnb</span>
+                <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </div>
+            </div>
+          </div>
         </a>
       </div>
 
     </div>
   </section>
 
-  <!-- BANDEAU PARTENAIRES & SPONSORS (Carrousel Infini de Logos avec Formes Dynamiques Athlétiques) -->
-  <section class="py-8 bg-slate-900 border-t border-b border-slate-800 overflow-hidden relative">
-    <!-- Formes Géométriques Athlétiques Style Ironman (Slashes & Profils d'Élévation) -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
-      <!-- Chevrons / Slashes de vitesse en filigrane répété -->
-      <svg class="absolute inset-0 w-full h-full opacity-[0.04] text-white" viewBox="0 0 1440 120" preserveAspectRatio="none">
-        <pattern id="sponsor-slashes" width="80" height="120" patternUnits="userSpaceOnUse" patternTransform="rotate(25)">
-          <line x1="0" y1="0" x2="0" y2="120" stroke="currentColor" stroke-width="1.5" />
-          <line x1="25" y1="0" x2="25" y2="120" stroke="currentColor" stroke-width="4" opacity="0.6" />
-          <line x1="50" y1="0" x2="50" y2="120" stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 4" />
-        </pattern>
-        <rect width="100%" height="100%" fill="url(#sponsor-slashes)" />
-      </svg>
-      <!-- Lignes de crêtes topographiques subtiles rouge et cyan -->
-      <svg class="absolute -bottom-1 left-0 right-0 w-full h-10 opacity-20 text-brand-red pointer-events-none" viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none">
-        <path d="M0 35 C 320 10, 680 38, 1020 18 C 1240 5, 1380 28, 1440 22" stroke="currentColor" stroke-width="1.5" />
-      </svg>
-      <svg class="absolute -top-1 left-0 right-0 w-full h-10 opacity-15 text-brand-cyan pointer-events-none" viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none">
-        <path d="M0 10 C 280 32, 620 8, 960 25 C 1180 35, 1360 12, 1440 15" stroke="currentColor" stroke-width="1.5" stroke-dasharray="8 6" />
-      </svg>
-    </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-5 text-center">
-      <span class="text-[11px] font-heading font-bold uppercase tracking-widest text-brand-red block mb-1">Partenaires & Équipementiers Officiels</span>
-      <p class="text-xs text-slate-400">Ils équipent et soutiennent les athlètes et les épreuves d'Endurance Aventure sur le terrain</p>
-    </div>
-    
-    <!-- Carrousel continu infini (Logos Uniquement) -->
-    <div class="relative z-10 w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]">
-      <div class="flex items-center gap-6 w-max animate-infinite-scroll">
-        {[...sponsors, ...sponsors].map((s) => (
-          <div class="h-16 w-36 sm:w-44 px-4 py-2 rounded-2xl bg-white shadow-sm border border-slate-200/90 flex items-center justify-center flex-shrink-0">
-            <img 
-              src={s.logo} 
-              alt={s.name} 
-              class="max-h-10 max-w-[120px] sm:max-w-[140px] w-auto h-auto object-contain filter grayscale hover:grayscale-0 transition-all opacity-85 hover:opacity-100" 
-              loading="lazy"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
   <!-- SECTION ÉVÉNEMENTS PHARES (Fond clair avec relief topographique de terrain) -->
-  <section id="evenements" class="py-24 bg-slate-100/70 border-t border-slate-200 relative overflow-hidden">
+  <section id="evenements" class="py-14 sm:py-20 lg:py-24 bg-slate-100/70 border-t border-slate-200 relative overflow-hidden">
     <!-- Formes de Relief Topographique Style Carte IGN / Outdoor (Courbes de niveau & Dénivelé) -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
       <svg class="absolute -top-10 left-1/2 -translate-x-1/2 w-[160%] sm:w-full h-[120%] opacity-[0.035] text-slate-900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -174,22 +174,23 @@ const sponsors = [
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 sm:mb-16 gap-4 sm:gap-6">
         <div>
           <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Grand Public & Athlètes</span>
-          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-slate-900">
+          <h2 class="text-2xl sm:text-4xl md:text-5xl font-heading font-black uppercase tracking-tight text-slate-900 leading-tight">
             Nos Événements Sportifs
           </h2>
         </div>
-        <a href="/evenements" class="text-brand-red hover:text-red-700 font-bold text-sm uppercase tracking-wider flex items-center gap-1.5 transition-colors">
-          Voir tout le calendrier →
+        <a href="/evenements" class="text-brand-red hover:text-red-700 font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center gap-1.5 transition-colors self-start sm:self-auto py-1">
+          <span>Voir tout le calendrier</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
       </div>
 
       <!-- Events Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {featuredEvents.map((evt) => (
-          <div class="group rounded-2xl bg-white border border-slate-200/90 shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:border-slate-300 hover:shadow-xl hover:-translate-y-1">
+          <div class="group rounded-lg bg-white border border-slate-200/90 shadow-sm overflow-hidden flex flex-col transition-all duration-300 hover:border-slate-300 hover:shadow-lg hover:-translate-y-0.5">
             <!-- Image Frame -->
             <div class="relative h-64 overflow-hidden bg-slate-200">
               <img 
@@ -200,13 +201,13 @@ const sponsors = [
               <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
               
               <!-- Badge Status -->
-              <span class="absolute top-4 left-4 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider bg-brand-red text-white shadow-md">
+              <span class="absolute top-4 left-4 px-2.5 py-1 rounded-sm text-xs font-bold uppercase tracking-wider bg-brand-red text-white shadow-sm">
                 {evt.category}
               </span>
 
               <!-- Badge Logos Officiels sur capsule blanche -->
               {evt.logo && (
-                <div class="absolute top-4 right-4 p-1.5 sm:p-2 rounded-xl bg-white shadow-lg border border-slate-200/90 flex items-center gap-2 z-10">
+                <div class="absolute top-4 right-4 p-1.5 sm:p-2 rounded-md bg-white shadow-sm border border-slate-200/90 flex items-center gap-2 z-10">
                   <img 
                     src={evt.logo} 
                     alt={`Logo ${evt.title}`} 
@@ -226,8 +227,9 @@ const sponsors = [
               )}
               
               <!-- Badge Location -->
-              <span class="absolute bottom-4 left-4 px-3 py-1 rounded-md text-xs font-semibold bg-slate-950/80 text-white backdrop-blur-sm">
-                📍 {evt.location}
+              <span class="absolute bottom-4 left-4 px-2.5 py-1 rounded-sm text-xs font-semibold bg-slate-950/85 text-white backdrop-blur-sm border border-slate-800 flex items-center gap-1.5 shadow-sm">
+                <svg class="w-3.5 h-3.5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span>{evt.location}</span>
               </span>
             </div>
 
@@ -255,12 +257,23 @@ const sponsors = [
               <!-- Button -->
               <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
                 <span class="text-xs text-slate-500 font-semibold">{evt.dates}</span>
-                <a 
-                  href={`/evenements/${evt.slug === 'raid-gaspesie' ? 'raids' : evt.slug}/`} 
-                  class="px-4 py-2.5 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-md shadow-brand-red/20"
-                >
-                  Détails & Inscription
-                </a>
+                {evt.registrationLink && evt.registrationLink !== '#' ? (
+                  <a 
+                    href={evt.registrationLink} 
+                    target={evt.registrationLink.startsWith('http') ? '_blank' : undefined}
+                    rel={evt.registrationLink.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    class="px-4 py-2.5 rounded-md bg-brand-red hover:bg-brand-red-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-all shadow-sm inline-flex items-center gap-1.5"
+                  >
+                    <span>{evt.buttonText || (evt.registrationLink.startsWith('http') ? 'Visiter le site' : 'Détails')}</span>
+                    {evt.registrationLink.startsWith('http') && (
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                    )}
+                  </a>
+                ) : (
+                  <span class="px-4 py-2.5 rounded-md bg-slate-100 text-slate-400 border border-slate-200 text-xs font-heading font-bold uppercase tracking-wider inline-flex items-center gap-1.5 cursor-not-allowed">
+                    À venir
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -270,13 +283,100 @@ const sponsors = [
     </div>
   </section>
 
+  <!-- SECTION ADN D'EXPÉDITION & IMPACT DE TERRAIN (Design Clair Élégant & Preuves Concrètes) -->
+  <section class="py-20 bg-slate-150/70 border-t border-slate-200 relative overflow-hidden bg-gradient-to-b from-slate-100/90 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Colonne Texte & Vision -->
+        <div class="lg:col-span-6 space-y-6">
+          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-slate-900 leading-tight">
+            28 Ans d'Expédition & d'Ingénierie Sportive
+          </h2>
+          <p class="text-base text-slate-700 leading-relaxed">
+            Endurance Aventure collabore étroitement avec les municipalités, parcs nationaux et diffuseurs pour concevoir, tracer et produire des événements d’envergure qui révèlent la beauté sauvage des territoires.
+          </p>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Du repérage cartographique GPS à la coordination des secours en région isolée, nos traceurs et réalisateurs créent des leviers majeurs d'attractivité touristique et économique, amplifiés par des captations audiovisuelles diffusées à travers le monde.
+          </p>
 
-  <!-- SECTION SERVICES CORPORATIFS & B2B (Modèle Hybride : Fond blanc avec cartes structurées) -->
+          <div class="pt-2 flex flex-wrap gap-4">
+            <a 
+              href="/entreprise/" 
+              class="px-7 py-3.5 rounded-md bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 shadow-sm"
+            >
+              <span>Découvrir l'histoire & l'équipe</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
+            <a 
+              href="/services/organisation-evenements/" 
+              class="px-6 py-3.5 rounded-md bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-heading font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 shadow-sm"
+            >
+              <span>Organisation d'Événements</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Colonne Preuves Sociales Réelles & Photos de Terrain -->
+        <div class="lg:col-span-6 space-y-6">
+          <!-- 4 Stats Cards Claires et Professionnelles -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-5 rounded-lg bg-white border border-slate-200 shadow-sm">
+              <div class="text-3xl sm:text-4xl font-heading font-black text-brand-red mb-1">1998</div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-900">Fondation au Québec</div>
+              <div class="text-[11px] text-slate-600 mt-1">Environ 28 ans d'organisation pionnière</div>
+            </div>
+            <div class="p-5 rounded-lg bg-white border border-slate-200 shadow-sm">
+              <div class="text-3xl sm:text-4xl font-heading font-black text-brand-cyan mb-1">+10 000 km</div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-900">Parcours & Sentiers Tracés</div>
+              <div class="text-[11px] text-slate-600 mt-1">Explorés, cartographiés et sécurisés en milieu sauvage</div>
+            </div>
+            <div class="p-5 rounded-lg bg-white border border-slate-200 shadow-sm">
+              <div class="text-3xl sm:text-4xl font-heading font-black text-slate-800 mb-1">30+</div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-900">Régions & Villes Partenaires</div>
+              <div class="text-[11px] text-slate-600 mt-1">Gaspésie, Témiscamingue, Estrie, Cantons</div>
+            </div>
+            <div class="p-5 rounded-lg bg-white border border-slate-200 shadow-sm">
+              <div class="text-3xl sm:text-4xl font-heading font-black text-brand-red mb-1">RDS</div>
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-900">Diffusion Média Nationale</div>
+              <div class="text-[11px] text-slate-600 mt-1">Documentaires sportifs & séries d'aventure</div>
+            </div>
+          </div>
+
+          <!-- Duo Photos de Terrain Authentiques -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="rounded-lg overflow-hidden bg-slate-100 border border-slate-200 h-44 relative group shadow-sm">
+              <img 
+                src="/assets/51581835318_775ae15a4e_k.webp" 
+                alt="Repérages cartographiques en pleine nature boréale" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+              <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Repérage de sentiers sauvages</span>
+            </div>
+            <div class="rounded-lg overflow-hidden bg-slate-100 border border-slate-200 h-44 relative group shadow-sm">
+              <img 
+                src="/assets/JMMsony-September-12-2014_DSC0167.webp" 
+                alt="Logistique tout-terrain et coordination des épreuves" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+              <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Logistique d'expédition & régie</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SECTION SERVICES CORPORATIFS, B2B & MUNICIPALITÉS (Fond Blanc Épuré) -->
   <section class="py-24 bg-white border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="max-w-3xl mb-16">
-        <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">Expertise B2B & Municipalités</span>
+        <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">Expertise B2B, Villes & Entreprises</span>
         <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-slate-900 mb-4">
           Services Événementiels & Production Audiovisuelle
         </h2>
@@ -294,137 +394,165 @@ const sponsors = [
             borderHover: 'hover:border-slate-400',
             btnBorderHover: 'hover:border-slate-800 hover:bg-slate-800 hover:text-white',
             bulletColor: 'text-brand-cyan',
+            image: '/assets/canadaman-2017-sommet-mont-megantic-ligne-arrivee.webp',
+            imageAlt: srv.title,
             iconSvg: `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`
           };
 
           return (
-            <div class={`rounded-2xl bg-slate-50/90 border border-slate-200 p-8 flex flex-col justify-between transition-all duration-300 ${meta.borderHover} hover:shadow-xl hover:-translate-y-1`}>
+            <div class={`rounded-lg bg-white border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between transition-all duration-300 ${meta.borderHover} hover:shadow-lg hover:-translate-y-0.5 group`}>
               <div>
-                <div class="flex items-center justify-between mb-6">
-                  <div class={`w-12 h-12 rounded-xl border flex items-center justify-center font-bold shadow-sm ${meta.iconBg}`} set:html={meta.iconSvg}>
-                  </div>
-                  <span class={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md border ${meta.badgeClass}`}>
+                <!-- Bannière Photo Authentique -->
+                <div class="h-48 overflow-hidden bg-slate-100 relative">
+                  <img 
+                    src={meta.image} 
+                    alt={meta.imageAlt} 
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-black/15 to-transparent"></div>
+                  <span class={`absolute top-3 right-3 text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-sm border shadow-sm ${meta.badgeClass}`}>
                     {meta.tag}
                   </span>
                 </div>
 
-                <h3 class="text-xl font-heading font-bold text-slate-900 mb-3">
-                  {srv.title}
-                </h3>
-                <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                  {srv.description}
-                </p>
+                <div class="p-6 sm:p-8">
+                  <div class="flex items-center gap-3 mb-4">
+                    <div class={`w-10 h-10 rounded-md border flex items-center justify-center font-bold shadow-sm flex-shrink-0 ${meta.iconBg}`} set:html={meta.iconSvg}>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-slate-900">
+                      {srv.title}
+                    </h3>
+                  </div>
 
-                <ul class="space-y-2.5 mb-8 text-xs text-slate-700">
-                  {srv.features.map((f) => (
-                    <li class="flex items-start gap-2.5">
-                      <span class={`font-bold mt-0.5 ${meta.bulletColor}`}>•</span>
-                      <span class="leading-relaxed">{f}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <p class="text-sm text-slate-600 mb-6 leading-relaxed">
+                    {srv.description}
+                  </p>
+
+                  <ul class="space-y-2.5 mb-8 text-xs text-slate-700">
+                    {srv.features.map((f) => (
+                      <li class="flex items-start gap-2.5">
+                        <span class={`font-bold mt-0.5 ${meta.bulletColor}`}>•</span>
+                        <span class="leading-relaxed">{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
-              <a 
-                href={`/services/${srv.slug}/`} 
-                class={`w-full py-3 rounded-xl border border-slate-300 text-slate-800 text-center text-xs font-bold uppercase tracking-wider transition-all shadow-sm ${meta.btnBorderHover}`}
-              >
-                Consulter les détails →
-              </a>
+              <div class="px-6 sm:px-8 pb-6 sm:pb-8 pt-0">
+                <a 
+                  href={`/services/${srv.slug}/`} 
+                  class={`w-full py-3 rounded-md border border-slate-300 text-slate-800 text-center text-xs font-bold uppercase tracking-wider transition-all shadow-sm flex items-center justify-center gap-1.5 ${meta.btnBorderHover}`}
+                >
+                  <span>Consulter les détails</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+              </div>
             </div>
           );
         })}
       </div>
 
-      <!-- BANDEAU CONSULTATION & DIRECTION DE PROJET (Design sobre, épuré et authentique) -->
-      <div class="mt-16 rounded-2xl bg-slate-900 border border-slate-800 p-8 sm:p-12 text-white shadow-xl">
+      <!-- BANDEAU DIRECTION OPÉRATIONNELLE & ENCADREMENT TERRAIN (Layout clair, aéré et prestigieux) -->
+      <div class="mt-16 rounded-xl bg-slate-50 border border-slate-200/90 p-8 sm:p-12 shadow-sm">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          <!-- Colonne Titre & Pitch -->
-          <div class="lg:col-span-7">
-            <span class="text-xs font-heading font-bold uppercase tracking-widest text-slate-400 block mb-2">
-              Ingénierie & Direction de Projet
-            </span>
-            <h3 class="text-2xl sm:text-3xl lg:text-4xl font-heading font-black uppercase tracking-tight text-white mb-4 leading-tight">
-              Un projet d'événement ou un tournage extrême ?
+          <!-- Colonne Information & Appel à l'action -->
+          <div class="lg:col-span-6 space-y-5">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-white border border-slate-200 text-slate-800 text-xs font-heading font-bold uppercase tracking-wider shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-brand-red"></span>
+              <span>Direction & Encadrement de Terrain</span>
+            </div>
+            
+            <h3 class="text-2xl sm:text-3xl font-heading font-black uppercase tracking-tight text-slate-900 leading-tight">
+              Une direction de projet chevronnée sur le terrain
             </h3>
-            <p class="text-base text-slate-300 leading-relaxed mb-6">
-              Échangez directement avec <strong class="text-white font-semibold">Bastien Michau</strong> et <strong class="text-white font-semibold">Daniel Poirier</strong> pour évaluer la faisabilité technique de votre projet et obtenir une soumission détaillée.
+            
+            <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+              Chaque mandat est supervisé directement par ses deux associés fondateurs et directeurs d'épreuve pour garantir rigueur, conformité de sécurité et retombées concrètes.
             </p>
 
-            <!-- Spécifications concrètes de terrain -->
-            <ul class="space-y-2 mb-8 text-xs text-slate-300">
-              <li class="flex items-center gap-2.5">
-                <span class="text-brand-red font-bold">✓</span>
-                <span>Repérage cartographique GPS, conformité environnementale et plans d'urgence</span>
-              </li>
-              <li class="flex items-center gap-2.5">
-                <span class="text-brand-cyan font-bold">✓</span>
-                <span>Moyens de tournage 4K, cadreurs outdoor et drones homologués Transports Canada</span>
-              </li>
-              <li class="flex items-center gap-2.5">
-                <span class="text-emerald-400 font-bold">✓</span>
-                <span>Étude de faisabilité et estimation chiffrée remises sous 48 heures</span>
-              </li>
-            </ul>
-
-            <!-- Actions claires et directes -->
-            <div class="flex flex-wrap items-center gap-4">
+            <div class="pt-2 flex flex-col sm:flex-row sm:items-center gap-4">
               <a 
-                href="/contact/" 
-                class="px-7 py-3.5 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2 shadow-sm"
+                href="/contact/?type=b2b" 
+                class="px-7 py-3.5 rounded-md bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all shadow-sm inline-flex items-center justify-center gap-2"
               >
-                <span>Demander une soumission</span>
+                <span>Demander une soumission de projet</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
               </a>
 
               <a 
-                href="mailto:info@enduranceaventure.com" 
-                class="px-5 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-bold uppercase tracking-wider transition-colors inline-flex items-center gap-2"
+                href="/entreprise/" 
+                class="text-xs font-heading font-bold uppercase tracking-wider text-slate-700 hover:text-brand-red transition-colors inline-flex items-center gap-1.5 self-center"
               >
-                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                <span>info@enduranceaventure.com</span>
+                <span>Découvrir l'équipe</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
               </a>
+            </div>
 
-              <span class="text-xs text-slate-400">
-                Magog, QC — <a href="tel:4506599944" class="text-slate-300 hover:text-white font-semibold underline underline-offset-4">(450) 659-9944</a>
+            <!-- Contact rapide bureau -->
+            <div class="pt-3 border-t border-slate-200 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs text-slate-600">
+              <span class="flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <span>Bureau Magog : <strong class="text-slate-800 font-semibold">(819) 342-5220</strong></span>
+              </span>
+              <span class="flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-brand-red flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                <span>Bureau France : <a href="tel:+330783409102" class="hover:text-brand-red transition-colors"><strong class="text-slate-800 font-semibold">+33 0783409102</strong></a></span>
+              </span>
+              <span class="flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5 text-slate-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <a href="mailto:info@enduranceaventure.com" class="hover:text-brand-red transition-colors">info@enduranceaventure.com</a>
               </span>
             </div>
           </div>
 
-          <!-- Colonne Interlocuteurs : Bastien Michau en premier, puis Daniel Poirier -->
-          <div class="lg:col-span-5 flex flex-col gap-3.5">
-            <div class="text-[11px] uppercase font-heading font-bold tracking-widest text-slate-400 mb-0.5">
-              Direction opérationnelle :
-            </div>
-
-            <!-- 1. Bastien Michau (En haut) -->
-            <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/90 border border-slate-700/80">
-              <img 
-                src="/assets/bastien-michau.webp" 
-                alt="Bastien Michau" 
-                class="w-14 h-14 rounded-xl object-cover border border-slate-600 flex-shrink-0"
-                onerror="this.src='/assets/bastien-michau.jpg'"
-              />
+          <!-- Duo Profils Direction : Daniel Poirier & Bastien Michau -->
+          <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <!-- Carte Daniel Poirier -->
+            <div class="p-5 rounded-lg bg-white border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-colors">
               <div>
-                <div class="text-white font-heading font-bold text-base leading-snug">Bastien Michau</div>
-                <div class="text-xs text-brand-cyan font-semibold">Directeur de Production & Réalisateur</div>
-                <div class="text-[11px] text-slate-400 mt-0.5">Captation outdoor extrême, drones certifiés & documentaires télévisés</div>
+                <div class="flex items-center gap-3.5 mb-3">
+                  <img 
+                    src="/assets/daniel-poirier-endurance-aventure.webp" 
+                    alt="Daniel Poirier" 
+                    class="w-14 h-14 rounded-md object-cover border border-slate-200 shadow-xs flex-shrink-0"
+                    onerror="this.src='/assets/daniel-poirier-endurance-aventure.jpg'"
+                  />
+                  <div>
+                    <h4 class="text-slate-900 font-heading font-black text-base leading-tight">Daniel Poirier</h4>
+                    <span class="inline-block mt-0.5 px-2 py-0.5 rounded-xs text-[10px] font-bold uppercase tracking-wider bg-red-50 text-brand-red border border-red-100">
+                      Fondateur & Réalisateur TV
+                    </span>
+                  </div>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Environ 28 ans d'expérience en captation outdoor extrême, réalisation de documentaires sportifs et diffusion sur les grands réseaux (RDS).
+                </p>
               </div>
             </div>
 
-            <!-- 2. Daniel Poirier (En dessous) -->
-            <div class="flex items-center gap-4 p-4 rounded-xl bg-slate-800/90 border border-slate-700/80">
-              <img 
-                src="/assets/daniel-poirier-endurance-aventure.webp" 
-                alt="Daniel Poirier" 
-                class="w-14 h-14 rounded-xl object-cover border border-slate-600 flex-shrink-0"
-                onerror="this.src='/assets/daniel-poirier-endurance-aventure.jpg'"
-              />
+            <!-- Carte Bastien Michau -->
+            <div class="p-5 rounded-lg bg-white border border-slate-200 shadow-sm flex flex-col justify-between hover:border-slate-300 transition-colors">
               <div>
-                <div class="text-white font-heading font-bold text-base leading-snug">Daniel Poirier</div>
-                <div class="text-xs text-brand-red font-semibold">Fondateur & Directeur d'Épreuves</div>
-                <div class="text-[11px] text-slate-400 mt-0.5">25 ans d'ingénierie de parcours, logistique en région isolée & sécurité civile</div>
+                <div class="flex items-center gap-3.5 mb-3">
+                  <img 
+                    src="/assets/bastien-michau.webp" 
+                    alt="Bastien Michau" 
+                    class="w-14 h-14 rounded-md object-cover border border-slate-200 shadow-xs flex-shrink-0"
+                    onerror="this.src='/assets/bastien-michau.jpg'"
+                  />
+                  <div>
+                    <h4 class="text-slate-900 font-heading font-black text-base leading-tight">Bastien Michau</h4>
+                    <span class="inline-block mt-0.5 px-2 py-0.5 rounded-xs text-[10px] font-bold uppercase tracking-wider bg-cyan-50 text-brand-cyan border border-cyan-100">
+                      Direction Technique & Sécurité
+                    </span>
+                  </div>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                  Ingénierie de tracés GPS, logistique d'expédition en zone boréale et coordination des plans d'urgence avec les services de secours.
+                </p>
               </div>
             </div>
 
@@ -436,49 +564,171 @@ const sponsors = [
     </div>
   </section>
 
-
-  <!-- SECTION DERNIÈRES NOUVELLES (Fond clair pour confort de lecture) -->
+  <!-- SECTION GALERIE IMMERSION & ÉPREUVES HISTORIQUES (Fond Clair avec relief) -->
   <section class="py-24 bg-slate-100/70 border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex items-center justify-between mb-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
         <div>
-          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Récits de Terrain</span>
-          <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase tracking-tight text-slate-900">
-            Actualités & Récits
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Preuves de Terrain & Récits Visuels</span>
+          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-slate-900">
+            L'Aventure au Cœur de l'Action
           </h2>
+          <p class="text-base text-slate-600 max-w-2xl mt-3 leading-relaxed">
+            De la baie des Chaleurs aux crêtes de Mégantic Du Québec à la Chine, nos caméras et nos équipes immortalisent l'effort brut et la beauté sauvage des épreuves d'endurance.
+          </p>
         </div>
-        <a href="/nouvelles" class="text-sm font-bold text-slate-700 hover:text-brand-red uppercase tracking-wider">
-          Tous les articles ({news.length}) →
+        <a 
+          href="/evenements/" 
+          class="text-brand-red hover:text-red-700 font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors self-start md:self-end"
+        >
+          <span>Voir toutes les épreuves</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
         </a>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Mosaïque 4 Photos de Terrain (2 colonnes sur mobile) -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6">
+        <!-- 1. Gravel GBC 500 -->
+        <a href="/evenements/gbc500/" class="group rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative aspect-[4/5] sm:h-80 sm:aspect-auto flex flex-col justify-end p-2.5 sm:p-5 transition-all hover:shadow-lg hover:-translate-y-0.5">
+          <img 
+            src="/assets/gravelbike-grange-scaled.webp" 
+            alt="GBC 500 dans les Cantons-de-l'Est" 
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+          <span class="relative z-10 self-start px-1.5 py-0.5 rounded-xs text-[8px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-red text-white mb-1 sm:mb-2 shadow-sm">
+            Gravel
+          </span>
+          <h3 class="relative z-10 text-xs sm:text-lg font-heading font-bold text-white mb-0.5 sm:mb-1 group-hover:text-brand-cyan transition-colors line-clamp-1">
+            GBC 500
+          </h3>
+          <p class="relative z-10 text-[10px] sm:text-xs text-slate-300 line-clamp-2 font-light">
+            500 km de chemins forestiers en autonomie.
+          </p>
+        </a>
+
+        <!-- 2. Raid Gaspésie -->
+        <a href="/evenements/" class="group rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative aspect-[4/5] sm:h-80 sm:aspect-auto flex flex-col justify-end p-2.5 sm:p-5 transition-all hover:shadow-lg hover:-translate-y-0.5">
+          <img 
+            src="/assets/raid-international-gaspesie-2016-mont-saint-joseph-slack-line.webp" 
+            alt="Raid International Gaspésie sur les parois rocheuses" 
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onerror="this.src='/assets/51582278409_86672a9a9f_k.webp'"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+          <span class="relative z-10 self-start px-1.5 py-0.5 rounded-xs text-[8px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-cyan text-white mb-1 sm:mb-2 shadow-sm">
+            Raid & Cordes
+          </span>
+          <h3 class="relative z-10 text-xs sm:text-lg font-heading font-bold text-white mb-0.5 sm:mb-1 group-hover:text-brand-cyan transition-colors line-clamp-1">
+            Raid Gaspésie
+          </h3>
+          <p class="relative z-10 text-[10px] sm:text-xs text-slate-300 line-clamp-2 font-light">
+            Orientation boussole et progression falaise.
+          </p>
+        </a>
+
+        <!-- 3. Canada Man / Woman XTRI -->
+        <a href="/evenements/" class="group rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative aspect-[4/5] sm:h-80 sm:aspect-auto flex flex-col justify-end p-2.5 sm:p-5 transition-all hover:shadow-lg hover:-translate-y-0.5">
+          <img 
+            src="/assets/canadaman-2017-lac-megantic-ligne-depart-nuit.webp" 
+            alt="Départ nocturne du Triathlon Canada Man à Lac-Mégantic" 
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+          <span class="relative z-10 self-start px-1.5 py-0.5 rounded-xs text-[8px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-red text-white mb-1 sm:mb-2 shadow-sm">
+            Triathlon
+          </span>
+          <h3 class="relative z-10 text-xs sm:text-lg font-heading font-bold text-white mb-0.5 sm:mb-1 group-hover:text-brand-cyan transition-colors line-clamp-1">
+            Triathlon CanadaMan/Woman XTri World Tour
+          </h3>
+          <p class="relative z-10 text-[10px] sm:text-xs text-slate-300 line-clamp-2 font-light">
+            Départ de nuit vers le sommet du Mont Mégantic.
+          </p>
+        </a>
+
+        <!-- 4. Mondiaux ARWS Témiscamingue -->
+        <a href="/evenements/championnat-monde-junior-arws/" class="group rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative aspect-[4/5] sm:h-80 sm:aspect-auto flex flex-col justify-end p-2.5 sm:p-5 transition-all hover:shadow-lg hover:-translate-y-0.5">
+          <img 
+            src="/assets/Raid-Temis-reperage4.webp" 
+            alt="Championnat du Monde Junior ARWS au Témiscamingue" 
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+            onerror="this.src='/assets/Raid-Temis-reperage4.jpg'"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent"></div>
+          <span class="relative z-10 self-start px-1.5 py-0.5 rounded-xs text-[8px] sm:text-[10px] font-bold uppercase tracking-wider bg-slate-800 text-white mb-1 sm:mb-2 shadow-sm">
+            Mondiaux Raid
+          </span>
+          <h3 class="relative z-10 text-xs sm:text-lg font-heading font-bold text-white mb-0.5 sm:mb-1 group-hover:text-brand-cyan transition-colors line-clamp-1">
+            Mondiaux junior Raid Aventure 2027
+          </h3>
+          <p class="relative z-10 text-[10px] sm:text-xs text-slate-300 line-clamp-2 font-light">
+            La relève mondiale du raid aventure boréal.
+          </p>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- SECTION ACTUALITÉS & RÉCITS DE TERRAIN (Fond Blanc structuré) -->
+  <section class="py-24 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">Récits & Médias</span>
+          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase tracking-tight text-slate-900">
+            Dernières Nouvelles du Terrain
+          </h2>
+          <p class="text-base text-slate-600 max-w-2xl mt-3 leading-relaxed">
+            Suivez nos annonces de courses, nos résumés d'épreuves et nos coulisses de tournages documentaires.
+          </p>
+        </div>
+        <a 
+          href="/nouvelles/" 
+          class="text-brand-red hover:text-red-700 font-bold text-xs uppercase tracking-wider flex items-center gap-1.5 transition-colors self-start md:self-end"
+        >
+          <span>Toutes les actualités</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Grille des 3 dernières nouvelles -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {latestNews.map((n) => (
-          <article class="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden flex flex-col group hover:shadow-lg transition-all duration-300">
-            <div class="relative h-48 overflow-hidden bg-slate-200">
+          <article class="rounded-lg bg-white border border-slate-200 overflow-hidden flex flex-col group hover:border-slate-300 hover:shadow-lg transition-all duration-300 shadow-sm">
+            <div class="relative h-52 overflow-hidden bg-slate-900">
               <img 
                 src={n.image} 
                 alt={n.title} 
-                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                onerror="this.src='/assets/EnduranceAventure.jpg'"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                onerror="this.src='/assets/canadaman-2017-sommet-mont-megantic-ligne-arrivee.webp'"
               />
-              <span class="absolute top-3 right-3 px-2.5 py-1 rounded bg-black/75 text-[11px] font-semibold text-white backdrop-blur-sm">
-                📅 {n.date}
+              <span class="absolute top-3 right-3 px-2 py-0.5 rounded-sm bg-black/80 text-[11px] font-semibold text-white backdrop-blur-sm border border-slate-800 flex items-center gap-1">
+                <svg class="w-3 h-3 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                <span>{n.date}</span>
               </span>
             </div>
+
             <div class="p-6 flex-grow flex flex-col justify-between">
               <div>
-                <h3 class="text-lg font-heading font-bold text-slate-900 mb-2 group-hover:text-brand-red transition-colors line-clamp-2">
+                <h3 class="text-lg font-heading font-bold text-slate-900 mb-3 group-hover:text-brand-red transition-colors line-clamp-2">
                   <a href={`/nouvelles/${n.slug}`}>{n.title}</a>
                 </h3>
-                <p class="text-xs text-slate-600 line-clamp-3 leading-relaxed mb-4">
+                <p class="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed mb-6">
                   {n.excerpt}
                 </p>
               </div>
-              <a href={`/nouvelles/${n.slug}`} class="text-xs font-bold text-brand-red hover:underline uppercase tracking-wider">
-                Lire l'article complet →
-              </a>
+
+              <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                <span class="text-[11px] uppercase tracking-wider text-slate-400 font-semibold">Endurance Aventure</span>
+                <a href={`/nouvelles/${n.slug}`} class="text-xs font-bold uppercase tracking-wider text-brand-red hover:underline flex items-center gap-1.5">
+                  <span>Lire l'article</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                </a>
+              </div>
             </div>
           </article>
         ))}
@@ -487,21 +737,40 @@ const sponsors = [
     </div>
   </section>
 
-  <style>
-    @keyframes infinite-scroll {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
-    }
-    .animate-infinite-scroll {
-      animation: infinite-scroll 32s linear infinite;
-    }
-    .animate-infinite-scroll:hover {
-      animation-play-state: paused;
-    }
-  </style>
+
+  <!-- SECTION BANDEAU FINAL CTA (Design Clair, Professionnel & Sobre) -->
+  <section class="py-20 bg-slate-100 border-t border-slate-200 text-slate-900 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="rounded-lg bg-white border border-slate-200 p-8 sm:p-14 shadow-sm relative overflow-hidden flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+        <div class="max-w-2xl">
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2 font-heading">
+            Collaboration, Territoires & Entreprises
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase tracking-tight text-slate-900 mb-4">
+            Vous avez un projet d'événement, de défi de plein air ou de film ?
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Mettez environ 28 ans d'ingénierie sportive, de logistique d'expédition et de captation extrême au service de votre vision. Échangez directement avec Daniel Poirier et Bastien Michau.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 flex-shrink-0 w-full lg:w-auto">
+          <a 
+            href="/contact/?type=b2b" 
+            class="px-8 py-4 rounded-lg bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all shadow-md text-center flex items-center justify-center gap-2 min-h-[48px] w-full sm:w-auto"
+          >
+            <span>Demander une soumission</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <a 
+            href="/services/organisation-evenements/" 
+            class="px-7 py-4 rounded-lg bg-slate-50 hover:bg-slate-100 text-slate-800 border border-slate-300 font-heading font-bold text-xs uppercase tracking-wider transition-all text-center min-h-[48px] flex items-center justify-center w-full sm:w-auto"
+          >
+            Découvrir nos services
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </Layout>

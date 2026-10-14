@@ -5,23 +5,31 @@
     "title": "Gravel Bikepacking Challenge 500 (GBC 500)",
     "subtitle": "L'ultime défi de vélo gravelle et bikepacking au Québec",
     "category": "Gravel Bike / Bikepacking",
-    "location": "Cantons-de-l'Est / Mont Mégantic, QC",
-    "dates": "Édition 2026 : Août 2026",
-    "distance": "500 km / 250 km / 100 km",
+    "location": "Cantons-de-l'Est, QC",
+    "dates": "Date à venir",
+    "distance": "100 km et 250 km",
     "image": "/assets/2023-08-05_GBC500_mc_1498-scaled.webp",
-    "logo": "/assets/logo-GBC500-ARGON18.png",
-    "secondaryLogo": "/assets/logo-argon-18-2.png",
+    "images": [
+      "/assets/2023-08-05_GBC500_mc_1498-scaled.webp",
+      "/assets/52297032844_c0694abe2a_k.webp",
+      "/assets/52297043904_e0558ff9bc_k.webp",
+      "/assets/52297032764_294ab3c4f4_k.webp",
+      "/assets/52296779718_3f37b20ad7_k.webp"
+    ],
+    "video": "https://player.vimeo.com/video/973355251",
+    "logo": "/assets/logo-gbc500-coul-vf.webp",
     "featured": true,
     "hasPage": true,
+    "external": false,
     "description": "Une aventure épique d'endurance en autonomie complète à travers les plus beaux chemins de terre, forêts et sommets du Québec.",
     "highlights": [
-      "500 km en autonomie ou avec soutien",
+      "100 km et 250 km en autonomie ou avec soutien",
       "Parcours GPS balisé",
-      "Ravitaillements & Campings de bivouac",
+      "Ravitaillements",
       "Encadrement sécuritaire tout-terrain"
     ],
-    "registrationLink": "/evenements/gbc500/",
-    "status": "Inscriptions Ouvertes"
+    "buttonText": "Détails",
+    "registrationLink": "/evenements/gbc500/"
   },
   {
     "id": "championnat-monde-junior-arws",
@@ -30,21 +38,28 @@
     "subtitle": "Le championnat du monde officiel des jeunes aventuriers U18 & U25",
     "category": "Championnat Mondial / ARWS Series",
     "location": "Témiscamingue, Québec, Canada",
-    "dates": "29 juillet au 2 août 2027",
+    "dates": "Du 28 au 1er juillet 2027",
     "distance": "100 km • 4 Jours • Équipes de 2",
-    "image": "/assets/Raid-Temis-reperage4.webp",
-    "logo": "/assets/Logo-Mondiaux-Bilingue-.webp",
+    "image": "/assets/arws-junior-world-photo1.webp",
+    "images": [
+      "/assets/arws-junior-world-photo1.webp",
+      "/assets/arws-junior-world-photo2.webp",
+      "/assets/arws-junior-world-photo3.webp",
+      "/assets/arws-junior-world-photo4.webp"
+    ],
+    "video": "https://player.vimeo.com/video/1234973447",
+    "logo": "/assets/logo-championnat-monde-raid-temiscamingue.png",
     "featured": true,
     "hasPage": true,
+    "external": false,
     "description": "Le rendez-vous planétaire de la relève de la course d'aventure : 100 km en autonomie totale (carte & boussole, canot, VTT, trail, nage et cordes) réunissant l'élite internationale U18 et U25.",
     "highlights": [
       "100 km en autonomie stricte carte & boussole",
       "Équipes de 2 (U18 et U25 : mixte, féminine, masculine)",
       "Canot boréal, VTT technique, trail & cordes",
-      "30 sélections nationales de 10+ pays (IARA / ARWS)"
+      "Course par étapes officielle ARWS & IARA"
     ],
-    "registrationLink": "/evenements/championnat-monde-junior-arws/",
-    "status": "Sélection & Inscriptions 2027"
+    "registrationLink": "/evenements/championnat-monde-junior-arws/"
   },
   {
     "id": "raids-multisports",
@@ -56,10 +71,19 @@
     "dates": "Saisons Estivales & Automnales",
     "distance": "Expéditions 100 à 300 km • Équipes de 2 à 4",
     "image": "/assets/51582278409_86672a9a9f_k.webp",
+    "images": [
+      "/assets/51582278409_86672a9a9f_k.webp",
+      "/assets/54090898065_b840e40c2f_o-scaled.webp",
+      "/assets/54090898255_4391e75f69_o-scaled.webp",
+      "/assets/54076034404_b2f54f229a_o-scaled.webp",
+      "/assets/54090693273_cf4e40b5bf_o-scaled.webp"
+    ],
+    "video": "https://www.youtube.com/embed/TMgSAIZHs40",
     "logo": "/assets/ZF-LogoRIG-ombrNoir-trans.png",
     "secondaryLogo": "/assets/VF-Logo-Raid-Temiscamingue-coul.webp",
-    "featured": true,
+    "featured": false,
     "hasPage": true,
+    "external": true,
     "description": "Une immersion totale de plusieurs jours par équipes dans les paysages les plus sauvages du Québec, alliant canot, vélo tout-terrain, trail et orientation.",
     "highlights": [
       "Raid International Gaspésie & Raid Témiscamingue",
@@ -67,31 +91,37 @@
       "Sections maritimes, rivières boréales et crêtes rocheuses",
       "Esprit d'équipe et dépassement en autonomie"
     ],
-    "registrationLink": "/evenements/raids/",
-    "status": "Découvrir les Raids"
+    "registrationLink": "https://raidtemiscamingue.ca"
   },
   {
     "id": "canadaman-xtri",
     "slug": "canadaman-xtri",
-    "title": "Triathlon Extrême Canada Man / Canada Woman",
+    "title": "Triathlon CanadaMan/Woman XTri World Tour",
     "subtitle": "L'épreuve nord-américaine mythique de la série XTRI World Tour",
-    "category": "Triathlon Extrême (XTRI)",
-    "location": "Lac-Mégantic & Mont Mégantic, QC",
-    "dates": "Archives & Éditions Historiques (2017 - 2024)",
-    "distance": "3.8 km Nage • 180 km Vélo • 42.2 km Trail",
+    "category": "Triathlon Extrême (XTRI World Tour)",
+    "location": "Région exceptionnelle à découvrir prochainement",
+    "dates": "Information à venir prochainement",
+    "distance": "2 km Nage • 90 km Vélo • 21 km Trail",
     "image": "/assets/51581607901_c23c63d19b_k.webp",
+    "images": [
+      "/assets/51581607901_c23c63d19b_k.webp",
+      "/assets/53061653539_951fb49b59_k.webp",
+      "/assets/43386180011_63d8234b1a_o.webp",
+      "/assets/Canadaman-xtri-copyright-Quebec-Dones-3-de-5.webp",
+      "/assets/28514399477_3839a9ca93_o-scaled.webp"
+    ],
+    "video": "https://player.vimeo.com/video/1017701274",
     "logo": "/assets/VF3-logo-Canada-ManWoman-Petit.webp",
-    "secondaryLogo": "/assets/CanadaManWoman.webp",
     "featured": true,
-    "hasPage": false,
-    "description": "L'un des triathlons d'un jour les plus redoutables au monde : nage obscure dans le Lac-Mégantic, vélo sur les routes exigeantes de l'Estrie et arrivée au sommet du Mont Mégantic.",
+    "hasPage": true,
+    "external": true,
+    "description": "Nous travaillons activement à l'implantation de ce triathlon extrême dans une région exceptionnelle que nous avons hâte de vous annoncer.",
     "highlights": [
-      "Membre fondateur officiel du circuit XTRI World Tour",
-      "3,8 km nage nocturne, 180 km vélo (2500m D+)",
-      "42,2 km trail marathon jusqu'à l'observatoire astronomique",
+      "2 km nage, 90 km de vélo",
+      "21 km de trail",
+      "Membre officiel du circuit XTRI World Tour",
       "Récits et vidéos de toutes les éditions dans nos archives"
     ],
-    "registrationLink": "#archive-canadaman",
-    "status": "Voir l'Historique XTRI"
+    "registrationLink": "#"
   }
 ]

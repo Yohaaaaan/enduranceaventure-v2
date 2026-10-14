@@ -1,0 +1,129 @@
+[
+  {
+    "id": "gbc500",
+    "slug": "gbc500",
+    "title": "Gravel Bikepacking Challenge 500 (GBC 500)",
+    "subtitle": "Quebec's ultimate gravel bike and bikepacking endurance challenge",
+    "category": "Gravel Bike / Bikepacking",
+    "location": "Eastern Townships, QC",
+    "dates": "Upcoming Date",
+    "distance": "100 km & 250 km",
+    "image": "/assets/2023-08-05_GBC500_mc_1498-scaled.webp",
+    "images": [
+      "/assets/2023-08-05_GBC500_mc_1498-scaled.webp",
+      "/assets/52297032844_c0694abe2a_k.webp",
+      "/assets/52297043904_e0558ff9bc_k.webp",
+      "/assets/52297032764_294ab3c4f4_k.webp",
+      "/assets/52296779718_3f37b20ad7_k.webp"
+    ],
+    "video": "https://player.vimeo.com/video/973355251",
+    "logo": "/assets/logo-gbc500-coul-vf.webp",
+    "featured": true,
+    "hasPage": true,
+    "external": false,
+    "description": "An epic self-supported endurance adventure through the dirt roads, remote forests and peaks of Quebec.",
+    "highlights": [
+      "100 km & 250 km self-supported or supported",
+      "Official verified GPX route",
+      "Aid stations & checkpoints",
+      "All-terrain safety and emergency protocols"
+    ],
+    "buttonText": "Details",
+    "registrationLink": "/en/evenements/gbc500/"
+  },
+  {
+    "id": "championnat-monde-junior-arws",
+    "slug": "championnat-monde-junior-arws",
+    "title": "ARWS Junior World Championship Témiscamingue",
+    "subtitle": "The official world championship for U18 & U25 youth adventure racers",
+    "category": "World Championship / ARWS Series",
+    "location": "Témiscamingue, Quebec, Canada",
+    "dates": "July 28 to August 1, 2027",
+    "distance": "100 km • 4 Days • Teams of 2",
+    "image": "/assets/arws-junior-world-photo1.webp",
+    "images": [
+      "/assets/arws-junior-world-photo1.webp",
+      "/assets/arws-junior-world-photo2.webp",
+      "/assets/arws-junior-world-photo3.webp",
+      "/assets/arws-junior-world-photo4.webp"
+    ],
+    "video": "https://player.vimeo.com/video/1234973447",
+    "logo": "/assets/logo-championnat-monde-raid-temiscamingue.png",
+    "featured": true,
+    "hasPage": true,
+    "external": false,
+    "description": "The global summit for youth adventure racing: 100 km in total self-sufficiency (map & compass, boreal canoe, mountain bike, trail, swimming and rope work) bringing together the international U18 and U25 elite.",
+    "highlights": [
+      "100 km strict self-sufficiency map & compass",
+      "Teams of 2 (U18 and U25: co-ed, female, male)",
+      "Boreal canoe, technical MTB, trail & ropes",
+      "Official ARWS & IARA stage race"
+    ],
+    "registrationLink": "/en/evenements/championnat-monde-junior-arws/",
+    "buttonText": "Details"
+  },
+  {
+    "id": "raids-multisports",
+    "slug": "raids",
+    "title": "Multisport Adventure Raids",
+    "subtitle": "Legendary wilderness expeditions (Gaspésie & Témiscamingue)",
+    "category": "Multisport Adventure Raid",
+    "location": "Gaspésie & Témiscamingue, QC",
+    "dates": "Summer & Autumn Seasons",
+    "distance": "100 to 300 km Expeditions • Teams of 2 to 4",
+    "image": "/assets/51582278409_86672a9a9f_k.webp",
+    "images": [
+      "/assets/51582278409_86672a9a9f_k.webp",
+      "/assets/54090898065_b840e40c2f_o-scaled.webp",
+      "/assets/54090898255_4391e75f69_o-scaled.webp",
+      "/assets/54076034404_b2f54f229a_o-scaled.webp",
+      "/assets/54090693273_cf4e40b5bf_o-scaled.webp"
+    ],
+    "video": "https://www.youtube.com/embed/TMgSAIZHs40",
+    "logo": "/assets/ZF-LogoRIG-ombrNoir-trans.png",
+    "secondaryLogo": "/assets/VF-Logo-Raid-Temiscamingue-coul.webp",
+    "featured": false,
+    "hasPage": true,
+    "external": true,
+    "description": "A multi-day team immersion in Quebec's wildest landscapes, combining canoeing, mountain biking, trail running, and orienteering.",
+    "highlights": [
+      "Gaspésie International Raid & Témiscamingue Raid",
+      "Strict map & compass navigation only",
+      "Maritime coastlines, boreal rivers and mountain ridges",
+      "Teamwork and self-reliance in remote terrain"
+    ],
+    "registrationLink": "https://raidtemiscamingue.ca",
+    "buttonText": "Visit Website"
+  },
+  {
+    "id": "canadaman-xtri",
+    "slug": "canadaman-xtri",
+    "title": "Triathlon CanadaMan/Woman XTri World Tour",
+    "subtitle": "North America's legendary XTRI World Tour event",
+    "category": "Extreme Triathlon (XTRI World Tour)",
+    "location": "Exceptional new region to be unveiled soon",
+    "dates": "Information coming soon",
+    "distance": "2 km Swim • 90 km Bike • 21 km Trail",
+    "image": "/assets/51581607901_c23c63d19b_k.webp",
+    "images": [
+      "/assets/51581607901_c23c63d19b_k.webp",
+      "/assets/53061653539_951fb49b59_k.webp",
+      "/assets/43386180011_63d8234b1a_o.webp",
+      "/assets/Canadaman-xtri-copyright-Quebec-Dones-3-de-5.webp",
+      "/assets/28514399477_3839a9ca93_o-scaled.webp"
+    ],
+    "video": "https://player.vimeo.com/video/1017701274",
+    "logo": "/assets/VF3-logo-Canada-ManWoman-Petit.webp",
+    "featured": true,
+    "hasPage": true,
+    "external": true,
+    "description": "We are actively preparing the launch of this extreme triathlon in an exceptional destination that we look forward to announcing.",
+    "highlights": [
+      "2 km swim, 90 km bike, 21 km trail",
+      "Official member of the XTRI World Tour circuit",
+      "Archive race stories and documentaries"
+    ],
+    "registrationLink": "#",
+    "buttonText": "Coming Soon"
+  }
+]

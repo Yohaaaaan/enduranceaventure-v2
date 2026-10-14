@@ -1,0 +1,380 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const gbcSchema = {
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Gravel Bikepacking Challenge (GBC 500)",
+  "description": "Quebec's premier gravel cycling and bikepacking challenge: 250 km and 100 km self-supported through the Eastern Townships.",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "Eastern Townships",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "QC",
+      "addressCountry": "CA"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Endurance Aventure",
+    "url": "https://enduranceaventure.com"
+  }
+};
+---
+
+<Layout 
+  title="GBC 500 | Gravel Bikepacking Challenge | Endurance Aventure"
+  description="Quebec's flagship gravel bike and bikepacking challenge: 250 km and 100 km across the scenic and wild backcountry gravel roads of the Eastern Townships."
+  image="/assets/2023-08-05_GBC500_mc_1498-scaled.webp"
+  jsonLd={gbcSchema}
+  lang="en"
+>
+
+  <!-- BANNER HERO GBC500 -->
+  <section class="relative min-h-[88vh] sm:min-h-screen flex items-center justify-center bg-slate-950 overflow-hidden">
+    <img 
+      src="/assets/2023-08-05_GBC500_mc_1498-scaled.webp" 
+      alt="GBC 500 Gravel Bike" 
+      class="absolute inset-0 w-full h-full object-cover object-center opacity-90 brightness-95 contrast-105"
+      onerror="this.src='/assets/2023-08-05_GBC500_mc_1498-scaled.jpg'"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-black/20 to-black/30"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-14 sm:py-20">
+      <!-- Official GBC 500 Logo -->
+      <div class="inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 rounded-lg bg-white shadow-sm border border-slate-200 mb-6 mx-auto">
+        <img 
+          src="/assets/logo-gbc500-coul-vf.webp" 
+          alt="GBC 500 Logo" 
+          class="h-14 sm:h-20 w-auto object-contain"
+        />
+      </div>
+      <h1 class="text-2xl sm:text-4xl lg:text-5xl font-heading font-black uppercase tracking-tight text-white mb-3 break-words">
+        Gravel Bikepacking Challenge
+      </h1>
+      <p class="text-sm sm:text-base lg:text-lg text-slate-300 max-w-2xl mx-auto font-light leading-relaxed mb-6">
+        An epic journey of self-reliance, gravel dust, elevation gain, and pure freedom along Quebec's finest backcountry routes.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <span 
+          class="inline-flex items-center justify-center px-6 py-2.5 rounded-lg bg-brand-red text-white font-heading font-bold text-xs uppercase tracking-wider shadow-sm min-h-[44px]"
+        >
+          Next Edition to be announced...
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="bg-slate-50 py-10 sm:py-20 space-y-12 sm:space-y-20">
+    
+    <!-- Distances & Formats: 2 Challenges -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
+        <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-1">Official Formats</span>
+        <h2 class="text-2xl sm:text-4xl font-heading font-black uppercase text-slate-900">
+          2 Challenges Tailored to Your Goals
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-2 max-w-4xl mx-auto gap-2.5 sm:gap-6">
+        
+        <!-- Format 250 km -->
+        <div class="rounded-lg bg-white border border-slate-200 p-3 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
+          <div>
+            <div class="text-2xl sm:text-4xl font-heading font-black text-slate-900 mb-0.5 sm:mb-1">250 KM</div>
+            <div class="text-[10px] sm:text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2 sm:mb-4">Semi-Bikepacking</div>
+            <p class="text-[11px] sm:text-sm text-slate-600 leading-relaxed mb-3 sm:mb-6 font-light">
+              A dense 1 to 2-day immersion to embrace the true spirit of gravel bikepacking on a spectacular route.
+            </p>
+            <ul class="space-y-1.5 sm:space-y-2.5 text-[10px] sm:text-xs text-slate-700 mb-4 sm:mb-8 border-t border-slate-100 pt-3 sm:pt-4">
+              <li class="flex items-center gap-1.5"><span class="text-brand-cyan font-bold">✓</span> <span>First bikepacking test</span></li>
+              <li class="flex items-center gap-1.5"><span class="text-brand-cyan font-bold">✓</span> <span>Official GPX track</span></li>
+              <li class="flex items-center gap-1.5"><span class="text-brand-cyan font-bold">✓</span> <span>Finish line meal</span></li>
+            </ul>
+          </div>
+          <span class="w-full py-2.5 sm:py-3.5 rounded-lg bg-slate-100 text-slate-500 border border-slate-200 font-heading font-bold text-center text-[10px] sm:text-xs uppercase tracking-wider block cursor-not-allowed">
+            Coming soon
+          </span>
+        </div>
+
+        <!-- Format 100 km -->
+        <div class="rounded-lg bg-white border border-slate-200 p-3 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all">
+          <div>
+            <div class="text-2xl sm:text-4xl font-heading font-black text-brand-cyan mb-0.5 sm:mb-1">100 KM</div>
+            <div class="text-[10px] sm:text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2 sm:mb-4">Gravel Day</div>
+            <p class="text-[11px] sm:text-sm text-slate-600 leading-relaxed mb-3 sm:mb-6 font-light">
+              A pure single-day gravel ride over scenic rolling backcountry lanes without heavy bivouac gear.
+            </p>
+            <ul class="space-y-1.5 sm:space-y-2.5 text-[10px] sm:text-xs text-slate-700 mb-4 sm:mb-8 border-t border-slate-100 pt-3 sm:pt-4">
+              <li class="flex items-center gap-1.5"><span class="text-slate-900 font-bold">✓</span> <span>Aid stations</span></li>
+              <li class="flex items-center gap-1.5"><span class="text-slate-900 font-bold">✓</span> <span>Mechanical support</span></li>
+              <li class="flex items-center gap-1.5"><span class="text-slate-900 font-bold">✓</span> <span>Finisher medal</span></li>
+            </ul>
+          </div>
+          <span class="w-full py-2.5 sm:py-3.5 rounded-lg bg-slate-100 text-slate-500 border border-slate-200 font-heading font-bold text-center text-[10px] sm:text-xs uppercase tracking-wider block cursor-not-allowed">
+            Coming soon
+          </span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SECTION MANDATORY GEAR & SAFETY -->
+    <section id="regulations" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 shadow-sm">
+        
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8 mb-10 pb-8 border-b border-slate-100">
+          <div class="max-w-2xl">
+            <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Safety & Self-Sufficiency</span>
+            <h3 class="text-2xl sm:text-3xl font-heading font-black text-slate-900 mb-3">
+              Mandatory Athlete Gear
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              The GBC crosses remote forest sectors with limited cell coverage. To guarantee safety, a <strong class="text-slate-900">mandatory technical check</strong> of your equipment is conducted at bib pick-up.
+            </p>
+          </div>
+
+          <!-- Illustration Bike Setup -->
+          <div class="w-full lg:w-72 flex-shrink-0 rounded-lg overflow-hidden border border-slate-200 shadow-sm bg-slate-100 group">
+            <img 
+              src="/assets/gravelbike-complet.webp" 
+              alt="Complete gravel bikepacking bicycle setup" 
+              class="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-300"
+              onerror="this.src='/assets/gravelbike-gbc500-1-scaled.webp'"
+            />
+            <div class="p-2.5 bg-slate-900 text-white text-[10px] text-center font-semibold">
+              Gravel Setup & Bikepacking Frame Bags
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          
+          <!-- 1. Lighting & Visibility -->
+          <div class="p-5 sm:p-6 rounded-lg bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2 py-0.5 rounded-xs text-[10px] font-bold uppercase tracking-wider bg-slate-900 text-white font-mono">
+                  01
+                </span>
+                <span class="px-2 py-0.5 rounded-xs text-[10px] font-bold uppercase tracking-wider bg-red-50 text-brand-red border border-red-200">
+                  Mandatory at Night
+                </span>
+              </div>
+              <h4 class="font-heading font-bold text-slate-900 text-base mb-3">Lighting & Visibility</h4>
+              <ul class="space-y-2 text-xs text-slate-600 leading-relaxed font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-red font-bold flex-shrink-0">•</span>
+                  <span><strong>High-power front headlight</strong>: Minimum 500 verified lumens with battery life for 8 hours.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-red font-bold flex-shrink-0">•</span>
+                  <span><strong>Rear red taillight</strong>: Steady or flashing, visible from 200+ meters.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-red font-bold flex-shrink-0">•</span>
+                  <span><strong>Reflective safety vest</strong>: Required on any road sections between dusk and dawn.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2. Navigation & Communication -->
+          <div class="p-5 sm:p-6 rounded-lg bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2 py-0.5 rounded-xs text-[10px] font-bold uppercase tracking-wider bg-slate-900 text-white font-mono">
+                  02
+                </span>
+                <span class="px-2 py-0.5 rounded-xs text-[10px] font-bold uppercase tracking-wider bg-cyan-50 text-brand-cyan border border-cyan-200">
+                  Checked at Start
+                </span>
+              </div>
+              <h4 class="font-heading font-bold text-slate-900 text-base mb-3">Navigation & Communication</h4>
+              <ul class="space-y-2 text-xs text-slate-600 leading-relaxed font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-cyan font-bold flex-shrink-0">•</span>
+                  <span><strong>Dedicated GPS bike computer</strong>: Garmin / Wahoo / Hammerhead with sufficient battery or power bank.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-cyan font-bold flex-shrink-0">•</span>
+                  <span><strong>Official GPX track</strong>: Loaded and verified prior to the pre-race briefing.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-cyan font-bold flex-shrink-0">•</span>
+                  <span><strong>Smartphone in waterproof pouch</strong>: Fully charged with backup 10,000 mAh battery pack.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 3. Survival & First Aid -->
+          <div class="p-5 sm:p-6 rounded-lg bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2 py-0.5 rounded-xs text-[10px] font-bold uppercase tracking-wider bg-slate-900 text-white font-mono">
+                  03
+                </span>
+                <span class="px-2 py-0.5 rounded-xs text-[10px] font-bold uppercase tracking-wider bg-slate-200 text-slate-800 border border-slate-300">
+                  Vital Safety
+                </span>
+              </div>
+              <h4 class="font-heading font-bold text-slate-900 text-base mb-3">Survival & First Aid</h4>
+              <ul class="space-y-2 text-xs text-slate-600 leading-relaxed font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-slate-800 font-bold flex-shrink-0">•</span>
+                  <span><strong>Space blanket (aluminized foil)</strong>: Intact, min size 140 x 200 cm.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-slate-800 font-bold flex-shrink-0">•</span>
+                  <span><strong>Pealess emergency whistle</strong>: For audio signaling in deep forests.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-slate-800 font-bold flex-shrink-0">•</span>
+                  <span><strong>Hydration capacity</strong>: Minimum 1.5 L carried on the bike at all times.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 4. Mechanics & Tooling -->
+          <div class="p-5 sm:p-6 rounded-lg bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2 py-0.5 rounded-xs text-[10px] font-bold uppercase tracking-wider bg-slate-900 text-white font-mono">
+                  04
+                </span>
+                <span class="px-2 py-0.5 rounded-xs text-[10px] font-bold uppercase tracking-wider bg-slate-200 text-slate-800 border border-slate-300">
+                  Total Autonomy
+                </span>
+              </div>
+              <h4 class="font-heading font-bold text-slate-900 text-base mb-3">Mechanics & Field Repairs</h4>
+              <ul class="space-y-2 text-xs text-slate-600 leading-relaxed font-light">
+                <li class="flex items-start gap-2">
+                  <span class="text-slate-800 font-bold flex-shrink-0">•</span>
+                  <span><strong>Flat repairs</strong>: 2 inner tubes + tubeless plugs + pump or 2 CO2 cartridges.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-slate-800 font-bold flex-shrink-0">•</span>
+                  <span><strong>Multi-tool with chain breaker</strong> + 1 quick-link compatible with your chain.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-slate-800 font-bold flex-shrink-0">•</span>
+                  <span><strong>Spare derailleur hanger</strong>: Highly recommended given rocky wilderness tracks.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION PHOTO GALLERY -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Visual Immersion</span>
+        <h3 class="text-2xl sm:text-4xl font-heading font-black uppercase text-slate-900">
+          The Gravel Bikepacking Epic
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-600 mt-2">
+          Scenic backcountry roads, raw forest double-tracks, and the pure passion of gravel cycling.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
+        <div class="group rounded-lg overflow-hidden bg-slate-200 shadow-sm relative aspect-[4/3]">
+          <img 
+            src="/assets/gravelbike-gbc500-1-scaled.webp" 
+            alt="Gravel cyclist in action across Eastern Townships gravel roads" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        <div class="group rounded-lg overflow-hidden bg-slate-200 shadow-sm relative aspect-[4/3]">
+          <img 
+            src="/assets/52295790607_9f99627483_k.webp" 
+            alt="Gravel bikepacking peloton riding under bright sunshine" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        <div class="group rounded-lg overflow-hidden bg-slate-200 shadow-sm relative aspect-[4/3]">
+          <img 
+            src="/assets/gbc500-endurance-aventure-mission-accomplie-2-scaled.webp" 
+            alt="Gravel cyclists taking in vast panoramic views in Quebec" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+
+        <div class="group rounded-lg overflow-hidden bg-slate-200 shadow-sm relative aspect-[4/3]">
+          <img 
+            src="/assets/2023-08-05_GBC500_mc_1498-scaled.webp" 
+            alt="Self-supported gravel bike on wilderness forest route" 
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION GPX TRACKS & MAPPING -->
+    <section id="gpx" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 shadow-sm">
+        <div class="mb-8">
+          <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">Navigation & Routes</span>
+          <h3 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900">
+            Mapping & Official GPX Files
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 mt-2 max-w-2xl leading-relaxed">
+            All routes are scouted and field-tested. GPX files will become available for download when registrations open.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div class="p-6 rounded-lg bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="text-[11px] font-bold uppercase text-slate-600 mb-1">Semi-Bikepacking</div>
+              <div class="text-xl font-heading font-black text-slate-900 mb-2">250 KM GPX Track</div>
+              <div class="text-xs text-slate-600 space-y-1.5 mb-6">
+                <div>• Average: +3,200 m elevation gain</div>
+                <div>• Average: 82% Gravel / 18% Paved rural</div>
+                <div>• Mid-point bivouac stage designated</div>
+              </div>
+            </div>
+            <span 
+              class="w-full py-2.5 rounded-lg bg-slate-100 text-slate-500 border border-slate-200 text-xs font-heading font-bold uppercase tracking-wider text-center block cursor-not-allowed"
+            >
+              Coming Soon
+            </span>
+          </div>
+
+          <div class="p-6 rounded-lg bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="text-[11px] font-bold uppercase text-brand-cyan mb-1">Gravel Day</div>
+              <div class="text-xl font-heading font-black text-slate-900 mb-2">100 KM GPX Track</div>
+              <div class="text-xs text-slate-600 space-y-1.5 mb-6">
+                <div>• Average: +1,450 m elevation gain</div>
+                <div>• Average: 85% Fast-rolling gravel</div>
+                <div>• Multiple aid stations along course</div>
+              </div>
+            </div>
+            <span 
+              class="w-full py-2.5 rounded-lg bg-slate-100 text-slate-500 border border-slate-200 text-xs font-heading font-bold uppercase tracking-wider text-center block cursor-not-allowed"
+            >
+              Coming Soon
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</Layout>

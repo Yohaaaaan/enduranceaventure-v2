@@ -7,80 +7,91 @@ interface Props {
   description?: string;
   image?: string;
   jsonLd?: Record<string, any>;
+  lang?: 'fr' | 'en';
 }
 
 const {
   title = "Endurance Aventure | Événements sportifs d'aventure & Production",
-  description = "Spécialiste de l'organisation d'événements sportifs extrêmes, gravel bikepacking (GBC500), trails hivernaux, raids multisports et production télévisuelle au Québec depuis plus de 20 ans.",
+  description = "Spécialiste de l'organisation d'événements sportifs extrêmes, gravel bikepacking (GBC500), trails hivernaux, raids multisports et production télévisuelle au Québec depuis environ 28 ans.",
   image = "/assets/2023-08-05_GBC500_mc_1498-scaled.webp",
   jsonLd,
+  lang,
 } = Astro.props;
+
+const isEn = lang ? lang === 'en' : Astro.url.pathname.startsWith('/en');
+const pageLang = isEn ? 'en' : 'fr';
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://enduranceaventure.com');
 
 const defaultOrgSchema = {
   "@context": "https://schema.org",
-  "@type": "SportsOrganization",
-  "name": "Endurance Aventure",
-  "url": "https://enduranceaventure.com",
-  "logo": "https://enduranceaventure.com/assets/endurance-aventure-logo-blanc.png",
-  "description": description,
-  "founder": {
-    "@type": "Person",
-    "name": "Daniel Poirier",
-    "jobTitle": "Fondateur & Directeur d'Épreuves"
-  },
-  "member": [
+  "@graph": [
     {
-      "@type": "Person",
-      "name": "Bastien Michau",
-      "jobTitle": "Directeur de Production & Réalisateur"
+      "@type": "SportsOrganization",
+      "@id": "https://enduranceaventure.com/#organization",
+      "name": "Endurance Aventure",
+      "url": "https://enduranceaventure.com",
+      "logo": "https://enduranceaventure.com/assets/endurance-aventure-logo-blanc.png",
+      "description": description,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Magog",
+        "addressRegion": "QC",
+        "addressCountry": "CA"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@enduranceaventure.com",
+        "telephone": "+1-819-342-5220",
+        "contactType": "customer service"
+      }
     },
     {
-      "@type": "Person",
-      "name": "Daniel Poirier",
-      "jobTitle": "Fondateur & Directeur d'Épreuves"
-    }
-  ],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Services Événementiels et Audiovisuels Tout-Terrain",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Organisation d'Événements Sportifs & Corporatifs",
-          "url": "https://enduranceaventure.com/services/organisation-evenements/"
-        }
+      "@type": ["ProfessionalService", "LocalBusiness"],
+      "@id": "https://enduranceaventure.com/#service",
+      "name": "Endurance Aventure - Services Événementiels & Audiovisuels",
+      "url": "https://enduranceaventure.com/services/organisation-evenements/",
+      "image": "https://enduranceaventure.com/assets/canadaman-2017-sommet-mont-megantic-ligne-arrivee.webp",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Magog",
+        "addressRegion": "QC",
+        "addressCountry": "CA"
       },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Production Télévisuelle & Audiovisuelle Tout-Terrain",
-          "url": "https://enduranceaventure.com/services/production-tele/"
-        }
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Québec, Canada"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services Événementiels et Audiovisuels Tout-Terrain",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Organisation d'Événements Sportifs Clés en Main",
+              "url": "https://enduranceaventure.com/services/organisation-evenements/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Production Télévisuelle & Audiovisuelle Tout-Terrain",
+              "url": "https://enduranceaventure.com/services/production-tele/"
+            }
+          }
+        ]
       }
-    ]
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Magog",
-    "addressRegion": "QC",
-    "addressCountry": "CA"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "info@enduranceaventure.com",
-    "telephone": "+1-450-659-9944",
-    "contactType": "customer service"
-  }
+    }
+  ]
 };
 ---
 
 <!doctype html>
-<html lang="fr" class="scroll-smooth">
+<html lang={pageLang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -99,7 +110,7 @@ const defaultOrgSchema = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
-    <meta property="og:locale" content="fr_CA" />
+    <meta property="og:locale" content={isEn ? "en_US" : "fr_CA"} />
     <meta property="og:site_name" content="Endurance Aventure" />
 
     <!-- Twitter -->
@@ -128,13 +139,15 @@ const defaultOrgSchema = {
             screenWidth: window.innerWidth,
             timestamp: new Date().toISOString()
           };
+          const jsonStr = JSON.stringify(data);
           if (navigator.sendBeacon) {
-            navigator.sendBeacon('/api/track', JSON.stringify(data));
+            const blob = new Blob([jsonStr], { type: 'application/json' });
+            navigator.sendBeacon('/api/track', blob);
           } else {
             fetch('/api/track', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify(data),
+              body: jsonStr,
               keepalive: true
             }).catch(function() {});
           }
@@ -142,11 +155,45 @@ const defaultOrgSchema = {
       })();
     </script>
   </head>
-  <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-red selection:text-white">
-    <Header />
-    <main class="flex-grow">
+  <body class="bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex flex-col selection:bg-brand-red selection:text-white w-full relative">
+    <Header lang={pageLang} />
+    <main class="flex-grow w-full overflow-x-hidden">
       <slot />
     </main>
-    <Footer />
+    <Footer lang={pageLang} />
+
+    <!-- Back to top floating button (Appears smoothly after scrolling down) -->
+    <button
+      id="back-to-top"
+      type="button"
+      aria-label={isEn ? "Back to top" : "Retour en haut"}
+      class="fixed bottom-6 right-6 z-40 p-3 rounded-full bg-slate-900/80 hover:bg-brand-red text-white shadow-md backdrop-blur-xs border border-slate-700/50 transition-all duration-300 opacity-0 pointer-events-none translate-y-3 cursor-pointer flex items-center justify-center focus:outline-hidden"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"/>
+      </svg>
+    </button>
+
+    <script is:inline>
+      (function() {
+        const btn = document.getElementById('back-to-top');
+        if (!btn) return;
+        
+        const toggleVisibility = () => {
+          if (window.scrollY > 400) {
+            btn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+            btn.classList.add('opacity-100', 'translate-y-0');
+          } else {
+            btn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+            btn.classList.remove('opacity-100', 'translate-y-0');
+          }
+        };
+
+        window.addEventListener('scroll', toggleVisibility, { passive: true });
+        btn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      })();
+    </script>
   </body>
 </html>

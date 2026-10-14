@@ -3,101 +3,222 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout 
-  title="Organisation d'Événements Sportifs Clés en Main | Endurance Aventure" 
-  description="Conception, logistique et sécurité pour événements sportifs, courses d'entreprise et défis outdoor au Québec."
+  title="Organisation d'Événements Sportifs Clés en Main au Québec | Endurance Aventure" 
+  description="Conception de parcours, logistique d'expédition, régie de départ et sécurité de secours pour courses officielles et défis d'envergure au Québec."
   image="/assets/organisation-evenements-sportifs-services-endurance-aventure.jpg"
 >
-  <!-- Header Sombre -->
-  <div class="bg-slate-950 py-16 sm:py-20 border-b border-slate-800">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <a href="/services/" class="text-xs text-brand-cyan font-bold uppercase tracking-wider mb-4 inline-block hover:underline">← Retour aux services</a>
-      <h1 class="text-3xl sm:text-5xl font-heading font-black uppercase text-white mb-4">
+  <!-- Header Sombre & Immersif avec Photo de Logistique Terrain -->
+  <header class="relative min-h-[48vh] sm:min-h-[55vh] flex items-center bg-slate-950 border-b border-slate-800 overflow-hidden">
+    <img 
+      src="/assets/51581607901_c23c63d19b_k.webp" 
+      alt="Organisation d'événements sportifs et logistique d'envergure" 
+      class="absolute inset-0 w-full h-full object-cover object-center opacity-90 brightness-95 contrast-105"
+      onerror="this.src='/assets/organisation-evenements-sportifs-services-endurance-aventure.jpg'"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-black/20 to-black/20"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-950/50 via-transparent to-transparent"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 sm:py-20 w-full">
+      <a href="/services/" class="text-xs text-brand-cyan hover:text-white font-bold uppercase tracking-wider mb-4 inline-flex items-center gap-1.5 transition-colors">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        <span>Retour aux services</span>
+      </a>
+      <h1 class="text-3xl sm:text-5xl font-heading font-black uppercase text-white mb-4 drop-shadow-lg">
         Organisation d'Événements Sportifs
       </h1>
-      <p class="text-base sm:text-lg text-slate-300 font-light leading-relaxed">
+      <p class="text-base sm:text-lg text-slate-100 font-normal leading-relaxed drop-shadow-md max-w-3xl">
         Une prise en charge logistique, technique et sécuritaire complète pour des épreuves sportives et défis corporatifs d'envergure.
       </p>
     </div>
-  </div>
+  </header>
 
   <!-- Contenu Principal sur Fond Clair Harmonieux -->
   <div class="bg-slate-50 py-16">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Photo illustrative -->
-      <div class="rounded-3xl overflow-hidden mb-12 shadow-sm border border-slate-200 h-96 bg-slate-200">
-        <img src="/assets/organisation-evenements-sportifs-services-endurance-aventure.jpg" alt="Organisation d'événements" class="w-full h-full object-cover" />
+      <!-- Photo illustrative haute résolution (Arrivée grandiose au sommet) -->
+      <div class="rounded-lg overflow-hidden mb-12 shadow-md border border-slate-200 h-[420px] bg-slate-900 relative group">
+        <img 
+          src="/assets/canadaman-2017-sommet-mont-megantic-ligne-arrivee.webp" 
+          alt="Arrivée grandiose au sommet du Mont-Mégantic - Triathlon Canada Man / Canada Woman XTRI" 
+          class="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-500"
+          onerror="this.src='/assets/canadaman-2017-sommet-mont-megantic-ligne-arrivee.jpg'"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+        <div class="absolute bottom-4 left-6 right-6 text-white flex items-center justify-between">
+          <div>
+            <span class="text-xs uppercase font-bold tracking-wider text-brand-red">Arrivée d'Étape Mythique</span>
+            <div class="text-sm sm:text-base font-bold">Arche d'arrivée au sommet • Vue panoramique sur les massifs québécois</div>
+          </div>
+        </div>
       </div>
 
       <!-- Corps du texte avec contrastes soignés -->
-      <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-sm space-y-8">
+      <div class="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 shadow-sm space-y-8">
         <div>
           <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Savoir-Faire Clé en Main</span>
           <h2 class="text-2xl sm:text-3xl font-heading font-bold text-slate-900 mb-4">
-            Une expertise tout-terrain rodée depuis plus de 25 ans
+            Une expertise tout-terrain rodée depuis environ 28 ans
           </h2>
           <p class="text-slate-700 leading-relaxed text-sm sm:text-base">
             Endurance Aventure vous accompagne de A à Z dans la création et l'exécution d'épreuves sportives, qu'il s'agisse de courses officielles de plusieurs centaines de participants ou de défis corporatifs sur-mesure pour fédérer vos équipes.
           </p>
         </div>
 
-        <!-- Grille des 4 domaines d'expertise (Fonds gris doux, titres foncés) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-8">
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-            <h3 class="font-heading font-bold text-slate-900 text-base mb-2">Ingénierie de Parcours</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Tracé cartographique GPS, validation des droits de passage avec propriétaires et municipalités, conformité environnementale et balisage professionnel.</p>
+        <!-- Grille des 4 domaines d'expertise (2 colonnes sur mobile) -->
+        <div class="grid grid-cols-2 gap-2.5 sm:gap-6 my-6 sm:my-8">
+          <div class="bg-slate-50 p-3 sm:p-6 rounded-md border border-slate-200">
+            <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-base mb-1 sm:mb-2">Ingénierie de Parcours</h3>
+            <p class="text-[11px] sm:text-sm text-slate-600 leading-relaxed font-light line-clamp-4 sm:line-clamp-none">Tracé cartographique GPS, droits de passage, conformité environnementale et balisage professionnel.</p>
           </div>
           
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-            <h3 class="font-heading font-bold text-slate-900 text-base mb-2">Sécurité & Plans d'Urgence</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Équipes de premiers secours tout-terrain, liaisons radio VHF et balises satellites, coordination étroite avec la sécurité civile et les ambulanciers.</p>
+          <div class="bg-slate-50 p-3 sm:p-6 rounded-md border border-slate-200">
+            <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-base mb-1 sm:mb-2">Sécurité & Urgences</h3>
+            <p class="text-[11px] sm:text-sm text-slate-600 leading-relaxed font-light line-clamp-4 sm:line-clamp-none">Équipes de secours tout-terrain, radio VHF, balises satellites et coordination avec les ambulanciers.</p>
           </div>
           
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-            <h3 class="font-heading font-bold text-slate-900 text-base mb-2">Logistique des Vivres & Bivouacs</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Gestion des points de ravitaillement, tentes, campements éphémères en milieu isolé et alimentation énergétique adaptée pour les athlètes.</p>
+          <div class="bg-slate-50 p-3 sm:p-6 rounded-md border border-slate-200">
+            <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-base mb-1 sm:mb-2">Vivres & Bivouacs</h3>
+            <p class="text-[11px] sm:text-sm text-slate-600 leading-relaxed font-light line-clamp-4 sm:line-clamp-none">Ravitaillements, tentes, campements éphémères en milieu isolé et nutrition énergétique adaptée.</p>
           </div>
           
-          <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-            <h3 class="font-heading font-bold text-slate-900 text-base mb-2">Plateforme d'Inscription & Accueil</h3>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Système d'inscription en ligne conforme, gestion de la billetterie, remise des trousses de coureur et accueil personnalisé des participants.</p>
+          <div class="bg-slate-50 p-3 sm:p-6 rounded-md border border-slate-200">
+            <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-base mb-1 sm:mb-2">Inscriptions & Accueil</h3>
+            <p class="text-[11px] sm:text-sm text-slate-600 leading-relaxed font-light line-clamp-4 sm:line-clamp-none">Système d'inscription en ligne, dossards, accueil personnalisé et validation du matériel.</p>
           </div>
         </div>
 
-        <!-- Galerie Réalisations Terrain -->
+        <!-- Carrousel Réalisations Terrain Vivant & Alterné -->
         <div class="pt-6 border-t border-slate-100">
-          <div class="text-center max-w-xl mx-auto mb-8">
-            <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-1">Preuves de Terrain</span>
-            <h3 class="text-xl sm:text-2xl font-heading font-bold text-slate-900">
-              Nos Réalisations Événementielles en Images
-            </h3>
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+            <div>
+              <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-1">Preuves de Terrain</span>
+              <h3 class="text-xl sm:text-2xl font-heading font-bold text-slate-900">
+                Nos Réalisations Événementielles en Images
+              </h3>
+              <p class="text-xs text-slate-500 mt-1">Triathlon Extrême, Raids Aventure, Gravel Bikepacking GBC500 et arrivées au sommet.</p>
+            </div>
+            
+            <!-- Contrôles du Carrousel -->
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <button 
+                id="carousel-prev-btn"
+                type="button" 
+                class="w-11 h-11 min-h-[44px] min-w-[44px] rounded-md bg-slate-100 hover:bg-brand-red hover:text-white border border-slate-300 flex items-center justify-center text-slate-700 transition-colors shadow-sm"
+                aria-label="Image précédente"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+              </button>
+              <button 
+                id="carousel-next-btn"
+                type="button" 
+                class="w-11 h-11 min-h-[44px] min-w-[44px] rounded-md bg-slate-100 hover:bg-brand-red hover:text-white border border-slate-300 flex items-center justify-center text-slate-700 transition-colors shadow-sm"
+                aria-label="Image suivante"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="group rounded-2xl overflow-hidden bg-slate-200 h-56 relative shadow-sm">
-              <img src="/assets/canadaman-2017-lac-megantic-ligne-depart-nuit-1920x718.jpg" alt="Ligne de départ de nuit" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Régie de départs nocturnes</span>
+
+          <!-- Piste de défilement du carrousel -->
+          <div 
+            id="event-photo-carousel" 
+            class="flex gap-4 overflow-x-auto pb-4 scroll-smooth snap-x snap-mandatory"
+            style="scrollbar-width: thin;"
+          >
+            <!-- 1. Triathlon Départ & Transition Nautique -->
+            <div class="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-start rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm group">
+              <div class="h-64 overflow-hidden relative">
+                <img src="/assets/51581607901_c23c63d19b_k.webp" alt="Départ natation triathlon extrême Canada Man" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              </div>
             </div>
-            <div class="group rounded-2xl overflow-hidden bg-slate-200 h-56 relative shadow-sm">
-              <img src="/assets/TDN-2018-Trail-des-Neiges-Mont-Orford-Gagnants-15km-skimo.webp" alt="Podium et remise des prix" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='/assets/51581835318_775ae15a4e_k.webp'" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Podiums & Cérémonies</span>
+
+            <!-- 2. VTT sur Crêtes Sauvages -->
+            <div class="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-start rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm group">
+              <div class="h-64 overflow-hidden relative">
+                <img src="/assets/51582278409_86672a9a9f_k.webp" alt="VTT en crête sauvage Raid International" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              </div>
             </div>
-            <div class="group rounded-2xl overflow-hidden bg-slate-200 h-56 relative shadow-sm">
-              <img src="/assets/51586236989_64f608f4ba_k.webp" alt="Gestion des pelotons et coureurs" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-              <span class="absolute bottom-2.5 left-3 text-white text-xs font-semibold">Encadrement de masse</span>
+
+            <!-- 3. Gravel Bikepacking en Forêt -->
+            <div class="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-start rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm group">
+              <div class="h-64 overflow-hidden relative">
+                <img src="/assets/2023-08-05_GBC500_mc_1498-scaled.webp" alt="Gravel bikepacking GBC 500 sur chemin forestier" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              </div>
+            </div>
+
+            <!-- 4. Course à Pied & Trail Extrême -->
+            <div class="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-start rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm group">
+              <div class="h-64 overflow-hidden relative">
+                <img src="/assets/Course-a-pied-scaled.webp" alt="Coureurs en action lors d'un événement d'endurance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              </div>
+            </div>
+
+            <!-- 5. Setup de Course & Arche de Transition -->
+            <div class="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-start rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm group">
+              <div class="h-64 overflow-hidden relative">
+                <img src="/assets/53061653539_951fb49b59_k.webp" alt="Configuration de course et zone de transition athlètes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              </div>
+            </div>
+
+            <!-- 6. Cycliste en Ascension Gravel Bike -->
+            <div class="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-start rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm group">
+              <div class="h-64 overflow-hidden relative">
+                <img src="/assets/gravelbike-gbc500-1-scaled.webp" alt="Cycliste de gravelle en plein effort en montagne" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              </div>
+            </div>
+
+            <!-- 7. Trail Running au Cœur des Grands Espaces -->
+            <div class="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-start rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm group">
+              <div class="h-64 overflow-hidden relative">
+                <img src="/assets/51588664244_a5ca30eb5d_k-2.webp" alt="Athlètes de trail en course au coucher du soleil" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              </div>
+            </div>
+
+            <!-- 8. VTT Tout-Terrain en Forêt Boréale -->
+            <div class="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-start rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm group">
+              <div class="h-64 overflow-hidden relative">
+                <img src="/assets/28514399477_3839a9ca93_o-scaled.webp" alt="VTT technique et franchissement en milieu sauvage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              </div>
+            </div>
+
+            <!-- 9. Coureurs d'Endurance et Dépassement -->
+            <div class="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-start rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm group">
+              <div class="h-64 overflow-hidden relative">
+                <img src="/assets/51582517360_5ace9e0494_k-2.webp" alt="Dépassement et endurance sur sentier de trail" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              </div>
+            </div>
+
+            <!-- 10. Relève et Compétition Mondiale Junior -->
+            <div class="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-start rounded-lg overflow-hidden bg-slate-900 border border-slate-200 shadow-sm group">
+              <div class="h-64 overflow-hidden relative">
+                <img src="/assets/arws-junior-world-photo1.webp" alt="Jeunes raideurs en compétition sur le parcours" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              </div>
             </div>
           </div>
         </div>
+
+        <script is:inline>
+          const carousel = document.getElementById('event-photo-carousel');
+          const prevBtn = document.getElementById('carousel-prev-btn');
+          const nextBtn = document.getElementById('carousel-next-btn');
+          if (carousel && prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+              carousel.scrollBy({ left: -360, behavior: 'smooth' });
+            });
+            nextBtn.addEventListener('click', () => {
+              carousel.scrollBy({ left: 360, behavior: 'smooth' });
+            });
+          }
+        </script>
 
         <!-- CTA Card Harmonisé (Fond clair structuré, pas de bloc noir agressif) -->
-        <div class="bg-slate-100 rounded-2xl border border-slate-300/80 p-8 sm:p-10 text-center">
+        <div class="bg-slate-100 rounded-md border border-slate-300/80 p-8 sm:p-10 text-center">
           <h3 class="text-xl sm:text-2xl font-heading font-bold text-slate-900 mb-2">Vous avez un projet d'événement sportif ou d'entreprise ?</h3>
           <p class="text-sm text-slate-600 max-w-xl mx-auto mb-6">Échangez avec Daniel Poirier et Bastien Michau pour évaluer la faisabilité technique et recevoir un devis adapté à vos effectifs.</p>
           <a 
             href="/contact/" 
-            class="px-8 py-3.5 rounded-xl bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all inline-block shadow-md shadow-brand-red/20"
+            class="w-full sm:w-auto px-8 py-3.5 min-h-[44px] rounded-md bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all inline-flex items-center justify-center shadow-sm"
           >
             Discuter de votre projet
           </a>

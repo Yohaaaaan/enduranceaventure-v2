@@ -16,12 +16,29 @@
     "link": "#"
   },
   {
+    "id": "event-rit-2025",
+    "title": "Raid International Témiscamingue 2025",
+    "year": "2025",
+    "location": "Témiscamingue, Québec, Canada, 2025",
+    "category": "Raid Aventure Multisport",
+    "description": "La 4e édition du Raid International Témiscamingue s'est tenue du 4 au 7 septembre 2025 sur un parcours d'endurance sauvage de 160 km sur 3 jours. 30 équipes ont affronté le canot boréal, le vélo de montagne, le trek d'orientation carte & boussole, la nage dans le lac Kipawa et des ateliers de cordes spectaculaires (tyrolienne et ascension d'un silo à Béarn). Un tracé grandiose traversant la Première Nation de Kebaowek, Témiscaming, Laniel, Fabre, Béarn, le Parc national d'Opémican, avec une arrivée finale vibrante à Lorrainville.",
+    "images": [
+      "/assets/raid-temiscamingue-2025-1.webp",
+      "/assets/raid-temiscamingue-2025-2.webp",
+      "/assets/raid-temiscamingue-2025-3.webp",
+      "/assets/raid-temiscamingue-2025-4.webp",
+      "/assets/raid-temiscamingue-2025-5.webp"
+    ],
+    "video": "https://www.youtube.com/embed/uDC-6JuaVsA",
+    "link": "#"
+  },
+  {
     "id": "event-1",
     "title": "Raid International Témiscamingue 2024",
     "year": "2024",
     "location": "Témiscamingue, Québec, Canada, 2024",
     "category": "Raid Aventure Multisport",
-    "description": "Le Raid International Témiscamingue 2025 est une course d’endurance de 170 km sur trois jours, combinant trekking, vélo de montagne, canoë, nage et épreuves sur cordes, avec navigation à la carte et boussole. Les participants traverseront les municipalités de Rémigny, Guérin, Notre-Dame-du-Nord et Saint-Bruno-de-Guigues, offrant des paysages naturels exceptionnels.",
+    "description": "Le Raid International Témiscamingue 2024 (3e édition) a proposé une course d’endurance de 170 km sur trois jours, combinant trekking, vélo de montagne, canoë, nage et épreuves sur cordes, avec navigation stricte à la carte et boussole à travers les municipalités de Rémigny, Guérin, Notre-Dame-du-Nord et Saint-Bruno-de-Guigues.",
     "images": [
       "/assets/54090898065_b840e40c2f_o-scaled.webp",
       "/assets/54090898255_4391e75f69_o-scaled.webp",

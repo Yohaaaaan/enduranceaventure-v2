@@ -1,0 +1,687 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+const arwsSchema = {
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "ARWS Junior World Adventure Racing Championship 2027",
+  "description": "The official Junior Adventure Racing World Championship (ARWS & IARA) hosted in Témiscamingue: 100 km, 4 days, boreal canoeing, MTB, trek, swimming, ropes and map & compass navigation for U18 and U25 youth categories.",
+  "startDate": "2027-07-28",
+  "endDate": "2027-07-31",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "Témiscamingue (Abitibi-Témiscamingue)",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Témiscamingue",
+      "addressRegion": "QC",
+      "addressCountry": "CA"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Endurance Aventure & Adventure Racing World Series (ARWS)",
+    "url": "https://www.arwsjuniorworld.com"
+  }
+};
+---
+
+<Layout 
+  title="ARWS Junior World Championship 2027 | Témiscamingue | Endurance Aventure"
+  description="From July 29 to August 1, 2027, Témiscamingue hosts the official ARWS & IARA Junior Adventure Racing World Championship. 100 km stage race for the world's elite U18 & U25 athletes."
+  image="/assets/arws-junior-world-temiscamingue-2026-1.webp"
+  jsonLd={arwsSchema}
+  lang="en"
+>
+
+  <!-- IMMERSIVE HERO BANNER -->
+  <section class="relative min-h-[85vh] sm:min-h-screen flex items-center justify-center bg-slate-950 overflow-hidden">
+    <img 
+      src="/assets/arws-junior-world-temiscamingue-2026-1.webp" 
+      alt="Young athletes in action - ARWS Junior World Championship 2027" 
+      class="absolute inset-0 w-full h-full object-cover opacity-90 brightness-100 contrast-105" 
+      onerror="this.src='/assets/Raid-Temis-reperage4.webp'"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-black/15 to-black/25"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto px-4 text-center py-14 sm:py-20">
+      
+      <!-- Official Logo -->
+      <div class="inline-flex items-center justify-center bg-white/95 backdrop-blur-md px-5 sm:px-7 py-2.5 sm:py-3.5 rounded-lg shadow-sm border border-white mb-5">
+        <img 
+          src="/assets/logo-championnat-monde-raid-temiscamingue.png" 
+          alt="ARWS Junior World Championship Témiscamingue" 
+          class="h-10 sm:h-14 w-auto object-contain"
+        />
+      </div>
+
+      <div class="block mb-3">
+        <span class="px-3 py-1 rounded-sm bg-brand-red text-white text-xs sm:text-sm font-bold uppercase tracking-wider inline-block">
+          July 29 to August 1, 2027 • Témiscamingue, Quebec, Canada
+        </span>
+      </div>
+
+      <h1 class="text-2xl sm:text-4xl md:text-5xl font-heading font-black uppercase text-white mb-4 tracking-tight drop-shadow-lg leading-tight">
+        ARWS Junior World <br class="hidden sm:inline" />
+        <span class="text-white">
+          Championship
+        </span>
+      </h1>
+      
+      <p class="text-sm sm:text-base text-slate-200 font-light max-w-2xl mx-auto mb-8 leading-relaxed drop-shadow">
+        The official global summit for next-generation adventure racers: <strong class="text-white font-semibold">100 km in stage race format</strong> across pristine boreal forests and vast Canadian Shield waterways. Teams of 2 in <strong class="text-brand-cyan font-semibold">U18 and U25</strong> divisions.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-xl mx-auto">
+        <a 
+          href="https://www.arwsjuniorworld.com" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 min-h-[44px] rounded-lg bg-brand-red hover:bg-brand-red-dark text-white font-heading font-bold text-xs uppercase tracking-wider transition-all shadow-sm gap-2 text-center"
+        >
+          <span>Official Worlds Portal</span>
+          <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+        <a 
+          href="#schedule" 
+          class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 min-h-[44px] rounded-lg bg-slate-900/90 hover:bg-slate-800 text-white border border-slate-700 font-heading font-bold text-xs uppercase tracking-wider transition-all text-center"
+        >
+          Discover Schedule
+        </a>
+        <a 
+          href="/en/contact?type=general&subject=championnat-monde-junior-arws" 
+          class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 min-h-[44px] rounded-lg bg-slate-900/70 hover:bg-slate-900 text-slate-200 border border-slate-700 font-heading font-bold text-xs uppercase tracking-wider transition-all text-center"
+        >
+          Contact Organization
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY METRICS BANNER -->
+  <div class="bg-slate-900 border-b border-slate-800 py-6 sm:py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6 text-center">
+        <div class="p-3 bg-white/5 rounded-md lg:bg-transparent">
+          <div class="text-2xl sm:text-4xl font-heading font-black text-brand-red">100 KM</div>
+          <div class="text-[10px] sm:text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">Wilderness Expedition</div>
+        </div>
+        <div class="p-3 bg-white/5 rounded-md lg:bg-transparent">
+          <div class="text-2xl sm:text-4xl font-heading font-black text-white">4 DAYS</div>
+          <div class="text-[10px] sm:text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">Boreal Immersion</div>
+        </div>
+        <div class="p-3 bg-white/5 rounded-md lg:bg-transparent">
+          <div class="text-2xl sm:text-4xl font-heading font-black text-brand-cyan">U18 & U25</div>
+          <div class="text-[10px] sm:text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">2 Official Divisions</div>
+        </div>
+        <div class="p-3 bg-white/5 rounded-md lg:bg-transparent">
+          <div class="text-2xl sm:text-4xl font-heading font-black text-white">DUO (x2)</div>
+          <div class="text-[10px] sm:text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">Co-ed, Female, Male</div>
+        </div>
+        <div class="p-3 bg-white/5 rounded-md lg:bg-transparent col-span-2 md:col-span-1">
+          <div class="text-2xl sm:text-4xl font-heading font-black text-brand-red">0 GPS</div>
+          <div class="text-[10px] sm:text-xs uppercase text-slate-400 font-bold tracking-wider mt-1">Map & Compass Pure</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFICIAL VIDEO TEASER SECTION -->
+  <section class="bg-slate-950 py-12 sm:py-16 border-b border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-slate-900 border-l-2 border-brand-red text-slate-200 text-xs font-heading font-bold uppercase tracking-wider mb-4">
+        <span>Official Teaser Trailer</span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-heading font-black uppercase tracking-tight text-white mb-2">
+        Official Teaser • ARWS Junior World Championship
+      </h2>
+      <p class="text-sm text-slate-400 max-w-2xl mx-auto mb-8 font-light">
+        Immerse yourself in the intensity, raw boreal scenery, and total self-reliance challenge awaiting U18 and U25 teams.
+      </p>
+
+      <div class="relative w-full aspect-video rounded-lg overflow-hidden shadow-sm border border-slate-800 bg-black">
+        <iframe 
+          src="https://player.vimeo.com/video/1234973447?autoplay=1&loop=1&autopause=0&muted=1&background=0" 
+          title="Official Teaser - ARWS Junior World Championship"
+          class="w-full h-full border-0" 
+          allow="autoplay; fullscreen; picture-in-picture" 
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div class="bg-slate-50 py-10 sm:py-20 space-y-12 sm:space-y-20">
+    
+    <!-- OFFICIAL PRESENTATION -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-red-100 text-brand-red text-xs font-bold uppercase tracking-wider">
+            <span>Historic Global Event</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-heading font-black uppercase text-slate-900 leading-tight">
+            The World's Elite Youth Racers in the Boreal Wild
+          </h2>
+          <p class="text-base text-slate-700 leading-relaxed">
+            For the second time in adventure racing history, the global circuit <strong class="text-slate-900 font-semibold">ARWS (Adventure Racing World Series)</strong> and the <strong class="text-slate-900 font-semibold">IARA (International Adventure Racing Association)</strong> join forces with <strong class="text-slate-900 font-semibold">Endurance Aventure</strong> to stage the official Junior Adventure Racing World Championship.
+          </p>
+          <p class="text-base text-slate-700 leading-relaxed">
+            From <strong class="text-slate-900 font-semibold">July 29 to August 1, 2027</strong>, the best young adventure athletes on Earth will gather in Témiscamingue to compete across a 100-kilometer stage-race course with nightly bivouacs, carved through the Canadian Shield's ancient granite, roaring rivers, and immense boreal lakes.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="relative rounded-lg overflow-hidden shadow-sm border border-slate-200 bg-slate-900 group">
+            <img 
+              src="/assets/arws-junior-world-temiscamingue-2026-4.webp" 
+              alt="Young athletes in action at the ARWS Junior Adventure Race" 
+              class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='/assets/Raid-Temis-reperage4.webp'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6 text-white">
+              <span class="px-2.5 py-1 rounded-sm bg-brand-cyan text-white text-[11px] font-bold uppercase tracking-wider mb-2 inline-block">
+                Wilderness Territory & Boreal Lakes
+              </span>
+              <p class="text-sm font-semibold leading-snug">
+                A world-class playground of dense forest, steep cliffs, and endless waterway corridors.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- OFFICIAL DISCIPLINES -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Endurance Multisport</span>
+        <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase text-slate-900">
+          Disciplines on the Program
+        </h2>
+        <p class="text-sm text-slate-600 mt-2">
+          Teams manage navigation, cohesion, and pace across 6 combined outdoor endurance disciplines.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6">
+        
+        <!-- Canoe & Portage -->
+        <div class="discipline-card bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
+          <div>
+            <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
+              <img 
+                src="/assets/raid-temiscamingue-2025-1.webp" 
+                alt="Expedition canoe section in boreal raid" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded-xs bg-black/80 text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">
+                Water
+              </span>
+            </div>
+            <div class="p-2.5 sm:p-5">
+              <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Boreal Canoe & Portages</h3>
+              <p class="discipline-desc text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+                Tandem open canoeing on vast boreal lakes and winding rivers. Demands intense paddling, forest portages and moving water.
+              </p>
+              <button type="button" class="expand-btn sm:hidden text-[10px] font-bold text-brand-red flex items-center gap-1 mb-2">
+                <span>Read more</span>
+              </button>
+            </div>
+          </div>
+          <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-semibold text-blue-600 border-t border-slate-100 mt-1 line-clamp-1">
+            Certified water gear mandatory
+          </div>
+        </div>
+
+        <!-- Technical MTB -->
+        <div class="discipline-card bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
+          <div>
+            <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
+              <img 
+                src="/assets/28514399477_3839a9ca93_o-scaled.webp" 
+                alt="Mountain bike transition and singletrack" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded-xs bg-black/80 text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">
+                MTB
+              </span>
+            </div>
+            <div class="p-2.5 sm:p-5">
+              <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Mountain Biking (MTB)</h3>
+              <p class="discipline-desc text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+                Wild forestry double-tracks, loose gravel, rocky singletracks, and punchy climbs testing mechanical durability.
+              </p>
+              <button type="button" class="expand-btn sm:hidden text-[10px] font-bold text-brand-red flex items-center gap-1 mb-2">
+                <span>Read more</span>
+              </button>
+            </div>
+          </div>
+          <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-semibold text-brand-red border-t border-slate-100 mt-1 line-clamp-1">
+            Total autonomy & helmets required
+          </div>
+        </div>
+
+        <!-- Trek & Bushwhack -->
+        <div class="discipline-card bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
+          <div>
+            <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
+              <img 
+                src="/assets/arws-junior-world-photo1.webp" 
+                alt="Off-trail foot progression in boreal forest" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded-xs bg-black/80 text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">
+                Trek
+              </span>
+            </div>
+            <div class="p-2.5 sm:p-5">
+              <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Boreal Trek & Bushwhack</h3>
+              <p class="discipline-desc text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+                On-foot progression through dense taiga and rugged rocky ridges. Full off-trail bushwhacking and bog crossings.
+              </p>
+              <button type="button" class="expand-btn sm:hidden text-[10px] font-bold text-brand-red flex items-center gap-1 mb-2">
+                <span>Read more</span>
+              </button>
+            </div>
+          </div>
+          <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-semibold text-slate-700 border-t border-slate-100 mt-1 line-clamp-1">
+            Rugged shoes & physical grit
+          </div>
+        </div>
+
+        <!-- Map & Compass Navigation -->
+        <div class="discipline-card bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
+          <div>
+            <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
+              <img 
+                src="/assets/raid-temiscamingue-2025-3.webp" 
+                alt="Topographic map and compass navigation in the wild" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded-xs bg-brand-red text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">
+                Strict Rule
+              </span>
+            </div>
+            <div class="p-2.5 sm:p-5">
+              <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Map & Compass Navigation</h3>
+              <p class="discipline-desc text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+                Zero GPS or phones allowed. Teams navigate solely using official topographic maps and magnetic compasses.
+              </p>
+              <button type="button" class="expand-btn sm:hidden text-[10px] font-bold text-brand-red flex items-center gap-1 mb-2">
+                <span>Read more</span>
+              </button>
+            </div>
+          </div>
+          <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-bold text-brand-red border-t border-slate-100 mt-1 line-clamp-1">
+            0 GPS • Pure bearing precision
+          </div>
+        </div>
+
+        <!-- Open Water Swimming -->
+        <div class="discipline-card bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
+          <div>
+            <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
+              <img 
+                src="/assets/arws-junior-world-temiscamingue-2026-3.webp" 
+                alt="Open water swimming section in wilderness raid" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded-xs bg-black/80 text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">
+                Aquatic
+              </span>
+            </div>
+            <div class="p-2.5 sm:p-5">
+              <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Open Water Swims</h3>
+              <p class="discipline-desc text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+                Open water swims crossing bays between islands and wild shorelines. Waterproof drybags required.
+              </p>
+              <button type="button" class="expand-btn sm:hidden text-[10px] font-bold text-brand-red flex items-center gap-1 mb-2">
+                <span>Read more</span>
+              </button>
+            </div>
+          </div>
+          <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-semibold text-brand-cyan border-t border-slate-100 mt-1 line-clamp-1">
+            Certified flotation gear
+          </div>
+        </div>
+
+        <!-- Rope Work & Vertical Sections -->
+        <div class="discipline-card bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:border-slate-300 transition-all group">
+          <div>
+            <div class="aspect-[4/3] sm:h-44 sm:aspect-auto overflow-hidden bg-slate-100 relative">
+              <img 
+                src="/assets/raid-international-gaspesie-2016-mont-saint-joseph-slack-line.webp" 
+                alt="Vertical ropes workshop and cliff rappel" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <span class="absolute top-2 left-2 px-1.5 py-0.5 rounded-xs bg-black/80 text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider">
+                Ropes
+              </span>
+            </div>
+            <div class="p-2.5 sm:p-5">
+              <h3 class="font-heading font-bold text-slate-900 text-xs sm:text-lg mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-none">Ropes & Heights</h3>
+              <p class="discipline-desc text-[11px] sm:text-xs text-slate-600 leading-relaxed mb-2 sm:mb-3 line-clamp-3 sm:line-clamp-none font-light">
+                Cliff rappels, tyrolean traverses, and rope maneuvers rigged and supervised by certified safety specialists.
+              </p>
+              <button type="button" class="expand-btn sm:hidden text-[10px] font-bold text-brand-red flex items-center gap-1 mb-2">
+                <span>Read more</span>
+              </button>
+            </div>
+          </div>
+          <div class="p-2.5 pt-0 sm:p-5 sm:pt-0 text-[10px] sm:text-xs font-semibold text-slate-700 border-t border-slate-100 mt-1 line-clamp-1">
+            Certified harnesses & helmets
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- COMPETITION FORMAT: U18 & U25 -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-lg p-5 sm:p-10 text-slate-900 shadow-sm border border-slate-200">
+        
+        <div class="max-w-3xl mb-6 sm:mb-8">
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-1">Race Structure</span>
+          <h2 class="text-xl sm:text-3xl font-heading font-black uppercase text-slate-900 mb-2">
+            Two Official World Divisions
+          </h2>
+          <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+            Each team consists of <strong class="text-slate-900">2 athletes</strong> racing under their national federation or an international wildcard entry.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          
+          <!-- U18 Division -->
+          <div class="p-4 sm:p-6 rounded-lg bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 rounded-xs bg-brand-cyan text-slate-950 font-black text-xs uppercase tracking-wider">
+                  U18 Division
+                </span>
+                <span class="text-xs font-semibold text-slate-500">15 to 17 years old</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-heading font-bold text-slate-900 mb-2">Junior Championship U18</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Open to racers aged 15 to 17. Live satellite beacon safety tracking with complete unassisted wilderness racing along the route.
+              </p>
+              <ul class="space-y-1.5 text-xs text-slate-700">
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-cyan font-bold">✓</span>
+                  <span>Co-ed Podium (1 Female + 1 Male)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-cyan font-bold">✓</span>
+                  <span>Female Podium (2 Females)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-cyan font-bold">✓</span>
+                  <span>Male Podium (2 Males)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- U25 Division -->
+          <div class="p-4 sm:p-6 rounded-lg bg-slate-50 border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-2.5 py-0.5 rounded-xs bg-brand-red text-white font-black text-xs uppercase tracking-wider">
+                  U25 Division
+                </span>
+                <span class="text-xs font-semibold text-slate-500">18 to 25 years old</span>
+              </div>
+              <h3 class="text-base sm:text-lg font-heading font-bold text-slate-900 mb-2">Espoir Championship U25</h3>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Open to competitors aged 18 to 25. Complete autonomy and navigation rigor modeled directly on premier ARWS World Series stages.
+              </p>
+              <ul class="space-y-1.5 text-xs text-slate-700">
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-red font-bold">✓</span>
+                  <span>Co-ed Podium (1 Female + 1 Male)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-red font-bold">✓</span>
+                  <span>Female Podium (2 Females)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="text-brand-red font-bold">✓</span>
+                  <span>Male Podium (2 Males)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4-DAY SCHEDULE -->
+    <div id="schedule" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-brand-cyan text-xs font-bold uppercase tracking-widest block mb-2">July 29 to August 1, 2027</span>
+        <h2 class="text-3xl sm:text-4xl font-heading font-black uppercase text-slate-900">
+          Estimated World Championship Schedule
+        </h2>
+        <p class="text-sm text-slate-600 mt-2">
+          Four days of sporting intensity, cultural discovery, and global camaraderie in Témiscamingue.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        
+        <!-- Day 1 -->
+        <div class="bg-white p-4 sm:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brand-red mb-1">July 29, 2027</div>
+            <div class="text-base sm:text-xl font-heading font-black text-slate-900 mb-1.5 sm:mb-3">Welcome & Gear Check</div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3 sm:mb-4 font-light">
+              Arrival of international delegations in Ville-Marie and Témiscaming. Mandatory survival gear check and safety rope tests.
+            </p>
+            <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 border-t border-slate-100 pt-2.5">
+              <li class="flex items-start gap-1.5"><span class="text-brand-red font-bold">•</span> <span>Check-in & medical verification</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-brand-red font-bold">•</span> <span>Captains' technical briefing</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-brand-red font-bold">•</span> <span>Opening ceremony of nations</span></li>
+            </ul>
+          </div>
+          <div class="text-[10px] sm:text-[11px] font-semibold text-slate-500 border-t border-slate-100 pt-2.5 sm:pt-3 mt-3 sm:mt-4">
+            Athletes' Village
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="bg-white p-4 sm:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brand-cyan mb-1">July 30, 2027</div>
+            <div class="text-base sm:text-xl font-heading font-black text-slate-900 mb-1.5 sm:mb-3">Prologue & Youth Event</div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3 sm:mb-4 font-light">
+              Spectacular prologue stage alongside the launch of the Desjardins Youth Raid for regional athletes.
+            </p>
+            <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 border-t border-slate-100 pt-2.5">
+              <li class="flex items-start gap-1.5"><span class="text-brand-cyan font-bold">•</span> <span>Spectator-friendly prologue race</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-brand-cyan font-bold">•</span> <span>Desjardins Discovery Youth Raid</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-brand-cyan font-bold">•</span> <span>Official sealed map handout</span></li>
+            </ul>
+          </div>
+          <div class="text-[10px] sm:text-[11px] font-semibold text-brand-cyan border-t border-slate-100 pt-2.5 sm:pt-3 mt-3 sm:mt-4">
+            Youth Showcase
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="bg-white p-4 sm:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brand-red mb-1">July 31, 2027</div>
+            <div class="text-base sm:text-xl font-heading font-black text-slate-900 mb-1.5 sm:mb-3">Stage 1 Grand Start</div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3 sm:mb-4 font-light">
+              Wilderness expedition race: boreal canoeing, MTB transitions, and navigation treks through untouched country.
+            </p>
+            <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 border-t border-slate-100 pt-2.5">
+              <li class="flex items-start gap-1.5"><span class="text-brand-red font-bold">•</span> <span>Mass line start</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-brand-red font-bold">•</span> <span>Strategic route choices</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-brand-red font-bold">•</span> <span>Live satellite tracking online</span></li>
+            </ul>
+          </div>
+          <div class="text-[10px] sm:text-[11px] font-semibold text-brand-red border-t border-slate-100 pt-2.5 sm:pt-3 mt-3 sm:mt-4">
+            Stage Race • Stage 1
+          </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="bg-white p-4 sm:p-6 rounded-lg border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-brand-red mb-1">Aug. 1, 2027</div>
+            <div class="text-base sm:text-xl font-heading font-black text-slate-900 mb-1.5 sm:mb-3">Stage 2 & World Finale</div>
+            <p class="text-xs text-slate-600 leading-relaxed mb-3 sm:mb-4 font-light">
+              Second race day finish line and official crowning of world champions followed by the banquet of nations.
+            </p>
+            <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 border-t border-slate-100 pt-2.5">
+              <li class="flex items-start gap-1.5"><span class="text-brand-red font-bold">•</span> <span>U18 & U25 finish line celebrations</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-brand-red font-bold">•</span> <span>Official medal ceremonies</span></li>
+              <li class="flex items-start gap-1.5"><span class="text-brand-red font-bold">•</span> <span>Closing banquet and festivities</span></li>
+            </ul>
+          </div>
+          <div class="text-[10px] sm:text-[11px] font-semibold text-brand-red border-t border-slate-100 pt-2.5 sm:pt-3 mt-3 sm:mt-4">
+            International Celebration
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- HOST REGION: WILD TÉMISCAMINGUE -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <div class="lg:col-span-6 space-y-5">
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-1">The Natural Playground</span>
+          <h3 class="text-2xl sm:text-4xl font-heading font-black uppercase text-slate-900 leading-tight">
+            Témiscamingue: Sanctuary of Adventure and Vast Wilderness
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Le Témiscamingue est une terre de légendes et de contrastes géologiques : des forêts mixtes denses, des falaises vertigineuses bordant le lac Témiscamingue et le labyrinthe féérique des immenses lacs boréaux.
+          </p>
+          <div class="space-y-3 text-xs sm:text-sm text-slate-700">
+            <div class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-sm bg-red-100 text-brand-red flex items-center justify-center font-bold flex-shrink-0">✓</span>
+              <span><strong class="text-slate-900">Anishinaabe & Kebaowek Heritage:</strong> Close collaboration and deep respect for the ancestral lands of First Nations along the course.</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <span class="w-6 h-6 rounded-sm bg-red-100 text-brand-red flex items-center justify-center font-bold flex-shrink-0">✓</span>
+              <span><strong class="text-slate-900">Warm Local Hospitality:</strong> The passionate commitment of local municipalities, volunteers, and the entire outdoor community.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 grid grid-cols-2 gap-2.5 sm:gap-4">
+          <div class="rounded-lg overflow-hidden shadow-sm aspect-[4/3] bg-slate-100 group">
+            <img 
+              src="/assets/arws-junior-world-temiscamingue-2026-2.webp" 
+              alt="Expedition canoeing on Témiscamingue lakes" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='/assets/Raid-Temis-reperage4.webp'"
+            />
+          </div>
+          <div class="rounded-lg overflow-hidden shadow-sm aspect-[4/3] bg-slate-100 group">
+            <img 
+              src="/assets/arws-junior-world-temiscamingue-2026-3.webp" 
+              alt="Water crossing in adventure racing" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onerror="this.src='/assets/Raid-Temis-reperage4.webp'"
+            />
+          </div>
+          <div class="rounded-lg overflow-hidden shadow-sm aspect-[4/3] bg-slate-100 group">
+            <img 
+              src="/assets/28514399477_3839a9ca93_o-scaled.webp" 
+              alt="MTB transition in boreal forest" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="rounded-lg overflow-hidden shadow-sm aspect-[4/3] bg-slate-100 group">
+            <img 
+              src="/assets/35792635631_c33a7fd7d0_o.webp" 
+              alt="Orienteering on rocky crest" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PARTNERS & CALL TO ACTION -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-lg border border-slate-200 p-8 sm:p-12 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="text-brand-red text-xs font-bold uppercase tracking-widest block mb-2">Organizing Committee & Partners</span>
+          <h3 class="text-2xl font-heading font-bold text-slate-900 mb-4">A United International Front</h3>
+          <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+            The 2027 ARWS Junior World Championship brings together leaders in world adventure racing: <strong class="text-slate-800">ARWS</strong>, <strong class="text-slate-800">IARA</strong>, and <strong class="text-slate-800">Endurance Aventure</strong>, alongside the <strong class="text-slate-800">MRC de Témiscamingue</strong>, Indigenous communities, and regional partners.
+          </p>
+          <div class="flex items-center gap-4">
+            <img 
+              src="/assets/logo-championnat-monde-raid-temiscamingue.png" 
+              alt="ARWS Junior World Championship Témiscamingue" 
+              class="h-12 w-auto object-contain"
+            />
+          </div>
+        </div>
+
+        <div class="bg-slate-50 p-6 rounded-lg border border-slate-200 text-center">
+          <div class="text-base font-heading font-bold text-slate-900 mb-2">Are you an athlete, national federation, or partner?</div>
+          <p class="text-xs text-slate-500 mb-6">Check official event information or reach out directly to Endurance Aventure for any logistics or partnership questions.</p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a 
+              href="https://www.arwsjuniorworld.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="w-full sm:w-auto px-6 py-3 rounded-lg bg-brand-red hover:bg-brand-red-dark text-white text-xs font-heading font-bold uppercase tracking-wider transition-colors shadow-sm"
+            >
+              Official Worlds Site ↗
+            </a>
+            <a 
+              href="/en/contact?type=general&subject=championnat-monde-junior-arws" 
+              class="w-full sm:w-auto px-6 py-3 rounded-lg bg-white border border-slate-300 hover:bg-slate-100 text-slate-800 text-xs font-heading font-bold uppercase tracking-wider transition-colors"
+            >
+              Contact Team
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</Layout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.discipline-card').forEach(card => {
+      const btn = card.querySelector('.expand-btn');
+      const desc = card.querySelector('.discipline-desc');
+      if (btn && desc) {
+        btn.addEventListener('click', () => {
+          const isExpanded = desc.classList.contains('line-clamp-none');
+          if (isExpanded) {
+            desc.classList.remove('line-clamp-none');
+            desc.classList.add('line-clamp-3');
+            btn.querySelector('span').textContent = 'Read more';
+          } else {
+            desc.classList.remove('line-clamp-3');
+            desc.classList.add('line-clamp-none');
+            btn.querySelector('span').textContent = 'Show less';
+          }
+        });
+      }
+    });
+  });
+</script>

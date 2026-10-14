@@ -16,7 +16,7 @@ Endurance Aventure is a pioneer in extreme sports event organization, wilderness
 | Environment | Directory Path | Git Branch | Internal Port | PM2 Process | Public Live URL | Purpose |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Preview / Staging** | `/mnt/data/enduranceaventure-preview/` | `preview` | `4322` | `endurance-preview` | `https://rag-agent.duckdns.org/` | **All active dev & modifications happen here** |
-| **Production** | `/mnt/data/enduranceaventure-v2/` | `main` | `4321` | `endurance-site` | `https://bb-reports.duckdns.org/` | **Untouchable during dev. Updated ONLY after user validation** |
+| **Production** | `/mnt/data/enduranceaventure-v2/` | `main` | `4321` | `endurance-site` | `https://enduranceaventure.com/` (alias: `https://bb-reports.duckdns.org/`) | **Untouchable during dev. Updated ONLY after user validation** |
 
 ---
 
@@ -35,7 +35,7 @@ flowchart TD
     F -- "Yes ('valide', 'go prod')" --> G["Commit & Push on 'preview' branch"]
     G --> H["Merge to 'main' & Push GitHub"]
     H --> I["Deploy Prod in /mnt/data/enduranceaventure-v2/: git pull && npm run build && pm2 restart endurance-site"]
-    I --> J["Production is Live & Verified at https://bb-reports.duckdns.org/"]
+    I --> J["Production is Live & Verified at https://enduranceaventure.com/"]
 ```
 
 ### Protocol Steps:
@@ -77,7 +77,7 @@ flowchart TD
         npm run build
         pm2 restart endurance-site
         ```
-     3. Verify production live URL (`https://bb-reports.duckdns.org/`).
+     3. Verify production live URL (`https://enduranceaventure.com/` and alias `https://bb-reports.duckdns.org/`).
 
 ---
 
@@ -114,7 +114,19 @@ The site follows a **Hybrid High-Contrast Outdoor Expedition** design system (an
 
 AI agents frequently fall back on generic training averages. In this project, all "AI Slop" patterns are strictly forbidden.
 
-### 🚫 The Visual Stop-List (Never Use)
+### 🚫 The Visual Stop-List (Strictly Prohibited & Their Replacements)
+- **NO Glowy Crypto Badges & Pulsing Dots**:
+  - *Prohibited*: `animate-pulse`, glowing dot pills (`<span class="... animate-pulse">`), neon borders (`border-cyan-400`), translucent pill badges with heavy `backdrop-blur-md shadow-lg`.
+  - *Replacement*: Crisp athletic tags inspired by sports timing and technical bibs: clean rectangular or subtle radius tags (`rounded-sm` or `rounded px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider`), solid high-contrast backgrounds (`bg-brand-red text-white` or `bg-slate-900 text-slate-100 border border-slate-800`), or left-border kickers (`border-l-2 border-brand-red pl-2.5`).
+- **NO Bubbly / Overly Rounded Corners (`rounded-3xl`, `rounded-2xl`)**:
+  - *Prohibited*: Over-curved "bubble app" / crypto startup corners (`rounded-3xl` and `rounded-2xl`) on cards, containers, sections, modals, and images.
+  - *Replacement*: Athletic, functional, and rugged geometry (Salomon, Arc'teryx, UTMB, Ironman): use `rounded-lg` (8px) or `rounded-md` (6px) maximum. Containers and cards must feel structured, technical, and architectural, never like inflatable toy bubbles.
+- **NO Raw Unicode Emojis**:
+  - *Prohibited*: Emojis in UI elements, headings, cards, or lists (`📍`, `📅`, `⚡`, `✓`, `🏢`, `🏃`, `📱`, `💻`, `📬`, `↓`, `→`, `←`, `↗`). Emojis destroy corporate credibility and give a distinct "amateur / AI-generated" aesthetic.
+  - *Replacement*: Minimalist monochrome SVG icons (`w-3.5 h-3.5` stroke-2), clean typographic labels (`Date :`, `Lieu :`, `Format :`), subtle typographic dashes (`—`), or sleek SVG arrows.
+- **NO Neon Glow Shadows**:
+  - *Prohibited*: `shadow-2xl` on normal cards, colored neon glow drop shadows (`shadow-brand-red/30`, `shadow-cyan/40`).
+  - *Replacement*: Flat structural design with crisp 1px neutral borders (`border border-slate-200` on light, `border border-slate-800` on dark) and subtle, natural elevation (`shadow-sm` or `shadow-md`).
 - **NO SaaS Gradients**: Never use purple/indigo/violet gradients (`from-purple-500 to-indigo-600` or `from-violet-600 to-pink-500`).
 - **NO Glassmorphism & Neon Halos**: Never use frosted glass cards with glowing neon borders, glowing shadow halos, or blurred color orbs in the background.
 - **NO Bento-Box Grids**: Avoid the cliché "3 identical rounded feature cards with floating colored icons" followed by generic pricing tables.
@@ -132,8 +144,27 @@ AI agents frequently fall back on generic training averages. In this project, al
 
 ### 📷 Imagery & Real Assets Rule
 - **100% Authentic Photography**: Every image must come from `/public/assets/` (over 500 real photos from the Endurance Aventure archives).
-- Photos must depict real athletes, mud, sweat, canoes, mountain bikes, wilderness bivouacs, and genuine Quebec terrain (Gaspésie, Témiscamingue, Cantons-de-l'Est, Lac-Mégantic, Nunavik).
 - **NO Stock Fitness Models**: Never use generic stock photography of smiling gym-goers or paved park joggers.
+
+### 📱 100% Mobile-First Responsive Architecture (Zero Content Loss)
+When adapting components or pages for mobile:
+1. **Strict Mobile-First Tailwind Layering**:
+   - Write base styles for the smallest mobile screens (320px–639px), then layer up with prefixes: `sm:` (640px+), `md:` (768px+), `lg:` (1024px+), `xl:` (1280px+).
+   - Never design desktop-down or rely on fixed desktop pixel widths (`w-[1200px]`).
+2. **Touch-Target Compliance (WCAG / Apple HIG)**:
+   - All interactive elements (buttons, mobile drawer links, accordions, filter chips) must have a minimum tap area of **44x44 CSS pixels** (`min-h-[44px]`, `min-w-[44px]`, `p-3`).
+3. **Zero Horizontal Overflow**:
+   - The body and page wrappers must enforce `overflow-x-hidden`.
+   - Embeds, videos, and iframes must use responsive aspect ratios (`aspect-video w-full rounded-lg`) rather than fixed width/height attributes.
+   - Decorative background SVGs must be constrained with `pointer-events-none max-w-full overflow-hidden`.
+4. **Fluid Typography & Headings**:
+   - Scale headings smoothly across viewports (`text-3xl sm:text-5xl lg:text-7xl`) to prevent word clipping on French composite nouns (e.g., *"Témiscamingue"*, *"Organisation"*).
+   - Use `break-words` or `hyphens-auto` where tight viewports risk horizontal push.
+5. **Form & Input Ergonomics**:
+   - Forms on mobile stack strictly into a single column (`grid-cols-1 md:grid-cols-2`).
+   - Use mobile-optimized input attributes (`type="tel"`, `type="email"`, `inputmode="numeric"`) to invoke appropriate virtual keyboards.
+6. **Structure Only, Content Intact**:
+   - Mobile optimization must purely adapt CSS layout, flex directions, grid columns, and touch spacing. Never hide, truncate, or delete informative text, event data, badges, or archive links on mobile viewports.
 
 ---
 
@@ -201,4 +232,44 @@ AI agents frequently fall back on generic training averages. In this project, al
    - Any file, document, photo, or dataset placed in `temporaire/` must **always be formally copied / imported into the project's persistent database or assets** (e.g., SQLite DB, structured `src/data/*.json`, or permanent `public/assets/` directory) before it can be used.
 3. **Consumption Strictly from Database / Permanent Storage**:
    - Both Preview and Production environments must consume all data, media, and documents **strictly from the database or the project's permanent storage**.
+
+---
+
+## 8. Media Assets Architecture & Database Structure (`data/media.db`)
+
+All visual assets, photos, logos, partner graphics, and documents are indexed in a native SQLite database: `data/media.db` (`media_assets` table).
+
+### Database Schema (`media_assets`)
+
+| Column | Type | Description |
+| :--- | :--- | :--- |
+| `id` | `INTEGER PRIMARY KEY AUTOINCREMENT` | Unique asset ID |
+| `filename` | `TEXT UNIQUE NOT NULL` | Exact filename in `public/assets/` |
+| `file_path` | `TEXT NOT NULL` | Web path (e.g. `/assets/2023-08-05_GBC500_mc_1498-scaled.webp`) |
+| `media_type` | `TEXT NOT NULL` | `photo`, `logo`, `partner_sponsor`, `team_portrait`, `document_pdf`, `banner_graphic`, `font`, `other` |
+| `event_category` | `TEXT NOT NULL` | `gbc500`, `canadaman_xtri`, `raid_gaspesie`, `raid_temiscamingue`, `trail_des_neiges`, `velo_cafe`, `corporate_general`, `unassigned` |
+| `format` | `TEXT NOT NULL` | Extension (`webp`, `jpg`, `png`, `pdf`, etc.) |
+| `size_bytes` | `INTEGER NOT NULL` | File size on disk in bytes |
+| `width` | `INTEGER` | Pixel width (null for non-images) |
+| `height` | `INTEGER` | Pixel height (null for non-images) |
+| `aspect_ratio` | `TEXT` | `landscape`, `portrait`, `square`, or `null` |
+| `is_used` | `INTEGER NOT NULL DEFAULT 0` | `1` if referenced in website code/JSON, `0` if in stock |
+| `used_in` | `TEXT` | JSON array of files referencing this asset |
+| `created_at` | `TEXT NOT NULL` | ISO 8601 index timestamp |
+
+### Media Types Breakdown (1,313 assets total)
+- `photo` (1,210): Real action, outdoor terrain, athletes, and expedition photography.
+- `partner_sponsor` (30): Sponsor and partner logos (Argon 18, XACT, Näak, Leki, Karpos, Vaude, Blizzard, Coast, etc.).
+- `logo` (29): Event and corporate branding logos (Endurance Aventure, GBC 500, ARWS, RIG, etc.).
+- `document_pdf` (17): Historical race briefs, guides, and rulebooks.
+- `team_portrait` (14): Founders & associates portraits (Jean-Thomas Boily, Daniel Poirier, Bastien Michau, Marc Plante, etc.).
+- `banner_graphic` (12): Historical web headers and banners.
+- `font` (1): Typography asset.
+
+### Maintenance & Indexing Command
+To re-index or update the database after adding or modifying media assets in `public/assets/`:
+```bash
+node scripts/build_media_db.js
+```
+
 
