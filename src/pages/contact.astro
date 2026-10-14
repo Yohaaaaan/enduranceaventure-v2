@@ -149,6 +149,11 @@ import Layout from '../layouts/Layout.astro';
 
             <form id="contact-form" class="space-y-6">
               <input type="hidden" id="form-type" name="type" value="b2b" />
+              <!-- Honeypot anti-spam (invisible pour les humains, piège pour les robots) -->
+              <div class="hidden" aria-hidden="true" style="display:none !important;">
+                <label for="contact-website-url">Ne pas remplir ce champ</label>
+                <input type="text" id="contact-website-url" name="website_url" tabindex="-1" autocomplete="off" />
+              </div>
 
               <!-- SECTION B2B (Affichée en mode B2B) -->
               <div id="b2b-fields" class="space-y-6">

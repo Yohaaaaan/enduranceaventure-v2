@@ -150,6 +150,11 @@ import Layout from '../../layouts/Layout.astro';
 
             <form id="contact-form" class="space-y-6">
               <input type="hidden" id="form-type" name="type" value="b2b" />
+              <!-- Honeypot anti-spam (invisible to humans, traps automated spam bots) -->
+              <div class="hidden" aria-hidden="true" style="display:none !important;">
+                <label for="contact-website-url">Do not fill this field</label>
+                <input type="text" id="contact-website-url" name="website_url" tabindex="-1" autocomplete="off" />
+              </div>
 
               <!-- B2B Fields -->
               <div id="b2b-fields" class="space-y-6">

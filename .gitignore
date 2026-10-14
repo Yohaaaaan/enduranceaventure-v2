@@ -24,6 +24,8 @@ data/contacts.json
 data/pending_email_leads.json
 data/*.db
 data/*.sqlite*
+data/.*
+data/*.json
 
 # Public heavy media & scraped assets library
 public/assets/*
