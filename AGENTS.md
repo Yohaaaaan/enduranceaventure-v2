@@ -16,7 +16,7 @@ Endurance Aventure is a pioneer in extreme sports event organization, wilderness
 | Environment | Directory Path | Git Branch | Internal Port | PM2 Process | Public Live URL | Purpose |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Preview / Staging** | `/mnt/data/enduranceaventure-preview/` | `preview` | `4322` | `endurance-preview` | `https://rag-agent.duckdns.org/` | **All active dev & modifications happen here** |
-| **Production** | `/mnt/data/enduranceaventure-v2/` | `main` | `4321` | `endurance-site` | `https://bb-reports.duckdns.org/` | **Untouchable during dev. Updated ONLY after user validation** |
+| **Production** | `/mnt/data/enduranceaventure-v2/` | `main` | `4321` | `endurance-site` | `https://enduranceaventure.com/` (alias: `https://bb-reports.duckdns.org/`) | **Untouchable during dev. Updated ONLY after user validation** |
 
 ---
 
@@ -35,7 +35,7 @@ flowchart TD
     F -- "Yes ('valide', 'go prod')" --> G["Commit & Push on 'preview' branch"]
     G --> H["Merge to 'main' & Push GitHub"]
     H --> I["Deploy Prod in /mnt/data/enduranceaventure-v2/: git pull && npm run build && pm2 restart endurance-site"]
-    I --> J["Production is Live & Verified at https://bb-reports.duckdns.org/"]
+    I --> J["Production is Live & Verified at https://enduranceaventure.com/"]
 ```
 
 ### Protocol Steps:
@@ -77,7 +77,7 @@ flowchart TD
         npm run build
         pm2 restart endurance-site
         ```
-     3. Verify production live URL (`https://bb-reports.duckdns.org/`).
+     3. Verify production live URL (`https://enduranceaventure.com/` and alias `https://bb-reports.duckdns.org/`).
 
 ---
 
