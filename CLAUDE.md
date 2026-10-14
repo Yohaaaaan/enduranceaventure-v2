@@ -166,6 +166,24 @@ When adapting components or pages for mobile:
 6. **Structure Only, Content Intact**:
    - Mobile optimization must purely adapt CSS layout, flex directions, grid columns, and touch spacing. Never hide, truncate, or delete informative text, event data, badges, or archive links on mobile viewports.
 
+### 🌐 Mandatory Bilingual Architecture (Strict 100% FR/EN Parity)
+Every single page and route on the platform must exist in both French and English:
+1. **Systematic Mirroring (`src/pages/en/`)**:
+   - For every French page created at `src/pages/path/page.astro`, an English counterpart MUST systematically be created at `src/pages/en/path/page.astro`.
+   - Never create a standalone French page without its English equivalent in the same increment.
+2. **Data Parity (`src/data/*_en.json`)**:
+   - `src/data/events.json` ⟷ `src/data/events_en.json`
+   - `src/data/news.json` ⟷ `src/data/news_en.json`
+   - `src/data/services.json` ⟷ `src/data/services_en.json`
+   - `src/data/pastEvents.json` ⟷ `src/data/pastEvents_en.json`
+   - Any addition, deletion, or change to a French dataset must immediately be mirrored in the corresponding English dataset.
+3. **Bidirectional Navigation**:
+   - The Header and Mobile Drawer language switcher (`FR | EN`) must route seamlessly between `/path` and `/en/path` on every page.
+4. **Natural High-Standard English**:
+   - Translations must use authentic, idiomatic, high-contrast outdoor expedition terminology (inspired by Salomon, Arc'teryx, UTMB, Ironman). Never use clumsy machine translation artifacts.
+5. **SEO & Crawl Parity**:
+   - Unique English `<title>`, `<meta name="description">`, OpenGraph tags, canonical tags, and structured data on all `en/` pages.
+
 ---
 
 ## 5. Directory Structure & Key Files
