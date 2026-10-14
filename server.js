@@ -136,8 +136,17 @@ app.post('/api/track', (req, res) => {
     } catch (e) {}
 
     // Normalize self-referrals to Direct
-    if (cleanRef === 'enduranceaventure.com' || cleanRef === 'rag-agent.duckdns.org' || cleanRef === 'bb-reports.duckdns.org') {
-      cleanRef = 'Direct';
+    // Institutional standard (IAB / Google Analytics 4 / Plausible):
+    // Deduplicate rapid reloads / F5 refreshes: if the same visitor viewed this exact page
+    // within the last 30 minutes, it belongs to the same unique pageview session.
+    const thirtyMinAgoIso = new Date(Date.now() - 30 * 60 * 1000).toISOString();
+    const recentView = db.prepare(
+      'SELECT id FROM page_views WHERE ip_hash = ? AND path = ? AND timestamp >= ? LIMIT 1'
+    ).get(ipHash, pagePath, thirtyMinAgoIso);
+
+    if (recentView) {
+      // Refresh within same 30-min reading window: do not inflate views count
+      return res.status(200).json({ ok: true, deduplicated: true });
     }
 
     const nowIso = timestamp || new Date().toISOString();
