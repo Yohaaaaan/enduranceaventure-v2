@@ -9,24 +9,138 @@ import { DatabaseSync } from 'node:sqlite';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// ==========================================
+// 1. LIGHTWEIGHT ZERO-DEPENDENCY .ENV LOADER
+// ==========================================
+const ENV_FILE = path.join(__dirname, '.env');
+if (fs.existsSync(ENV_FILE)) {
+  try {
+    const envContent = fs.readFileSync(ENV_FILE, 'utf8');
+    for (const line of envContent.split('\n')) {
+      const trimmed = line.trim();
+      if (trimmed && !trimmed.startsWith('#') && trimmed.includes('=')) {
+        const idx = trimmed.indexOf('=');
+        const k = trimmed.slice(0, idx).trim();
+        const v = trimmed.slice(idx + 1).trim();
+        if (!process.env[k]) {
+          process.env[k] = v;
+        }
+      }
+    }
+  } catch (e) {
+    console.warn('[Security] Could not load .env file:', e.message);
+  }
+}
+
 const app = express();
+
+// Disable Express fingerprint to prevent technological reconnaissance
+app.disable('x-powered-by');
+
 const PORT = process.env.PORT || 4321;
 const DATA_DIR = path.join(__dirname, 'data');
 const DB_FILE = path.join(DATA_DIR, 'analytics.db');
-const DATA_FILE = path.join(DATA_DIR, 'analytics.json');
 const CONTACTS_FILE = path.join(DATA_DIR, 'contacts.json');
-const ADMIN_PASS = process.env.ADMIN_PASSWORD || '123456789';
-const VALID_PASSWORDS = new Set([
-  process.env.ADMIN_PASSWORD,
-  '123456789',
-  '123546789'
-].filter(Boolean));
-const AUTH_TOKEN = 'ea_secure_session_' + Buffer.from('123456789').toString('base64');
 
-// Ensure data directory exists
-fs.mkdirSync(DATA_DIR, { recursive: true });
+// Ensure data directory exists with restricted permissions (0700)
+try {
+  fs.mkdirSync(DATA_DIR, { recursive: true, mode: 0o700 });
+} catch (e) {}
 
-// Initialize SQLite database
+// ==========================================
+// 2. CRYPTOGRAPHIC SECRETS & AUTH SYSTEM
+// ==========================================
+const SECRETS_FILE = path.join(DATA_DIR, '.auth_secrets.json');
+let ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+let SESSION_SECRET = process.env.SESSION_SECRET;
+
+if (!ADMIN_PASSWORD || !SESSION_SECRET) {
+  let savedSecrets = {};
+  if (fs.existsSync(SECRETS_FILE)) {
+    try {
+      savedSecrets = JSON.parse(fs.readFileSync(SECRETS_FILE, 'utf8'));
+    } catch (e) {}
+  }
+  if (!ADMIN_PASSWORD) {
+    ADMIN_PASSWORD = savedSecrets.ADMIN_PASSWORD || 'EA2026_Securite!Expert98';
+  }
+  if (!SESSION_SECRET) {
+    SESSION_SECRET = savedSecrets.SESSION_SECRET || crypto.randomBytes(32).toString('hex');
+  }
+  try {
+    fs.writeFileSync(
+      SECRETS_FILE,
+      JSON.stringify({ ADMIN_PASSWORD, SESSION_SECRET }, null, 2),
+      { mode: 0o600 }
+    );
+  } catch (e) {}
+}
+
+// Cryptographic session token generation & verification (HMAC-SHA256 with 24h validity)
+function createSessionToken() {
+  const timestamp = Date.now();
+  const signature = crypto.createHmac('sha256', SESSION_SECRET).update(String(timestamp)).digest('hex');
+  return `${timestamp}.${signature}`;
+}
+
+function verifySessionToken(token) {
+  if (!token || typeof token !== 'string') return false;
+  const parts = token.split('.');
+  if (parts.length !== 2) return false;
+  const [timestampStr, providedSig] = parts;
+  const timestamp = Number(timestampStr);
+  if (isNaN(timestamp)) return false;
+
+  const age = Date.now() - timestamp;
+  // Valid for 24 hours (86,400,000 ms), reject if in future (>10s clock drift)
+  if (age < -10000 || age > 86400000) return false;
+
+  const expectedSig = crypto.createHmac('sha256', SESSION_SECRET).update(String(timestamp)).digest('hex');
+  try {
+    return crypto.timingSafeEqual(Buffer.from(providedSig, 'hex'), Buffer.from(expectedSig, 'hex'));
+  } catch (e) {
+    return false;
+  }
+}
+
+// Timing-safe password verification
+function verifyAdminPassword(inputPass) {
+  if (!inputPass || typeof inputPass !== 'string') return false;
+  const hashA = crypto.createHash('sha256').update(inputPass.trim()).digest();
+  const hashB = crypto.createHash('sha256').update(ADMIN_PASSWORD.trim()).digest();
+  return crypto.timingSafeEqual(hashA, hashB);
+}
+
+// ==========================================
+// 3. IN-MEMORY RATE LIMITERS (ANTI-BRUTE-FORCE & ANTI-SPAM)
+// ==========================================
+const authAttempts = new Map(); // ip -> { count: number, blockedUntil: number }
+const contactAttempts = new Map(); // ip -> Array of timestamps
+
+function getClientIp(req) {
+  const xff = req.headers['x-forwarded-for'];
+  if (xff && typeof xff === 'string') {
+    return xff.split(',')[0].trim();
+  }
+  return req.socket.remoteAddress || '127.0.0.1';
+}
+
+// Periodic cleanup every 10 minutes to avoid memory leaks
+setInterval(() => {
+  const now = Date.now();
+  for (const [ip, data] of authAttempts.entries()) {
+    if (data.blockedUntil < now && data.count === 0) authAttempts.delete(ip);
+  }
+  for (const [ip, timestamps] of contactAttempts.entries()) {
+    const recent = timestamps.filter(t => now - t < 3600000);
+    if (recent.length === 0) contactAttempts.delete(ip);
+    else contactAttempts.set(ip, recent);
+  }
+}, 600000);
+
+// ==========================================
+// 4. SQLITE DATABASE INITIALIZATION
+// ==========================================
 const db = new DatabaseSync(DB_FILE);
 db.exec(`
   CREATE TABLE IF NOT EXISTS page_views (
@@ -68,30 +182,66 @@ const stmtInsertContact = db.prepare(`
   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
 `);
 
-// Support both standard JSON and text/plain (used by navigator.sendBeacon)
-app.use(express.json());
-app.use(express.text({ type: ['text/plain', 'text/*'] }));
+// Restrict request body size to 50kb to prevent DoS / memory exhaustion
+app.use(express.json({ limit: '50kb' }));
+app.use(express.text({ limit: '50kb', type: ['text/plain', 'text/*'] }));
 
-// API: Verify Admin Password
-app.post('/api/auth', (req, res) => {
-  const { password } = req.body || {};
-  const cleanPass = String(password || '').trim();
-  if (cleanPass && VALID_PASSWORDS.has(cleanPass)) {
-    return res.json({ success: true, token: AUTH_TOKEN });
+// ==========================================
+// 5. API ROUTES & SECURITY CONTROLS
+// ==========================================
+
+// API: Verify Admin Password with Brute-Force Rate Limiting
+app.post('/api/auth', async (req, res) => {
+  const clientIp = getClientIp(req);
+  const now = Date.now();
+  const attemptData = authAttempts.get(clientIp) || { count: 0, blockedUntil: 0 };
+
+  if (attemptData.blockedUntil > now) {
+    const remainingSec = Math.ceil((attemptData.blockedUntil - now) / 1000);
+    return res.status(429).json({ 
+      success: false, 
+      error: `Trop de tentatives erronées. Accès temporairement bloqué pendant encore ${remainingSec}s.` 
+    });
   }
-  return res.status(401).json({ success: false, error: 'Mot de passe incorrect' });
+
+  const { password } = req.body || {};
+  const isCorrect = verifyAdminPassword(password);
+
+  if (isCorrect) {
+    authAttempts.delete(clientIp);
+    const token = createSessionToken();
+    return res.json({ success: true, token });
+  }
+
+  // Failed attempt: increment counter
+  attemptData.count += 1;
+  // Block for 15 minutes after 5 consecutive failures
+  if (attemptData.count >= 5) {
+    attemptData.blockedUntil = now + 15 * 60 * 1000;
+  }
+  authAttempts.set(clientIp, attemptData);
+
+  // Intentional delay to kill timing and rapid enumeration attacks
+  await new Promise(r => setTimeout(r, 600));
+
+  return res.status(401).json({ 
+    success: false, 
+    error: attemptData.count >= 5 
+      ? 'Trop de tentatives erronées. Accès temporairement suspendu pour 15 minutes.' 
+      : 'Mot de passe incorrect.' 
+  });
 });
 
 // Middleware to protect admin routes
 function requireAdmin(req, res, next) {
   const authHeader = req.headers['authorization'];
   const queryAuth = req.query.token || req.query.auth;
-  const token = authHeader ? authHeader.replace('Bearer ', '') : queryAuth;
+  const token = authHeader ? authHeader.replace(/^Bearer\s+/i, '').trim() : (queryAuth ? String(queryAuth).trim() : '');
 
-  if (token === AUTH_TOKEN || VALID_PASSWORDS.has(token)) {
+  if (verifySessionToken(token)) {
     return next();
   }
-  return res.status(401).json({ error: 'Accès non autorisé. Authentification requise.' });
+  return res.status(401).json({ error: 'Accès non autorisé. Session invalide ou expirée.' });
 }
 
 // API: Track page view (Real privacy-first analytics)
@@ -106,14 +256,14 @@ app.post('/api/track', (req, res) => {
       return res.status(200).json({ ok: true, ignored: 'admin_or_system' });
     }
 
-    // Filter out bots, search crawlers, and automated agent scripts
+    // Filter out bots, search crawlers, and automated scripts
     const ua = req.headers['user-agent'] || '';
     if (/bot|crawler|spider|slurp|curl|wget|python|postman|node-fetch|axios|headless/i.test(ua)) {
       return res.status(200).json({ ok: true, ignored: 'bot' });
     }
 
     // IP hashing for GDPR compliance (anonymized hash)
-    const clientIp = req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.socket.remoteAddress || '127.0.0.1';
+    const clientIp = getClientIp(req);
     
     // Ignore internal loopback traffic
     if (clientIp === '127.0.0.1' || clientIp === '::1' || clientIp === 'localhost') {
@@ -135,17 +285,13 @@ app.post('/api/track', (req, res) => {
       }
     } catch (e) {}
 
-    // Normalize self-referrals to Direct
-    // Institutional standard (IAB / Google Analytics 4 / Plausible):
-    // Deduplicate rapid reloads / F5 refreshes: if the same visitor viewed this exact page
-    // within the last 30 minutes, it belongs to the same unique pageview session.
+    // Deduplicate rapid reloads / F5 refreshes (30-min reading window per institutional GA4 standard)
     const thirtyMinAgoIso = new Date(Date.now() - 30 * 60 * 1000).toISOString();
     const recentView = db.prepare(
       'SELECT id FROM page_views WHERE ip_hash = ? AND path = ? AND timestamp >= ? LIMIT 1'
     ).get(ipHash, pagePath, thirtyMinAgoIso);
 
     if (recentView) {
-      // Refresh within same 30-min reading window: do not inflate views count
       return res.status(200).json({ ok: true, deduplicated: true });
     }
 
@@ -222,7 +368,6 @@ app.get('/api/stats', requireAdmin, (req, res) => {
     let timelineValues = [];
 
     if (range === 'today') {
-      // 24 hour buckets
       const hourCounts = {};
       for (let h = 0; h < 24; h++) {
         const label = String(h).padStart(2, '0') + 'h';
@@ -241,7 +386,6 @@ app.get('/api/stats', requireAdmin, (req, res) => {
       });
       timelineValues = timelineLabels.map((_, idx) => hourCounts[idx]);
     } else {
-      // Day buckets
       const dayBuckets = {};
       const numDays = range === '30d' ? 30 : (range === 'all' ? 45 : 7);
       for (let i = numDays - 1; i >= 0; i--) {
@@ -332,7 +476,11 @@ function fallbackSendmail(subject, body) {
 }
 
 function sendLeadEmail(lead) {
-  const subject = `[Demande Site Web] ${lead.subject || lead.service || 'Nouveau contact'} - ${lead.name}`;
+  // Ensure subject and email contain NO newline characters (CRLF Injection defense)
+  const safeSubject = String(`[Demande Site Web] ${lead.subject || lead.service || 'Nouveau contact'} - ${lead.name}`)
+    .replace(/[\r\n]/g, ' ')
+    .trim();
+  const safeReplyTo = String(lead.email).replace(/[\r\n]/g, '').trim();
   const dateStr = new Date().toLocaleString('fr-CA', { timeZone: 'America/Toronto' });
   const body = [
     `Nouvelle demande reçue depuis le site web Endurance Aventure :`,
@@ -355,7 +503,7 @@ function sendLeadEmail(lead) {
 
   console.log(`[Lead Dispatch] Préparation envoi notification vers ${NOTIFICATION_EMAIL} pour ${lead.name}`);
 
-  // Archiver dans pending_email_leads.json en secours permanent
+  // Archiver dans pending_email_leads.json en secours permanent (chmod 0600)
   try {
     let pending = [];
     if (fs.existsSync(PENDING_LEADS_FILE)) {
@@ -364,10 +512,10 @@ function sendLeadEmail(lead) {
     pending.unshift({
       timestamp: new Date().toISOString(),
       to: NOTIFICATION_EMAIL,
-      subject,
+      subject: safeSubject,
       lead
     });
-    fs.writeFileSync(PENDING_LEADS_FILE, JSON.stringify(pending.slice(0, 50), null, 2));
+    fs.writeFileSync(PENDING_LEADS_FILE, JSON.stringify(pending.slice(0, 50), null, 2), { mode: 0o600 });
   } catch (e) {
     console.warn('[Lead Backup Warning]', e.message);
   }
@@ -378,34 +526,59 @@ function sendLeadEmail(lead) {
       const py = spawn('python3', [
         GMAIL_SENDER_SCRIPT,
         '--to', NOTIFICATION_EMAIL,
-        '--subject', subject,
+        '--subject', safeSubject,
         '--body', body,
-        '--reply-to', lead.email
+        '--reply-to', safeReplyTo
       ]);
       py.stdout.on('data', (d) => console.log(`[Mail Success] ${d.toString().trim()}`));
       py.stderr.on('data', (d) => console.warn(`[Mail Warning] ${d.toString().trim()}`));
       py.on('close', (code) => {
         if (code !== 0) {
           console.warn('[Mail Warning] Échec passerelle SMTP, tentative sendmail fallback...');
-          fallbackSendmail(subject, body);
+          fallbackSendmail(safeSubject, body);
         }
       });
     } catch (err) {
       console.warn('[Mail Warning] Exception passerelle SMTP:', err.message);
-      fallbackSendmail(subject, body);
+      fallbackSendmail(safeSubject, body);
     }
   } else {
-    fallbackSendmail(subject, body);
+    fallbackSendmail(safeSubject, body);
   }
 }
 
-// API: Submit Contact / B2B Quote
+// API: Submit Contact / B2B Quote with Anti-Spam & Strict Sanitization
 app.post('/api/contact', (req, res) => {
   try {
+    const clientIp = getClientIp(req);
+    const now = Date.now();
+
+    // 1. Anti-bot Honeypot check (hidden field)
     const {
+      website_url,
+      _gotcha,
+      homepage
+    } = req.body || {};
+
+    if (website_url || _gotcha || homepage) {
+      // Deceive bot into thinking it succeeded, drop silently
+      console.log(`[Anti-Spam] Bot submission dropped silently from IP ${clientIp}`);
+      return res.json({ success: true, id: 'lead_verified' });
+    }
+
+    // 2. IP Rate Limiting: Max 5 submissions per hour per IP
+    const timestamps = (contactAttempts.get(clientIp) || []).filter(t => now - t < 3600000);
+    if (timestamps.length >= 5) {
+      return res.status(429).json({
+        success: false,
+        error: 'Limite de messages atteinte pour cette heure. Veuillez nous contacter par téléphone si urgent.'
+      });
+    }
+
+    let {
       type = 'general',
-      name,
-      email,
+      name = '',
+      email = '',
       phone = '',
       organization = '',
       orgType = '',
@@ -414,12 +587,49 @@ app.post('/api/contact', (req, res) => {
       period = '',
       budget = '',
       subject = '',
-      message,
+      message = '',
     } = req.body || {};
 
+    // 3. Strict Input Sanitization & CRLF Injection Prevention
+    const sanitizeSingleLine = (val, maxLen) => {
+      return String(val || '')
+        .replace(/[\r\n\t]/g, ' ')
+        .trim()
+        .slice(0, maxLen);
+    };
+
+    name = sanitizeSingleLine(name, 100);
+    email = sanitizeSingleLine(email, 120);
+    phone = sanitizeSingleLine(phone, 35);
+    organization = sanitizeSingleLine(organization, 120);
+    orgType = sanitizeSingleLine(orgType, 60);
+    service = sanitizeSingleLine(service, 120);
+    subject = sanitizeSingleLine(subject, 150);
+    participants = sanitizeSingleLine(participants, 50);
+    period = sanitizeSingleLine(period, 50);
+    budget = sanitizeSingleLine(budget, 50);
+    type = sanitizeSingleLine(type, 20);
+
+    // Message can contain newlines, but bounded to 5,000 chars
+    message = String(message || '').trim().slice(0, 5000);
+
+    // 4. Required fields & Email regex validation
     if (!name || !email || !message) {
       return res.status(400).json({ success: false, error: 'Nom, courriel et message sont obligatoires.' });
     }
+
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ success: false, error: 'Format d\'adresse courriel invalide.' });
+    }
+
+    if (message.length < 5) {
+      return res.status(400).json({ success: false, error: 'Le message est trop court.' });
+    }
+
+    // Record submission timestamp for rate limiting
+    timestamps.push(now);
+    contactAttempts.set(clientIp, timestamps);
 
     const id = 'lead_' + Date.now();
     const createdAt = new Date().toISOString();
@@ -431,16 +641,16 @@ app.post('/api/contact', (req, res) => {
       finalSubject, message, createdAt, 'Nouveau'
     );
 
-    // Sync to contacts.json for easy inspection
+    // Sync to contacts.json with mode 0600
     try {
       const allContacts = db.prepare('SELECT * FROM contacts ORDER BY created_at DESC').all();
-      fs.writeFileSync(CONTACTS_FILE, JSON.stringify(allContacts, null, 2));
+      fs.writeFileSync(CONTACTS_FILE, JSON.stringify(allContacts, null, 2), { mode: 0o600 });
     } catch(e) {}
 
-    // Dispatch email notification to info@enduranceaventure.com
+    // Dispatch email notification
     sendLeadEmail({ type, name, email, phone, organization, orgType, service, subject: finalSubject, message });
 
-    console.log(`[Contact] Nouvelle demande reçue de ${name} (${email}) - ${type}`);
+    console.log(`[Contact] Nouvelle demande légitime de ${name} (${email}) - ${type}`);
     res.json({ success: true, id });
   } catch (err) {
     console.error('[Contact Error]', err);
@@ -458,7 +668,9 @@ app.get('/api/contacts', requireAdmin, (req, res) => {
   }
 });
 
-// Serve static Astro dist files with aggressive caching for static assets
+// ==========================================
+// 6. STATIC FILE SERVING & PATH TRAVERSAL DEFENSE
+// ==========================================
 const distDir = path.join(__dirname, 'dist');
 
 // Redirect removed services cleanly
@@ -472,15 +684,20 @@ app.use((req, res, next) => {
   next();
 });
 
+// Explicit boundary check to prevent path traversal attacks
 app.use((req, res, next) => {
   if (req.method !== 'GET') return next();
   const cleanPath = req.path.replace(/^\/+|\/+$/g, '');
   if (!cleanPath) return next();
 
-  const htmlPath = path.join(distDir, cleanPath, 'index.html');
-  if (fs.existsSync(htmlPath)) {
+  const resolvedHtmlPath = path.resolve(distDir, cleanPath, 'index.html');
+  if (!resolvedHtmlPath.startsWith(distDir)) {
+    return res.status(403).send('Forbidden');
+  }
+
+  if (fs.existsSync(resolvedHtmlPath)) {
     res.setHeader('Cache-Control', 'public, max-age=3600');
-    return res.sendFile(htmlPath);
+    return res.sendFile(resolvedHtmlPath);
   }
   next();
 });
@@ -495,15 +712,15 @@ app.use(express.static(distDir, {
   }
 }));
 
-// Fallback for 404 or SPA fallback
+// Fallback for 404
 app.use((req, res) => {
   const rootIndex = path.join(distDir, 'index.html');
   if (fs.existsSync(rootIndex)) {
-    return res.sendFile(rootIndex);
+    return res.status(404).sendFile(rootIndex);
   }
   res.status(404).send('Page non trouvée');
 });
 
 app.listen(PORT, '127.0.0.1', () => {
-  console.log(`🚀 Endurance Aventure Server running on http://127.0.0.1:${PORT}`);
+  console.log(`🚀 Endurance Aventure Server (Hardened) running on http://127.0.0.1:${PORT}`);
 });
