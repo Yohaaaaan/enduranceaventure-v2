@@ -102,15 +102,26 @@ app.post('/api/track', (req, res) => {
       try { payload = JSON.parse(payload); } catch(e) {}
     }
     const { path: pagePath, referrer, screenWidth, timestamp } = payload || {};
-    if (!pagePath || pagePath.startsWith('/admin') || pagePath.startsWith('/api')) {
-      return res.status(200).json({ ok: true });
+    if (!pagePath || pagePath.startsWith('/admin') || pagePath.startsWith('/api') || pagePath.startsWith('/_')) {
+      return res.status(200).json({ ok: true, ignored: 'admin_or_system' });
+    }
+
+    // Filter out bots, search crawlers, and automated agent scripts
+    const ua = req.headers['user-agent'] || '';
+    if (/bot|crawler|spider|slurp|curl|wget|python|postman|node-fetch|axios|headless/i.test(ua)) {
+      return res.status(200).json({ ok: true, ignored: 'bot' });
     }
 
     // IP hashing for GDPR compliance (anonymized hash)
     const clientIp = req.headers['x-forwarded-for']?.split(',')[0]?.trim() || req.socket.remoteAddress || '127.0.0.1';
+    
+    // Ignore internal loopback traffic
+    if (clientIp === '127.0.0.1' || clientIp === '::1' || clientIp === 'localhost') {
+      return res.status(200).json({ ok: true, ignored: 'loopback' });
+    }
+
     const ipHash = 'h_' + crypto.createHash('sha256').update(clientIp + 'ea_salt_2026').digest('hex').slice(0, 12);
 
-    const ua = req.headers['user-agent'] || '';
     let device = (screenWidth && screenWidth < 768) ? 'Mobile' : 'Desktop';
     if (!screenWidth && ua) {
       device = /mobile|android|iphone|ipad/i.test(ua) ? 'Mobile' : 'Desktop';
@@ -123,6 +134,11 @@ app.post('/api/track', (req, res) => {
         cleanRef = u.hostname.replace(/^www\./, '');
       }
     } catch (e) {}
+
+    // Normalize self-referrals to Direct
+    if (cleanRef === 'enduranceaventure.com' || cleanRef === 'rag-agent.duckdns.org' || cleanRef === 'bb-reports.duckdns.org') {
+      cleanRef = 'Direct';
+    }
 
     const nowIso = timestamp || new Date().toISOString();
     stmtInsertView.run(pagePath, cleanRef, device, ipHash, nowIso);
