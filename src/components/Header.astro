@@ -195,8 +195,26 @@ const t = isEn ? {
         </a>
       </nav>
 
-      <!-- Desktop Right Actions: CTA Only -->
+      <!-- Desktop Right Actions: Lang Switcher & CTA -->
       <div class="hidden lg:flex items-center gap-3.5 flex-shrink-0">
+        <!-- Language Switcher Pill (Desktop) -->
+        <div class="inline-flex items-center p-0.5 rounded-sm bg-slate-900 border border-slate-700/80 text-xs font-heading font-bold uppercase tracking-wider shadow-sm">
+          <a 
+            href={frUrl} 
+            class={`px-2.5 py-1 min-h-[30px] inline-flex items-center justify-center rounded-sm transition-all duration-200 ${!isEn ? 'bg-brand-red text-white shadow-xs' : 'text-slate-400 hover:text-white'}`}
+            aria-label="Passer en version française"
+          >
+            FR
+          </a>
+          <a 
+            href={enUrl} 
+            class={`px-2.5 py-1 min-h-[30px] inline-flex items-center justify-center rounded-sm transition-all duration-200 ${isEn ? 'bg-brand-red text-white shadow-xs' : 'text-slate-400 hover:text-white'}`}
+            aria-label="Switch to English version"
+          >
+            EN
+          </a>
+        </div>
+
         <!-- CTA Button Desktop -->
         <a 
           href={t.contactLink} 
@@ -206,8 +224,24 @@ const t = isEn ? {
         </a>
       </div>
 
-      <!-- Mobile / Tablet Hamburger & Contact Button -->
+      <!-- Mobile / Tablet Hamburger & Quick Lang (Visible on screens < 1024px) -->
       <div class="flex lg:hidden items-center gap-2">
+        <!-- Compact Lang Pill on Mobile Bar -->
+        <div class="inline-flex items-center p-0.5 rounded-sm bg-slate-900 border border-slate-700 text-[11px] font-heading font-bold uppercase tracking-wider">
+          <a 
+            href={frUrl} 
+            class={`px-2 py-0.5 rounded-sm transition-all ${!isEn ? 'bg-brand-red text-white' : 'text-slate-400'}`}
+          >
+            FR
+          </a>
+          <a 
+            href={enUrl} 
+            class={`px-2 py-0.5 rounded-sm transition-all ${isEn ? 'bg-brand-red text-white' : 'text-slate-400'}`}
+          >
+            EN
+          </a>
+        </div>
+
         <a 
           href={t.contactLink} 
           class="inline-flex sm:hidden px-3.5 py-2.5 rounded bg-brand-red text-white font-heading font-bold text-xs uppercase tracking-wider min-h-[44px] items-center justify-center shadow-xs"
