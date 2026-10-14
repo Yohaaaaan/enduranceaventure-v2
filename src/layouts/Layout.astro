@@ -133,6 +133,7 @@ const defaultOrgSchema = {
       (function() {
         try {
           if (window.location.pathname.startsWith('/admin')) return;
+          if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') return;
           const data = {
             path: window.location.pathname,
             referrer: document.referrer || 'Direct',
