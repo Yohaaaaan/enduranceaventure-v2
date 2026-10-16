@@ -206,9 +206,9 @@ function generateVisualDescription(f, mediaType, eventCategory) {
   }
   if (name.includes("marc-plante")) {
     return {
-      description: "Portrait de Marc Plante, associé et producteur exécutif chargé de la distribution internationale.",
-      alt: "Portrait de Marc Plante - Producteur exécutif et associé",
-      tags: ["marc-plante", "equipe", "producteur", "portrait", "associe"]
+      description: "Portrait officiel de terrain de Marc Plante, associé et producteur exécutif d'Endurance Aventure, sur le site du Canada Man / Canada Woman XTRI avec sa casquette et la veste officielle TV crew.",
+      alt: "Portrait de Marc Plante - Producteur exécutif et associé Endurance Aventure",
+      tags: ["marc-plante", "equipe", "producteur", "portrait", "associe", "canada-man", "tv-crew"]
     };
   }
   if (name.includes("patricia-desgagne")) {
